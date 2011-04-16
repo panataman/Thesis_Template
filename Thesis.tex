@@ -1,0 +1,42 @@
+\documentclass[a4paper,oneside,12pt]{ThesisStyle}
+
+\include{formatAndDefs}
+
+\begin{document}
+
+\include{Title_Page}
+
+\dominitoc
+
+\pagenumbering{roman}
+
+\cleardoublepage
+
+\include{Abstract}
+\listoftodos
+\tableofcontents
+\listoffigures
+\mtcaddchapter[Abbildungsverzeichnis]
+\listoftables
+\mtcaddchapter[Tabellenverzeichnis]
+\lstlistoflistings
+\mtcaddchapter[Matlab-Code Verzeichnis]
+\printnomenclature % to get this toc! makeindex hauptdokument.nlo -s nomencl.ist -o hauptdokument.nls
+\mtcfixglossary[chapter] % solve the conflict of \minitoc and \nomencl
+
+\mainmatter % maindocument whit arabic numbers
+
+\include{Einleitung}
+\include{Theorie}
+\include{Handhabung_des_Programms}
+
+\appendix
+\include{Anhang}
+
+%\bibliographystyle{ThesisStyle}
+\bibliographystyle{alpha}
+\bibliography{Thesis}
+
+%\backmatter
+
+\end{document}
