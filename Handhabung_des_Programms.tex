@@ -177,13 +177,13 @@ verschiedener Datentypen einen durch \matlab darauf direkten Zugriff.
 7          0 ... % installed cooling power in W
 8          2, ... % number_of_walls
 9          [16.4 6.7], ... % area_wall
-10         [200 200], ... % masse_stored
-11         [2.3 3.52], ... % specific_mass_capacity
-12         -6, ... % temperature_min in Celsius
-13         2, ... % temperature_max in Celsius
-14         1, ... % averaged cooling room temperature in Celsius
-15         [0.38 0.38], ... % heat_transmission_coefficient
-16         [19 15], ... % temperature_outside
+10         [0.38 0.38], ... % heat_transmission_coefficient
+11         [19 15], ... % temperature_outside
+12         [200 200], ... % masse_stored
+13         [2.3 3.52], ... % specific_mass_capacity
+14         -6, ... % temperature_min in Celsius
+15         2, ... % temperature_max in Celsius
+16         1, ... % averaged cooling room temperature in Celsius
 17         0, ... % refrigerating capacity
 18        };
 \end{lstlisting}
@@ -204,28 +204,44 @@ verschiedener Datentypen einen durch \matlab darauf direkten Zugriff.
 	eingetragen.
 
 	\item [{Spalte vier}] Der Anteil des Verdichters an dem Tagesenergieverbrauch der Kühleinheiten wird Leistungszahl
-	genannt. Aus der \cref{lverd} geht hervor, wie diese Kehnzahl in die Berechnung eingeht. Die Liestungszahl wird in
-	der Spalte vier festgehalten.
+	genannt. Aus der \cref{lverd} im \cref{chap:theorie} geht hervor, wie diese Kehnzahl in die Berechnung eingeht. Die
+	Liestungszahl wird in der Spalte vier festgehalten.
 
 	\item [{Spalte fünf}] Werden anschlussfertige Kälteaggrigate zur Kühlung von Räumen verwendet, so wird die
 	installierte Kälteleistung in Kilowatt in die Spalte fünf anstatt einer Null eingetragen.
 
-	\item [{Spalte sechs}] Ein Teil der Wärmeverlsute ist auf die Transmissionsverluste durch die Wände zurückzuführen.
+	\item [{Spalte sechs}] Ein Teil der Wärmeverluste ist auf die Transmissionsverluste durch die Wände zurückzuführen.
 	Die Anzahl der Wände muss für die Rechnung berücksichtigt werden, Sie wird in die sechste Spalte eingetragen.
 	
+	\item [{Spalte sieben}] Für die Transmissionsverlustberechnung sind under anderen die Flächengrößen und die jeweiligen
+	Wärmedurchgangskoeffizienten der einzelnen Wände maßgebend\footnoteremember{Waende}{ Der mathematische Zusammenhang
+	wird im \cref{chap:theorie} in der \cref{ptrans} deutlich gemacht.}. Für je eine Flächengröße in Quadratmeter ist in
+	der Spalte sieben des NK\_KT\_S-Arrays ein Spaltenplatz im $1\times w$-Flächenarray reserviert. Die $w$ steht für die
+	Anzahl der Wände.
+
+	\item [{Spalte acht}] In der achten Spalte werden in einem weiteren $1\times w$-Array die mit den Flächen
+	korrespondiere Wärmedurchgangskoeffiziente\footnoterecall{Waende} in gleicher Reihenfolge gespeichert.
+
+	\item [{Spalte neun}] Die Tepmeratur außerhalb der Kühleinheit bestimmt\footnoterecall{Waende} die Größe der
+	Transmissionsverluste. In der neunten Spalte werden nach dem gleichen Prinzip und in der gleichen Form wie im
+	vorhergegangenen Eintrag die Außentemperatur für jede Wand eingetragen.
+
+	\item [{Spalte zehn}] Die Abhängigkeit der Temperaturänderung von der in einer Kühleinheit deponierten Masse an Wahren
+	und deren spezifische Wärmekapazität ist aus der \cref{tdif} im \cref{chap:theorie} ersichtlich. In der Realität
+	werden in der Regel in einem Kühlschrank mehrere verschiedene Lebensmittel gekühlt. Möchte man gemischte Beladung
+	simulieren, so sind im Daten-Array NK\_KT\_S in der fünften Zeile die Massen in einem Zeilenvektor zu speichern.
+
 	Aus \cref{tdif} geht hervor, dass die Temperaturänderung in einer Kühleinheit (u.a) abhängig
 	ist von der Masse $m$ der in der Kühleinheit gehaltenen Lebensmittel und ihrer spezifischen Wärmekapazität $c$. Beide
-	Parameter sind Elemente der positiven reelen Zahlen.  In der Realität werden in der Regel in einem Kühlschrank
-	mehrere verschiedene Lebensmittel gekühlt.  Auf Wunsch des Anwenders kann diese Konstellation simuliert werden.
-	Möchte man gemischte Beladung simulieren, so sind im Daten-Array NK\_KT\_S in der fünften Zeile die Massen in einem
-	Zeilenvektor zu speichern. Die dazugehörigen spezifischen Wärmekapazitäten sind in der sechsten Zeile in Zeilenvektor
+	Parameter sind Elemente der positiven reelen Zahlen.    Auf Wunsch des Anwenders kann diese Konstellation simuliert werden.
+	 Die dazugehörigen spezifischen Wärmekapazitäten sind in der sechsten Zeile in Zeilenvektor
 	der selben Größe wie in der Zeile 5 einzutragen. Die Spaltennummer der kommunizierender\todo{kann man so sagen?}
 	Parameter müssen übereinstimmen.
 
 In der Realität fällt die Spanne für Variation die Innentemperatur in einem Lebensmittelkühlschrank eher gering aus, da die
 Temperatur auf einem bestimmten Niveau gehalten werden muss, damit die Lebensmittel maximal lange frisch bleiben können.
 Möchte man die Kälte im Lebensmittel speichern, darf man bestimmte Grenzen nicht überschreiten. In der Spalte acht im
-NK\_KT\_S wird die untere Temperaturgrenze festgelegt. In der Scheiße.
+NK\_KT\_S wird die untere Temperaturgrenze festgelegt. In der Scheiße das ist unmöglich.
 
 \end{description}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
