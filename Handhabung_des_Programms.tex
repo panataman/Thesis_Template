@@ -216,7 +216,7 @@ verschiedener Datentypen einen durch \matlab darauf direkten Zugriff.
 	\item [{Spalte sieben}] Für die Transmissionsverlustberechnung sind under anderen die Flächengrößen und die jeweiligen
 	Wärmedurchgangskoeffizienten der einzelnen Wände maßgebend\footnoteremember{Waende}{ Der mathematische Zusammenhang
 	wird im \cref{chap:theorie} in der \cref{ptrans} deutlich gemacht.}. Für je eine Flächengröße in Quadratmeter ist in
-	der Spalte sieben des NK\_KT\_S-Arrays ein Spaltenplatz im $1\times w\,$-Spaltenarray reserviert. Die $w$ steht für die
+	der Spalte sieben des NK\_KT\_S-Arrays ein Spaltenplatz im $1\times w\,$-Zeilenarray reserviert. Die $w$ steht für die
 	Anzahl der Wände.
 
 	\item [{Spalte acht}] In der achten Spalte werden in einem weiteren $1\times w\,$-Zeilenarray die mit den Flächen
@@ -229,31 +229,38 @@ verschiedener Datentypen einen durch \matlab darauf direkten Zugriff.
 	\item [{Spalte zehn}] Die Abhängigkeit der Temperaturänderung von der in einer Kühleinheit deponierten Masse an Waren
 	und deren spezifische Wärmekapazität ist aus der \cref{tdif} im \cref{chap:theorie} ersichtlich. In der Realität
 	werden in einem Kühlschrank gewöhnlich mehrere verschiedene Lebensmittel gekühlt. Möchte man gemischte Beladung
-	simulieren, so sind die Massen in der Spalte zehn im NK\_KT\_S in der gleichen Art und Weise wie in der Spalte sieben
-	acht oder neun zu einzutragen.
+	simulieren, so sind die Massen in der Spalte zehn im NK\_KT\_S in der gleichen Art und Weise wie in der Spalte
+	sieben acht oder neun zu einzutragen. Der Eintrag erfolgt in Kilogramm.
 
 	\item [{Spalte elf}] Zu jeder in der Spalte zehn eingetragener Massezahl muss in der Spalte neun nach dem Beispiel der
 	Spalte acht die spezifische Wärmekapazität eingetragen werden.
 
-	\item [{Spalte zehn}] 
+	\item [{Spalte zwölf}] In der Realität fällt die Spanne für Variation die Innentemperatur in einem
+	Lebensmittelkühlschrank eher gering aus, da die Temperatur auf einem bestimmten Niveau gehalten werden muss, damit die
+	Lebensmittel maximal lange frisch bleiben können. Möchte man die Kälte im Lebensmittel speichern, darf die
+	Lebensmitteltemperatur einen bestimmten Bereich nicht Verlassen. In der Spalte zwölf im NK\_KT\_S wird die untere
+	Temperaturgrenze in Grad Celsius festgelegt.
 
-	Aus \cref{tdif} geht hervor, dass die Temperaturänderung in einer Kühleinheit (u.a) abhängig
-	ist von der Masse $m$ der in der Kühleinheit gehaltenen Lebensmittel und ihrer spezifischen Wärmekapazität $c$. Beide
-	Parameter sind Elemente der positiven reelen Zahlen.    Auf Wunsch des Anwenders kann diese Konstellation simuliert werden.
-	 Die dazugehörigen spezifischen Wärmekapazitäten sind in der sechsten Zeile in Zeilenvektor
-	der selben Größe wie in der Zeile 5 einzutragen. Die Spaltennummer der kommunizierender\todo{kann man so sagen?}
-	Parameter müssen übereinstimmen.
+	\item [{Spalte elf}] In der Spalte elf wird die obere Temperaturgrenze in Grad Celsius festgelegt.
 
-In der Realität fällt die Spanne für Variation die Innentemperatur in einem Lebensmittelkühlschrank eher gering aus, da die
-Temperatur auf einem bestimmten Niveau gehalten werden muss, damit die Lebensmittel maximal lange frisch bleiben können.
-Möchte man die Kälte im Lebensmittel speichern, darf man bestimmte Grenzen nicht überschreiten. In der Spalte acht im
-NK\_KT\_S wird die untere Temperaturgrenze festgelegt. In der Scheiße das ist unmöglich.
+	\item [{Spalte zwölf}] Die Bedeutung\footnoteremember{v:caro}{ Ausführlich begründet wird das in \cite{caro}.} der
+	mittleren Kühlraumtemperatur ist kurz im \cref{chap:theorie} angeschnitten. Notiert wird diese Kennzahl in der Spalte
+	zwölf im NK\_KT\_S eingetragen.
+
+	\item [{Spalte dreizehn}] Keine Ahnung\todo{Klären was das ist.}
 
 \end{description}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Die main.m Datei}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Deklamation der berechneten Daten}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 Die inhaltliche Auswertung der Simulation ist dem Benutzer vorbehalten. Darum müssen die Ergebnisse der Simulation in einer
 anwenderfreundlichen Form zugänglich gemacht werden. Durch sinnvolle graphische Darstellung der untersuchten Größen kann zum
