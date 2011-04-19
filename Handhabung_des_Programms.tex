@@ -216,20 +216,26 @@ verschiedener Datentypen einen durch \matlab darauf direkten Zugriff.
 	\item [{Spalte sieben}] Für die Transmissionsverlustberechnung sind under anderen die Flächengrößen und die jeweiligen
 	Wärmedurchgangskoeffizienten der einzelnen Wände maßgebend\footnoteremember{Waende}{ Der mathematische Zusammenhang
 	wird im \cref{chap:theorie} in der \cref{ptrans} deutlich gemacht.}. Für je eine Flächengröße in Quadratmeter ist in
-	der Spalte sieben des NK\_KT\_S-Arrays ein Spaltenplatz im $1\times w$-Flächenarray reserviert. Die $w$ steht für die
+	der Spalte sieben des NK\_KT\_S-Arrays ein Spaltenplatz im $1\times w\,$-Spaltenarray reserviert. Die $w$ steht für die
 	Anzahl der Wände.
 
-	\item [{Spalte acht}] In der achten Spalte werden in einem weiteren $1\times w$-Array die mit den Flächen
+	\item [{Spalte acht}] In der achten Spalte werden in einem weiteren $1\times w\,$-Zeilenarray die mit den Flächen
 	korrespondiere Wärmedurchgangskoeffiziente\footnoterecall{Waende} in gleicher Reihenfolge gespeichert.
 
 	\item [{Spalte neun}] Die Tepmeratur außerhalb der Kühleinheit bestimmt\footnoterecall{Waende} die Größe der
 	Transmissionsverluste. In der neunten Spalte werden nach dem gleichen Prinzip und in der gleichen Form wie im
 	vorhergegangenen Eintrag die Außentemperatur für jede Wand eingetragen.
 
-	\item [{Spalte zehn}] Die Abhängigkeit der Temperaturänderung von der in einer Kühleinheit deponierten Masse an Wahren
+	\item [{Spalte zehn}] Die Abhängigkeit der Temperaturänderung von der in einer Kühleinheit deponierten Masse an Waren
 	und deren spezifische Wärmekapazität ist aus der \cref{tdif} im \cref{chap:theorie} ersichtlich. In der Realität
-	werden in der Regel in einem Kühlschrank mehrere verschiedene Lebensmittel gekühlt. Möchte man gemischte Beladung
-	simulieren, so sind im Daten-Array NK\_KT\_S in der fünften Zeile die Massen in einem Zeilenvektor zu speichern.
+	werden in einem Kühlschrank gewöhnlich mehrere verschiedene Lebensmittel gekühlt. Möchte man gemischte Beladung
+	simulieren, so sind die Massen in der Spalte zehn im NK\_KT\_S in der gleichen Art und Weise wie in der Spalte sieben
+	acht oder neun zu einzutragen.
+
+	\item [{Spalte elf}] Zu jeder in der Spalte zehn eingetragener Massezahl muss in der Spalte neun nach dem Beispiel der
+	Spalte acht die spezifische Wärmekapazität eingetragen werden.
+
+	\item [{Spalte zehn}] 
 
 	Aus \cref{tdif} geht hervor, dass die Temperaturänderung in einer Kühleinheit (u.a) abhängig
 	ist von der Masse $m$ der in der Kühleinheit gehaltenen Lebensmittel und ihrer spezifischen Wärmekapazität $c$. Beide
@@ -257,8 +263,7 @@ Beispiel die Überprüfung, die Veranschaulichung oder die Bestimmung der funkti
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{Graphische Ausgabe}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% \subsubsection{Graphische Ausgabe}
 \textbf{Wichtig!!!} hier wird nicht der Quellcode erklärt, sondern die Darstellung der Ausgabe.
 \todo[inline,color=orange!30]{Funktion mit für die graphische Ausgabe schreiben}
 \subsubsection{Tabellarische Ausgabe im Command-Window und Exel}
