@@ -1,4 +1,4 @@
-\chapter{Problembeschreibung}
+\chapter{Problembeschreibung}\todo{Programmentwurf?}
 \label{chap:problemstellung}
 \minitoc
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -8,5 +8,34 @@
 \item Präzisierung
 \item Formalisierung
 \end{itemize}
-\section{Problemstellung Inhalt und Aufbau der Arbeit}
-Die vorliegende Arbeit beschäftigt sich mit$\ldots$
+\section{Präzisierung der Anforderungen}
+
+In diesem Kapitel wird detaillierter vorgestellt welche 
+\begin{itemize}
+\item netzbezogene Beschränkungen
+\item kältetechnische Beschränkungen
+\end{itemize}
+
+\section{Erster Schritt der Planung}
+
+Die Anforderungen, die an das Programm gestellt werden, werden im ersten Schritt des Softwareentwurfs bestimmt. Die Ermittlung
+der Funktionen des Programms, sowie die Form und die Menge der Daten, die in das Programm fließen müssen, bilden das Ziel der
+ersten Phase der Planung.
+
+\subsection{Funktionen des Programms}
+
+Die Intention der Arbeit, ein Programm zur Simulation des variablen Lastverhaltens von Kältelast mit Kältespeicher im
+Energieversorgungsnetz, bestimmt die Funktionen, die das Simulationsprogramm zu erfüllen hat. Dem Anwender des Programms muss
+die Möglichkeit bereitgestellt werden, das Lastverhalten einer variablen Anzahl an Modellkältelasten in einem beliebigen
+Energieversorgungsnetz in Folge vom Anwender bestimmten Lasmanagementes zu simulieren und anschließend die Verbrauchsdaten in
+einem Lastflussoptimierungsprogramm zu verwenden.
+
+%Das Simulationsprogramm wird im Zusammenhang mit einem Lastflussoptimierungsprogramm aufgerufen.
+
+Im Energieversorgungsnetz ist eine Kältelast ein gewöhnlicher Energieverbraucher, der an Knoten des Energieversorgungsnetzes
+angeschlossen ist. Besonderes interessant als Untersuchungsgegenstand bei der Betrachtung der Möglichkeiten zum Lastmamagement
+im Ramen der Integration der fluktuierenden Erneuerbaren Energie in ein Energieversorgungsnetz wird diese Art der Last,
+speziell die Kälteanlagen in den bestehenden Supermarktketten, durch die Tatsache, dass einen hoher Prozentanteil am
+Gesamtenergieverbrauch eines Landes darauf abfällt \cite{doctor}. Der durchschnittliche Energieverbrauch der Kälteanlagen je
+Supermaktkette kann auf Grund der technischen Ausführung unterschiedlich sein. Der Energieverbrauch entsteht also an
+definierten Punkten im Netz. An den einzelnen Knotenpunkten können mehrere Kältelasten angeschlossen sein. 
