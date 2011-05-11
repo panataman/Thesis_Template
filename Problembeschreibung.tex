@@ -4,17 +4,25 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+In diesem Kapitel wird ein detailliertes Bild über die Aufgabenstellung gegeben. Außerdem werden die Schritte, die beim
+Programmentwurf in der Plannungsphase durchgegangen worden sind, Punkt für Punkt beschrieben.
+
+\section{Aufgabenstellung}
+
+Ein Programm zur Simulation des variablen Lastverhaltens von Kältelast mit Kältespeicher im
+Energieversorgungsnetz\todo{Aufgabenstellung richtig beschreiben}.
+
 \begin{itemize}
 \item Präzisierung
 \item Formalisierung
 \end{itemize}
-\section{Präzisierung der Anforderungen}
 
-In diesem Kapitel wird detaillierter vorgestellt welche 
 \begin{itemize}
 \item netzbezogene Beschränkungen
 \item kältetechnische Beschränkungen
 \end{itemize}
+
 
 \section{Erster Schritt der Planung}
 
@@ -25,8 +33,8 @@ ersten Phase der Planung.
 \subsection{Funktionen des Programms}
 
 Die Intention der Arbeit, ein Programm zur Simulation des variablen Lastverhaltens von Kältelast mit Kältespeicher im
-Energieversorgungsnetz, bestimmt die Funktionen, die das Simulationsprogramm zu erfüllen hat. Dem Anwender des Programms muss
-die Möglichkeit bereitgestellt werden, das Lastverhalten einer variablen Anzahl an Modellkältelasten in einem beliebigen
+Energieversorgungsnetz, bestimmt die Funktionen, die das Simulationsprogramm zu erfüllen hat. Dem Anwender des Programms wird
+die Möglichkeit bereitgestellt, das Lastverhalten einer variablen Anzahl an Modellkältelasten in einem beliebigen
 Energieversorgungsnetz in Folge vom Anwender bestimmten Lasmanagementes zu simulieren und anschließend die Verbrauchsdaten in
 einem Lastflussoptimierungsprogramm zu verwenden.
 
@@ -38,4 +46,15 @@ im Ramen der Integration der fluktuierenden Erneuerbaren Energie in ein Energiev
 speziell die Kälteanlagen in den bestehenden Supermarktketten, durch die Tatsache, dass einen hoher Prozentanteil am
 Gesamtenergieverbrauch eines Landes darauf abfällt \cite{doctor}. Der durchschnittliche Energieverbrauch der Kälteanlagen je
 Supermaktkette kann auf Grund der technischen Ausführung unterschiedlich sein. Der Energieverbrauch entsteht also an
-definierten Punkten im Netz. An den einzelnen Knotenpunkten können mehrere Kältelasten angeschlossen sein. 
+definierten Punkten im Netz. An den einzelnen Knotenpunkten können mehrere Kältelasten angeschlossen sein.
+
+Auf Grund dieser Analyse erscheinen folgende Funktionen für die Umsetzung des Programms besonders zweckmäßig.
+
+\begin{itemize}
+\item Eines auf das Problem reduziertes Computermodell des Energieversorgungsnetzes wird erstellt. Die relevante
+Informationen sind:
+	\begin{itemize}
+		\item Anzahl der Knoten,
+		\item Anzahl der an einen Knoten angeschlossene Speicher.
+	\end{itemize}.
+\end{itemize}
