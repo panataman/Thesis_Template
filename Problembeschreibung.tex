@@ -6,7 +6,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 In diesem Kapitel wird ein detailliertes Bild über die Aufgabenstellung gegeben. Außerdem werden die Schritte, die beim
-Programmentwurf in der Plannungsphase durchgegangen worden sind, Punkt für Punkt beschrieben.
+Programmentwurf in der Planungsphase durchgegangen worden sind, Punkt für Punkt beschrieben.
 
 \section{Aufgabenstellung}
 
@@ -23,38 +23,44 @@ Energieversorgungsnetz\todo{Aufgabenstellung richtig beschreiben}.
 \item kältetechnische Beschränkungen
 \end{itemize}
 
+Das Simulationsprogramm wird im Zusammenhang mit einem Lastflussoptimierungsprogramm aufgerufen.
 
 \section{Erster Schritt der Planung}
 
-Die Anforderungen, die an das Programm gestellt werden, werden im ersten Schritt des Softwareentwurfs bestimmt. Die Ermittlung
+Die an das Programm gestellten Anforderungen werden im ersten Schritt des Softwareentwurfs bestimmt. Die Ermittlung
 der Funktionen des Programms, sowie die Form und die Menge der Daten, die in das Programm fließen müssen, bilden das Ziel der
 ersten Phase der Planung.
 
-\subsection{Funktionen des Programms}
+\subsection{Funktionen und Daten}
 
 Die Intention der Arbeit, ein Programm zur Simulation des variablen Lastverhaltens von Kältelast mit Kältespeicher im
 Energieversorgungsnetz, bestimmt die Funktionen, die das Simulationsprogramm zu erfüllen hat. Dem Anwender des Programms wird
 die Möglichkeit bereitgestellt, das Lastverhalten einer variablen Anzahl an Modellkältelasten in einem beliebigen
-Energieversorgungsnetz in Folge vom Anwender bestimmten Lasmanagementes zu simulieren und anschließend die Verbrauchsdaten in
+Energieversorgungsnetz in Folge vom Anwender bestimmten Lasmanagementes zu simulieren um anschließend die Verbrauchsdaten in
 einem Lastflussoptimierungsprogramm zu verwenden.
 
-%Das Simulationsprogramm wird im Zusammenhang mit einem Lastflussoptimierungsprogramm aufgerufen.
 
 Im Energieversorgungsnetz ist eine Kältelast ein gewöhnlicher Energieverbraucher, der an Knoten des Energieversorgungsnetzes
 angeschlossen ist. Besonderes interessant als Untersuchungsgegenstand bei der Betrachtung der Möglichkeiten zum Lastmamagement
 im Ramen der Integration der fluktuierenden Erneuerbaren Energie in ein Energieversorgungsnetz wird diese Art der Last,
 speziell die Kälteanlagen in den bestehenden Supermarktketten, durch die Tatsache, dass einen hoher Prozentanteil am
-Gesamtenergieverbrauch eines Landes darauf abfällt \cite{doctor}. Der durchschnittliche Energieverbrauch der Kälteanlagen je
-Supermaktkette kann auf Grund der technischen Ausführung unterschiedlich sein. Der Energieverbrauch entsteht also an
-definierten Punkten im Netz. An den einzelnen Knotenpunkten können mehrere Kältelasten angeschlossen sein.
+Gesamtenergieverbrauch eines Landes darauf abfällt \cite{doctor}\todo{freaky}. Der durchschnittliche Energieverbrauch der
+Kälteanlagen je Supermaktkette kann auf Grund der technischen Ausführung unterschiedlich sein. Der Energieverbrauch entsteht
+also an definierten Punkten im Netz. An den einzelnen Knotenpunkten können mehrere Kältelasten angeschlossen sein.
 
 Auf Grund dieser Analyse erscheinen folgende Funktionen für die Umsetzung des Programms besonders zweckmäßig.
 
 \begin{itemize}
-\item Eines auf das Problem reduziertes Computermodell des Energieversorgungsnetzes wird erstellt. Die relevante
-Informationen sind:
+	\item Eines auf das Problem reduziertes Computermodell des Energieversorgungsnetzes wird erstellt. Die relevante
+	Informationen sind:
 	\begin{itemize}
 		\item Anzahl der Knoten,
-		\item Anzahl der an einen Knoten angeschlossene Speicher.
-	\end{itemize}.
+		\item Anzahl der an einen Knoten angeschlossene Speicher,
+		\item Menge der zu regelnder Energie,
+		\item bzw. LMP-Preise.
+	\end{itemize}
+	\item Ein Computermodell der Kältelast wird erstellt. Die relevanten Informationen sind:
+	\begin{itemize}
+		\item Modellparameter Kältelast
+	\end{itemize}
 \end{itemize}
