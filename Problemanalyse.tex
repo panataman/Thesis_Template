@@ -1,4 +1,4 @@
-\chapter{Problembeschreibung}\todo{Programmentwurf?}
+\chapter{Problemanalyse}
 \label{chap:problemstellung}
 \minitoc
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -14,13 +14,13 @@ Ein Programm zur Simulation des variablen Lastverhaltens von Kältelast mit Käl
 Energieversorgungsnetz\todo{Aufgabenstellung richtig beschreiben}.
 
 \begin{itemize}
-\item Präzisierung
-\item Formalisierung
+	\item Präzisierung
+	\item Formalisierung
 \end{itemize}
 
 \begin{itemize}
-\item netzbezogene Beschränkungen
-\item kältetechnische Beschränkungen
+	\item netzbezogene Beschränkungen
+	\item kältetechnische Beschränkungen
 \end{itemize}
 
 Das Simulationsprogramm wird im Zusammenhang mit einem Lastflussoptimierungsprogramm aufgerufen.
@@ -51,16 +51,21 @@ also an definierten Punkten im Netz. An den einzelnen Knotenpunkten können mehr
 Auf Grund dieser Analyse erscheinen folgende Funktionen für die Umsetzung des Programms besonders zweckmäßig.
 
 \begin{itemize}
-	\item Eines auf das Problem reduziertes Computermodell des Energieversorgungsnetzes wird erstellt. Die relevante
-	Informationen sind:
+	\item Eines auf das Problem reduziertes Computermodell des Energieversorgungsnetzes wird erstellt. Die relevanten
+	Input-Informationen sind:
 	\begin{itemize}
 		\item Anzahl der Knoten,
 		\item Anzahl der an einen Knoten angeschlossene Speicher,
 		\item Menge der zu regelnder Energie,
 		\item bzw. LMP-Preise.
 	\end{itemize}
-	\item Ein Computermodell der Kältelast wird erstellt. Die relevanten Informationen sind:
+	\item Ein Computermodell der Kältelast wird erstellt. Die relevanten Input-Informationen sind:
 	\begin{itemize}
-		\item Modellparameter Kältelast
+		\item Modellparameter Kältelast.
 	\end{itemize}
+	\item Der Informationsfluss zwischen den Computermodellen Energieversorgungsnetz und Kältelast wird in einer Weise
+	implementiert, die es ermöglicht, den elektrischen Energieverbrauch der jeweiligen Kältelasten eindeutig zu berechnen
+	und dem Verursacher sowie dem Anschlussort, an dem die Energie verbraucht wird, zuzuordnen. Der elektrische
+	Energieverbrauch wird auf Grund der Modellparameter der Kältelasten sowie 
 \end{itemize}
+
