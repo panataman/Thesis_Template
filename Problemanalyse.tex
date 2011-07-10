@@ -1,17 +1,20 @@
 \chapter{Problemanalyse}
-\label{chap:problemstellung}
+\label{chap:problemanalyse}
 \minitoc
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-In diesem Kapitel wird ein detailliertes Bild über die Aufgabenstellung gegeben. Außerdem werden die Schritte, die beim
-Programmentwurf in der Planungsphase durchgegangen worden sind, Punkt für Punkt beschrieben.
+In diesem Kapitel wird ein detailliertes Bild über die Aufgabenstellung gegeben.
+Außerdem werden die Schritte, die beim Programmentwurf in der Planungsphase
+durchgegangen worden sind, Punkt für Punkt beschrieben\todo{Grobentwurf
+einbinden}.
 
 \section{Aufgabenstellung}
 
-Ein Programm zur Simulation des variablen Lastverhaltens von Kältelast mit Kältespeicher im
-Energieversorgungsnetz\todo{Aufgabenstellung richtig beschreiben}.
+Ein Programm zur Simulation des variablen Lastverhaltens von Kältelast mit
+Kältespeicher im Energieversorgungsnetz\todo{Aufgabenstellung richtig
+beschreiben}.
 
 \begin{itemize}
 	\item Präzisierung
@@ -23,35 +26,47 @@ Energieversorgungsnetz\todo{Aufgabenstellung richtig beschreiben}.
 	\item kältetechnische Beschränkungen
 \end{itemize}
 
-Das Simulationsprogramm wird im Zusammenhang mit einem Lastflussoptimierungsprogramm aufgerufen.
+Das Simulationsprogramm wird im Zusammenhang mit einem
+Lastflussoptimierungsprogramm aufgerufen.
 
 \section{Erster Schritt der Planung}
 
-Die an das Programm gestellten Anforderungen werden im ersten Schritt des Softwareentwurfs bestimmt. Die Ermittlung
-der Funktionen des Programms, sowie die Form und die Menge der Daten, die in das Programm fließen müssen, bilden das Ziel der
-ersten Phase der Planung.
+Die an das Programm gestellten Anforderungen werden im ersten Schritt des
+Softwareentwurfs bestimmt. Die Ermittlung der Funktionen des Programms, sowie
+die Form und die Menge der Daten, die in das Programm fließen müssen, bilden das
+Ziel der ersten Phase der Planung.
 
 \subsection{Funktionen und Daten}
 
-Die Intention der Arbeit, ein Programm zur Simulation des variablen Lastverhaltens von Kältelast mit Kältespeicher im
-Energieversorgungsnetz, bestimmt die Funktionen, die das Simulationsprogramm zu erfüllen hat. Dem Anwender des Programms wird
-die Möglichkeit bereitgestellt, das Lastverhalten einer variablen Anzahl an Modellkältelasten in einem beliebigen
-Energieversorgungsnetz in Folge vom Anwender bestimmten Lasmanagementes zu simulieren um anschließend die Verbrauchsdaten in
-einem Lastflussoptimierungsprogramm zu verwenden.
+Die Intention der Arbeit, ein Programm zur Simulation des variablen
+Lastverhaltens von Kältelast mit Kältespeicher im Energieversorgungsnetz,
+bestimmt die Funktionen, die das Simulationsprogramm zu erfüllen hat. Dem
+Anwender des Programms wird die Möglichkeit bereitgestellt, das Lastverhalten
+einer variablen Anzahl an Modellkältelasten in einem beliebigen
+Energieversorgungsnetz in Folge vom Anwender bestimmten Lasmanagementes zu
+simulieren um anschließend die Verbrauchsdaten in einem
+Lastflussoptimierungsprogramm zu verwenden.
 
 
-Im Energieversorgungsnetz ist eine Kältelast ein gewöhnlicher Energieverbraucher, der an Knoten des Energieversorgungsnetzes
-angeschlossen ist. Besonderes interessant als Untersuchungsgegenstand bei der Betrachtung der Möglichkeiten zum Lastmamagement
-im Ramen der Integration der fluktuierenden Erneuerbaren Energie in ein Energieversorgungsnetz wird diese Art der Last,
-speziell die Kälteanlagen in den bestehenden Supermarktketten, durch die Tatsache, dass einen hoher Prozentanteil am
-Gesamtenergieverbrauch eines Landes darauf abfällt \cite{doctor}\todo{freaky}. Der durchschnittliche Energieverbrauch der
-Kälteanlagen je Supermaktkette kann auf Grund der technischen Ausführung unterschiedlich sein. Der Energieverbrauch entsteht
-also an definierten Punkten im Netz. An den einzelnen Knotenpunkten können mehrere Kältelasten angeschlossen sein.
+Im Energieversorgungsnetz ist eine Kältelast ein gewöhnlicher
+Energieverbraucher, der an Knoten des Energieversorgungsnetzes angeschlossen
+ist. Besonderes interessant als Untersuchungsgegenstand bei der Betrachtung der
+Möglichkeiten zum Lastmamagement im Ramen der Integration der fluktuierenden
+Erneuerbaren Energie in ein Energieversorgungsnetz wird diese Art der Last,
+speziell die Kälteanlagen in den bestehenden Supermarktketten, durch die
+Tatsache, dass einen hoher Prozentanteil am Gesamtenergieverbrauch eines Landes
+darauf abfällt \cite{doctor}\todo{freaky}. Der durchschnittliche
+Energieverbrauch der Kälteanlagen je Supermaktkette kann auf Grund der
+technischen Ausführung unterschiedlich sein. Der Energieverbrauch entsteht an
+definierten Punkten im Netz. An den einzelnen Knotenpunkten können mehrere
+Kältelasten angeschlossen sein.
 
-Auf Grund dieser Analyse erscheinen folgende Funktionen für die Umsetzung des Programms besonders zweckmäßig.
+Auf Grund dieser Analyse erscheinen folgende Funktionen für die Umsetzung des
+Programms besonders zweckmäßig.
 
 \begin{itemize}
-	\item Eines auf das Problem reduziertes Computermodell des Energieversorgungsnetzes wird erstellt. Die relevanten
+	\item Eines auf das Problem reduziertes Computermodell des
+	Energieversorgungsnetzes wird erstellt. Die relevanten
 	Input-Informationen sind:
 	\begin{itemize}
 		\item Anzahl der Knoten,
@@ -59,13 +74,18 @@ Auf Grund dieser Analyse erscheinen folgende Funktionen für die Umsetzung des P
 		\item Menge der zu regelnder Energie,
 		\item bzw. LMP-Preise.
 	\end{itemize}
-	\item Ein Computermodell der Kältelast wird erstellt. Die relevanten Input-Informationen sind:
+	\item Ein Computermodell der Kältelast wird erstellt. Die relevanten
+	Input-Informationen sind:
 	\begin{itemize}
 		\item Modellparameter Kältelast.
 	\end{itemize}
-	\item Der Informationsfluss zwischen den Computermodellen Energieversorgungsnetz und Kältelast wird in einer Weise
-	implementiert, die es ermöglicht, den elektrischen Energieverbrauch der jeweiligen Kältelasten eindeutig zu berechnen
-	und dem Verursacher sowie dem Anschlussort, an dem die Energie verbraucht wird, zuzuordnen. Der elektrische
-	Energieverbrauch wird auf Grund der Modellparameter der Kältelasten sowie 
+	\item Der Informationsfluss zwischen den Computermodellen
+	Energieversorgungsnetz und Kältelast wird in einer Weise implementiert,
+	die es ermöglicht, den elektrischen Energieverbrauch der jeweiligen
+	Kältelasten eindeutig zu berechnen und dem Verursacher sowie dem
+	Anschlussort, an dem die Energie verbraucht wird, zuzuordnen. Der
+	elektrische Energieverbrauch wird auf Grund der Modellparameter der
+	Kältelasten sowie der bevorzugten Betriebsmodi der Kältelasten
+	berechnet.
 \end{itemize}
 
