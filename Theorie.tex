@@ -2,49 +2,114 @@
 \label{chap:theorie}
 \minitoc
 
+
+
+\section{Supermarkt: Potentiale und Besonderheiten}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Day-Ahead-Prognose}
+\subsection{Probleme und Folgen der Fehlprognosen}
+\subsubsection*{Blackouts}
+\subsubsection*{Regelenergiebereitstellung}
+\subsubsection*{etc}
+
+\section{Objektorientierte Programmierung mit Matlab}
+
 Seit Ende des letzten Jahrhunderts herrscht in der Fachliteratur für Informatik
 die Meinung, dass der Einsatz von objektorientierten Techniken Programme
 hervorbringt, die im Vergleich \textit{einfacher erweiterbar, besser testbar}
 und \textit{besser wartbar} sind\todo{SIND, das ist hier nicht gut.}. Dabei wird
 ein Verfahren angewendet, nach dem große Systeme in kleinere Teile des Ganzen
-zerlegt werden. Programme lassen sich dann im Allgemeinen mit weniger Aufwand und
-kleineren Fehlerwahrscheinlichkeit programmieren.  Inspiriert durch die Vorgänge
-aus der realen Welt, werden die Abläufe durch operierende Objekte vorgestellt,
-die Aufträge erledigen und vergeben können. Die objektorientierte
-Programmierung, die im folgenden Text mit OOP\abvz{OOP}{objektorientierte
-Programmierung} abgek\"urzt wird, erm\"oglicht die Lösung von Problemen durch
-ein Gefecht kooperierender Objekte.
+zerlegt werden. Programme lassen sich dadurch im Allgemeinen mit weniger Aufwand
+und kleineren Fehlerwahrscheinlichkeit programmieren. Inspiriert durch die
+Vorgänge aus der realen Welt, werden die Abläufe durch operierende Objekte
+vorgestellt, die Aufträge erledigen und vergeben können. Die wesentlichen
+Eigenschaften der objektorientierten Programmierung, kurz
+OOP\abvz{OOP}{objektorientierte Programmierung}, sind die Datenkapselung, die
+Polymorphie und die Vererbung.\footnote{ Ausführliche Informationen dazu findet
+man z.B.  in \cite{OOP},\cite{java} oder \cite{python}.}
 
-\vspace{0.3cm} \noindent Die wesentlichen Eigenschaften der OOP sind:
-\begin{description}
-	\item[Datenkapselung] Der Zugriff auf Attribute einer Klasse erfolgt
-	gew\"ohnlich durch ihre Methoden, die Kommunikationsschnittstellen
-	darstellen. Dieses Verfahren bezeichnet man Datenkapselung.
-	\item[Polymorphie] Wenn einem Objekt einer bestimmten Klasse die
-	Objektvariablen einer anderen Klasse zugewiesen werden k\"onnen, spricht
-	man von Polymorphie.
-	\item[Vererbung] was ist das?
-\end{description}
-\footnote{ Ausführliche Informationen dazu findet man z.B. in
-\cite{OOP},\cite{java} oder \cite{python}.}\todo{Das ist nicht ganz ok?}
+Wichtige im oberen Teil des Kapitels verwendete Definitionen werden nun n\"aher
+vorgestellt\todo{Einleitungssatz noch nicht gut, oder?}. Anhand eines
+Beispielcodes erfolgt anschlie\ss end eine kurze Pr\"asentation einiger
+wichtiger Schl\"usselw\"orter der Syntax, die bei der OOP mit \matlab verwendet
+werden.
 
-\section{Objektorientierte Programmierung mit Matlab}
 
-\subsection*{Klassen und Objekte in \matlab}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{description}
-	\item[\textbf{Klassen}] Eine Klasse ist ein Instrument der
+
+	\item[\textbf{Klasse}] Eine Klasse ist ein Instrument der
 	Programmierung zur Erfassung von charakteristischen Eigenschaften
 	zusammenh\"angender Objekte. Die Definition der Strukturen der Objekte
 	erfolgt durch Klassen.
+
+	\item[\textbf{Objekt}] Ein Objekt ist ein konkretes Exemplar einer
+	Klasse.
+
+	\item[Datenkapselung] Der Zugriff auf Attribute einer Klasse erfolgt
+	gew\"ohnlich durch ihre Methoden, die Kommunikationsschnittstellen
+	darstellen. Dieses Verfahren bezeichnet man Datenkapselung.
+
+	\item[Polymorphie] Wenn einem Objekt einer bestimmten Klasse die
+	Objektvariablen einer anderen Klasse zugewiesen werden k\"onnen, spricht
+	man von Polymorphie.
+
+	\item[Vererbung] Die Vererbung erm\"oglicht durch Ver\"nderung der
+	bestehenden Klassen neue Klassen zu erstellen. Die grundlegenden
+	Programmteile der bestehenden Klasse werden zwangsl\"aufig
+	\"ubernomen.\footnote{ Ausf\"urliche Informationen dazu findet man z.B.
+	in \cite{pepperOOP}.}
+
 \end{description}
 
-\begin{lstlisting}[float=h,frame=noframe]
-classdef Classname < Superclass
-	...
-end
+% \begin{lstlisting}[float=h,frame=none]
+% 	classdef Classname < Superclass
+% 		properties % class Attributs
+% 			property_1;
+% 			property_2;
+% 		end
+% 		methods
+% 			% obj is the object being constructed
+% 			function obj = Classname(a,b,c) % Consturctor
+% 				obj.property_1 = a;
+% 				obj.property_2 = b + c;
+% 			end
+% 			function A
+% 				...
+% 			end
+% 			function B
+% 				...
+% 			end
+% 		end
+% 	end
+% \end{lstlisting}
+
+\begin{lstlisting}[float=h,frame=none]
+	classdef (Attributes) class_name < super_class % class definition
+		properties (Attributes) % first property block
+			PropertyName
+		end % end of properties block
+		% additionally here can be another methods block with 
+		% specifying by another Attributes
+		methods (Attributes) 
+			function obj = class_name(obj,a) % consturctor
+				obj.PropertyName = a;
+			end
+			function [X] = second_function(obj)
+				X = obj.PropertyName + 1;
+			end
+		end
+		% additionally here can be another methods block with 
+		% specifying by another Attributes
+	end % end of classdef block
 \end{lstlisting}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Kurze Einf\"urung in die Theorie der K\"altetechnik}
 
 In diesem Kapitel wird ein knapper \"Uberblick über die mathematischen und
