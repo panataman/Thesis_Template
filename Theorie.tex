@@ -1,6 +1,52 @@
-\chapter{Kurze Darstellung der Theorie des Modellsupermarktes}
+\chapter{Theorie}
 \label{chap:theorie}
 \minitoc
+
+Seit Ende des letzten Jahrhunderts herrscht in der Fachliteratur für Informatik
+die Meinung, dass der Einsatz von objektorientierten Techniken Programme
+hervorbringt, die im Vergleich \textit{einfacher erweiterbar, besser testbar}
+und \textit{besser wartbar} sind\todo{SIND, das ist hier nicht gut.}. Dabei wird
+ein Verfahren angewendet, nach dem große Systeme in kleinere Teile des Ganzen
+zerlegt werden. Programme lassen sich dann im Allgemeinen mit weniger Aufwand und
+kleineren Fehlerwahrscheinlichkeit programmieren.  Inspiriert durch die Vorgänge
+aus der realen Welt, werden die Abläufe durch operierende Objekte vorgestellt,
+die Aufträge erledigen und vergeben können. Die objektorientierte
+Programmierung, die im folgenden Text mit OOP\abvz{OOP}{objektorientierte
+Programmierung} abgek\"urzt wird, erm\"oglicht die Lösung von Problemen durch
+ein Gefecht kooperierender Objekte.
+
+\vspace{0.3cm} \noindent Die wesentlichen Eigenschaften der OOP sind:
+\begin{description}
+	\item[Datenkapselung] Der Zugriff auf Attribute einer Klasse erfolgt
+	gew\"ohnlich durch ihre Methoden, die Kommunikationsschnittstellen
+	darstellen. Dieses Verfahren bezeichnet man Datenkapselung.
+	\item[Polymorphie] Wenn einem Objekt einer bestimmten Klasse die
+	Objektvariablen einer anderen Klasse zugewiesen werden k\"onnen, spricht
+	man von Polymorphie.
+	\item[Vererbung] was ist das?
+\end{description}
+\footnote{ Ausführliche Informationen dazu findet man z.B. in
+\cite{OOP},\cite{java} oder \cite{python}.}\todo{Das ist nicht ganz ok?}
+
+\section{Objektorientierte Programmierung mit Matlab}
+
+\subsection*{Klassen und Objekte in \matlab}
+
+\begin{description}
+	\item[\textbf{Klassen}] Eine Klasse ist ein Instrument der
+	Programmierung zur Erfassung von charakteristischen Eigenschaften
+	zusammenh\"angender Objekte. Die Definition der Strukturen der Objekte
+	erfolgt durch Klassen.
+\end{description}
+
+\begin{lstlisting}[float=h,frame=noframe]
+classdef Classname < Superclass
+	...
+end
+\end{lstlisting}
+
+\section{Kurze Einf\"urung in die Theorie der K\"altetechnik}
+
 In diesem Kapitel wird ein knapper \"Uberblick über die mathematischen und
 physikalischen Zusammenhänge, die bei der Entwicklung eines Modellsupermarktes
 zwingend beachtet werden müssen, vorgestellt\todo{Der Satz ist total scheiße
@@ -278,6 +324,7 @@ Die Umrechnung von $\lmehr$ in $\pmehr$ erfolgt mit Hilfe der Leistungszahl
 $\epsilon$. Die Verdichterarbeit $\lmehr$ wird mit $\epsilon$ multipliziert.
 Es wird angenommen, dass der Mehrbedarf in den rund zw\"olf Stunden der
 \"Offnungszeit einf\"a
+
 \begin{equation}
 	\pmehr = \frac{\lmehr}{12h} \cdot \epsilon
 \label{<++>}
