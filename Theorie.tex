@@ -2,13 +2,23 @@
 \label{chap:theorie}
 \minitoc
 
+\section{Erneuerbare Energien im Energieversorgungsnetz}
 
+Die Erneuerbaren Energien \"ubernehmen in Deutschland mit jedem Jahr mehr Anteil
+an der Elektrizit\"atsversorgung. Mehr als die H\"alfte der Erneuerbaren Energie
+wird durch Wind und Photovoltaik erzeugt. Diese Energiequellen sind jedoch im
+hohen Grad witterungsabh\"angig und k\"onnen stark fluktuieren. Dadurch kann die
+Menge der zur Verf\"ugung stehenden Energie von der Nachfrage zeitlich enorm
+abweichen. Der sichere Betrieb des Stromnetzes bei einer konstanten Frequenz von
+$50\,Hz$ kann dadurch gef\"ardet werden. Zus\"atzliche Bereitstellung an
+Regelleistung\todo{Regelleistung vs. Regelenergie, was ist richtig?} wird dadurch
+notwendig. Au\ss erdem erfolgt die Erstellung der Fahrlpl\"ane f\"ur den Einsatz
+der konventionellen Kraftwerke zwangsweise auf den fehlerbehafteten
+Vortagsprognosen \"uber die Menge an Leistung aus Erneuerbaren Energien.
+Die G\"ute der Prognose bestimmt direkt den Regel- und den Reservebedarf.
 
-\section{K\"alteanlagen im Supermarkt: Potentiale und Besonderheiten}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Wetter- und Windprognose}
 
-\section{Day-Ahead-Prognose}
 Um eine exakte Prognose über die WEA-Leistung zu erhalten\todo{Das ist
 geklaut bie \cite{prognose_doctor}!  Beachte!}, ist daher eine möglichst genaue
 Vorhersage der Windverhältnisse an der Anlage bzw. dem Windpark zu treffen.
@@ -37,38 +47,60 @@ Dadurch geht jedoch wertvolle elektrische Energie verloren, weil der gedrosselte
 Anteil nicht in das Netz eingespeist wird. So bleibt nur der Ausgleich durch
 Kraftwerke bzw. dem Energiemarkt. Abhilfe können jedoch auch Energiespeicher
 bieten, die die Fluktuationen durch Ein- und Ausspeichern von Energie
-ausgleichen. 
+ausgleichen.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \subsubsection*{Veränderliche Lastflüsse}
+
 Aufgrund des unstetigen Windes kann nie mit völliger Sicherheit
 vorausgesagt werden, wie sich die Einspeisung von WEA zu einem bestimmten
 Zeitpunkt verhält. Bei hohen Windstärken besteht zudem die Gefahr, dass Anlagen
 abgeschaltet werden müssen. Sollte dies bei einem Sturm in der Nordsee der Fall
 sein, könnten innerhalb von wenigen Minuten alle offshore installierten Anlagen
 vom Netz gehen, womit deren volle Leistung fehlen würde.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \subsubsection*{Erhöhter Regelleistungsbedarf}
+
 Zum Ausgleich unvorhersehbarer Differenzen zwischen Prognose und realer
 Windenergie- einspeisung benötigt man Regelleistung. Die Höhe des RL-Bedarfs ist
 direkt abhängig von der Güte der Windprognose. Je besser diese ist, desto
 kleiner sind die Abweichungen und desto weniger RL muss bereitgehalten
 werden.\cite{prognose_doctor}
 
-\subsection{Probleme und Folgen der Fehlprognosen}
-\subsubsection*{Blackouts}
-\subsubsection*{Regelenergiebereitstellung}
 Wachsender Anteil der Windenergie wird zunehmenden Bedarf an Regelleistung
-verursachen.
-Implikation für die konventionelle Strom- erzeugung bei konstantem Niveau der
-Versorgungszuverlässigkeit:
+verursachen.  Implikation für die konventionelle Strom erzeugung bei konstantem
+Niveau der Versorgungszuverlässigkeit:
+
 \begin{itemize}
 	\item Konventionelle Kraftwerke müssen zunehmend im Teillastmodus
 	betrieben werden;
 	\item Pumpspeicherkraftwerke sind verstärkt als Regelkraftwerke
 	einzusetzen;
 \end{itemize}
+
 Zunehmender Anteil der Windenergie an der Stromerzeugung ist nicht mit
 entsprechenden Kapazitätseffekten verbunden.
 
-\subsubsection*{etc}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{K\"alteanlagen im Supermarkt: Potentiale und Besonderheiten\todo{Es ist
+noch nicht ausformuliert! Das ist noch sehr Plagiatlastig!}}
+
+Bei einem durchschnittlichen Supermarkt entfallen 62 \% des Stromverbrauchs auf
+Kühlen und Tiefkühlen. Ein großer Supermarkt verbraucht zehnmal so viel Strom
+wie ein Bürogebäude gleicher Größe (Quelle: Zahlen und Tabellen, Novem).
+Fast 2/3 des Stromverbrauchs in einem Supermarkt entfallen auf das Kühlen und
+Tiefkühlen von Produkten. Bei Supermärkten sind die Verbrauchszahlen hoch, die
+meisten Verbräuche liegen zwischen 300 und 500 MWh auf Jahresbasis.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Objektorientierte Programmierung mit Matlab}
 
@@ -100,7 +132,7 @@ werden.
 
 	\item[\textbf{Klasse}] Eine Klasse ist ein Instrument der
 	Programmierung zur Erfassung von charakteristischen Eigenschaften
-	zusammenh\"angender Objekte. Die Definition der Strukturen der Objekte
+	zusammenh\"angende!!r Objekte. Die Definition der Strukturen der Objekte
 	erfolgt durch Klassen.
 
 	\item[\textbf{Objekt}] Ein Objekt ist ein konkretes Exemplar einer
@@ -122,29 +154,8 @@ werden.
 
 \end{description}
 
-% \begin{lstlisting}[float=h,frame=none]
-% 	classdef Classname < Superclass
-% 		properties % class Attributs
-% 			property_1;
-% 			property_2;
-% 		end
-% 		methods
-% 			% obj is the object being constructed
-% 			function obj = Classname(a,b,c) % Consturctor
-% 				obj.property_1 = a;
-% 				obj.property_2 = b + c;
-% 			end
-% 			function A
-% 				...
-% 			end
-% 			function B
-% 				...
-% 			end
-% 		end
-% 	end
-% \end{lstlisting}
 
-\begin{lstlisting}[float=h,frame=none]
+\begin{lstlisting}[float=h!,frame=none]
 	classdef (Attributes) class_name < super_class % class definition
 		properties (Attributes) % first property block
 			PropertyName
@@ -166,7 +177,8 @@ werden.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Kurze Einf\"urung in die Theorie der K\"altetechnik}
+
+\section{Überblick über die mathematische Zusammenhänge}
 
 In diesem Kapitel wird ein knapper \"Uberblick über die mathematischen und
 physikalischen Zusammenhänge, die bei der Entwicklung eines Modellsupermarktes
@@ -174,10 +186,6 @@ zwingend beachtet werden müssen, vorgestellt\todo{Der Satz ist total scheiße
 man}. Es beinhaltet eine Zusammenfassung des mathematischen Konstruktes aus dem
 Kapitel 3 der Diplomarbeit von Caroline Möller \cite{caro}, der bei der
 Entwicklung des Programms zu Grunde gelegt wurde.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% \section{Ausformuliertes Einfügen}
 
 Die primäre Aufgabe der Kühleinheiten in einem Supermarkt besteht in der Regel
 darin, Lebensmitteltemperatur unter die Zimmertemperatur zu bringen und diese
@@ -197,12 +205,6 @@ detailierte Beschreibung dieser Prozesse in einer Kopressionskälteanlage und
 Spezifikation ist nicht Gegenstand dieser Arbeit.  Ausführliche Informationen
 dazu findet man z.B.  in \cite{caro, doctor, TAB_A1}.}.
 
-%\input{uml_sequence2}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% \section{Überblick über die mathematische Zusammenhänge}
-
 Das wird ausformuliert und mit einem Bild visualisiert\todo{bald schnell
 machen}.
 \begin{itemize}
@@ -216,11 +218,6 @@ machen}.
 	\missingfigure{Modellgrundlage}
 \end{figure}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% \subsection{Wermeverlustquellen bei Kühlgeräten}
-
-Division der eindringenden Wärmeenergie mit dem Produkt aus Substanzmasse zur
 Aufnahme der Wärmeenergie und der spezifischen Wärmekapazität dieser
 Substanzmasse ergibt die Temperaturdifferenz $\Delta\:t$.
 
@@ -240,10 +237,6 @@ Substanzmasse ergibt die Temperaturdifferenz $\Delta\:t$.
 \end{description}
 \vspace{0.5cm}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% \subsection{Erforderliche Kälteleistung}
-
 Die installierte Kälteleistung multipliziert mit der täglichen Betriebszeit muss
 zwangsweise größer oder gleich dem stündlichen Kältebedarf multipliziert mit der
 Tagesstundenzahl sein.
@@ -260,10 +253,6 @@ Tagesstundenzahl sein.
 
 \end{description}
 \vspace{0.5cm}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% \subsection{Transmissionswärmeleistung}
 
 Die Transmissionswärmeleistung wird aus der Multiplikation der Fläche
 der wärmeübertragenden Wänd mit ihrem spezifischen Wärmedurchgangskoeffizient
@@ -285,12 +274,6 @@ Umgebungstemperatur berechnet.
 \end{description}
 \vspace{0.5cm}
 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% \subsection{Leistungszahl}
-% \label{Leistungszahl}
-
 Der Zusammenhang zwischen der aufgewendeten elektrischen Antriebsleistung $P$
 eines Verdichters in einer Kompressionskälteanlage und der genutzten
 Kälteleistung ${\dot{Q}}_0$ wird durch die Kältezahl $\epsilon$ wiedergegeben.
@@ -311,10 +294,6 @@ Die Leistungszahl wird in die zweite Spalte im Array (vergl. Zeile 4 im
 
 \end{description}
 \vspace{0.5cm}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% \subsection{Verbrauch abhängig von der Öffnungszeit}
 
 Die Öffnungszeit des Supermarkts hat einen spürbaren Einfluss auf die Größe der
 Wärmeverluste. In der Literatur wird der Nachtverbrauch mit $10\%$ bis $20\%$
@@ -468,11 +447,11 @@ Kältebedarfsabsenkung $K$ bei Geräten, bei denen der Kältebedarf gegeben ist.
 Bei steckerfertigen Geräten ist $\ptag$ die Summe aus dem Mehrbedarf an Leistung
 am Tag $\pmehr$ und der mittleren Transmissionswärmeleistung $\ptrans$.
 
-%\subsection{Berechnung der Temperaturänderung}
 Mit den Wärmeverlusten, die am Tag und in der Nacht in unterschiedlicher Größe
 auftreten, wird für jeden Zeitschritt die Zeit bis zum kritischen
 Temperaturmaximum bestimmt. Diese Zeit braucht das Programm, um den Einsatz der
 Supermarktkälteanlagen als Speicher zu planen. Mit der Gleichung
+
 \begin{equation}
 	\tau_{krit}(i) = \frac{m \cdot c \cdot (t_{max} -
 		t(i))}{\aptranslog}
@@ -547,4 +526,4 @@ Temperatur ist damit:
 \vspace{0.5cm}
 
 wobei $Q_v$ die aktuell eindringende Wärmeenergie und $Q_ab$ die abgeführte
-Wärmeenergie ist.
+*Wärmeenergie ist.
