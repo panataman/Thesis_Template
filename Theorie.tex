@@ -2,6 +2,9 @@
 \label{chap:theorie}
 \minitoc
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \section{Erneuerbare Energien im Energieversorgungsnetz}
 
 Die Erneuerbaren Energien \"ubernehmen in Deutschland mit jedem Jahr einen
@@ -17,6 +20,9 @@ Erstellung der Fahrlpl\"ane f\"ur den Einsatz der konventionellen Kraftwerke
 zwangsweise auf den fehlerbehafteten Vortagsprognosen \"uber die Menge an
 Leistung aus Erneuerbaren Energien.  Die G\"ute der Prognose bestimmt direkt den
 Regel- und den Reservebedarf.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection*{Wetter- und Windprognose}
 
@@ -40,28 +46,27 @@ Regelungsverluste und der Aufwand verringert und damit Kosten gespart werden.
 Kann ein Verbraucher seine Hauptlast zeitlich verschieben, besteht das Potential
 diese F\"ahigkeit zur Regelung einzusetzen.
 
-Es ist vorstellbar, dass Anlagen zur K\"alteerzeugung zu g\"unstigen Zeiten die
-Temperatur zus\"atzlich senken k\"onnen und zu ung\"unstigen Zeiten die
-K\"uhlt\"atigkeit auf das Minimum herunterfahren.
+Es ist vorstellbar, dass Anlagen zur K\"alteerzeugung auf Grund der thermischen
+Tr\"agheit zu g\"unstigen Zeiten die Temperatur zus\"atzlich senken k\"onnen und
+zu ung\"unstigen Zeiten die K\"uhlt\"atigkeit auf das Minimum herunterfahren.
+Hiermit ist also das Interesse begr\"undet, das Lastverlagerungspotential in der
+K\"alteerzeugung zu untersuchen.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{K\"alteanlagen im Supermarkt: Potentiale und Besonderheiten\todo{Es ist
-noch nicht ausformuliert! Das ist noch sehr Plagiatlastig!}}
+\section{K\"alteerzeugung im Supermarkt: Potentiale und Besonderheiten}
 
 Der Anteil am Bedarf an elektrischen Energie vom Gesamtverbrauch eines
-Industrielandes für Kälteerzeugung in den Supermärkten wird in Australien zum
-Beispiel auf ein Prozent \cite[Seite 8]{australia} und in Schweden auf zwei
-\cite[Seite 6]{doctor} und \cite{EANRW} Prozent geschätzt\todo{Irgendwie
-bewerten?}.
+Industrielandes für Kälteerzeugung in den Supermärkten wird in der Literatur
+f\"ur  Australien mit $1\, \%$ \cite{australia} und in Schweden mit $2\, \%$
+\cite{doctor, EANRW} Prozent angegeben. In Deutschland liegt der Verbrauch mit
+6294 GWh f\"ur das Jahr 1999 bei rund $1.27\, \%$\cite{steilme}.
 
-Bei einem durchschnittlichen Supermarkt entfallen $62\, \%$ des Stromverbrauchs auf
-Kühlen und Tiefkühlen. Ein großer Supermarkt verbraucht zehnmal so viel Strom
-wie ein Bürogebäude gleicher Größe (Quelle: Zahlen und Tabellen, Novem).
-Fast 2/3 des Stromverbrauchs in einem Supermarkt entfallen auf das Kühlen und
-Tiefkühlen von Produkten. Bei Supermärkten sind die Verbrauchszahlen hoch, die
-meisten Verbräuche liegen zwischen 300 und 500 MWh auf Jahresbasis.
+Im Mittel entfallen $62\, \%$ des Stromverbrauchs in einem Supermarkt
+auf Kühlen und Tiefkühlen von Produkten. Der durchschnittliche Verbrauch in
+einem Supermarkt liegt zwischen 300 MWh und 500 MWh im Jahr\cite{leghart}.
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -87,10 +92,6 @@ vorgestellt\todo{Einleitungssatz noch nicht gut, oder?}. Anhand eines
 Beispielcodes erfolgt anschlie\ss end eine kurze Pr\"asentation einiger
 wichtiger Schl\"usselw\"orter der Syntax, die bei der OOP mit \matlab verwendet
 werden.
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{description}
 
@@ -142,14 +143,56 @@ werden.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\section{Anwendung der OOP am Modell}
+
+In der \cref{vkb} wird ein einfaches Energieversorgungsnetz mit vier Knoten
+dargestellt. Am Knoten eins ist eine regenerative elektrische Energiequelle, in
+diesem Fall ein Windpark, angeschlossen. Weitere konventionelle elektrische
+Energiequellen befinden sich an den Knoten zwei und drei. Die passiven Lasten
+befinden sich am Knoten zwei und vier. Der Kältespeicher ist am Knoten zwei
+angeschlossen. Im Bild wird der Kältespeicher Supermarkt durch einen
+Einkaufswagen symbolisiert. Die Knoten sind untereinander durch Leitungen
+verbunden.
+
+\begin{figure}[h]
+\caption{Vier Knoten Beispiel}
+	\label{vkb}
+	\begin{center}
+	\includegraphics[scale=0.75]{images/SEVN/power_grid}
+	\end{center}
+\end{figure}
+
+In der Realität kann ein Energieversorgungsnetz durch die Variation der
+Knotenzahl und die Vermaschung beliebig komplizierte Form aufweisen. Bei der
+Umsetzung der gegebenen Situation im Programm.
+
+\begin{figure}[h]
+\caption{Klassendiagramm Modellkonstrukt}
+	\label{klassendiagramm}
+	\begin{center}
+	\includegraphics[scale=0.8]{images/Theorie_Super/class_diagramm}
+	\end{center}
+\end{figure}
+
+Hier noch ein Zwischentext.
+
+\begin{figure}[h]
+\caption{Sequenzdiagramm Modellkonstrukt}
+	\label{uml_sequence}
+	\begin{center}
+	\includegraphics[scale=0.8]{images/Theorie_Super/sequence_one}
+	\end{center}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \section{Überblick über die mathematische Zusammenhänge}
 
 In diesem Kapitel wird ein knapper \"Uberblick über die mathematischen und
 physikalischen Zusammenhänge, die bei der Entwicklung eines Modellsupermarktes
 zwingend beachtet werden müssen, vorgestellt\todo{Der Satz ist total scheiße
-man}. Es beinhaltet eine Zusammenfassung des mathematischen Konstruktes aus dem
-Kapitel 3 der Diplomarbeit von Caroline Möller \cite{caro}, der bei der
-Entwicklung des Programms zu Grunde gelegt wurde.
+man}.
 
 Die primäre Aufgabe der Kühleinheiten in einem Supermarkt besteht in der Regel
 darin, Lebensmitteltemperatur unter die Zimmertemperatur zu bringen und diese
