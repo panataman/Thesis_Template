@@ -57,21 +57,50 @@ K\"alteerzeugung zu untersuchen.
 
 \section{K\"alteerzeugung im Supermarkt: Potentiale und Besonderheiten}
 
-Der Anteil am Bedarf an elektrischen Energie vom Gesamtverbrauch eines
-Industrielandes für Kälteerzeugung in den Supermärkten wird in der Literatur
-f\"ur  Australien mit $1\, \%$ \cite{australia} und in Schweden mit $2\, \%$
-\cite{doctor, EANRW} Prozent angegeben. In Deutschland liegt der Verbrauch mit
-6294 GWh f\"ur das Jahr 1999 bei rund $1.27\, \%$\cite{steilme}.
-
-Im Mittel entfallen $62\, \%$ des Stromverbrauchs in einem Supermarkt
-auf Kühlen und Tiefkühlen von Produkten. Der durchschnittliche Verbrauch in
-einem Supermarkt liegt zwischen 300 MWh und 500 MWh im Jahr\cite{leghart}.
-
+Im Mittel entfallen $60\, \%$\cite{leghart, EANRW} des Stromverbrauchs in einem
+Supermarkt auf Kühlen und Tiefkühlen von Produkten. Der durchschnittliche
+Verbrauch in einem Supermarkt liegt zwischen 300 MWh und 500 MWh im
+Jahr\cite{leghart}. In den kommenden Jahren sch\"atzt man den Wachstum des
+gesamten K\"altebedarfs f\"ur Deutschland mit 100 \% \cite{probst}. Der Anteil
+am Bedarf an elektrischen Energie vom Gesamtverbrauch eines Industrielandes für
+Kälteerzeugung in den Supermärkten wird in der Literatur f\"ur  Australien mit
+$1\, \%$ \cite{australia} und in Schweden mit $2\, \%$ \cite{doctor, EANRW}
+Prozent angegeben. In Deutschland liegt der Verbrauch mit 6294 GWh f\"ur das
+Jahr 1999 bei rund $1.27\, \%$\cite{steilme}. Die Gr\"o\ss enordnung des
+Verbrauchs f\"ur die Produktlagerung in Superm\"arkten und die M\"oglichkeit
+diesen zeitlich zu verschieben, macht die Superm\"arkte f\"ur die Regelung
+besonders interessant\todo{Eine \"Uberleitung finden}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Objektorientierte Programmierung mit Matlab}
+\subsection*{Beschr\"ankungen und Randbedingungen}
+
+Die Mindesthaltbarkeit f\"ur bestimmten Produkte kann nur durch Lagerung
+dieser Produkte in f\"ur sie festgelegtem K\"uhltemeperaturbereichen
+garantiert werden. Dieser Temperaturbereich ist je nach Bedarf und Anwendung in
+Normalk\"uhlung (NK\abvz{NK}{Normalk\"uhlung}) über 0 $\grad$C und in
+Tiefk\"uhlung (TK\abvz{TK}{Tiefk\"uhlung}) unter 0 $\grad$C unterteilt. Auf der
+nationalen und auch auf internationalen Ebene existieren Auflagen die die
+maximale Temperaturen bei der Lagerung von Nahrungsmitteln vorschreiben. Die
+fundamentale Verordnung ist die EG 853/2004. Aus der geht hervor, dass
+normalgekühlte Produkte im Temperaturbereich 0 bis $+8$ $\grad$C je nach
+Nahrungsmittel und tiefgekühlte Produkte mindestens bei $-18$ $\grad$C gekühlt
+werden müssen.
+
+Die K\"alteerzeugung im Supermarkt kann r\"aumlich generell in zwei Bereiche
+unterteilt werden, dem Verkaufsbereich und dem Warenlager. Au\ss erdem kommen
+K\"uhleinheiten zum Einsatz, die einer Verbundk\"alteanlage angeh\"oren oder
+steckerfertig zur Verf\"ugung stehen. Kühlregale, –truhen und –schränke im TK-
+und NK-Bereich sowie NK-Kühltheken geh\"oren in den Verkaufsbereich. Diese sind
+sowohl offen als auch durch Türen oder Abdeckungen verschließbar. Es kann davon
+ausgegangen werden, dass offene K\"uhlregale oder K\"uhltheken nachts durch
+Rollos oder Deckel verschlossen werden\todo{Plagiat!}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Objektorientierte Programmierung mit \matlab}
 
 Seit Ende des letzten Jahrhunderts herrscht in der Fachliteratur für Informatik
 die Meinung, dass der Einsatz von objektorientierten Techniken Programme
@@ -97,7 +126,7 @@ werden.
 
 	\item[\textbf{Klasse}] Eine Klasse ist ein Instrument der
 	Programmierung zur Erfassung von charakteristischen Eigenschaften
-	zusammenh\"angende!!r Objekte. Die Definition der Strukturen der Objekte
+	zusammenh\"angender Objekte. Die Definition der Strukturen der Objekte
 	erfolgt durch Klassen.
 
 	\item[\textbf{Objekt}] Ein Objekt ist ein konkretes Exemplar einer
