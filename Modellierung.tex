@@ -1,4 +1,4 @@
-\chapter{Supermarkt im Energieversorgungsnetz: Problemspezifikation}
+\chapter{Modellierung}
 \label{chap:SEVN}
 \minitoc
 
@@ -7,49 +7,6 @@ Lösung Problem\todo{Der Einführungsabsatz ist zu schreiben.}. Unabhängig von 
 mathematischen Modell des Modellsupermarktes wird die Umsetzung der
 Implementierung vorgestellt\todo{Was ist los?}.
 
-
-
-\section{Anwendung der OOP am Modell}
-In der \cref{vkb} wird ein einfaches Energieversorgungsnetz mit vier Knoten
-dargestellt. Am Knoten eins ist eine regenerative elektrische Energiequelle, in
-diesem Fall ein Windpark, angeschlossen. Weitere konventionelle elektrische
-Energiequellen befinden sich an den Knoten zwei und drei. Die passiven Lasten
-befinden sich am Knoten zwei und vier. Der Kältespeicher ist am Knoten zwei
-angeschlossen. Im Bild wird der Kältespeicher Supermarkt durch einen
-Einkaufswagen symbolisiert. Die Knoten sind untereinander durch Leitungen
-verbunden.
-
-\begin{figure}[h]
-\caption{Vier Knoten Beispiel}
-	\label{vkb}
-	\begin{center}
-	\includegraphics[scale=0.75]{images/SEVN/power_grid}
-	\end{center}
-\end{figure}
-
-In der Realität kann ein Energieversorgungsnetz durch die Variation der
-Knotenzahl und die Vermaschung beliebig komplizierte Form aufweisen. Bei der
-Umsetzung der gegebenen Situation im Programm.
-
-\begin{figure}[h]
-\caption{Klassendiagramm Modellkonstrukt}
-	\label{klassendiagramm}
-	\begin{center}
-	\includegraphics[scale=0.8]{images/Theorie_Super/class_diagramm}
-	\end{center}
-\end{figure}
-
-Hier noch ein Zwischentext.
-
-\begin{figure}[h]
-\caption{Sequenzdiagramm Modellkonstrukt}
-	\label{uml_sequence}
-	\begin{center}
-	\includegraphics[scale=0.8]{images/Theorie_Super/sequence_one}
-	\end{center}
-\end{figure}
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -94,14 +51,13 @@ Hier noch ein Zwischentext.
 	\end{center}
 \end{figure}
 
-\chapter{Handhabung des Programms}
-\label{chap:handhabung}
-\minitoc
+\section{Handhabung des Programms}
+\label{sc:handhabung}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Allgemeines}
+\subsection{Allgemeines}
 
 Das Programm ist ein Packet aus \matlab M-files zur Simulation von Kälteanlagen
 mit Kältespeichern\footnote{ Da gewöhnliche Supermarktketten Untersuchungsobjekt
@@ -116,7 +72,7 @@ eingebunden werden.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Systemanforderungen}
+\subsubsection{Systemanforderungen}
 
 Zur Benutzung des Programms muss auf Grund der gewählten Programmiersprache und
 der objektorientierten Programmierwiese folgendes gelten:
@@ -133,7 +89,7 @@ bestimmt.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Installation}
+\subsubsection{Installation}
 
 Das Programm richtet sich in seiner Installation und der Benutzung nach dem
 allgemein gültigen Gebrauch der \matlab M-files\footnoteremember{matlab}{
@@ -142,7 +98,7 @@ allgemein gültigen Gebrauch der \matlab M-files\footnoteremember{matlab}{
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Aufruf der Simulation}%
+\subsubsection{Aufruf der Simulation}%
 
 Die Primärfunktion des Programms ist, wie oben schon erwähnt, die Simulation des
 Lastverhaltens eines Supermarkts oder mehreren Supermarktketten in einem
@@ -160,7 +116,7 @@ realisiert werden:
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{Vorbereitung der Input-Information}
+\subsubsection*{Vorbereitung der Input-Information}
 \label{sec:input_infos}
 
 Je nach Fall oder theoretischer Grundlage können die Konfigurationsdateien
@@ -410,11 +366,11 @@ Datentypen einen durch \matlab darauf direkten Zugriff.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{Die main.m Datei}
+\subsubsection*{Die main.m Datei}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Deklamation der berechneten Daten}
+\subsubsection{Deklamation der berechneten Daten}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -431,7 +387,7 @@ implementiert. Das muss DU NOCH MACHEN!}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{Graphische Ausgabe}
+\subsubsection*{Graphische Ausgabe}
 \textbf{Wichtig!!!} hier wird nicht der Quellcode erklärt, sondern die
 Darstellung der Ausgabe.  \todo[inline,color=orange!30]{Funktion mit für die
 graphische Ausgabe schreiben}
