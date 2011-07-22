@@ -147,7 +147,7 @@ man z.B.  in \cite{OOP},\cite{java} oder \cite{python}.}
 	\item[Vererbung] Die Vererbung erm\"oglicht durch Ver\"nderung der
 	bestehenden Klassen neue Klassen zu erstellen. Die grundlegenden
 	Programmteile der bestehenden Klasse werden zwangsl\"aufig
-	\"ubernomen.\footnote{ Ausf\"urliche Informationen dazu findet man z.B.
+	\"ubernomen.\footnote{ Ausf\"uhrliche Informationen dazu findet man z.B.
 	in \cite{pepperOOP}.}
 
 \end{description}
@@ -171,7 +171,8 @@ Ausf\"uhrliche Informationen dazu findet man z.B. in \cite{matlab_kompakt} oder
 	Eigenschaften-Block. Abgeschlossen wird der Block mit \lstinline$end$.
 	Innerhalb einer Klasse k\"onnen mehrere Bl\"ocke existieren. M\"ochte
 	man das Verhalten eines Eigenschaften-Blocks zus\"atzlich ver\"andern,
-	ist der Einsatz von Attributen zweckm\"a\ss ig.
+	zum Beispiel neu Zugriffsarten oder Zugriffsrechte vergeben, ist der
+	Einsatz von Attributen zweckm\"a\ss ig.
 	\begin{lstlisting}[frame=none]
 	properties (attribut1, attribut2, etc.)
 	end
@@ -193,18 +194,24 @@ Ausf\"uhrliche Informationen dazu findet man z.B. in \cite{matlab_kompakt} oder
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection*{Klassendefinition mit \matlab}
+\subsection*{Klassen und Objekte mit \matlab}
 
 Klassen werden in \matlab mit Hilfe einer Datei mit der Endung $.m$ definiert,
 die den selben Namen wie die Klasse hat. Im Quelltextbeispiel
-\matref{Klassendefinition} wird eine Beispielklasse
-\textbf{class\_name} mit einem Eigenschaften-Block und einem Methoden-Block
-definiert.
+\matref{Klassendefinition} wird eine Beispielklasse \textbf{class\_name} mit
+einem Eigenschaften-Block und einem Methoden-Block definiert. Die Datei muss
+demnach \textbf{class\_name.m} hei\ss en. In die erste Zeile der Datei kommt die
+Anweisung \lstinline$classdef$, die die Klasse einleitet. Werden der Klasse
+zus\"atzliche Verhaltensmuster zugewiesen, folgt die Setzung der Attribute in
+Klammern. Anschlie\ss end kommt der Name der Klasse. Wird die neue Klasse eine
+durch Vererbung abgeleitete einer anderen Klasse, so folgt das Kleinerzeichen
+und der Name der Superklasse. In den anschlie\ss enden Zeilen werden der
+Eigenschaften-Block und der Methoden-Block definiert.
 
 \begin{lstlisting}[float=h!,caption={Beispiel Klassendefinition},label={Klassendefinition}, frame=none]
 	classdef (Attributes) class_name < super_class % class definition
 		properties (Attributes) % first property block
-			PropertyName
+			PropertyName = [];
 		end % end of properties block
 		% additionally here can be another methods block with 
 		% specifying by another Attributes
@@ -220,6 +227,35 @@ definiert.
 		% specifying by another Attributes
 	end % end of classdef block
 \end{lstlisting}
+
+Objekte einer Klasse werden durch eine Konstruktor-Methode erzeugt. Diese
+Funktion wird im ersten Methoden-Block an erster Stelle definiert. Sie hat den
+selben Namen wie die Klasse. \"Uber die Konstruktor-Funktion k\"onnen bereits
+bei der Erzeugung der Objekte Werte an ausgew\"ahlte Parameter \"ubergeben
+werden. Erfolgt der Aufruf einer Konstruktor-Funktion einer Klasse fehlerfrei,
+so ist das Ergebnis des Aufrufes ein Objekt dieser Klasse. Der Aufruf eines
+Konstruktors unterscheidet sich nicht von dem Aufruf gew\"ohnlicher
+\matlab-Funktionen. Im folgenden Quelltextbeispiel wird im Command-Window durch
+den Aufruf der Konstruktor-Funktion ein Objekt \textbf{das\_objekt} der im
+\matref{Klassendefinition} vorgestellten Klasse erzeugt.
+\begin{lstlisting}[frame=none]
+	>> das_objekt = class_name(input_data);
+\end{lstlisting}
+
+Methoden, die Applikationsspezifische Operationen mit dem Datensatz
+durchrf\"uhren sollen, werden nach der Konstruktor-Funktion definiert.
+Die meisten dieser Funktionen nutzen das das Objekt als Eingabeargument, zum
+Beispiel: \lstinline{second\_function(obj)}. Der Zugriff auf die Variablen der
+Objekteigenschaften erfolgt durch Referenzierung auf das Objekt. Im
+Quelltextbeispiel \matref{Klassendefinition} wird das wie folgt vorgestellt:
+\lstinline{obj.PropertyName}. Wenn ein Zugriff auf Objektfunktionen erlaubt ist,
+kann darauf wie folgt zugegriffen werden:
+
+\begin{lstlisting}[frame=none]
+	>> function_return = das_objekt.second_function;
+\end{lstlisting}
+\noindent Die Referenz auf den Namen des Objektes muss stets erfolgen.
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -600,7 +636,7 @@ multipliziert.  Die Gleichung zur stündlichen Berechnung der aktuellen
 Temperatur ist damit:
 
 \begin{equation}
-	t(i+1) = 0.8 \cdot \frac{Q_v - Q_{ab}}{m \cdot c} + t(i)
+	t(i+1) = 0.8 \cdot \frac{Q_v - Q_{ab}}{m \cdot c}h + t(i)
 \label{tns}
 \end{equation}
 
@@ -613,5 +649,5 @@ Temperatur ist damit:
 \end{description}
 \vspace{0.5cm}
 
-wobei $Q_v$ die aktuell eindringende Wärmeenergie und $Q_ab$ die abgeführte
+wobei $Q_v$ die aktuell eindringende Wärmeenergie und $Q_{ab}$ die abgeführte
 Wärmeenergie ist.
