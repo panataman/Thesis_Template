@@ -80,7 +80,7 @@ dieser Produkte in f\"ur sie festgelegtem K\"uhltemeperaturbereichen
 garantiert werden. Dieser Temperaturbereich ist je nach Bedarf und Anwendung in
 Normalk\"uhlung (NK\abvz{NK}{Normalk\"uhlung}) über 0 $\grad C$ und in
 Tiefk\"uhlung (TK\abvz{TK}{Tiefk\"uhlung}) unter 0 $\grad C$ unterteilt. Auf der
-nationalen und auch auf internationalen Ebene existieren Auflagen die die
+nationalen und auch auf internationalen Ebene existieren Auflagen, die die
 maximale Temperaturen bei der Lagerung von Nahrungsmitteln vorschreiben. Die
 fundamentale Verordnung ist die EG 853/2004. Aus der geht hervor, dass
 normalgekühlte Produkte im Temperaturbereich 0 bis $+8$ $\grad C$ je nach
@@ -94,7 +94,7 @@ steckerfertig zur Verf\"ugung stehen. \"Uberwiegend werden im Verkaufsbereich
 K\"uhlregale, K\"uhltruhen und K\"uhlschr\"anke im Tiefk\"uhlbereich und im
 Niederk\"uhlbereich ebenso wie K\"uhltheken im Niederk\"uhlbereich installiert.
 Zur Ausstattung z\"ahlen Ger\"ate in offener sowie durch T\"uren verschlie\ss
-barer Ausf\"uhrung. Gro\ss enteils werden die die offenen Modelle au\ss erhalb
+barer Ausf\"uhrung. Gro\ss enteils werden, die die offenen Modelle au\ss erhalb
 der \"Offnungszeiten durch Decken und Rollos zwecks Energieeinsparung
 verschlossen.
 
@@ -106,16 +106,16 @@ verschlossen.
 Seit Ende des letzten Jahrhunderts herrscht in der Fachliteratur für Informatik
 die Meinung, dass der Einsatz von objektorientierten Techniken Programme
 hervorbringt, die im Vergleich \textit{einfacher erweiterbar, besser testbar}
-und \textit{besser wartbar} sind\todo{SIND, das ist hier nicht gut.}. Dabei wird
-ein Verfahren angewendet, nach dem große Systeme in kleinere Teile des Ganzen
-zerlegt werden. Programme lassen sich dadurch im Allgemeinen mit weniger Aufwand
-und kleineren Fehlerwahrscheinlichkeit programmieren. Inspiriert durch die
-Vorgänge aus der realen Welt, werden die Abläufe durch operierende Objekte
-vorgestellt, die Aufträge erledigen und vergeben können. Die wesentlichen
-Eigenschaften der objektorientierten Programmierung, kurz
-OOP\abvz{OOP}{objektorientierte Programmierung}, sind die Datenkapselung, die
-Polymorphie und die Vererbung.\footnote{ Ausführliche Informationen dazu findet
-man z.B.  in \cite{OOP},\cite{java} oder \cite{python}.}
+und \textit{besser wartbar} sind. Dabei wird ein Verfahren angewendet, nach dem
+große Systeme in kleinere Teile des Ganzen zerlegt werden. Programme lassen sich
+dadurch im Allgemeinen mit weniger Aufwand und kleineren
+Fehlerwahrscheinlichkeit programmieren. Inspiriert durch die Vorgänge aus der
+realen Welt, werden die Abläufe durch operierende Objekte vorgestellt, die
+Aufträge erledigen und vergeben können. Die wesentlichen Eigenschaften der
+objektorientierten Programmierung, kurz OOP\abvz{OOP}{objektorientierte
+Programmierung}, sind die Datenkapselung, die Polymorphie und die
+Vererbung.\footnote{ Ausführliche Informationen dazu findet
+man z.B. in \cite{OOP},\cite{java} oder \cite{python}.}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -123,10 +123,10 @@ man z.B.  in \cite{OOP},\cite{java} oder \cite{python}.}
 \subsection*{Allgemeine Erl\"auterungen}
 \begin{description}
 
-	\item[Klasse] Eine Klasse ist ein Instrument der
-	Programmierung zur Erfassung von charakteristischen Eigenschaften
-	zusammenh\"angender Objekte. Die Definition der Strukturen der Objekte
-	erfolgt durch Klassen.
+	\item[Klasse] Eine Klasse ist ein Instrument der Programmierung zur
+	Erfassung von charakteristischen Eigenschaften zusammenh\"angender
+	Objekte. Die Definition der Strukturen der Objekte erfolgt durch
+	Klassen.
 
 	\item[Objekt] Ein Objekt ist ein konkretes Exemplar einer
 	Klasse.
@@ -136,13 +136,11 @@ man z.B.  in \cite{OOP},\cite{java} oder \cite{python}.}
 
 	\item[Methoden] Methoden sind objektlokale Funktionen.
 
-	\item[Datenkapselung] Der Zugriff auf Attribute einer Klasse erfolgt
-	gew\"ohnlich durch ihre Methoden, die Kommunikationsschnittstellen
-	darstellen. Dieses Verfahren bezeichnet man Datenkapselung.
+	\item[Datenkapselung] Man spricht von Kapselung, wenn Objekte den
+	Zugriff auf ihre Daten kontrollieren.
 
-	\item[Polymorphie] Wenn einem Objekt einer bestimmten Klasse die
-	Objektvariablen einer anderen Klasse zugewiesen werden k\"onnen, spricht
-	man von Polymorphie.
+	\item[Polymorphie] K\"onnen unterschiedliche Objekte auf eine gleiche
+	Nachricht unterschiedlich reagieren, spricht man von Polymorphie.
 
 	\item[Vererbung] Die Vererbung erm\"oglicht durch Ver\"nderung der
 	bestehenden Klassen neue Klassen zu erstellen. Die grundlegenden
@@ -236,57 +234,64 @@ werden. Erfolgt der Aufruf einer Konstruktor-Funktion einer Klasse fehlerfrei,
 so ist das Ergebnis des Aufrufes ein Objekt dieser Klasse. Der Aufruf eines
 Konstruktors unterscheidet sich nicht von dem Aufruf gew\"ohnlicher
 \matlab-Funktionen. Im folgenden Quelltextbeispiel wird im Command-Window durch
-den Aufruf der Konstruktor-Funktion ein Objekt \textbf{das\_objekt} der im
+den Aufruf der Konstruktor-Funktion ein Objekt \textbf{object} der im
 \matref{Klassendefinition} vorgestellten Klasse erzeugt.
 \begin{lstlisting}[frame=none]
-	>> das_objekt = class_name(input_data);
+	>> object = class_name(input_data);
 \end{lstlisting}
 
-Methoden, die Applikationsspezifische Operationen mit dem Datensatz
-durchrf\"uhren sollen, werden nach der Konstruktor-Funktion definiert.
-Die meisten dieser Funktionen nutzen das das Objekt als Eingabeargument, zum
-Beispiel: \lstinline{second\_function(obj)}. Der Zugriff auf die Variablen der
+Methoden, die applikationsspezifische Operationen mit einem Datensatz
+durchrf\"uhren sollen, werden nach der Konstruktor-Funktion definiert.  Die
+meisten dieser Funktionen nutzen das Objekt als Eingabeargument, zum Beispiel:
+\lstinline{second_function(obj)}. Der Zugriff auf die Variablen der
 Objekteigenschaften erfolgt durch Referenzierung auf das Objekt. Im
 Quelltextbeispiel \matref{Klassendefinition} wird das wie folgt vorgestellt:
 \lstinline{obj.PropertyName}. Wenn ein Zugriff auf Objektfunktionen erlaubt ist,
 kann darauf wie folgt zugegriffen werden:
 
 \begin{lstlisting}[frame=none]
-	>> function_return = das_objekt.second_function;
+	>> function_return = object.second_function;
 \end{lstlisting}
 \noindent Die Referenz auf den Namen des Objektes muss stets erfolgen.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Kurze Einf\"uhrung in die Physik und Mathematik der
-K\"altetechnik}\markboth{Einf\"uhrung in die K\"altetechnik}{Einf\"uhrung in die K\"altetechnik}
+\section{Einf\"uhrung in die K\"altetechnik}
 
 In diesem Kapitel wird ein knapper \"Uberblick über die mathematischen und
 physikalischen Zusammenhänge, die bei der Entwicklung eines Modellsupermarktes
 zwingend beachtet werden müssen, vorgestellt\todo{Der Satz ist total scheiße
-man}.
+man}.\\
 
-Die primäre Aufgabe der Kühleinheiten in einem Supermarkt besteht in der Regel
-darin, Lebensmitteltemperatur unter die Zimmertemperatur zu bringen und diese
-dabei zu halten\todo{Hört sich komisch an!}. Körper mit unterschiedlicher
-Temperatur sind bestrebt, wenn sie thermisch von einander nicht vollkommen
-isoliert sind, durch gegenseitige Wechselwirkung ihre Temperaturen anzugleichen,
-sodass ein Wärmegleichgewicht entsteht, wobei der natürliche, selbständige
-Wärmefluss immer von einem Körper mit höheren Temperatur in Richtung des Körpers
-mit kleineren Temperatur stattfindet. Um eine negative Temperaturänderung
-herzustellen und diese auch zu halten, muss die eindringende Wärmeenergie
-ständig in der selben Höhe abgeführt werden, damit die Temperatur konstant
-bleibt. Diese Energiemenge pro Zeiteinheit wird als Kälteleistung bezeichnet.
-Eine Abweichung von dieser Menge führt zum Steigen der Temperatur, wenn weniger
-und zum sinken der Temperatur wenn mehr abgeführt wird. Um diesen Kühlkreislauf
-aufrecht zu erhalten, muss Leistung aufgewendet werden\footnote{ Eine
-detailierte Beschreibung dieser Prozesse in einer Kopressionskälteanlage und
-Spezifikation ist nicht Gegenstand dieser Arbeit.  Ausführliche Informationen
-dazu findet man z.B.  in \cite{caro, doctor, TAB_A1}.}.
+In den Superm\"arkten werden K\"uhlger\"ate zur Lagerung der Ware bis zum
+Verkauf an den Endkunden eingesetzt. Um die Haltbarkeit dieser Ware f\"ur den
+Zeitraum zu gew\"ahrleisten, wird sie bei niedrigen Temperaturen gehalten.
+Körper mit unterschiedlicher Temperatur sind bestrebt, wenn sie thermisch von
+einander nicht vollkommen isoliert sind, durch gegenseitige Wechselwirkung ihre
+Temperaturen anzugleichen. Infolge dessen wird ein Wärmegleichgewicht erreicht.
+Der nat\"urliche W\"armefluss findet selbstst\"andig immer vom K\"orper mit
+h\"oheren Temperatur in die Richtung des K\"orpers mit der kleineren
+Temperatur statt.
 
-Das wird ausformuliert und mit einem Bild visualisiert\todo{bald schnell
-machen}.
+Um eine negative Temperaturänderung herzustellen und diese auch zu halten, muss
+die eindringende Wärmeenergie ständig in der selben Höhe abgeführt werden, damit
+die Temperatur konstant bleibt. Diese Energiemenge pro Zeiteinheit wird als
+Kälteleistung bezeichnet. Eine Abweichung von dieser Menge führt zum Steigen
+der Temperatur, wenn weniger und zum sinken der Temperatur wenn mehr abgeführt
+wird. Um diesen Kühlkreislauf aufrecht zu erhalten, muss Leistung aufgewendet
+werden\footnote{ Eine detailierte Beschreibung dieser Prozesse in einer
+Kopressionskälteanlage und Spezifikation ist nicht Gegenstand dieser Arbeit.
+Ausführliche Informationen dazu findet man z.B.  in \cite{caro, doctor,
+TAB_A1}.}.
+
+\begin{figure}[float=h]\caption{Prinzipdarstellung Kompressionsk\"alteanlage}
+\label{prinz}
+\begin{center}
+\includegraphics[scale=0.6]{/images/Theorie_Super/fridge}
+	\end{center}
+\end{figure}
+
 \begin{itemize}
 	\item Temperaturunterschied in Kelvin $K$
 	\item Wärmeausgleich (Verlust an Kälte)
@@ -294,9 +299,6 @@ machen}.
 	spezifischen Wärmekapazität
 	\item Kälteenergie gespeichert in Masse
 \end{itemize}
-\begin{figure}[float=h]\caption{ Modellgrundlage}
-	\missingfigure{Modellgrundlage}
-\end{figure}
 
 Aufnahme der Wärmeenergie und der spezifischen Wärmekapazität dieser
 Substanzmasse ergibt die Temperaturdifferenz $\Delta\:t$.
