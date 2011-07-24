@@ -2,15 +2,15 @@
 \label{chap:SEVN}
 \minitoc
 
-In diesem Kapitel wird anhand eines vier Knoten Beispielnetzes vorgestellt,
-Lösung Problem\todo{Der Einführungsabsatz ist zu schreiben.}. Unabhängig von dem
-mathematischen Modell des Modellsupermarktes wird die Umsetzung der
-Implementierung vorgestellt\todo{Was ist los?}.
+Der durchschnittliche Energieverbrauch der Kälteanlagen je Supermaktkette
+kann auf Grund der technischen Ausführung unterschiedlich sein. Der
+Energieverbrauch entsteht an definierten Punkten im Netz. An den einzelnen
+Knotenpunkten können mehrere Kältelasten angeschlossen sein.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Anwendung der OOP am Modell}
+\section{Erstellung des OOP-Modells}
 
 In der \cref{vkb} wird ein einfaches Energieversorgungsnetz mit vier Knoten
 dargestellt. Am Knoten eins ist eine regenerative elektrische Energiequelle, in
@@ -28,6 +28,8 @@ verbunden.
 	\includegraphics[scale=0.75]{images/SEVN/power_grid}
 	\end{center}
 \end{figure}
+
+
 
 In der Realität kann ein Energieversorgungsnetz durch die Variation der
 Knotenzahl und die Vermaschung beliebig komplizierte Form aufweisen. Bei der

@@ -106,16 +106,16 @@ verschlossen.
 Seit Ende des letzten Jahrhunderts herrscht in der Fachliteratur für Informatik
 die Meinung, dass der Einsatz von objektorientierten Techniken Programme
 hervorbringt, die im Vergleich \textit{einfacher erweiterbar, besser testbar}
-und \textit{besser wartbar} sind. Dabei wird ein Verfahren angewendet, nach dem
+und \textit{besser wartbar} sind. Dabei wird ein Verfahren angewendet, nachdem
 große Systeme in kleinere Teile des Ganzen zerlegt werden. Programme lassen sich
 dadurch im Allgemeinen mit weniger Aufwand und kleineren
 Fehlerwahrscheinlichkeit programmieren. Inspiriert durch die Vorgänge aus der
-realen Welt, werden die Abläufe durch operierende Objekte vorgestellt, die
+realen Welt, werden die Abläufe durch operierende Objekte dargestellt, die
 Aufträge erledigen und vergeben können. Die wesentlichen Eigenschaften der
 objektorientierten Programmierung, kurz OOP\abvz{OOP}{objektorientierte
 Programmierung}, sind die Datenkapselung, die Polymorphie und die
 Vererbung.\footnote{ Ausführliche Informationen dazu findet
-man z.B. in \cite{OOP},\cite{java} oder \cite{python}.}
+man z.B. in \cite{OOP},\cite{pepperOOP},\cite{java} oder \cite{python}.}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -145,8 +145,7 @@ man z.B. in \cite{OOP},\cite{java} oder \cite{python}.}
 	\item[Vererbung] Die Vererbung erm\"oglicht durch Ver\"nderung der
 	bestehenden Klassen neue Klassen zu erstellen. Die grundlegenden
 	Programmteile der bestehenden Klasse werden zwangsl\"aufig
-	\"ubernomen.\footnote{ Ausf\"uhrliche Informationen dazu findet man z.B.
-	in \cite{pepperOOP}.}
+	\"ubernomen.
 
 \end{description}
 
@@ -177,10 +176,10 @@ Ausf\"uhrliche Informationen dazu findet man z.B. in \cite{matlab_kompakt} oder
 	\end{lstlisting}
 	\item[methods] Die Anweisung \lstinline$methods$ beginnt den
 	Methoden-Block und mit \lstinline$end$ wird er geschlossen. Analog zu
-	dem Eigenschaften k\"onnen in einer Klasse mehrere Methoden-Bl\"ocke
-	existieren. M\"ochte man das Verhalten eines Methoden-Blocks
-	zus\"atzlich ver\"andern, ist der Einsatz von Attributen zweckm\"a\ss
-	ig.
+	dem Eigenschaften-Block k\"onnen in einer Klasse mehrere
+	Methoden-Bl\"ocke existieren. M\"ochte man das Verhalten eines
+	Methoden-Blocks zus\"atzlich ver\"andern, ist der Einsatz von Attributen
+	zweckm\"a\ss ig.
 	\begin{lstlisting}[frame=none]
 	methods (attribut1, attribut2, etc.)
 	end
@@ -259,30 +258,29 @@ kann darauf wie folgt zugegriffen werden:
 
 \section{Einf\"uhrung in die K\"altetechnik}
 
-In diesem Kapitel wird ein knapper \"Uberblick über die mathematischen und
-physikalischen Zusammenhänge, die bei der Entwicklung eines Modellsupermarktes
-zwingend beachtet werden müssen, vorgestellt\todo{Der Satz ist total scheiße
-man}.\\
+An dieser Stelle wird ein knapper \"Uberblick über die mathematischen und
+physikalischen Zusammenhänge gegeben, die bei der Entwicklung eines Modells
+einer K\"alteanlage in einem Modellsupermarkt zwingend beachtet werden müssen.\\
 
 In den Superm\"arkten werden K\"uhlger\"ate zur Lagerung der Ware bis zum
 Verkauf an den Endkunden eingesetzt. Um die Haltbarkeit dieser Ware f\"ur den
-Zeitraum zu gew\"ahrleisten, wird sie bei niedrigen Temperaturen gehalten.
-Körper mit unterschiedlicher Temperatur sind bestrebt, wenn sie thermisch von
-einander nicht vollkommen isoliert sind, durch gegenseitige Wechselwirkung ihre
-Temperaturen anzugleichen. Infolge dessen wird ein Wärmegleichgewicht erreicht.
-Der nat\"urliche W\"armefluss findet selbstst\"andig immer vom K\"orper mit
-h\"oheren Temperatur in die Richtung des K\"orpers mit der kleineren
-Temperatur statt.
-
-Um eine negative Temperaturänderung herzustellen und diese auch zu halten, muss
-die eindringende Wärmeenergie ständig in der selben Höhe abgeführt werden, damit
-die Temperatur konstant bleibt. Diese Energiemenge pro Zeiteinheit wird als
-Kälteleistung bezeichnet. Eine Abweichung von dieser Menge führt zum Steigen
-der Temperatur, wenn weniger und zum sinken der Temperatur wenn mehr abgeführt
-wird. Um diesen Kühlkreislauf aufrecht zu erhalten, muss Leistung aufgewendet
-werden\footnote{ Eine detailierte Beschreibung dieser Prozesse in einer
-Kopressionskälteanlage und Spezifikation ist nicht Gegenstand dieser Arbeit.
-Ausführliche Informationen dazu findet man z.B.  in \cite{caro, doctor,
+Mindestzeitraum zu gew\"ahrleisten, wird sie bei niedrigen Temperaturen
+gehalten. Körper mit unterschiedlicher Temperatur sind bestrebt, wenn sie
+thermisch von einander nicht vollkommen isoliert sind, durch gegenseitige
+Wechselwirkung ihre Temperaturen anzugleichen. Infolge dessen wird ein
+Wärmegleichgewicht erreicht. Der nat\"urliche W\"armefluss findet
+selbstst\"andig immer vom K\"orper mit h\"oheren Temperatur in die Richtung des
+K\"orpers mit der kleineren Temperatur statt. Um eine negative
+Temperaturänderung herzustellen und diese auch zu halten, muss die eindringende
+Wärmeenergie ständig in der selben Höhe abgeführt werden, damit die Temperatur
+konstant bleibt. Diese Energiemenge pro Zeiteinheit wird als Kälteleistung
+bezeichnet. Eine Abweichung von dieser Menge führt zum Steigen der Temperatur,
+wenn weniger und zum sinken der Temperatur wenn mehr abgeführt wird. Um diesen
+Kühlkreislauf aufrecht zu erhalten, muss Leistung aufgewendet werden\footnote{
+	Eine detailierte Beschreibung dieser Prozesse in einer
+	Kopressionskälteanlage und Spezifikation ist nicht Gegenstand dieser
+	Arbeit.  Ausführliche Informationen dazu findet man z.B.  in \cite{caro,
+	doctor,
 TAB_A1}.}.
 
 \begin{figure}[float=h]\caption{Prinzipdarstellung Kompressionsk\"alteanlage}
@@ -292,15 +290,15 @@ TAB_A1}.}.
 	\end{center}
 \end{figure}
 
-\begin{itemize}
-	\item Temperaturunterschied in Kelvin $K$
-	\item Wärmeausgleich (Verlust an Kälte)
-	\item Kälteenergie gespeichert in Körpern mit einer bestimmten
-	spezifischen Wärmekapazität
-	\item Kälteenergie gespeichert in Masse
-\end{itemize}
+In der \cref{prinz} ist die Prinzipdarstellung der weitverbreiteten
+Kompressionsk\"altemaschine zu sehen. Die Ware, die symbolisch durch einen
+Kohlkopf dargestellt ist, wird mit einer Temperatur zwischen $\pm 0$ und
+$+8\grad C$ gelagert. Der Temperaturunterschied zwischen dem Innen,- und Au\ss
+enbereich folgt der W\"armeausgleich (Verlust an K\"alte). Die K\"alteenergie,
+die in der Substanzmasse (der Ware) gespeichert wird, geht dabei f\"ur den
+Betreiber verloren.
 
-Aufnahme der Wärmeenergie und der spezifischen Wärmekapazität dieser
+Die Aufnahme der Wärmeenergie und der spezifischen Wärmekapazität dieser
 Substanzmasse ergibt die Temperaturdifferenz $\Delta\:t$.
 
 \begin{equation}
@@ -523,7 +521,8 @@ Es wird angenommen, dass der Mehrbedarf in den rund zw\"olf Stunden der
 \vspace{0.5cm}
 berechnen.
 
-Dabei entspricht $\pnacht$ der mittleren Transmissionswärmeleistung $\ptrans$.
+Dabei entspricht $\pnacht$ der mittleren Transmissionswärmeleistung
+$\ptrans$\todo{ab hier noch nicht umformuliert}.
 $\ptag$ ist der Kältebedarf $\pkalt$, multipliziert mit dem Faktor für die
 Kältebedarfsabsenkung $K$ bei Geräten, bei denen der Kältebedarf gegeben ist.
 Bei steckerfertigen Geräten ist $\ptag$ die Summe aus dem Mehrbedarf an Leistung
