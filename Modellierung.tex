@@ -12,7 +12,7 @@ Knotenpunkten können mehrere Kältelasten angeschlossen sein.
 
 \section{Erstellung des OOP-Modells}
 
-In der \cref{vkb} wird ein einfaches Energieversorgungsnetz mit vier Knoten
+In der \cref{fig:vkb} wird ein einfaches Energieversorgungsnetz mit vier Knoten
 dargestellt. Am Knoten eins ist eine regenerative elektrische Energiequelle, in
 diesem Fall ein Windpark, angeschlossen. Weitere konventionelle elektrische
 Energiequellen befinden sich an den Knoten zwei und drei. Die passiven Lasten
@@ -23,35 +23,59 @@ verbunden.
 
 \begin{figure}[h]
 \caption{Vier Knoten Beispiel}
-	\label{vkb}
+	\label{fig:vkb}
 	\begin{center}
 	\includegraphics[scale=0.75]{images/SEVN/power_grid}
 	\end{center}
 \end{figure}
 
+\noindent In der Realität kann ein Energieversorgungsnetz durch die Variation
+der Knotenzahl und die Vermaschung beliebig komplizierte Form aufweisen. \\
 
-
-In der Realität kann ein Energieversorgungsnetz durch die Variation der
-Knotenzahl und die Vermaschung beliebig komplizierte Form aufweisen. Bei der
-Umsetzung der gegebenen Situation im Programm.
-
-\begin{figure}[h]
+In Anbetracht der im \cref{sec:OOP} vorgestellten Verfahren erscheint der Ansatz
+der OOP bei der Erstellung eines Programms zur Simulation einer K\"alteslast mit
+K\"altespeicher im Energieversorgungsnetz auf der Basis des vorangegangenen
+Beispieles \cref{fig:vkb} als sinnvoll. In der \cref{fig:klassendiagramm} wird
+in Form eines Klassendiagramms das fertige Klassen-Modell dargestellt. Au\ss
+erdem wird die Abh\"angigkeit unter Klassen visualisiert.
+\begin{figure}[h!]
 \caption{Klassendiagramm Modellkonstrukt}
-	\label{klassendiagramm}
+	\label{fig:klassendiagramm}
 	\begin{center}
-	\includegraphics[scale=0.8]{images/Theorie_Super/class_diagramm}
+	\includegraphics[scale=0.7]{images/Theorie_Super/class_new_diagramm}
 	\end{center}
 \end{figure}
 
-Hier noch ein Zwischentext.
+Das Ergebnis der Abstraktion sind vier Klassen. Alle Klassen haben einen
+unterschiedlichen Status. Die Klasse \textbf{Power\_gird} vertritt die Rolle des
+ganzen Systems, also des Energieversorgungsnetzes, welches aus
+charakteristischen Teilen, den Knoten (im Modell \textbf{Bus}) besteht. Die
+Existenz eines Knotens au\ss erhalb eines Netzes ergibt f\"ur die Berechnung
+keinen Sinn. Dieser Zusammenhang zwischen Klassen wird im Klassendiagramm durch
+eine Linienverbindung verdeutlicht. Auf der Seite des Ganzen endet die Linie mit
+einem ausgef\"ullten Rhombus. Das komplette Modell ist nach diesem Prinzip
+aufgestellt. Die kleinste Einheite stellt die K\"alteanlage (im Modell
+\textbf{Refrigerator}) dar. Auf diese Weise wird erreicht, dass der f\"ur eine
+bestimmte K\"alteanlage berechnete Energieverbrauch \todo{Modell, was wird
+dadurch erreicht?}.
 
 \begin{figure}[h]
 \caption{Sequenzdiagramm Modellkonstrukt}
-	\label{uml_sequence}
+	\label{fig:uml_sequence}
 	\begin{center}
 	\includegraphics[scale=0.8]{images/Theorie_Super/sequence_one}
 	\end{center}
 \end{figure}
+
+Wird eine Funktion aufgerufen, die den Start der Simulation veranlasst,
+m\"ussen, bevor auf die Methoden der einzelnen Objekte zugegriffen werden kann,
+die das Modell beschreibende Objekte erzeugt werden\todo{modelbeschreibende
+Objekte, was ist das?}. In der
+\cref{fig:uml_sequence} wird mit Hilfe eines Sequenzdiagrammes der
+Nachrichtenaustausch hervorgehoben, der bei Initialisierung Objekte durchlaufen
+wird. In der Funktion \textbf{runCooling}, die den Start der Simulation
+veranlasst und steuert, wird der Konstruktor der Klasse \textbf{Power\_grid}
+aufgerufen.
 
 \section{Handhabung des Programms}
 \label{sc:handhabung}
