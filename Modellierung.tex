@@ -36,8 +36,9 @@ In Anbetracht der im \cref{sec:OOP} vorgestellten Verfahren erscheint der Ansatz
 der OOP bei der Erstellung eines Programms zur Simulation einer K\"alteslast mit
 K\"altespeicher im Energieversorgungsnetz auf der Basis des vorangegangenen
 Beispieles \cref{fig:vkb} als sinnvoll. In der \cref{fig:klassendiagramm} wird
-in Form eines Klassendiagramms das fertige Klassen-Modell dargestellt. Au\ss
-erdem wird die Abh\"angigkeit unter Klassen visualisiert.
+in Form eines Klassendiagramms das fertige Klassen-Modell dargestellt und die
+Abh\"angigkeit unter Klassen visualisiert.
+
 \begin{figure}[h!]
 \caption{Klassendiagramm Modellkonstrukt}
 	\label{fig:klassendiagramm}
@@ -46,50 +47,75 @@ erdem wird die Abh\"angigkeit unter Klassen visualisiert.
 	\end{center}
 \end{figure}
 
-Das Ergebnis der Abstraktion sind vier Klassen. Alle Klassen haben einen
-unterschiedlichen Status. Die Klasse \textbf{Power\_gird} vertritt die Rolle des
-ganzen Systems, also des Energieversorgungsnetzes, welches aus
-charakteristischen Teilen, den Knoten (im Modell \textbf{Bus}) besteht. Die
-Existenz eines Knotens au\ss erhalb eines Netzes ergibt f\"ur die Berechnung
-keinen Sinn. Dieser Zusammenhang zwischen Klassen wird im Klassendiagramm durch
-eine Linienverbindung verdeutlicht. Auf der Seite des Ganzen endet die Linie mit
-einem ausgef\"ullten Rhombus. Das komplette Modell ist nach diesem Prinzip
-aufgestellt. Die kleinste Einheite stellt die K\"alteanlage (im Modell
-\textbf{Refrigerator}) dar. Auf diese Weise wird erreicht, dass der f\"ur eine
-bestimmte K\"alteanlage berechnete Energieverbrauch \todo{Modell, was wird
-dadurch erreicht?}.
+Das Ergebnis der Abstraktion sind vier Klassen. In der Klasse
+\textbf{Refrigerator} sind Eigenschaften und Methoden zusammengefasst, die das
+Modell einer K\"altelast beschreiben. Die explizite Erkl\"arung der\todo{hier
+ein \"Uberleitungssatz}.
+
+\subsection*{Refrigerator}
+
+An dieser Stelle werden die Eigenschaften und die Methoden der Klasse
+\textbf{Refrigerator} explizit erkl\"art.
+
+\subsubsection*{Attribute}
+\begin{description}
+	\item[fridge\_detector] Art der Anlage. Die Berechnung der Verluste der
+	Verbundsanlagen unterscheidet sich von der der steckerfertigen
+	Ger\"aten.
+	\item[energy\_consumption\_day] H\"ohe des durchschnittlichen
+	elektrischen Energieverbrauches \cref{}.
+	\item[epsilon] Leistungszahl.
+	\item[compressor\_quotient] Anteil des Verdichters am Gesamtverbrauch
+	der K\"uhlanlage.
+	\item[cooling\_power] K\"alteleistungsbedarf(Herstellerangabe).
+	\
+
+	\end{description}
+
+Alle Klassen haben einen unterschiedlichen Status. Die Klasse
+\textbf{Power\_gird} vertritt die Rolle des ganzen Systems, also des
+Energieversorgungsnetzes, welches aus charakteristischen Teilen, den Knoten
+(\textbf{Bus}) besteht. Die Existenz eines Knotens au\ss erhalb eines Netzes
+ergibt f\"ur die Berechnung keinen Sinn. Dieser Zusammenhang zwischen Klassen
+wird im Klassendiagramm durch eine Linienverbindung verdeutlicht. Auf der Seite
+des Ganzen endet die Linie mit einem ausgef\"ullten Rhombus. Das komplette
+Modell ist nach diesem Prinzip aufgestellt. Die kleinste Einheit des Ganzen
+stellt die K\"alteanlage (\textbf{Refrigerator}) dar.
 
 \begin{figure}[h]
 \caption{Sequenzdiagramm Modellkonstrukt}
 	\label{fig:uml_sequence}
 	\begin{center}
-	\includegraphics[scale=0.8]{images/Theorie_Super/sequence_one}
+		\includegraphics[scale=0.8]{images/Theorie_Super/sequence_one}
 	\end{center}
 \end{figure}
 
-Wird eine Funktion aufgerufen, die den Start der Simulation veranlasst,
-m\"ussen, bevor auf die Methoden der einzelnen Objekte zugegriffen werden kann,
-die das Modell beschreibende Objekte erzeugt werden\todo{modelbeschreibende
-Objekte, was ist das?}. In der
+Auf Grund des Modells wird das elektrische Verhalten einer
+Supermarket-K\"altelast im Energieversorgungsnetz durch miteinander
+kooperierende Objekte dargestellt. Wird eine Funktion aufgerufen, die den Start
+der Simulation veranlasst, m\"ussen, bevor auf die Methoden der einzelnen
+Objekte zugegriffen werden kann, die Objekte erzeugt werden. In der
 \cref{fig:uml_sequence} wird mit Hilfe eines Sequenzdiagrammes der
-Nachrichtenaustausch hervorgehoben, der bei Initialisierung Objekte durchlaufen
-wird. In der Funktion \textbf{runCooling}, die den Start der Simulation
-veranlasst und steuert, wird der Konstruktor der Klasse \textbf{Power\_grid}
-aufgerufen.
+Nachrichtenaustausch hervorgehoben, der bei der Erstellung der Objekte
+durchlaufen wird. In der Funktion \textbf{runCooling}, die den Start der
+Simulation veranlasst und steuert, wird der Konstruktor der Klasse
+\textbf{Power\_grid} aufgerufen. Als Ergebnis des Aufrufes bekommt die Funktion
+\textbf{runCooling} ein Objekt der Klasse \textbf{Power\_grid} mit allen
+Unterobjekten, die den zu simulierenden Fall beschreiben. Die
+Konstruktor-Funktionen der Klassen, die einen untergeordneten Status besitzen,
+werden bei der Erstellung der \"ubergeordneten Objekte aufgerufen. Die Anzahl
+der erzeugten Objekte h\"angt davon ab, wie oft die Konstruktor-Funktion der
+jeweiligen Klasse aufgerufen wird. Diese Zahlen werden in Konfigurationsdateien
+abh\"angig von dem untersuchten Fall festgelegt. Die ausf\"uhrliche Erkl\"arung
+der Konfigurationsdateien wird in kommenden Abschnitten vorgenommen.
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Handhabung des Programms}
 \label{sc:handhabung}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Allgemeines}
-
 Das Programm ist ein Packet aus \matlab M-files zur Simulation von Kälteanlagen
-mit Kältespeichern\footnote{ Da gewöhnliche Supermarktketten Untersuchungsobjekt
-dieser Studie sind, werden die Termini Kältelast, Kälteanlagen mit
-Kältespeichern und Supermarktkette als gleichbedeutend aufgefasst und
-verwendet.} in einem Energieversorgungsnetz. Das Simulationsprogramm ist in der
+mit Kältespeichern in einem Energieversorgungsnetz. Das Simulationsprogramm ist in der
 Lage das Verhalten einer bzw. mehrerer Supermarktkälteanlagen als flexibler
 Verbraucher in einem Energieversorgungsnetz zu simulieren. Das Programm kann
 über eine vordefinierte Schnittstelle in ein Leistungsflussberechnungs-Programm
@@ -219,14 +245,14 @@ beibehalten.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{lstlisting}[float=h!,caption=config\_supermarkets.m,label={csuper}]
-%%       Kind of fridge
+%%       Kind of fridge     Anzahl
 Aldi = {...
-        NK_KT_S;     ...
-        NK_KR_V;     ...
-        TK_TKT_S     ...
+        { NK_KT_S      ,    1 };     ...
+        { NK_KR_V      ,    2 };     ...
+        { TK_TKT_S     ,    1 }      ...
        };
 Netto = {...
-        NK_KT_S      ...
+        { NK_KT_S      ,    5 };     ...
        };
 \end{lstlisting}
 
@@ -307,10 +333,9 @@ Datentypen einen durch \matlab darauf direkten Zugriff.
 	doch überflüssig, oder?}) Die Unterscheidung in steckerfertige
 	Kälteanlagen und Kälteverbundanlagen im Programm ist notwendig, da bei
 	der Berechnung der Kälteverluste unterschiedliche Verfahren zu Grunde
-	gelegt werden\todo{Das ist noch zu Überprüfen}.  Diese Differenzierung
-	erfolgt durch die Zuweisung einer Eins für die steckerfertige Einheit
-	und einer Zwei für eine Einheit an Verbundanlage in der ersten Spalte im
-	Array .
+	gelegt werden. Diese Differenzierung erfolgt durch die Zuweisung einer
+	Eins für die steckerfertige Einheit und einer Zwei für eine Einheit an
+	Verbundanlage in der ersten Spalte im Array .
 
 	\item [{Spalte zwei}] Die druchschnittliche elektrische Energieaufnahme
 	ist eine Kennzahl in Watt pro 24 Stunden, die durch die Hersteller mit
@@ -319,7 +344,7 @@ Datentypen einen durch \matlab darauf direkten Zugriff.
 	schreiben}.
 
 	\item [{Spalte drei}] In diese Spalte wird die Leistungszahl
-	(ausführlich beschrieben im \cref{Leistungszahl}) eingetragen.
+	eingetragen.
 
 	\item [{Spalte vier}] Der Anteil des Verdichters an dem
 	Tagesenergieverbrauch der Kühleinheiten wird Leistungszahl genannt. Aus
@@ -327,7 +352,7 @@ Datentypen einen durch \matlab darauf direkten Zugriff.
 	in die Berechnung eingeht. Die Liestungszahl wird in der Spalte vier
 	festgehalten.
 
-	\item [{Spalte fünf}] Werden anschlussfertige Kälteaggrigate zur Kühlung
+	\item [{Spalte fünf}] Werden anschlussfertige Kälteaggregate zur Kühlung
 	von Räumen verwendet, so wird die installierte Kälteleistung in Kilowatt
 	in die Spalte fünf anstatt einer Null eingetragen.
 
