@@ -67,10 +67,91 @@ An dieser Stelle werden die Eigenschaften und die Methoden der Klasse
 	\item[epsilon] Leistungszahl.
 	\item[compressor\_quotient] Anteil des Verdichters am Gesamtverbrauch
 	der K\"uhlanlage.
-	\item[cooling\_power] K\"alteleistungsbedarf(Herstellerangabe).
-	\
+	\item[cooling\_power] K\"alteleistungsbedarf (Herstellerangaben).
+	\item[temperatur\_outside\_fridge] $1\times M$-Array mit
+	Au\ss entemperaturwertet f\"ur die Umgebung der K\"alteanlage. $M$
+	stimmt mit der Anzahl der W\"ande \"uberein, f\"ur die ihre Fl\"ache
+	bekannt ist.
+	\item[mass\_stored] $1\times N$-Array mit den Massewerten, der zur
+	K\"uhlung vorhandenen Substansmasse. $N$ stimmt mit der Anzahl der
+	Massen \"uberein, f\"ur die die spezifische W\"armekapazit\"at
+	unterschiedlich ist.
+	\item[specific\_heat\_capacity] $1\times N$-Array mit den Werten f\"ur
+	spezifische W\"armekapazit\"aten der Substanzmassen.
+	\item[cooling\_room\_temperature\_min] Niedrigste Temperatur, die durch
+	K\"uhlung erreicht werden darf.
+	\item[cooling\_room\_temperature\_max] H\"ochste Temperatur, die durch
+	K\"uhlung erreicht werden darf.
+	\item[averaged\_cooling\_room\_temperature] Durchschnittliche Temperatur
+	im Normalbetrieb.
+	\item[temperature\_history] $24\times 365$-Array mit den st\"undlichen
+	Werten des berechneten Temperaturverlaufes f\"ur alle simulierten Tage.
+	Die Werte sind das Ergebnis der Berechnung der Funktion
+	\textbf{main\_equation}.
+	\item[temperature\_capacity\_history] ??
+	\item[electric\_power\_consumption\_history] $24\times 365$-Array mit
+	den st\"undlich Werten des berechneten Verbrauchs der zur K\"uhlung
+	ben\"otigten elektrischen Leistung f\"ur alle simulierten Tage. Die
+	Werte sind das Ergebnis der Berechnung der Funktion
+	\textbf{main\_equation}.
+	\item[averaged\_transmission\_losses] Durchschnittliche
+	Transmissionsverluste im Normalbetrieb (vergleiche \cref{aptrans}).
+	\item[m\_heat\_transmission\_coefficient] $1\times M$-Array mit Werten
+	aus der elementenweise Multiplikation des Vektors mit Spezifische
+	W\"armedurchgangskoeffizient mit dem Vektor mit Werten f\"ur die
+	Durchgagnsfl\"achen.
+	\item[increased\_demand\_heat\_power\_day] Mehrbedarf am Tag (vergleiche
+	\cref{pmehr}), auf Grund der zus\"atzlichen Verluste durch Licht,
+	Menschenk\"orperw\"arme, T\"ur\"offnungszeiten und weitere Einfl\"usse.
+	\item[factor\_cooling\_reducer] Faktor f\"ur K\"altebedarfsabsenkung
+	infolge der Luftfeuchte und der Umgebungstemperatur.
+\end{description}
 
-	\end{description}
+\subsubsection*{Methoden}
+\begin{description}
+	\item[Refrigerator(fridge\_config,number\_steps,days)] Konstruktor der
+	Klasse.
+		\begin{description}
+			\item[fridge\_config] $1 \times 2$-Cell Array
+			mit Modellparametern\footnote{ Die Form des Arrays ist
+			\"aquivalent zu genaue einer Zeile der in
+			\matref{csuper} vorgestellten Arrays, die die Modelle
+			der Superm\"arkte abbilden.}
+			\item[number\_steps] Anzahl der Zeitschritte die einen
+			Tag beschreiben.
+			\item[days] Anzahl der zu simulierenden Tage
+		\end{description}
+	Bei der Initialisierung eines Objektes werden an alle oben vorgestellten
+	Attribute der Klasse \textbf{Refrigerator} konkrete Werte aus dem
+	\textbf{ fridge\_config }-Array \"ubergeben.
+	\item[sum\_mass\_times\_capacity()]
+			Berechnung die Summe der
+	Multiplikation aller Substansmassen mit der jeweiligen spezifischen
+	W\"armekapazit\"aten.
+	% \begin{equation}
+	% 	\centering
+	% 	\sum\limits_{i=1}^N{m_i \cdot c_i}
+	% \end{equation}
+	% \begin{description}
+	% 	\item[N] Anzahl der Substanzmassen mit unterschiedlicher
+	% 	spezifischen W\"armekapazit\"at
+	% 	\item[$m_i$] konkrete Auspregung der Substanzmasse in $kg$
+	% 	\item[$c_i$] die zu der Masse korrespondierende spezifische
+	% 	W\"armekapazit\"at in $\frac{kJ}{kg\cdot K}$
+	% \end{description}
+	\item[sum\_transmission\_losses()] Berechnung die Summe der
+	Transmissionsverluste durch alle Durchgangsfl\"achen.
+	% \begin[equation]
+	% 	\centering
+	% 	
+	% \end[equation]
+	\item[sum\_all\_losses()] Berechnung der Summe aller Verluste an K\"alte.
+	\item[capacity\_estimator()] Berechnung des Bedarfes an Leistung, die
+	n\"otig ist, um die vorhandene Substanzmasse in einer Stunde auf die
+	Minimaltemperatur zu bringen.
+	\item[main\_equation()] Berechnung der Temperatur der Substanzmasse, die
+	die durch K\"uhlung am Ende eines Zeitschrittes erreicht wird.
+\end{description}
 
 Alle Klassen haben einen unterschiedlichen Status. Die Klasse
 \textbf{Power\_gird} vertritt die Rolle des ganzen Systems, also des
@@ -314,17 +395,16 @@ Datentypen einen durch \matlab darauf direkten Zugriff.
 5          2, ... % epsilon power quotient
 6          0.66, ... % compressor quotient
 7          0 ... % installed cooling power in W
-8          2, ... % number_of_walls
-9          [16.4 6.7], ... % area_wall
-10         [0.38 0.38], ... % heat_transmission_coefficient
-11         [19 15], ... % temperature_outside
-12         [200 200], ... % masse_stored
-13         [2.3 3.52], ... % specific_mass_capacity
-14         -6, ... % temperature_min in Celsius
-15         2, ... % temperature_max in Celsius
-16         1, ... % averaged cooling room temperature in Celsius
-17         0, ... % refrigerating capacity
-18        };
+8          [16.4 6.7], ... % area_wall
+9          [0.38 0.38], ... % heat_transmission_coefficient
+10         [19 15], ... % temperature_outside
+11         [200 200], ... % masse_stored
+12         [2.3 3.52], ... % specific_mass_capacity
+13         -6, ... % temperature_min in Celsius
+14         2, ... % temperature_max in Celsius
+15         1, ... % averaged cooling room temperature in Celsius
+16         0, ... % refrigerating capacity
+17        };
 \end{lstlisting}
 
 \begin{description}
