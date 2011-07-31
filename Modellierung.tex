@@ -63,7 +63,7 @@ An dieser Stelle werden die Eigenschaften und die Methoden der Klasse
 	Verbundsanlagen unterscheidet sich von der der steckerfertigen
 	Ger\"aten.
 	\item[energy\_consumption\_day] H\"ohe des durchschnittlichen
-	elektrischen Energieverbrauches \cref{}.
+	elektrischen Energieverbrauches.
 	\item[epsilon] Leistungszahl.
 	\item[compressor\_quotient] Anteil des Verdichters am Gesamtverbrauch
 	der K\"uhlanlage.
@@ -88,13 +88,12 @@ An dieser Stelle werden die Eigenschaften und die Methoden der Klasse
 	Werten des berechneten Temperaturverlaufes f\"ur alle simulierten Tage.
 	Die Werte sind das Ergebnis der Berechnung der Funktion
 	\textbf{main\_equation}.
-	\item[temperature\_capacity\_history] ??
 	\item[electric\_power\_consumption\_history] $24\times 365$-Array mit
 	den st\"undlich Werten des berechneten Verbrauchs der zur K\"uhlung
 	ben\"otigten elektrischen Leistung f\"ur alle simulierten Tage. Die
 	Werte sind das Ergebnis der Berechnung der Funktion
 	\textbf{main\_equation}.
-	\item[averaged\_transmission\_losses] Durchschnittliche
+	\item[averaged\_transmission\_losses] Summe aller durchschnittlichen
 	Transmissionsverluste im Normalbetrieb (vergleiche \cref{aptrans}).
 	\item[m\_heat\_transmission\_coefficient] $1\times M$-Array mit Werten
 	aus der elementenweise Multiplikation des Vektors mit Spezifische
@@ -111,21 +110,36 @@ An dieser Stelle werden die Eigenschaften und die Methoden der Klasse
 \begin{description}
 	\item[Refrigerator(fridge\_config,number\_steps,days)] Konstruktor der
 	Klasse.
-		\begin{description}
-			\item[fridge\_config] $1 \times 2$-Cell Array
-			mit Modellparametern\footnote{ Die Form des Arrays ist
-			\"aquivalent zu genaue einer Zeile der in
-			\matref{csuper} vorgestellten Arrays, die die Modelle
-			der Superm\"arkte abbilden.}
-			\item[number\_steps] Anzahl der Zeitschritte die einen
-			Tag beschreiben.
-			\item[days] Anzahl der zu simulierenden Tage
-		\end{description}
-	Bei der Initialisierung eines Objektes werden an alle oben vorgestellten
-	Attribute der Klasse \textbf{Refrigerator} konkrete Werte aus dem
-	\textbf{ fridge\_config }-Array \"ubergeben.
-	\item[sum\_mass\_times\_capacity()]
-			Berechnung die Summe der
+	\begin{description}
+		\item[fridge\_config] $1 \times 2$-Cell Array
+		mit Modellparametern\footnote{ Die Form des Arrays ist
+		\"aquivalent zu genaue einer Zeile der in
+		\matref{csuper} vorgestellten Arrays, die die Modelle
+		der Superm\"arkte abbilden.}
+		\item[number\_steps] Anzahl der Zeitschritte die einen
+		Tag beschreiben
+		\item[days] Anzahl der zu simulierenden Tage
+	\end{description}
+	Bei der Initialisierung eines Objektes werden einem Teil der oben
+	vorgestellten Attribute der Klasse \textbf{Refrigerator} Werte aus dem
+	\textbf{ fridge\_config }-Array direkt \"ubergeben. Andere Werte werden
+	einmalig von der Konstruktor-Methode berechnet oder im Laufe der
+	Simulation ver\"andert.\\
+
+	Folgende Attribute werden einmalig bei der Initialisierung berechnet.
+	\begin{description}
+		\item[energy\_consumption\_day] Bei der Simulation einer
+		Schar baugleicher K\"alteanlagen mit identischer
+		Bef\"ullung und K\"uhlstrategie wird der durchschnittliche
+		elektrische Energieverbrauch mit der Anzahl der K\"alteanlagen
+		skaliert\todo{das ist noch zu \"uberpr\"ufen}.
+		\item[averaged\_transmission\_losses] Summe aller gemittelten
+		Transmissionsverluste (\cref{aptrans}).
+		\item[m\_heat\_transmission\_coefficient]
+	\end{description}
+
+
+	\item[sum\_mass\_times\_capacity()] Berechnung die Summe der
 	Multiplikation aller Substansmassen mit der jeweiligen spezifischen
 	W\"armekapazit\"aten.
 	% \begin{equation}
@@ -133,7 +147,7 @@ An dieser Stelle werden die Eigenschaften und die Methoden der Klasse
 	% 	\sum\limits_{i=1}^N{m_i \cdot c_i}
 	% \end{equation}
 	% \begin{description}
-	% 	\item[N] Anzahl der Substanzmassen mit unterschiedlicher
+	% 	\item[N] Anza\hl der Substanzmassen mit unterschiedlicher
 	% 	spezifischen W\"armekapazit\"at
 	% 	\item[$m_i$] konkrete Auspregung der Substanzmasse in $kg$
 	% 	\item[$c_i$] die zu der Masse korrespondierende spezifische
