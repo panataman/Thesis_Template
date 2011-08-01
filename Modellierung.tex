@@ -3,7 +3,7 @@
 \minitoc
 
 Der durchschnittliche Energieverbrauch der Kälteanlagen je Supermaktkette
-kann auf Grund der technischen Ausführung unterschiedlich sein. Der
+kann aufgrund der technischen Ausführung unterschiedlich sein. Der
 Energieverbrauch entsteht an definierten Punkten im Netz. An den einzelnen
 Knotenpunkten können mehrere Kältelasten angeschlossen sein.
 
@@ -94,14 +94,18 @@ An dieser Stelle werden die Eigenschaften und die Methoden der Klasse
 	Werte sind das Ergebnis der Berechnung der Funktion
 	\textbf{main\_equation}.
 	\item[averaged\_transmission\_losses] Summe aller durchschnittlichen
-	Transmissionsverluste im Normalbetrieb (vergleiche \cref{aptrans}).
-	\item[m\_heat\_transmission\_coefficient] $1\times M$-Array mit Werten
-	aus der elementenweise Multiplikation des Vektors mit Spezifische
-	W\"armedurchgangskoeffizient mit dem Vektor mit Werten f\"ur die
-	Durchgagnsfl\"achen.
-	\item[increased\_demand\_heat\_power\_day] Mehrbedarf am Tag (vergleiche
-	\cref{pmehr}), auf Grund der zus\"atzlichen Verluste durch Licht,
-	Menschenk\"orperw\"arme, T\"ur\"offnungszeiten und weitere Einfl\"usse.
+	Transmissionsverluste im Normalbetrieb (vgl. \cref{aptrans}).
+	\item[modified\_heat\_transmission\_coefficient] $1\times M$-Array mit
+	Werten aus der elementenweise Multiplikation des Vektors mit Werten der
+	spezifischen W\"armedurchgangskoeffizienten mit dem Vektor mit Werten
+	f\"ur die Durchgagnsfl\"achen (vgl. \cref{vmod}).
+	\item[increased\_demand\_heat\_power\_day] Mehrbedarf am Tag, aufgrund
+	der zus\"atzlichen Verluste durch Licht, Menschenk\"orperw\"arme,
+	T\"ur\"offnungszeiten und weiteren Einfl\"usse. Die Berechnung erfolgt
+	nach einer Auswahl zwischen \cref{pmehr} und der \cref{lverd} bis
+	\cref{spmehr} wie auf der Seiten \pageref{pmehr} und \pageref{spmehr}
+	beschrieben.
+
 	\item[factor\_cooling\_reducer] Faktor f\"ur K\"altebedarfsabsenkung
 	infolge der Luftfeuchte und der Umgebungstemperatur.
 \end{description}
@@ -115,10 +119,10 @@ An dieser Stelle werden die Eigenschaften und die Methoden der Klasse
 		mit Modellparametern\footnote{ Die Form des Arrays ist
 		\"aquivalent zu genaue einer Zeile der in
 		\matref{csuper} vorgestellten Arrays, die die Modelle
-		der Superm\"arkte abbilden.}
+		der Superm\"arkte abbilden.}.
 		\item[number\_steps] Anzahl der Zeitschritte die einen
-		Tag beschreiben
-		\item[days] Anzahl der zu simulierenden Tage
+		Tag beschreiben.
+		\item[days] Anzahl der zu simulierenden Tage.
 	\end{description}
 	Bei der Initialisierung eines Objektes werden einem Teil der oben
 	vorgestellten Attribute der Klasse \textbf{Refrigerator} Werte aus dem
@@ -126,16 +130,21 @@ An dieser Stelle werden die Eigenschaften und die Methoden der Klasse
 	einmalig von der Konstruktor-Methode berechnet oder im Laufe der
 	Simulation ver\"andert.\\
 
-	Folgende Attribute werden einmalig bei der Initialisierung berechnet.
+	Folgende Attribute werden einmalig bei der Initialisierung berechnet:
 	\begin{description}
-		\item[energy\_consumption\_day] Bei der Simulation einer
-		Schar baugleicher K\"alteanlagen mit identischer
-		Bef\"ullung und K\"uhlstrategie wird der durchschnittliche
-		elektrische Energieverbrauch mit der Anzahl der K\"alteanlagen
-		skaliert\todo{das ist noch zu \"uberpr\"ufen}.
-		\item[averaged\_transmission\_losses] Summe aller gemittelten
-		Transmissionsverluste (\cref{aptrans}).
-		\item[m\_heat\_transmission\_coefficient]
+		\item[averaged\_transmission\_losses] Summe aller
+		durchschnittlichen Transmissionsverluste im Normalbetrieb
+		(vergleiche \cref{aptrans}).
+		\item[modified\_heat\_transmission\_coefficient] $1\times
+		M$-Array mit Werten aus der elementenweise Multiplikation des
+		Vektors mit Werten der spezifischen
+		W\"armedurchgangskoeffizienten mit dem Vektor mit Werten f\"ur
+		die Durchgagnsfl\"achen (vgl. \cref{vmod}).
+		\item[increased\_demand\_heat\_power\_day] Mehrbedarf am Tag ,
+		aufgrund der zus\"atzlichen Verluste durch Licht,
+		Menschenk\"orperw\"arme, T\"ur\"offnungszeiten und weiteren
+		Einfl\"usse. Die Berechnung erfolgt wie in der \cref{lverd} bis
+		\cref{spmehr} beschrieben.
 	\end{description}
 
 
@@ -221,7 +230,7 @@ eingebunden werden.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Systemanforderungen}
 
-Zur Benutzung des Programms muss auf Grund der gewählten Programmiersprache und
+Zur Benutzung des Programms muss aufgrund der gewählten Programmiersprache und
 der objektorientierten Programmierwiese folgendes gelten:
 
 \begin{itemize}
@@ -354,7 +363,7 @@ Netto = {...
 Die Kältelast in einem Supermarkt bilden die einzelnen je nach Einsatzzweck
 speziell dafür konstruierten Kühleinheiten. Die Anzahl, die technischen
 Eigenschaften und die Betriebsweise dieser Kältemaschinen können in der Realität
-beispielsweise auf Grund von klimatischen, wirtschaftlichen oder auf
+beispielsweise aufgrund von klimatischen, wirtschaftlichen oder auf
 Kundenverhalten bezogenen Standortbesonderheiten Unterschiede
 aufweisen\todo{Kältemaschinen beschreiben?}. Für eine breite Betrachtung des
 Einflusses auf ein Energieversorgungsnetz durch den Einsatz unterschiedlicher

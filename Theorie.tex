@@ -461,11 +461,13 @@ Geräten, kann der Mehrbedarf am Tag \"uber den Wert Verdichterarbeit pro 24
 Stunden $\lverd$ für den gesamten Kälteverbraucher ermittelt werden.
 
 Das Produkt aus dem spezifischen Energieverbrauch mit dem Faktor für
-Kältebedarfsabsenkung, dem Verdichteranteil und der Anzahl der Geräte ergibt die
-Verdichterarbeit.
-
+Kältebedarfsabsenkung, dem Verdichteranteil ergibt die Verdichterarbeit.
 \begin{equation}
-	\lverd = \lspez \cdot K \cdot v \cdot n
+	v_{mod} = K \cdot v
+\label{vmod}
+\end{equation}
+\begin{equation}
+	\lverd = \lspez \cdot v_{mod}
 \label{lverd}
 \end{equation}
 
@@ -476,7 +478,7 @@ Verdichterarbeit.
 		$\frac{kWh}{24h}$
 	\item[$K$] Faktor für Kältebedarfsabsenkung (einheitenlos)
 	\item[$v$] Verdichteranteil (einheitenlos)
-	\item[$n$] Anzahl der Geräte
+	\item[$v_{mod}$] modifizierte Verdichteranteil (einheitenlos)
 
 \end{description}
 \vspace{0.5cm}
@@ -486,7 +488,7 @@ eindringenden W\"aremeenergie in der \"Offnungszeit berechnet werden, die einem
 weiteren Schritt in W\"armeleistung $\pmehr$ umgewandelt wird.
 
 \begin{equation}
-	\lmehr = \lverd - \frac{\ptrans}{\epsilon} \cdot 24h
+	\lmehr = \lverd - \frac{\aptrans}{\epsilon} \cdot 24h
 \label{lmehr}
 \end{equation}
 
@@ -495,7 +497,7 @@ weiteren Schritt in W\"armeleistung $\pmehr$ umgewandelt wird.
 	\item[$\lmehr$] Verdichterarbeit zum Abführen von eindringenden
 		Wärmeenergie $\emehr$ in $kWh$ in der \"Offnungszeit
 	\item[$\lverd$] Verdichterarbeit pro $24\,h$ in $\frac{kWh}{24h}$
-	\item[$\ptrans$] Transmissionswärmeleistung in $kW$
+	\item[$\aptrans$] mittlere Transmissionswärmeleistung in $kW$
 	\item[$\epsilon$] Leistungszahl (einheitenlos)
 
 \end{description}
@@ -508,7 +510,7 @@ Es wird angenommen, dass der Mehrbedarf in den rund zw\"olf Stunden der
 
 \begin{equation}
 	\pmehr = \frac{\lmehr}{12h} \cdot \epsilon
-\label{<++>}
+\label{spmehr}
 \end{equation}
 
 \begin{description}[\dth]
