@@ -537,8 +537,13 @@ Temperaturmaximum bestimmt. Diese Zeit braucht das Programm, um den Einsatz der
 Supermarktkälteanlagen als Speicher zu planen. Mit der Gleichung
 
 \begin{equation}
+	\aptranslog(i) = \frac{ \ptransm(i) - \ptrans(i) }{log \left(
+		\frac{\ptransm(i)}{\ptrans(i)} \right)}
+	\label{log}
+\end{equation}
+\begin{equation}
 	\tau_{krit}(i) = \frac{m \cdot c \cdot (t_{max} -
-		t(i))}{\aptranslog}
+		t(i))}{\aptranslog(i)}
 \label{taukn}
 \end{equation}
 
@@ -551,7 +556,7 @@ Supermarktkälteanlagen als Speicher zu planen. Mit der Gleichung
 	\item[$t_{max}$] obere Temperaturgrenze in $ ^{\circ} C $
 	\item[$t(i)$] Temperatur zur Stunde $i$ in $ ^{\circ} C $
 	\item[$\aptranslog$] logrithmierte Mittelwert der
-		Transmissionswärmeleistung in $kW$|
+		Transmissionswärmeleistung in $kW$
 \end{description}
 \vspace{0.5cm}
 
