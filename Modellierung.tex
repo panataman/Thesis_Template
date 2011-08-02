@@ -35,8 +35,9 @@ der Knotenzahl und die Vermaschung beliebig komplizierte Form aufweisen. \\
 In Anbetracht der im \cref{sec:OOP} vorgestellten Verfahren erscheint der Ansatz
 der OOP bei der Erstellung eines Programms zur Simulation einer K\"alteslast mit
 K\"altespeicher im Energieversorgungsnetz auf der Basis des vorangegangenen
-Beispieles \cref{fig:vkb} als sinnvoll. In der \cref{fig:klassendiagramm} wird
-in Form eines Klassendiagramms das fertige Klassen-Modell dargestellt und die
+Beispieles \cref{fig:vkb} auf der Seite \pageref{fig:vkb} als sinnvoll. In der
+\cref{fig:klassendiagramm} auf der Seite \pageref{fig:klassendiagramm} wird in
+Form eines Klassendiagramms das fertige Klassen-Modell dargestellt und die
 Abh\"angigkeit unter Klassen visualisiert.
 
 \begin{figure}[h!]
@@ -84,25 +85,30 @@ An dieser Stelle werden die Eigenschaften und die Methoden der Klasse
 	K\"uhlung erreicht werden darf.
 	\item[averaged\_cooling\_room\_temperature] Durchschnittliche Temperatur
 	im Normalbetrieb.
-	\item[temperature\_history] $24\times 365$-Array mit den st\"undlichen
-	Werten des berechneten Temperaturverlaufes f\"ur alle simulierten Tage.
-	Die Werte sind das Ergebnis der Berechnung der Funktion
-	\textbf{main\_equation}.
-	\item[electric\_power\_consumption\_history] $24\times 365$-Array mit
-	den st\"undlich Werten des berechneten Verbrauchs der zur K\"uhlung
-	ben\"otigten elektrischen Leistung f\"ur alle simulierten Tage. Die
-	Werte sind das Ergebnis der Berechnung der Funktion
-	\textbf{main\_equation}.
+	\item[temperature\_history] $n \times m$-Array mit $(n,m)\in
+	\mathbb{Z}^+_0$, wobei $n$ f\"ur die Anzahl der Werten des berechneten
+	Temperaturverlaufes und $m$ f\"ur die Anzahl der simulierten Tage
+	stehen\todo{stehen oder steht?}. Die Werte sind das Ergebnis der
+	Berechnung der Funktion \textbf{main\_equation}. Eine Spalte des Arrays
+	stellt den Temperaturverlauf an genau einem Tag dar.
+	\item[electric\_power\_consumption\_history] $n \times m$-Array mit
+	$(n,m)\in \mathbb{Z}^+_0$, wobei $n$ f\"ur die Anzahl der Werten des
+	berechneten Verbrauchs und $m$ f\"ur die Anzahl der simulierten Tage
+	stehen\todo{stehen oder steht?}. Die Werte sind das Ergebnis der
+	Berechnung der Funktion \textbf{main\_equation}. Eine Spalte des Arrays
+	stellt den Verlauf des berechneten Verbrauches an genau einem Tag dar.
 	\item[averaged\_transmission\_losses] Summe aller durchschnittlichen
-	Transmissionsverluste im Normalbetrieb (vgl. \cref{aptrans}).
+	Transmissionsverluste im Normalbetrieb (vgl. \cref{aptrans} auf der
+	Seite \pageref{aptrans}).
 	\item[modified\_heat\_transmission\_coefficient] $1\times M$-Array mit
 	Werten aus der elementenweise Multiplikation des Vektors mit Werten der
 	spezifischen W\"armedurchgangskoeffizienten mit dem Vektor mit Werten
-	f\"ur die Durchgagnsfl\"achen (vgl. \cref{vmod}).
+	f\"ur die Durchgagnsfl\"achen (vgl. \cref{vmod} auf der Seite
+	\pageref{vmod}).
 	\item[increased\_demand\_heat\_power\_day] Mehrbedarf am Tag, aufgrund
 	der zus\"atzlichen Verluste durch Licht, Menschenk\"orperw\"arme,
 	T\"ur\"offnungszeiten und weiteren Einfl\"usse. Die Berechnung erfolgt
-	nach einer Auswahl zwischen \cref{pmehr} und der \cref{lverd} bis
+	nach einer Auswahl zwischen der \cref{pmehr} und der \cref{lverd} bis
 	\cref{spmehr} wie auf der Seiten \pageref{pmehr} und \pageref{spmehr}
 	beschrieben.
 
@@ -113,13 +119,14 @@ An dieser Stelle werden die Eigenschaften und die Methoden der Klasse
 \subsubsection*{Methoden}
 \begin{description}
 	\item[Refrigerator(fridge\_config,number\_steps,days)] Konstruktor der
-	Klasse.
+	Klasse. Bei dem Aufruf dieser Funktion werden folgende Argumente
+	\"ubergeben:
 	\begin{description}
 		\item[fridge\_config] $1 \times 2$-Cell Array
 		mit Modellparametern\footnote{ Die Form des Arrays ist
 		\"aquivalent zu genaue einer Zeile der in
-		\matref{csuper} vorgestellten Arrays, die die Modelle
-		der Superm\"arkte abbilden.}.
+		\matref{csuper} auf der Seite \pageref{csuper} vorgestellten
+		Arrays, die die Modelle der Superm\"arkte abbilden.}.
 		\item[number\_steps] Anzahl der Zeitschritte die einen
 		Tag beschreiben.
 		\item[days] Anzahl der zu simulierenden Tage.
@@ -134,40 +141,84 @@ An dieser Stelle werden die Eigenschaften und die Methoden der Klasse
 	\begin{description}
 		\item[averaged\_transmission\_losses] Summe aller
 		durchschnittlichen Transmissionsverluste im Normalbetrieb
-		(vergleiche \cref{aptrans}).
+		(vgl. \cref{aptrans} auf der Seite \pageref{aptrans}).
 		\item[modified\_heat\_transmission\_coefficient] $1\times
 		M$-Array mit Werten aus der elementenweise Multiplikation des
 		Vektors mit Werten der spezifischen
 		W\"armedurchgangskoeffizienten mit dem Vektor mit Werten f\"ur
-		die Durchgagnsfl\"achen (vgl. \cref{vmod}).
+		die Durchgagnsfl\"achen (vgl. \cref{vmod} auf der Seite
+		\pageref{vmod}).
 		\item[increased\_demand\_heat\_power\_day] Mehrbedarf am Tag ,
 		aufgrund der zus\"atzlichen Verluste durch Licht,
 		Menschenk\"orperw\"arme, T\"ur\"offnungszeiten und weiteren
-		Einfl\"usse. Die Berechnung erfolgt wie in der \cref{lverd} bis
-		\cref{spmehr} beschrieben.
+		Einfl\"usse. Die Berechnung erfolgt nach einer Auswahl
+		zwischen der \cref{pmehr} und der \cref{lverd} bis \cref{spmehr}
+		wie auf der Seiten \pageref{pmehr} und \pageref{spmehr}
+		beschrieben.
 	\end{description}
 
+	Folgende Attribute werden im Laufe der Simulation ver\"andert:
+	\begin{description}
+		\item[temperature\_history] $n \times m$-Array mit $(n,m)\in
+		\mathbb{Z}^+_0$, wobei $n$ f\"ur die Anzahl der Werten des
+		berechneten Temperaturverlaufes und $m$ f\"ur die Anzahl der
+		simulierten Tage stehen\todo{stehen oder steht?}. Die Werte sind
+		das Ergebnis der Berechnung der Funktion
+		\textbf{main\_equation}. Eine Spalte des Arrays stellt den
+		Temperaturverlauf an genau einem Tag dar.
+		\item[electric\_power\_consumption\_history] $n \times m$-Array
+		mit $(n,m)\in \mathbb{Z}^+_0$, wobei $n$ f\"ur die Anzahl der
+		Werten des berechneten Verbrauchs und $m$ f\"ur die
+		Anzahl der simulierten Tage stehen\todo{stehen oder steht?}. Die
+		Werte sind das Ergebnis der Berechnung der Funktion
+		\textbf{main\_equation}. Die Werte sind das Ergebnis der
+		Berechnung der Funktion \textbf{main\_equation}. Eine Spalte des
+		Arrays stellt den Verlauf des berechneten Verbrauches an genau
+		einem Tag dar.
+	\end{description}
 
-	\item[sum\_mass\_times\_capacity()] Berechnung die Summe der
-	Multiplikation aller Substansmassen mit der jeweiligen spezifischen
-	W\"armekapazit\"aten.
-	% \begin{equation}
-	% 	\centering
-	% 	\sum\limits_{i=1}^N{m_i \cdot c_i}
-	% \end{equation}
-	% \begin{description}
-	% 	\item[N] Anza\hl der Substanzmassen mit unterschiedlicher
-	% 	spezifischen W\"armekapazit\"at
-	% 	\item[$m_i$] konkrete Auspregung der Substanzmasse in $kg$
-	% 	\item[$c_i$] die zu der Masse korrespondierende spezifische
-	% 	W\"armekapazit\"at in $\frac{kJ}{kg\cdot K}$
-	% \end{description}
-	\item[sum\_transmission\_losses()] Berechnung die Summe der
-	Transmissionsverluste durch alle Durchgangsfl\"achen.
-	% \begin[equation]
-	% 	\centering
-	% 	
-	% \end[equation]
+	Folgende Attribute sind auf Grund der Annahmen dieser Studie konstant,
+	k\"onnen aber bei der bei einer Modifizierung der Annahmen im Laufe der
+	Simulation ver\"andert werden:
+	\begin{description}
+		\item[temperature\_outside\_fridge] Befindet sich der
+		K\"altespeicher au\ss erhalb geschlossener R\"aume und im
+		direkten Kontakt mit der Au\ss entemperatur, muss die
+		Temperatur\"anderung die im Tagesverlauf in Abh\"angigkeit von
+		der Jahreszeit entsteht, beachtet werden.
+		\item[mass\_stored] Wenn nicht mehr Angenommen wird, dass
+		die Substansmasse im Supermarkt im Laufe des Tages konstant ist,
+		sondern mit dem Konsumverhalten der Bev\"olkerung in
+		Abh\"angigkeit steht, muss eine Anpassung erfolgen.
+	\end{description}
+
+	\item[sum\_mass\_times\_capacity()] Der R\"uckgabewert dieser Funktion
+	ist die berechnete Summe aus elementenweise Multiplikation aller
+	Substansmassen mit der jeweiligen spezifischen W\"armekapazit\"aten. Der
+	Funktion werden keine explizite Argumente \"ubergeben. Die Funktion
+	greift direkt auf die Attribute \textbf{specific\_heat\_capacity} und
+	\textbf{mass\_stored} des Objektes zu\todo{Warum ist es n\"otig, die
+	Funktion expliziert zu schreiben?}.
+
+	\item[sum\_transmission\_losses()] Es gibt zwei R\"uckgabewerte dieser
+	Funktion. Der erste Wert ist die Summe der Transmissionsverluste (vgl.
+	\cref{aptrans} auf der Seite \pageref{ptrans}) durch alle
+	Durchgangsfl\"achen f\"ur den aktuellen Zeitpunkt und die aktuelle
+	K\"uhlraumtemperatur. Desweiteren wird die Summe der
+	Transimissionsverluste berechnet, die bei der oberen Grenze des
+	zugelassenen Temperaturbereiches entstehen. Die Kenntnis dieser Verluste
+	ist wichtig um die Zeitspanne absch\"atzen zu k\"onnen, bis obere
+	Temperaturgrenze erreicht wird. Die
+	\"Ubergabe folgender Argumente an die Funktion ist erforderlich:
+	\begin{description}
+		\item[number\_steps] Laufvariable. Gesamtzahl der zu
+		simuliertenden Zeitschrite f\"ur ein Tag.
+		\item[count\_number\_steps] Der aktuelle Wert von
+		\textbf{number\_steps}.
+		\item[count\_number\_day] Der aktuelle Wert von der Laufvariable
+		\textbf{count\_number\_day}.
+	\end{description}
+
 	\item[sum\_all\_losses()] Berechnung der Summe aller Verluste an K\"alte.
 	\item[capacity\_estimator()] Berechnung des Bedarfes an Leistung, die
 	n\"otig ist, um die vorhandene Substanzmasse in einer Stunde auf die
