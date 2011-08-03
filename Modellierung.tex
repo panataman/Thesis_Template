@@ -208,24 +208,56 @@ An dieser Stelle werden die Eigenschaften und die Methoden der Klasse
 	Transimissionsverluste berechnet, die bei der oberen Grenze des
 	zugelassenen Temperaturbereiches entstehen. Die Kenntnis dieser Verluste
 	ist wichtig um die Zeitspanne absch\"atzen zu k\"onnen, bis obere
-	Temperaturgrenze erreicht wird. Die
-	\"Ubergabe folgender Argumente an die Funktion ist erforderlich:
+	Temperaturgrenze erreicht wird (vgl. \cref{taukn} auf der Seite
+	\pageref{taukn}).
+
+	Die \"Ubergabe folgender Argumente an die Funktion ist erforderlich:
 	\begin{description}
 		\item[number\_steps] Laufvariable. Gesamtzahl der zu
-		simuliertenden Zeitschrite f\"ur ein Tag.
+		simulierenden Zeitschrite f\"ur ein Tag.
 		\item[count\_number\_steps] Der aktuelle Wert von
 		\textbf{number\_steps}.
 		\item[count\_number\_day] Der aktuelle Wert von der Laufvariable
-		\textbf{count\_number\_day}.
+		\textbf{number\_days}.
 	\end{description}
 
-	\item[sum\_all\_losses()] Es gibt drei R\"uckgabewerte dieser Funktion. Berechnung der Summe aller Verluste an K\"alte.
+	\item[sum\_all\_losses()] Es gibt zwei R\"uckgabewerte dieser Funktion.
+	Der erste R\"uckgabewert beinhaltet die Summe aller Verluste an K\"alte
+	(vgl. \cref{qv} auf der Seite \pageref{qv}).
+	Au\ss erhalb der \"Offnungszeiten entf\"allt der Anteil an
+	zus\"atzlichen Verlusten, die durch Licht, offene T\"uren und etc.
+	anfallen. Durch eine alternative Verzweigung, deren Bedingung die
+	Zugeh\"origkeit des aktuellen Wertes der Laufvariable
+	\textbf{count\_number\_steps} zu den \"Offnungszeiten ist, wird die
+	Ber\"ucksichtigung der zus\"atzlichen Verluste sichergestellt. Der
+	zweite Ruckgabewert ist die Zeitspanne bis zum Erreichen der kritischen
+	maximalen Temperatur (vgl. \cref{taukn} und \cref{taukd} auf den Seiten
+	\pageref{taukn} und \pageref{taukd}).
 
+	Die \"Ubergabe folgender Argumente an die Funktion ist erforderlich:
+	\begin{description}
+		\item[number\_steps] Laufvariable. Gesamtzahl der zu
+		simulierenden Zeitschrite f\"ur ein Tag.
+		\item[count\_number\_steps] Der aktuelle Wert von
+		\textbf{number\_steps}.
+		\item[count\_number\_day] Der aktuelle Wert von der Laufvariable
+		\textbf{number\_days}.
+		\item[number\_days] Laufvariable. Gesamtzahl der zu
+		simulierenden Tage.
+	\end{description}
 
-
-	\item[capacity\_estimator()] Berechnung des Bedarfes an Leistung, die
-	n\"otig ist, um die vorhandene Substanzmasse in einer Stunde auf die
-	Minimaltemperatur zu bringen.
+	\item[capacity\_estimator()] Die Funktion hat einen R\"uckgabewert.
+	Berechnet wird die maximal abzuf\"uhrende Wermeenergiemenge $\emax$
+	(vgl. die \cref{emax} auf der Seite \pageref{emax}).
+	\begin{description}
+		\item[count\_number\_steps] Der aktuelle Wert von
+		\textbf{number\_steps}.
+		\item[count\_number\_day] Der aktuelle Wert von der Laufvariable
+		\textbf{number\_days}.
+		\item[Q\_losses] Wert der aktuellen eindringenden
+		W\"armeenergie als Ergebnis der Funktion
+		\textbf{sum\_all\_losses()}.
+		\end{description}
 	\item[main\_equation()] Berechnung der Temperatur der Substanzmasse, die
 	die durch K\"uhlung am Ende eines Zeitschrittes erreicht wird.
 \end{description}
@@ -273,11 +305,11 @@ der Konfigurationsdateien wird in kommenden Abschnitten vorgenommen.
 \label{sc:handhabung}
 
 Das Programm ist ein Packet aus \matlab M-files zur Simulation von Kälteanlagen
-mit Kältespeichern in einem Energieversorgungsnetz. Das Simulationsprogramm ist in der
-Lage das Verhalten einer bzw. mehrerer Supermarktkälteanlagen als flexibler
-Verbraucher in einem Energieversorgungsnetz zu simulieren. Das Programm kann
-über eine vordefinierte Schnittstelle in ein Leistungsflussberechnungs-Programm
-eingebunden werden.
+mit Kältespeichern in einem Energieversorgungsnetz. Das Simulationsprogramm ist
+in der Lage das Verhalten einer bzw. mehrerer Supermarktkälteanlagen als
+flexibler Verbraucher in einem Energieversorgungsnetz zu simulieren. Das
+Programm kann über eine vordefinierte Schnittstelle in ein
+Leistungsflussberechnungs-Programm eingebunden werden.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

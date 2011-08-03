@@ -132,7 +132,7 @@ man z.B. in \cite{OOP},\cite{pepperOOP},\cite{java} oder \cite{python}.}
 	Klasse.
 
 	\item[Eigenschaften] Eigenschaften sind Variablen, die f\"ur jedes
-	Objekt existieren, die von einer Klasse erzeugt werden.
+	Objekt existieren.
 
 	\item[Methoden] Methoden sind objektlokale Funktionen.
 
@@ -414,6 +414,27 @@ Tagesmehrbedarf als weitgehend konstant angenommen.
 \end{description}
 \vspace{0.5cm}
 
+Die in den K\"uhlbereich eindringende Verlustw\"armemenge ist aufgrund der
+obengenannten Schlussfolgerungen je nach Tageszeit unterschiedlich.
+
+\begin{equation}
+	Q_v = \begin{cases}
+	1h \cdot \pnacht, & \text{au\ss erhalb der \"Offnungszeiten}\\
+	1h \cdot \ptag, & \text{innerhalb der \"Offnungszeiten.}
+	\end{cases}
+\label{qv}
+\end{equation}
+
+\begin{description}[\dth]
+
+	\item[$Q_v$] eindringende Verlustwärmemenge in $kJ$
+	\item[$\ptag$] Leistungsbedarf am Tag in $kW$
+	\item[$\pnacht$] Mehrbedarf am Tag in $kW$
+	\item[$h$] Zeiteinheit f\"ur Stunden
+
+\end{description}
+\vspace{0.5cm}
+
 Die Berechnung der mittleren Transmissionswärmeleistung erfolgt durch die
 Multiplikation der Differenz zwischen der Umgebungstemperatur und der mittleren
 Kühlraumtemperatur mit dem Wärmedurchgangskoeffizienten und der Fläche der
@@ -553,8 +574,8 @@ Supermarktkälteanlagen als Speicher zu planen. Mit der Gleichung
 	\item[$m$] Substanzmasse zur Aufnahme der Wärmeenergie in $kg$
 	\item[$c$] Spezifische Wärmekapazität der Substanzmasse in $\frac{kJ}{kg
 		\cdot K}$
-	\item[$t_{max}$] obere Temperaturgrenze in $ ^{\circ} C $
-	\item[$t(i)$] Temperatur zur Stunde $i$ in $ ^{\circ} C $
+	\item[$t_{max}$] obere Temperaturgrenze in $ \grad C $
+	\item[$t(i)$] Temperatur zur Stunde $i$ in $ \grad C $
 	\item[$\aptranslog$] logrithmierte Mittelwert der
 		Transmissionswärmeleistung in $kW$
 \end{description}
@@ -572,7 +593,7 @@ Temperatur berücksichtigt werden, wodurch sich folgende Gleichung ergibt:
 
 \begin{equation}
 	\tau_{krit}(i) = \frac{m \cdot c \cdot (t_{max} -
-		t(i))}{{\overline{\dot{Q}}_{Tr_{ln}}} + \pmehr}
+		t(i))}{\aptranslog(i) + \pmehr}
 \label{taukd}
 \end{equation}
 
@@ -615,4 +636,22 @@ Temperatur ist damit:
 \vspace{0.5cm}
 
 wobei $Q_v$ die aktuell eindringende Wärmeenergie und $Q_{ab}$ die abgeführte
-Wärmeenergie ist.
+Wärmeenergie ist\todo{die nachfolgende Gleichung geh\"ort nicht dahin! oder?}.
+
+\begin{equation}
+	\emax = m \cdot c \cdot (t(i) - t_{max}) + Q_v
+\label{emax}
+\end{equation}
+
+\begin{description}[\dth]
+
+	\item[$\emax$] maximal abzuf\"uhrende W\"armeenergiemenge in $kJ$
+	\item[$m$] Substanzmasse zur Aufnahme der Wärmeenergie in $kg$
+	\item[$c$] Spezifische Wärmekapazität der Substanzmasse in $\frac{kJ}{kg
+		\cdot K}$
+	\item[$Q_v$] eindringende Verlustwärmemenge in $kJ$
+	\item[$t_{min}$] obere Temperaturgrenze in $ \grad C $
+	\item[$t(i)$] Temperatur zur Stunde $i$ in $ \grad C $
+
+\end{description}
+\vspace{0.5cm}
