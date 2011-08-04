@@ -249,6 +249,8 @@ An dieser Stelle werden die Eigenschaften und die Methoden der Klasse
 	\item[capacity\_estimator()] Die Funktion hat einen R\"uckgabewert.
 	Berechnet wird die maximal abzuf\"uhrende Wermeenergiemenge $\emax$
 	(vgl. die \cref{emax} auf der Seite \pageref{emax}).
+
+	Die \"Ubergabe folgender Argumente an die Funktion ist erforderlich:
 	\begin{description}
 		\item[count\_number\_steps] Der aktuelle Wert von
 		\textbf{number\_steps}.
@@ -257,9 +259,24 @@ An dieser Stelle werden die Eigenschaften und die Methoden der Klasse
 		\item[Q\_losses] Wert der aktuellen eindringenden
 		W\"armeenergie als Ergebnis der Funktion
 		\textbf{sum\_all\_losses()}.
-		\end{description}
-	\item[main\_equation()] Berechnung der Temperatur der Substanzmasse, die
-	die durch K\"uhlung am Ende eines Zeitschrittes erreicht wird.
+	\end{description}
+	\item[temperature\_change()] Die Funktion hat einen R\"uckgabewert.
+	Berechnet wird die Temperatur der Substanzmasse, die durch K\"uhlung am
+	Ende eines Zeitschrittes erreicht wird (vgl. die \cref{tns} auf der
+	Seite \pageref{tns}).
+	
+	Die \"Ubergabe folgender Argumente an die Funktion ist erforderlich:
+	\begin{description}
+		\item[number\_steps] Laufvariable. Gesamtzahl der zu
+		simulierenden Zeitschrite f\"ur ein Tag.
+		\item[count\_number\_steps] Der aktuelle Wert von
+		\textbf{number\_steps}.
+		\item[count\_number\_day] Der aktuelle Wert von der Laufvariable
+		\textbf{number\_days}.
+		\item[Q\_losses] Wert der aktuellen eindringenden
+		W\"armeenergie als Ergebnis der Funktion
+		\textbf{sum\_all\_losses()}.
+	\end{description}
 \end{description}
 
 Alle Klassen haben einen unterschiedlichen Status. Die Klasse
