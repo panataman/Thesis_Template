@@ -111,9 +111,10 @@ An dieser Stelle werden die Eigenschaften und die Methoden der Klasse
 	nach einer Auswahl zwischen der \cref{pmehr} und der \cref{lverd} bis
 	\cref{spmehr} wie auf der Seiten \pageref{pmehr} und \pageref{spmehr}
 	beschrieben.
-
 	\item[factor\_cooling\_reducer] Faktor f\"ur K\"altebedarfsabsenkung
 	infolge der Luftfeuchte und der Umgebungstemperatur.
+	\item[fridge\_number\_scale] Anzahl der Anlagen mit der identischen
+	technischen Ausf\"uhrung, der Beladung und dem Fahrplan.
 \end{description}
 
 \subsubsection*{Methoden}
@@ -315,6 +316,42 @@ der erzeugten Objekte h\"angt davon ab, wie oft die Konstruktor-Funktion der
 jeweiligen Klasse aufgerufen wird. Diese Zahlen werden in Konfigurationsdateien
 abh\"angig von dem untersuchten Fall festgelegt. Die ausf\"uhrliche Erkl\"arung
 der Konfigurationsdateien wird in kommenden Abschnitten vorgenommen.
+
+\subsection*{Bereitstellung der Leistung zur K\"alteerzeugung}
+
+Der augenblickliche Gleichgewicht zwischen dem K\"altebedarf und der zur
+Verf\"ugung stehenden K\"alteleistung sichert die Einhaltung der Soll-Temperatur
+der K\"uhlg\"uter. Werden die K\"alteanlagen als Energiespeicher zur Regelung
+eingesetzt, so f\"uhrt das auf Grund der fluktuierenden zur Verf\"ugung
+stehenden K\"alteleistung zu Temperaturschwankungen. Die engen Grenzen des
+zul\"assigen Temperaturbandes d\"urfen nicht \"uberschritten werden.
+
+Verschiedene Konzepte f\"ur den Einsatz der K\"alteanlagen als Energiespeicher
+im Energieversorgungsnetz sind denkbar. Im folgenden Abschnitt wird die
+Implementierung eines m\"oglicher Kooperationskonzept zwischen Supermarkt und
+Windpark vorgestellt.
+
+Der Windpark ist bestrebt die Verpflichtung \"uber die Bereitstellung von
+Leistung beim Netzbetreiber zu erf\"uhlen. Abweichungen, die aufgrund der
+fehlerhaften Windprognosen entstehen, sollen durch die Kooperation mit
+Supermarktketten ausgeglichen werden.
+
+Es wird angenommen, dass der Prognosefehler von der Windleistungsvorhersage
+f\"ur 24 h den 15 \% entspricht. Der Windparkbetreiber meldet beim Netzbetreiber
+die untere Grenze, also 85 \% von der Windleistungsvorhersage, an. Der
+Supermarkt besitzt einen st\"undlichen Bedarf, der unbedingt gedeckt werden
+muss. Sind die 15 \% von der Prognose kleiner als der st\"undliche Bedarf, wird
+die Differenz aus dem Netz gezogen. Diese Abweichung wird beim Netzbetreiber zur
+Erstellung des Lastfahrplanes mitgeteilt. \"Ubersteigt der Prognosefehler die 15
+\%, versucht der Supermarkt diesen \"Uberschuss zu neutralisieren.
+
+Die prognostizierten elektrischen Windleistungsdaten und die tatsächlich vom
+Windpark produzierten elektrischen Windleistungsdaten der Vattenfall-Regelzone
+\todo{was ist das heute?} aus dem Jahr 2005 werden als Grundlage-Datensatz zur
+Implementierung des Kooperationskonzeptets verwendet. Im Datensatz sind
+Stundenwerte von Windleistung gespeichert weshalb in diesem Fall auch von
+Energie gesprochen werden kann.
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
