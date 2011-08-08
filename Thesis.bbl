@@ -1,0 +1,114 @@
+\begin{thebibliography}{10}
+
+\bibitem{MATLAB-Buch}
+{Angermann, Beuschel, Rau und Wohlfarth}.
+\newblock {\em MATLAB - Simulink - Stateflow: Grundlagen, Toolboxen,
+  Beispiele}.
+\newblock Oldenbourg, München, 6., aktualis. aufl. edition, 2009.
+
+\bibitem{doctor}
+Jaime Arias.
+\newblock {\em {Energy Usage in Supermarkets - Modelling und Field
+  Measurements}}.
+\newblock text, {Royal Institute of Technology}, KTH, Energy Technology ;
+  Stockholm, 2005.
+
+\bibitem{OOP}
+{Bernhard Lahres und Gregor Rayman}.
+\newblock {\em Objektorientierte Programmierung. das umfassende Handbuch}.
+\newblock Galileo computing. Galileo Press, Bonn, 2., aktualisierte und erw.
+  aufl. edition, 2009.
+
+\bibitem{EANRW}
+EnergieAgentur.NRW.
+\newblock {Energieeffizienz im Lebensmittel-Einzelhandel}.
+\newblock URL:
+  \url{http://www.energieagentur.nrw.de/unternehmen/page.asp?TopCatID=3695&Cat%
+ID=3721&RubrikID=3743}~(Zugriff am 20. Juli 2011).
+
+\bibitem{kauffeld}
+Michael Kauffeld.
+\newblock {\em Stand der Technik von Supermarktkälteanlagen. Umwelteinfluss
+  und Entwicklungspotential}.
+\newblock 2008.
+
+\bibitem{regelung}
+Martin Kleimaier.
+\newblock {Netzintegration von Strom aus erneuerbaren Energiequellen:
+  Zunehmende dezentrale Einspeisung erfordert eine Umrüstung der Netze}.
+\newblock {\em Energy 2.0}, 1(7):45--47, 2008.
+
+\bibitem{leghart}
+F.A.T.M. Ligthart.
+\newblock {Untersuchung zur Möglichkeit einer Abdeckung von Kühl- und
+  Tiefkühlmobiliar in Supermärkten }.
+\newblock Technical Report {ECN-E--08-009}, ECN Energy in the Built
+  Environment, 2008.
+
+\bibitem{solarvorhersagung}
+Elke Lorenz, Johannes Hurka, and Detlev Heinemann.
+\newblock Solarleistungsvorhersage zur netzintegration von solarstrom.
+\newblock {\em 24. Symposium Photovoltaische Solarenergie : 04. - 06. M\"arz
+  2009, Kloster Banz, Bad Staffelstein}, page~6, 2009.
+
+\bibitem{australia}
+Sean McGowan.
+\newblock {Supermarket refrigeration going natural}.
+\newblock {\em HVAC\&R Nation}, pages 8--9, 2007.
+
+\bibitem{caro}
+Caroline Möller.
+\newblock {Spezifikation und Simulation einer Kältelast mit Kältespeicher im
+  Energieversorgungsnetz}.
+\newblock Diplomarbeit, {Technische Universität Berlin}, {Berlin}, Juli 2010.
+
+\bibitem{pepperOOP}
+P.~Pepper.
+\newblock {\em Programmieren lernen: Eine grundlegende Einf{\\"u}hrung mit
+  Java}.
+\newblock Springer, 2008.
+
+\bibitem{java}
+Arnd Poetzsch-Heffter.
+\newblock {\em Konzepte Objektorientierter Programmierung: Mit Einer
+  Einführung in Java}.
+\newblock Springer, Berlin, 2009.
+
+\bibitem{probst}
+J~Probst.
+\newblock {Ein Netzwerk für effiziente Kältetechnik.}
+\newblock URL:
+  \url{http://www.energieagentur.nrw.de/unternehmen/page.asp?TopCatID=3695&Cat%
+ID=3721&RubrikID=3743}~(Zugriff am 20. Juli 2011), 2009.
+
+\bibitem{TAB_A1}
+{Risto Ciconkov und Arnd Hilligweg}.
+\newblock {Simulationsprogramme für Kälteanlagen Einsatz in Ausbildung und
+  Praxis}.
+\newblock {\em Technik im Bau, Fachzeitschrift für Technische
+  Gebäudeausrüstung}, 77(3):64--70, 2004.
+
+\bibitem{matlab_kompakt}
+W.~Schweizer.
+\newblock {\em MATLAB kompakt}.
+\newblock Oldenbourg Wissensch.Vlg, 2009.
+
+\bibitem{steilme}
+F.~Steimle, H.~Kruse, E.~Wobst, and et~al.
+\newblock {Energiebedarf für die technische Erzeugung von Kälte.}
+\newblock Technical Report {Statusbericht Nr. 22}, {Deutscher Kälte- und
+  Klimatechnische Verein (DKV) e.V.}, Stuttgart, 2002.
+
+\bibitem{prognose_doctor}
+Steve Völler.
+\newblock {\em Optimierte Betriebsführung von Windenergieanlagen durch
+  Energiespeicher Elektronische Ressource}.
+\newblock Universitätsbibliothek Wuppertal, Wuppertal, 2010.
+
+\bibitem{python}
+Michael Weigend.
+\newblock {\em Objektorientierte Programmierung mit Python 3. Einstieg, Praxis,
+  professionelle Anwendung}.
+\newblock mitp-Verl., Heidelberg u.a., 4., aktualisierte aufl. edition, 2010.
+
+\end{thebibliography}

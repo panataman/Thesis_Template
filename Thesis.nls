@@ -1,0 +1,14 @@
+\begin{thenomenclature} 
+
+ \nomgroup{A}
+
+  \item [{NK\_KR\_V}]\begingroup normalgekühltes Kühltregal an Verbundanlage\nomeqref {3.0}
+		\nompageref{12}
+  \item [{NK\_KT\_S}]\begingroup normalgekühlte Kühltruhe steckerfertig\nomeqref {3.0}
+		\nompageref{12}
+  \item [{OOP}]\begingroup objektorientierte Programmierung\nomeqref {1.0}
+		\nompageref{2}
+  \item [{TK\_TKT\_S}]\begingroup tiefgekühlte Tiefkühltruhe steckerfertig\nomeqref {3.0}
+		\nompageref{12}
+
+\end{thenomenclature}

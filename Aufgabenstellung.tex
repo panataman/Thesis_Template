@@ -1,0 +1,44 @@
+\chapter{Aufgabenstellung}
+\label{chap:aufst}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Die Intention der Arbeit, ist der objektorientierte Entwurf eines
+\matlab-Programms zur Simulation des variablen Lastverhaltens von Kältelasten
+mit Kältespeichern im Energieversorgungsnetz. 
+
+Es sollen ausschlie\ss lich K\"alteanlagen modelliert werden, die in den
+Superm\"arkten zum Einsatz kommen. Das Ergebnis der Simulation soll der
+Verbrauch einer variabel gef\"uhrten Supermarktkette auf der Basis der einzelnen
+in den Superm\"arkten eingesetzten K\"alteanlagen sein.
+
+Verbrauchswerte in einem Lastflussoptimierungsprogramm zu verwenden.
+
+\section*{Explizite Anforderungen}
+
+Folgende explizite Anforderungen sind an das Programm gestellt:
+
+\begin{itemize}
+	\item Die Speicherung der f\"ur das Beschreiben der Modelle
+	erforderlichen Parameter findet in einer Konfigurationsdatei statt.
+	\item Der elektrische Energieverbrauch wird auf Grund der
+	Modellparameter der Kältelasten sowie des gefahrenen Einsatzes der
+	Kältelasten berechnet.
+	\item Die Topologie des elektrischen Netzwerkes werden ber\"ucksichtigt.
+	\item Die M\"oglichkeit einer eindeutigen Zuweisung der Verbrauchswerte
+	f\"ur folgende Verursacher wird realisiert:
+	\begin{itemize}
+		\item Daten f\"ur jede K\"alteanlage werden einzeln gespeichert,
+		wenn der Verbrauch mehrerer Anlagen simuliert wird.
+		\item Daten f\"ur jede Supermarktkette werden einzeln
+		gespeichert, wenn der Verbrach mehrerer Supermarktketten
+		simuliert wird.
+		\item Erfolgt die Simulation des Energieverbrauchs f\"ur ein
+		Mehrknotennetz, so werden die Daten f\"ur jeden Knoten, einzeln
+		gespeichert.
+	\end{itemize}
+\end{itemize}
+
+

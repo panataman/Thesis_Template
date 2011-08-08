@@ -1,0 +1,24 @@
+\select@language {ngerman}
+\contentsline {chapter}{Abbildungsverzeichnis}{iv}{chapter*.4}
+\contentsline {chapter}{Tabellenverzeichnis}{v}{chapter*.5}
+\contentsline {chapter}{\textsc {Matlab\textsuperscript {\textsf {\textregistered }}}\tmspace +\thinmuskip {.1667em}-Code Verzeichnis}{vi}{chapter*.6}
+\contentsline {chapter}{Abk{\"u}rzungsverzeichnes}{vii}{chapter*.7}
+\contentsline {xchapter}{}{vii}{chapter*.7}
+\contentsline {chapter}{\numberline {1}Einleitung}{1}{chapter.1}
+\contentsline {chapter}{\numberline {2}Theorie}{2}{chapter.2}
+\contentsline {section}{\numberline {2.1}Erneuerbare Energien im Energieversorgungsnetz}{2}{section.2.1}
+\contentsline {section}{\numberline {2.2}K\"alteerzeugung im Supermarkt: Potentiale und Besonderheiten}{3}{section.2.2}
+\contentsline {section}{\numberline {2.3}Objektorientierte Programmierung mit \textsc {Matlab\textsuperscript {\textsf {\textregistered }}}\tmspace +\thinmuskip {.1667em}}{4}{section.2.3}
+\contentsline {section}{\numberline {2.4}Einf\"uhrung in die K\"altetechnik}{6}{section.2.4}
+\contentsline {chapter}{\numberline {3}Aufgabenstellung}{14}{chapter.3}
+\contentsline {chapter}{\numberline {4}Modellierung}{15}{chapter.4}
+\contentsline {section}{\numberline {4.1}Erstellung des OOP-Modells}{15}{section.4.1}
+\contentsline {section}{\numberline {4.2}Handhabung des Programms}{24}{section.4.2}
+\contentsline {subsubsection}{\numberline {4.2.0.1}Systemanforderungen}{24}{subsubsection.4.2.0.1}
+\contentsline {subsubsection}{\numberline {4.2.0.2}Installation}{24}{subsubsection.4.2.0.2}
+\contentsline {subsubsection}{\numberline {4.2.0.3}Aufruf der Simulation}{24}{subsubsection.4.2.0.3}
+\contentsline {subsubsection}{\numberline {4.2.0.4}Deklamation der berechneten Daten}{29}{subsubsection.4.2.0.4}
+\contentsline {subsubsection}{\numberline {4.2.0.5}Tabellarische Ausgabe im Command-Window und Exel}{29}{subsubsection.4.2.0.5}
+\contentsline {chapter}{\numberline {A}Anhang}{31}{appendix.A}
+\contentsline {section}{\numberline {A.1}Anhang Example section}{31}{section.A.1}
+\contentsline {chapter}{Literaturverzeichnis}{32}{section*.50}

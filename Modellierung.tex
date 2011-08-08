@@ -331,26 +331,105 @@ im Energieversorgungsnetz sind denkbar. Im folgenden Abschnitt wird die
 Implementierung eines m\"oglicher Kooperationskonzept zwischen Supermarkt und
 Windpark vorgestellt.
 
-Der Windpark ist bestrebt die Verpflichtung \"uber die Bereitstellung von
-Leistung beim Netzbetreiber zu erf\"uhlen. Abweichungen, die aufgrund der
-fehlerhaften Windprognosen entstehen, sollen durch die Kooperation mit
-Supermarktketten ausgeglichen werden.
-
-Es wird angenommen, dass der Prognosefehler von der Windleistungsvorhersage
-f\"ur 24 h den 15 \% entspricht. Der Windparkbetreiber meldet beim Netzbetreiber
-die untere Grenze, also 85 \% von der Windleistungsvorhersage, an. Der
-Supermarkt besitzt einen st\"undlichen Bedarf, der unbedingt gedeckt werden
-muss. Sind die 15 \% von der Prognose kleiner als der st\"undliche Bedarf, wird
-die Differenz aus dem Netz gezogen. Diese Abweichung wird beim Netzbetreiber zur
-Erstellung des Lastfahrplanes mitgeteilt. \"Ubersteigt der Prognosefehler die 15
-\%, versucht der Supermarkt diesen \"Uberschuss zu neutralisieren.
-
 Die prognostizierten elektrischen Windleistungsdaten und die tatsächlich vom
 Windpark produzierten elektrischen Windleistungsdaten der Vattenfall-Regelzone
 \todo{was ist das heute?} aus dem Jahr 2005 werden als Grundlage-Datensatz zur
 Implementierung des Kooperationskonzeptets verwendet. Im Datensatz sind
 Stundenwerte von Windleistung gespeichert weshalb in diesem Fall auch von
 Energie gesprochen werden kann.
+
+Der Windpark ist bestrebt die Verpflichtung \"uber die Bereitstellung von
+Leistung beim Netzbetreiber zu erf\"uhlen. Abweichungen, die aufgrund der
+fehlerhaften Windprognosen entstehen, sollen durch die Kooperation mit
+Supermarktketten ausgeglichen werden.
+
+Es wird angenommen, dass der Prognosefehler von der Windleistungsvorhersage
+f\"ur 24 h den 15\% entspricht. Der Windparkbetreiber meldet beim Netzbetreiber
+die untere Grenze, also 85\% von der Windleistungsvorhersage, an. Der
+Supermarkt besitzt einen st\"undlichen Bedarf, der unbedingt gedeckt werden
+muss. Sind die 15\% von der Prognose kleiner als der st\"undliche Bedarf, wird
+die Differenz aus dem Netz gezogen. Diese Abweichung wird beim Netzbetreiber zur
+Erstellung des Lastfahrplanes mitgeteilt. \"Ubersteigt der Prognosefehler die
+15\%, versucht der Supermarkt diesen \"Uberschuss zu neutralisieren.
+
+Die vom Windparkbetreiber beim Netzbetreiber anzumeldende Leistung wird
+berechnet, indem von der Windleistungsvorhersage die 85\% bestimmt werden
+oder der st\"undliche Bedarf des Supermarktes abgezogen wird, wenn die 15\%
+kleiner als der st\"undliche Bedarf sind.
+\begin{equation*}
+	b = 0.85 \cdot P_{DA}
+\end{equation*}
+oder
+\begin{equation*}
+	b = P_{DA} - P_{dem}\\
+	\label{b}
+\end{equation*}
+
+ \begin{description}[\dth]
+	\item[$b$] Leistung, die vom Windparkbetreiber beim Netzbetreiber
+	angemeldet wird in $MW$
+	\item[$P_{DA}$] Vorhersage der Windleistung (day ahead) in $MW$
+	\item[$P_{dem}$] st\"undlicher Leistungsbedarf des Supermarkts (demand)
+	$MW$
+ \end{description} \vspace{0.5cm}
+
+Die vom Windparkbetreiber dem Supermarkt versprochene Leistung wird berechnet,
+indem von der Windleistungsvorhersage die 15\% bestimmt werden oder nur der
+st\"undliche Bedarf, wenn die 15\% kleiner als der st\"undliche Bedarf sind.
+\begin{equation*}
+	a = 0.15 \cdot P_{DA}\\
+\end{equation*}
+oder
+\begin{equation*}
+	a = P_{dem}\\
+	\label{b}
+\end{equation*}
+
+\begin{description}[\dth]
+	\item[$a$] Leistung, die vom Windparkbetreiber dem Supermarkt
+	versprochen wird in $MW$
+	\item[$P_{DA}$] Vorhersage der Windleistung (day ahead) in $MW$
+	\item[$P_{dem}$] st\"undlicher Leistungsbedarf des Supermarkts (demand)
+	$MW$
+\end{description} \vspace{0.5cm}
+
+Die Leistung, die insgesamt den K\"alteanlagen zur Verf\"ugung steht, berechnet
+sich nach der \cref{pload}. Der Ausdruck $P_{RT} - b$ bedeutet die
+\"ubersch\"ussige Windleistung. Der Ausdruck $P_{dem} - a$  bedeutet die vom
+Supermarkts beim Netzbetreiber nicht abgemeldete Leistung.
+
+\begin{equation}
+	P_{load} = P_{RT} - b + P_{dem} - a
+	\label{pload}
+\end{equation}
+\begin{description}[\dth]
+	\item[$P_{load}$] vorhandene Leistung zum Laden in $MW$
+	\item[$a$] Leistung, die vom Windparkbetreiber dem Supermarkt
+	versprochen wird in $MW$
+	\item[$P_{dem}$] st\"undlicher Leistungsbedarf des Supermarkts (demand)
+	$MW$
+\end{description} \vspace{0.5cm}
+
+\subsubsection*{Implementierung}
+Die Implementierung des Kooperationskonzeptetes erfordert eine neue Klasse
+\textbf{Cooling\_strategy}. Diese Klasse hat die Aufgabe jeder K\"uhlstelle in
+jedem Supermarkt im Netz die aufgrund des  Kooperationskonzeptetes und der
+Temperaturbeschr\"ankungen optimale Menge an K\"alteleistung zuzuweisen. Die zur
+Verf\"ugung vorhandene Leistung wird auf alle K\"uhlstellen gleichm\"a\ss ig
+aufgeteilt bis keine Leistung mehr zur Verf\"ugung steht oder die
+Minimaltemperatur erreicht wird. Alle K\"uhlstellen sollen zu jeder Stunde
+mindestens soviel Leistung zugewiesen bekommen, dass genau diese eine Stunde
+\"uberbr\"uckt werden kann, ohne dass die H\"ochsttemperatur \"uberschritten
+wird.
+
+\begin{figure}[h]
+\caption{Sequenzdiagramm Kooperationsstrategie}
+	\label{fig:uml_coop}
+	\begin{center}
+		\includegraphics[scale=1]{images/Theorie_Super/sequence_two}
+	\end{center}
+\end{figure}
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
