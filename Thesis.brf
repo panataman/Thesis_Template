@@ -1,5 +1,5 @@
-\backcite {prognose_doctor}{{2}{[section][1][2]2.1}{section*.13}}
-\backcite {solarvorhersagung}{{2}{[section][1][2]2.1}{section*.13}}
+\backcite {prognose_doctor}{{2}{[section][1][2]2.1}{section*.14}}
+\backcite {solarvorhersagung}{{2}{[section][1][2]2.1}{section*.14}}
 \backcite {leghart, EANRW}{{3}{[section][2][2]2.2}{section.2.2}}
 \backcite {leghart}{{3}{[section][2][2]2.2}{section.2.2}}
 \backcite {probst}{{3}{[section][2][2]2.2}{section.2.2}}
@@ -13,11 +13,11 @@
 \backcite {matlab_kompakt}{{5}{2}{Hfootnote.2}}
 \backcite {caro, doctor, TAB_A1}{{7}{3}{Hfootnote.3}}
 \backcite {kauffeld}{{9}{[section][4][2]2.4}{equation.2.4.4}}
-\backcite {MATLAB-Buch}{{24}{3}{Hfootnote.6}}
-\backcite {MATLAB-Buch}{{25}{[subsubsection][3][4,2,0]4.2.0.3}{lstnumber.4.1.8}}
-\backcite {caro}{{27}{4}{Hfootnote.7}}
-\backcite {caro}{{29}{6}{Hfootnote.9}}
-\backcite {caro}{{31}{[subappendix][1][{2147483647}1]A.1}{section.A.1}}
-\backcite {MATLAB-Buch}{{31}{[subappendix][1][{2147483647}1]A.1}{section.A.1}}
-\backcite {TAB_A1}{{31}{[subappendix][1][{2147483647}1]A.1}{section.A.1}}
-\backcite {caro,doctor,prognose_doctor,MATLAB-Buch,java,python,TAB_A1,OOP,australia,regelung,EANRW,solarvorhersagung}{{32}{[subappendix][1][{2147483647}1]A.1}{section.A.1}}
+\backcite {MATLAB-Buch}{{26}{3}{Hfootnote.6}}
+\backcite {MATLAB-Buch}{{28}{[subsubsection][3][4,2,0]4.2.0.3}{lstnumber.4.1.8}}
+\backcite {caro}{{29}{4}{Hfootnote.7}}
+\backcite {caro}{{31}{6}{Hfootnote.9}}
+\backcite {caro}{{33}{[subappendix][1][{2147483647}1]A.1}{section.A.1}}
+\backcite {MATLAB-Buch}{{33}{[subappendix][1][{2147483647}1]A.1}{section.A.1}}
+\backcite {TAB_A1}{{33}{[subappendix][1][{2147483647}1]A.1}{section.A.1}}
+\backcite {caro,doctor,prognose_doctor,MATLAB-Buch,java,python,TAB_A1,OOP,australia,regelung,EANRW,solarvorhersagung}{{34}{[subappendix][1][{2147483647}1]A.1}{section.A.1}}

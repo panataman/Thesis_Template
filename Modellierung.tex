@@ -17,16 +17,16 @@ dargestellt. Am Knoten eins ist eine regenerative elektrische Energiequelle, in
 diesem Fall ein Windpark, angeschlossen. Weitere konventionelle elektrische
 Energiequellen befinden sich an den Knoten zwei und drei. Die passiven Lasten
 befinden sich am Knoten zwei und vier. Der Kältespeicher ist am Knoten zwei
-angeschlossen. Im Bild wird der Kältespeicher Supermarkt durch einen
-Einkaufswagen symbolisiert. Die Knoten sind untereinander durch Leitungen
+angeschlossen. Im Bild wird der Kältespeicher Supermarkt durch ein Geb\"aude
+mit Einkaufswagen dargestellt. Die Knoten sind untereinander durch Leitungen
 verbunden.
 
 \begin{figure}[h]
-\caption{Vier Knoten Beispiel}
-	\label{fig:vkb}
 	\begin{center}
 	\includegraphics[scale=0.75]{images/SEVN/power_grid}
 	\end{center}
+\caption{Vier Knoten Beispiel}
+\label{fig:vkb}
 \end{figure}
 
 \noindent In der Realität kann ein Energieversorgungsnetz durch die Variation
@@ -35,17 +35,17 @@ der Knotenzahl und die Vermaschung beliebig komplizierte Form aufweisen. \\
 In Anbetracht der im \cref{sec:OOP} vorgestellten Verfahren erscheint der Ansatz
 der OOP bei der Erstellung eines Programms zur Simulation einer K\"alteslast mit
 K\"altespeicher im Energieversorgungsnetz auf der Basis des vorangegangenen
-Beispieles \cref{fig:vkb} auf der Seite \pageref{fig:vkb} als sinnvoll. In der
+Beispiels (\cref{fig:vkb} auf der Seite \pageref{fig:vkb}) als sinnvoll. In der
 \cref{fig:klassendiagramm} auf der Seite \pageref{fig:klassendiagramm} wird in
 Form eines Klassendiagramms das fertige Klassen-Modell dargestellt und die
 Abh\"angigkeit unter Klassen visualisiert.
 
 \begin{figure}[h!]
-\caption{Klassendiagramm Modellkonstrukt}
-	\label{fig:klassendiagramm}
 	\begin{center}
 	\includegraphics[scale=0.7]{images/Theorie_Super/class_new_diagramm}
 	\end{center}
+\caption{Klassendiagramm Modellkonstrukt}
+\label{fig:klassendiagramm}
 \end{figure}
 
 Das Ergebnis der Abstraktion sind vier Klassen. In der Klasse
@@ -112,7 +112,7 @@ An dieser Stelle werden die Eigenschaften und die Methoden der Klasse
 	\cref{spmehr} wie auf der Seiten \pageref{pmehr} und \pageref{spmehr}
 	beschrieben.
 	\item[factor\_cooling\_reducer] Faktor f\"ur K\"altebedarfsabsenkung
-	infolge der Luftfeuchte und der Umgebungstemperatur.
+	infolge der Luftfeuchtigkeit und der Umgebungstemperatur.
 	\item[fridge\_number\_scale] Anzahl der Anlagen mit der identischen
 	technischen Ausf\"uhrung, der Beladung und dem Fahrplan.
 \end{description}
@@ -285,17 +285,17 @@ Alle Klassen haben einen unterschiedlichen Status. Die Klasse
 Energieversorgungsnetzes, welches aus charakteristischen Teilen, den Knoten
 (\textbf{Bus}) besteht. Die Existenz eines Knotens au\ss erhalb eines Netzes
 ergibt f\"ur die Berechnung keinen Sinn. Dieser Zusammenhang zwischen Klassen
-wird im Klassendiagramm durch eine Linienverbindung verdeutlicht. Auf der Seite
-des Ganzen endet die Linie mit einem ausgef\"ullten Rhombus. Das komplette
-Modell ist nach diesem Prinzip aufgestellt. Die kleinste Einheit des Ganzen
-stellt die K\"alteanlage (\textbf{Refrigerator}) dar.
+wird im Klassendiagramm \cref{fig:klassendiagramm} durch eine Linienverbindung
+verdeutlicht. Auf der Seite des Ganzen endet die Linie mit einem ausgef\"ullten
+Rhombus. Das komplette Modell ist nach diesem Prinzip aufgestellt. Die kleinste
+Einheit des Ganzen stellt die K\"alteanlage (\textbf{Refrigerator}) dar.
 
 \begin{figure}[h]
-\caption{Sequenzdiagramm Modellkonstrukt}
-	\label{fig:uml_sequence}
 	\begin{center}
 		\includegraphics[scale=0.8]{images/Theorie_Super/sequence_one}
 	\end{center}
+\caption{Sequenzdiagramm Modellkonstrukt}
+\label{fig:uml_sequence}
 \end{figure}
 
 Auf Grund des Modells wird das elektrische Verhalten einer
@@ -334,7 +334,7 @@ Windpark vorgestellt.
 Die prognostizierten elektrischen Windleistungsdaten und die tatsächlich vom
 Windpark produzierten elektrischen Windleistungsdaten der Vattenfall-Regelzone
 \todo{was ist das heute?} aus dem Jahr 2005 werden als Grundlage-Datensatz zur
-Implementierung des Kooperationskonzeptets verwendet. Im Datensatz sind
+Implementierung des Kooperationskonzeptes verwendet. Im Datensatz sind
 Stundenwerte von Windleistung gespeichert weshalb in diesem Fall auch von
 Energie gesprochen werden kann.
 
@@ -411,9 +411,9 @@ Supermarkts beim Netzbetreiber nicht abgemeldete Leistung.
 \end{description} \vspace{0.5cm}
 
 \subsubsection*{Implementierung}
-Die Implementierung des Kooperationskonzeptetes erfordert eine neue Klasse
+Die Implementierung des Kooperationskonzeptes erfolgt in einer neuen Klasse
 \textbf{Cooling\_strategy}. Diese Klasse hat die Aufgabe jeder K\"uhlstelle in
-jedem Supermarkt im Netz die aufgrund des  Kooperationskonzeptetes und der
+jedem Supermarkt im Netz die aufgrund des Kooperationskonzeptes und der
 Temperaturbeschr\"ankungen optimale Menge an K\"alteleistung zuzuweisen. Die zur
 Verf\"ugung vorhandene Leistung wird auf alle K\"uhlstellen gleichm\"a\ss ig
 aufgeteilt bis keine Leistung mehr zur Verf\"ugung steht oder die
@@ -421,13 +421,58 @@ Minimaltemperatur erreicht wird. Alle K\"uhlstellen sollen zu jeder Stunde
 mindestens soviel Leistung zugewiesen bekommen, dass genau diese eine Stunde
 \"uberbr\"uckt werden kann, ohne dass die H\"ochsttemperatur \"uberschritten
 wird.
+\begin{figure}[h!]
+	\begin{center}
+	\includegraphics[scale=0.7]{images/Theorie_Super/class_diagramm_second}
+	\end{center}
+\caption{Klassendiagramm Kooperationskonzept}
+\label{fig:klasskoop}
+\end{figure}
+
+In der \cref{fig:klasskoop} auf der Seite \pageref{fig:klasskoop} wird in einem
+Klassendiagramm die Beziehung zwischen dem bestehenden Modell und der Klasse
+\textbf{Cooling\_strategy} dargestellt. Eine Klasse \textbf{Cooling\_strategy}
+steht in der direkten Verbindung mit der Klasse \textbf{Refrigerator}, f\"ur die
+sie den zur K\"uhlung erforderliche Leistung berechnet. Ein Objekt der Klasse
+\textbf{Cooling\_strategy} kann mit einem bis mehreren Objekten der Klasse
+\textbf{Refrigerator} in Verbindung stehen.
+
+Aus dem Diagramm wird ersichtlich, dass die Klasse \textbf{Cooling\_strategy}
+\"uber keine Attribute verf\"ugt. Die Klasse besitzt drei Methoden. Das
+Ergebnis des Aufrufes der Konstruktor-Funktion ist ein konkretes Objekt der
+Klasse.
+
+In der \cref{fig:coop} auf der Seite \pageref{fig:coop} ist der
+Programmstrukturplan der Kooperationskonzeptes dargestellt. Der Algorithmus
+zeigt den Ablauf beim "'Auff\"uhlen"' der K\"uhlstellen f\"ur genau einen
+Zeitschritt der Simulation. Die Umsetzung erfolgt in der Funktion
+\textbf{strategy\_calculator()}. Die Leistung, die zum K\"uhlen der
+K\"alteanlagen zur Verf\"ugung steht (vgl. \cref{pload} auf der Seite
+\pageref{pload}), wird mit Hilfe der Funktion \textbf{power\_for\_load\_nett()}
+berechnet.
+%TODO Was ist verdammt noch einmal cooling capacity?
+\begin{figure}[h!]
+	\begin{center}
+	\includegraphics[scale=0.8]{images/Theorie_Super/cooperation}
+	\end{center}
+\caption{Flussdiagramm}
+\label{fig:coop}
+\end{figure}
+
+Der genaue Ablauf des Informationsflusses, der zwischen den Objekten im Verlauf
+der Simulation stattfindet, wird im Sequenzdiagramm in der \cref{fig:uml_coop}
+auf der Seite \pageref{fig:uml_coop} grafisch verdeutlicht. Auf der Zeitachse,
+die senkrecht von oben nach unten verl\"auft, wird mit Hilfe der Pfeile der
+Zugriff auf die Methoden der Objekte dargestellt. Ist eine Methode des Objektes
+f\"ur einen Zeitraum aktiv, wird dieser Zustand durch einen grauen Balken auf
+dem Zeitstrahl des zugeh\"origen Objektes visualisiert.
 
 \begin{figure}[h]
-\caption{Sequenzdiagramm Kooperationsstrategie}
-	\label{fig:uml_coop}
 	\begin{center}
-		\includegraphics[scale=1]{images/Theorie_Super/sequence_two}
+	\includegraphics[scale=1.15]{images/Theorie_Super/double}
 	\end{center}
+\caption{Sequenzdiagramm Kooperationsstrategie}
+\label{fig:uml_coop}
 \end{figure}
 
 
@@ -684,7 +729,7 @@ Datentypen einen durch \matlab darauf direkten Zugriff.
 	sechste Spalte eingetragen.
 	
 	\item [{Spalte sieben}] Für die Transmissionsverlustberechnung sind
-	under anderen die Flächengrößen und die jeweiligen
+	unter anderem die Flächengrößen und die jeweiligen
 	Wärmedurchgangskoeffizienten der einzelnen Wände
 	maßgebend\footnoteremember{Waende}{ Der mathematische Zusammenhang wird
 	im \cref{chap:theorie} in der \cref{ptrans} deutlich gemacht.}. Für je

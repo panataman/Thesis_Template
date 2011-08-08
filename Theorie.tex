@@ -7,17 +7,18 @@
 
 \section{Erneuerbare Energien im Energieversorgungsnetz}
 
-Die Erneuerbaren Energien \"ubernehmen in Deutschland mit jedem Jahr einen
-gr\"o\ss eren Anteil an der Elektrizit\"atsversorgung. Mehr als die H\"alfte der
-Erneuerbaren Energie wird durch Wind und Photovoltaik erzeugt. Diese
+Die erneuerbaren Energien \"ubernehmen in Deutschland mit jedem Jahr einen
+gr\"o\ss eren Anteil an der Elektrizit\"atsversorgung. Mehr als die H\"alfte
+\todo{wo ist die Quelle?}der
+erneuerbaren Energie wird durch Wind und Photovoltaik erzeugt. Diese
 Energiequellen sind jedoch im hohen Grad witterungsabh\"angig und k\"onnen stark
 fluktuieren. Dadurch kann die Menge der zur Verf\"ugung stehenden Energie von
 der Nachfrage zeitlich enorm abweichen. Der sichere Betrieb des Stromnetzes bei
 einer konstanten Frequenz von $50\,Hz$ kann dadurch gef\"ardet werden.
 Zus\"atzliche Bereitstellung an Regelleistung wird dadurch notwendig. Au\ss
-erdem erfolgt die Erstellung der Fahrlpl\"ane f\"ur den Einsatz der
+erdem erfolgt die Erstellung der Fahrpl\"ane f\"ur den Einsatz der
 konventionellen Kraftwerke zwangsweise auf den fehlerbehafteten Vortagsprognosen
-\"uber die Menge an Leistung aus Erneuerbaren Energien.  Die G\"ute der Prognose
+\"uber die Menge an Leistung aus erneuerbaren Energien.  Die G\"ute der Prognose
 bestimmt direkt den Regel- und den Reservebedarf.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -278,19 +279,19 @@ bezeichnet. Eine Abweichung von dieser Menge führt zum Steigen der Temperatur,
 wenn weniger und zum sinken der Temperatur wenn mehr abgeführt wird. Um diesen
 Kühlkreislauf aufrecht zu erhalten, muss Leistung aufgewendet werden\footnote{
 	Eine detailierte Beschreibung dieser Prozesse in einer
-	Kopressionskälteanlage und Spezifikation ist nicht Gegenstand dieser
+	Kompressionskälteanlage und Spezifikation ist nicht Gegenstand dieser
 	Arbeit.  Ausführliche Informationen dazu findet man z.B.  in \cite{caro,
-	doctor,
-TAB_A1}.}.
+	doctor, TAB_A1}.}.
 
-\begin{figure}[float=h]\caption{Prinzipdarstellung Kompressionsk\"alteanlage}
-\label{prinz}
+\begin{figure}[h]
 \begin{center}
 \includegraphics[scale=0.6]{/images/Theorie_Super/fridge}
-	\end{center}
+\end{center}
+\caption{Prinzipdarstellung Kompressionsk\"alteanlage}
+\label{fig:prinz}
 \end{figure}
 
-In der \cref{prinz} ist die Prinzipdarstellung der weitverbreiteten
+In der \cref{fig:prinz} auf der \pageref{fig:prinz}ist die Prinzipdarstellung der weitverbreiteten
 Kompressionsk\"altemaschine zu sehen. Die Ware, die symbolisch durch einen
 Kohlkopf dargestellt ist, wird mit einer Temperatur zwischen $\pm 0$ und
 $+8\grad C$ gelagert. Der Temperaturunterschied zwischen dem Innen,- und Au\ss
@@ -335,7 +336,7 @@ Tagesstundenzahl sein.
 \vspace{0.5cm}
 
 Die Transmissionswärmeleistung wird aus der Multiplikation der Fläche
-der wärmeübertragenden Wänd mit ihrem spezifischen Wärmedurchgangskoeffizient
+der wärmeübertragenden Wände mit ihrem spezifischen Wärmedurchgangskoeffizient
 und der Temperaturdifferenz zwischen der Kühlraumtemperatur und der
 Umgebungstemperatur berechnet.
 
@@ -457,9 +458,9 @@ wärmeübertragenden Wände.
 \end{description}
 \vspace{0.5cm}
 
-Ist f\"ur eine K\"alteanlage der K\"alteleistungsbedarf bekannt so wird der
+Ist f\"ur eine K\"alteanlage der K\"alteleistungsbedarf bekannt, so wird der
 Tagesmehrbedarf an K\"alteleistung ermittelt, indem vom Produkt des
-K\"alteleistungsbarfes f\"ur $24\;h$ mit dem Faktor f\"ur
+K\"alteleistungsbedarfes f\"ur $24\;h$ mit dem Faktor f\"ur
 K\"altebedarfsabsenkung die mittlere Transmissionswärmeleistung abgezogen wird.
 
 \begin{equation}
@@ -527,7 +528,7 @@ weiteren Schritt in W\"armeleistung $\pmehr$ umgewandelt wird.
 Die Umrechnung von $\lmehr$ in $\pmehr$ erfolgt mit Hilfe der Leistungszahl
 $\epsilon$. Die Verdichterarbeit $\lmehr$ wird mit $\epsilon$ multipliziert.
 Es wird angenommen, dass der Mehrbedarf in den rund zw\"olf Stunden der
-\"Offnungszeit einf\"a
+\"Offnungszeit entsteht.
 
 \begin{equation}
 	\pmehr = \frac{\lmehr}{12h} \cdot \epsilon
@@ -543,7 +544,6 @@ Es wird angenommen, dass der Mehrbedarf in den rund zw\"olf Stunden der
 
 \end{description}
 \vspace{0.5cm}
-berechnen.
 
 Dabei entspricht $\pnacht$ der mittleren Transmissionswärmeleistung
 $\ptrans$\todo{ab hier noch nicht umformuliert}.
@@ -576,7 +576,7 @@ Supermarktkälteanlagen als Speicher zu planen. Mit der Gleichung
 		\cdot K}$
 	\item[$t_{max}$] obere Temperaturgrenze in $ \grad C $
 	\item[$t(i)$] Temperatur zur Stunde $i$ in $ \grad C $
-	\item[$\aptranslog$] logrithmierte Mittelwert der
+	\item[$\aptranslog$] logarithmierte Mittelwert der
 		Transmissionswärmeleistung in $kW$
 \end{description}
 \vspace{0.5cm}
@@ -639,7 +639,7 @@ wobei $Q_v$ die aktuell eindringende Wärmeenergie und $Q_{ab}$ die abgeführte
 Wärmeenergie ist\todo{die nachfolgende Gleichung geh\"ort nicht dahin! oder?}.
 
 \begin{equation}
-	\emax = m \cdot c \cdot (t(i) - t_{max}) + Q_v
+	\emax = m \cdot c \cdot (t(i) - t_{min}) + Q_v
 \label{emax}
 \end{equation}
 

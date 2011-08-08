@@ -5,15 +5,16 @@ A level-1 auxiliary file: Abstract.aux
 A level-1 auxiliary file: Einleitung.aux
 A level-1 auxiliary file: Theorie.aux
 A level-1 auxiliary file: Aufgabenstellung.aux
-A level-1 auxiliary file: Konkretisierung_Lousungsweg.aux
-A level-1 auxiliary file: Handhabung_des_Programms.aux
+A level-1 auxiliary file: Modellierung.aux
+A level-1 auxiliary file: Simulation_und_Ergebnisse.aux
+A level-1 auxiliary file: Ausblick.aux
 A level-1 auxiliary file: Anhang.aux
 The style file: plain.bst
 Database file #1: Thesis.bib
 Warning--empty publisher in kauffeld
 You've used 18 entries,
             2118 wiz_defined-function locations,
-            615 strings with 7143 characters,
+            616 strings with 7138 characters,
 and the built_in function-call counts, 4272 in all, are:
 = -- 412
 > -- 153

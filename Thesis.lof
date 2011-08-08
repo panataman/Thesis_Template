@@ -8,7 +8,7 @@
 \contentsline {xchapter}{Einleitung}{1}{chapter.1}
 \addvspace {10\p@ }
 \contentsline {xchapter}{Theorie}{2}{chapter.2}
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Prinzipdarstellung Kompressionsk\"alteanlage}}{7}{figure.2.1}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Prinzipdarstellung Kompressionsk\"alteanlage}}{8}{figure.2.1}
 \addvspace {10\p@ }
 \contentsline {xchapter}{Aufgabenstellung}{14}{chapter.3}
 \addvspace {10\p@ }
@@ -16,6 +16,8 @@
 \contentsline {figure}{\numberline {4.1}{\ignorespaces Vier Knoten Beispiel}}{15}{figure.4.1}
 \contentsline {figure}{\numberline {4.2}{\ignorespaces Klassendiagramm Modellkonstrukt}}{16}{figure.4.2}
 \contentsline {figure}{\numberline {4.3}{\ignorespaces Sequenzdiagramm Modellkonstrukt}}{21}{figure.4.3}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Sequenzdiagramm Kooperationsstrategie}}{30}{figure.4.4}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Klassendiagramm Kooperationskonzept}}{24}{figure.4.4}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Flussdiagramm}}{26}{figure.4.5}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Sequenzdiagramm Kooperationsstrategie}}{27}{figure.4.6}
 \addvspace {10\p@ }
-\contentsline {xchapter}{Anhang}{31}{appendix.A}
+\contentsline {xchapter}{Anhang}{33}{appendix.A}

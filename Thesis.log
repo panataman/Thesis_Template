@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.4.29)  8 AUG 2011 08:30
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.4.29)  8 AUG 2011 20:02
 entering extended mode
  %&-line parsing enabled.
 **Thesis.tex
@@ -1556,17 +1556,27 @@ Underfull \hbox (badness 10000) in paragraph at lines 8--8
 []\T1/cmr/bx/n/17.28 Erneuerbare En-ergien im En-ergiev-er-
  []
 
+
+Overfull \hbox (52.5487pt too wide) in paragraph at lines 12--12
+[][][] 
+ []
+
+
+Overfull \hbox (52.5487pt too wide) in paragraph at lines 12--12
+[][][] 
+ []
+
 [2
 
 
 
 ]
-Overfull \hbox (52.5487pt too wide) in paragraph at lines 71--71
+Overfull \hbox (52.5487pt too wide) in paragraph at lines 72--72
 [][][] 
  []
 
 
-Overfull \hbox (52.5487pt too wide) in paragraph at lines 71--71
+Overfull \hbox (52.5487pt too wide) in paragraph at lines 72--72
 [][][] 
  []
 
@@ -1577,97 +1587,97 @@ Package Fancyhdr Warning: \headheight is too small (13.6pt):
  This may cause the page layout to be inconsistent, however.
 
 [3]
-Underfull \hbox (badness 10000) in paragraph at lines 104--104
+Underfull \hbox (badness 10000) in paragraph at lines 105--105
 []\T1/cmr/bx/n/17.28 Objektorientierte Pro-gram-mierung mit
  []
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\mathsurround' on input line 104.
+(hyperref)                removing `\mathsurround' on input line 105.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\z@' on input line 104.
+(hyperref)                removing `\z@' on input line 105.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 104.
+(hyperref)                removing `math shift' on input line 105.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `superscript' on input line 104.
+(hyperref)                removing `superscript' on input line 105.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\afterassignment' on input line 104.
+(hyperref)                removing `\afterassignment' on input line 105.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\<def>-command' on input line 104.
+(hyperref)                removing `\<def>-command' on input line 105.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\f@size' on input line 104.
+(hyperref)                removing `\f@size' on input line 105.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\afterassignment' on input line 104.
+(hyperref)                removing `\afterassignment' on input line 105.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\<def>-command' on input line 104.
+(hyperref)                removing `\<def>-command' on input line 105.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\f@baselineskip' on input line 104.
+(hyperref)                removing `\f@baselineskip' on input line 105.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\<def>-command' on input line 104.
+(hyperref)                removing `\<def>-command' on input line 105.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\f@linespread' on input line 104.
+(hyperref)                removing `\f@linespread' on input line 105.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\<let>-command' on input line 104.
+(hyperref)                removing `\<let>-command' on input line 105.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\baselinestretch' on input line 104.
+(hyperref)                removing `\baselinestretch' on input line 105.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\<def>-command' on input line 104.
+(hyperref)                removing `\<def>-command' on input line 105.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\<def>-command' on input line 104.
+(hyperref)                removing `\<def>-command' on input line 105.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\font@name' on input line 104.
+(hyperref)                removing `\font@name' on input line 105.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\TS1/cmss/bx/sc/12' on input line 104.
+(hyperref)                removing `\TS1/cmss/bx/sc/12' on input line 105.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 104.
+(hyperref)                removing `math shift' on input line 105.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                \kern 1.95827pt
-(hyperref)                removed on input line 104.
+(hyperref)                removed on input line 105.
 
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 159.
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 160.
 
 (/usr/share/texmf-texlive/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    Try loading font information for T1+pcr on input line 164.
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 165.
 
 (/usr/share/texmf-texlive/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
@@ -1679,7 +1689,7 @@ Package Fancyhdr Warning: \headheight is too small (13.6pt):
  This may cause the page layout to be inconsistent, however.
 
 [4]
-Underfull \hbox (badness 6961) in paragraph at lines 167--173
+Underfull \hbox (badness 6961) in paragraph at lines 168--174
 []\T1/cmr/m/n/12 Die An-weisung [][][][][] be-gin-nt den Eigenschaften-Block.
  []
 
@@ -1693,19 +1703,19 @@ Package Fancyhdr Warning: \headheight is too small (13.6pt):
  This may cause the page layout to be inconsistent, however.
 
 [5]
-Underfull \hbox (badness 3179) in paragraph at lines 242--250
+Underfull \hbox (badness 3179) in paragraph at lines 243--251
 []\T1/cmr/m/n/12 Methoden, die ap-p-lika-tion-sspez-i-fis-che Op-er-a-tio-nen m
 it einem Daten-satz
  []
 
 
-Underfull \hbox (badness 1087) in paragraph at lines 261--264
+Underfull \hbox (badness 1087) in paragraph at lines 262--265
 \T1/cmr/m/n/12 An dieser Stelle wird ein knap-per Überblick über die math-e-ma-
 tis-chen und
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 261--264
+Underfull \hbox (badness 10000) in paragraph at lines 262--265
 
  []
 
@@ -1715,30 +1725,33 @@ Package Fancyhdr Warning: \headheight is too small (13.6pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[6] <./images/Theorie_Super/fridge.pdf, id=347, 562.38052pt x 578.56152pt>
+[6] <./images/Theorie_Super/fridge.pdf, id=353, 562.38052pt x 578.56152pt>
 File: ./images/Theorie_Super/fridge.pdf Graphic file (type pdf)
 
 <use ./images/Theorie_Super/fridge.pdf>
 
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
 Package Fancyhdr Warning: \headheight is too small (13.6pt): 
  Make it at least 14.49998pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[7pdfTeX warning (ext4): destination with the same identifier (name{figure.2.1}
+[7]
+
+Package Fancyhdr Warning: \headheight is too small (13.6pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[8pdfTeX warning (ext4): destination with the same identifier (name{figure.2.1}
 ) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.300 
+l.363 
        <./images/Theorie_Super/fridge.pdf>]
-
-Package Fancyhdr Warning: \headheight is too small (13.6pt): 
- Make it at least 14.49998pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[8]
 
 Package Fancyhdr Warning: \headheight is too small (13.6pt): 
  Make it at least 14.49998pt.
@@ -1810,7 +1823,7 @@ Kapitel 4.
 
 \openout3 = `Thesis.mtc'.
 
-(./Thesis.mtc8) <images/SEVN/power_grid.pdf, id=431, 514.87198pt x 201.1244pt>
+(./Thesis.mtc8) <images/SEVN/power_grid.pdf, id=438, 514.87198pt x 201.1244pt>
 File: images/SEVN/power_grid.pdf Graphic file (type pdf)
 
 <use images/SEVN/power_grid.pdf>
@@ -1829,7 +1842,7 @@ has been already used, duplicate ignored
                                                   \fi \fi 
 l.42 
       <./images/SEVN/power_grid.pdf>]
-<images/Theorie_Super/class_new_diagramm.pdf, id=446, 302.74706pt x 631.8526pt>
+<images/Theorie_Super/class_new_diagramm.pdf, id=453, 302.74706pt x 631.8526pt>
 File: images/Theorie_Super/class_new_diagramm.pdf Graphic file (type pdf)
 <use images/Theorie_Super/class_new_diagramm.pdf>
 Overfull \hbox (52.5487pt too wide) in paragraph at lines 54--54
@@ -1981,7 +1994,7 @@ Underfull \hbox (badness 1789) in paragraph at lines 275--277
 
  []
 
-<images/Theorie_Super/sequence_one.pdf, id=529, 490.78952pt x 311.12436pt>
+<images/Theorie_Super/sequence_one.pdf, id=537, 490.78952pt x 311.12436pt>
 File: images/Theorie_Super/sequence_one.pdf Graphic file (type pdf)
 
 <use images/Theorie_Super/sequence_one.pdf>
@@ -2014,23 +2027,41 @@ Package Fancyhdr Warning: \headheight is too small (13.6pt):
  This may cause the page layout to be inconsistent, however.
 
 [22]
+<images/Theorie_Super/class_diagramm_second.pdf, id=558, 442.33153pt x 631.8526
+pt>
+File: images/Theorie_Super/class_diagramm_second.pdf Graphic file (type pdf)
+ <use images/Theorie_Super/class_diagramm_second.pdf>
 
 Package Fancyhdr Warning: \headheight is too small (13.6pt): 
  Make it at least 14.49998pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[23] <images/Theorie_Super/sequence_two.pdf, id=556, 597.23125pt x 845.1575pt>
-File: images/Theorie_Super/sequence_two.pdf Graphic file (type pdf)
+[23]
 
-<use images/Theorie_Super/sequence_two.pdf>
-Overfull \hbox (171.57654pt too wide) in paragraph at lines 429--430
- [] 
- []
+Package Fancyhdr Warning: \headheight is too small (13.6pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
 
+[24pdfTeX warning (ext4): destination with the same identifier (name{figure.4.4
+}) has been already used, duplicate ignored
 
-LaTeX Warning: Float too large for page by 232.47707pt on input line 431.
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.439 
+       <./images/Theorie_Super/class_diagramm_second.pdf>]
+<images/Theorie_Super/cooperation.pdf, id=593, 361.9974pt x 541.20493pt>
+File: images/Theorie_Super/cooperation.pdf Graphic file (type pdf)
 
+<use images/Theorie_Super/cooperation.pdf>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<images/Theorie_Super/double.pdf, id=596, 365.09299pt x 349.12433pt>
+File: images/Theorie_Super/double.pdf Graphic file (type pdf)
+
+<use images/Theorie_Super/double.pdf>
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
@@ -2041,39 +2072,33 @@ Package Fancyhdr Warning: \headheight is too small (13.6pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[24]
-Underfull \hbox (badness 1383) in paragraph at lines 486--489
+[25]
+
+Package Fancyhdr Warning: \headheight is too small (13.6pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[26pdfTeX warning (ext4): destination with the same identifier (name{figure.4.5
+}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.531 	\item V
+              on einem besonderen Interesse sind die Energieverbrauchszahlen <.
+/images/Theorie_Super/cooperation.pdf>]
+Underfull \hbox (badness 1383) in paragraph at lines 531--534
 []\T1/cmr/m/n/12 Von einem beson-deren In-ter-esse sind die En-ergie-ver-brauch
 -szahlen zum
  []
 
 
-Overfull \hbox (52.5487pt too wide) in paragraph at lines 498--498
+Overfull \hbox (52.5487pt too wide) in paragraph at lines 543--543
 [][][] 
  []
 
 
-Overfull \hbox (52.5487pt too wide) in paragraph at lines 498--498
-[][][] 
- []
-
-
-Overfull \hbox (52.5487pt too wide) in paragraph at lines 516--516
-[][][] 
- []
-
-
-Overfull \hbox (52.5487pt too wide) in paragraph at lines 516--516
-[][][] 
- []
-
-
-Overfull \hbox (52.5487pt too wide) in paragraph at lines 539--539
-[][][] 
- []
-
-
-Overfull \hbox (52.5487pt too wide) in paragraph at lines 539--539
+Overfull \hbox (52.5487pt too wide) in paragraph at lines 543--543
 [][][] 
  []
 
@@ -2083,55 +2108,90 @@ Package Fancyhdr Warning: \headheight is too small (13.6pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[25]
-Overfull \hbox (52.5487pt too wide) in paragraph at lines 587--587
+[27pdfTeX warning (ext4): destination with the same identifier (name{figure.4.6
+}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.549 	\item c
+              onfig\_fridges.m <./images/Theorie_Super/double.pdf>]
+Overfull \hbox (52.5487pt too wide) in paragraph at lines 561--561
 [][][] 
  []
 
 
-Overfull \hbox (52.5487pt too wide) in paragraph at lines 587--587
+Overfull \hbox (52.5487pt too wide) in paragraph at lines 561--561
 [][][] 
  []
 
 
-Overfull \hbox (52.5487pt too wide) in paragraph at lines 598--598
+Overfull \hbox (52.5487pt too wide) in paragraph at lines 584--584
 [][][] 
  []
 
 
-Overfull \hbox (52.5487pt too wide) in paragraph at lines 598--598
+Overfull \hbox (52.5487pt too wide) in paragraph at lines 584--584
 [][][] 
  []
 
 
-Underfull \hbox (badness 1292) in paragraph at lines 582--601
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Overfull \hbox (52.5487pt too wide) in paragraph at lines 632--632
+[][][] 
+ []
+
+
+Overfull \hbox (52.5487pt too wide) in paragraph at lines 632--632
+[][][] 
+ []
+
+
+Overfull \hbox (52.5487pt too wide) in paragraph at lines 643--643
+[][][] 
+ []
+
+
+Overfull \hbox (52.5487pt too wide) in paragraph at lines 643--643
+[][][] 
+ []
+
+
+Underfull \hbox (badness 1292) in paragraph at lines 627--646
 \T1/cmr/m/n/12 bre-ite Be-tra-ch-tung des Ein-flusses auf ein En-ergiev-er-sorg
 ungsnetz durch den
  []
 
 
-Overfull \hbox (1.65112pt too wide) in paragraph at lines 612--612
+Package Fancyhdr Warning: \headheight is too small (13.6pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[28]
+Overfull \hbox (1.65112pt too wide) in paragraph at lines 657--657
 []\T1/cmr/m/n/12 Beschränkungen 
  []
 
 
-Overfull \hbox (52.5487pt too wide) in paragraph at lines 612--612
+Overfull \hbox (52.5487pt too wide) in paragraph at lines 657--657
 [][][] 
  []
 
 
-Overfull \hbox (1.65112pt too wide) in paragraph at lines 612--612
+Overfull \hbox (1.65112pt too wide) in paragraph at lines 657--657
 []\T1/cmr/m/n/12 Beschränkungen 
  []
 
 
-Overfull \hbox (52.5487pt too wide) in paragraph at lines 612--612
+Overfull \hbox (52.5487pt too wide) in paragraph at lines 657--657
 [][][] 
  []
 
 \c@carro=\count166
 
-Underfull \hbox (badness 1527) in paragraph at lines 609--620
+Underfull \hbox (badness 1527) in paragraph at lines 654--665
 []\T1/cmr/m/n/12 Die Kon-fig-u-ra-tions-datei \T1/cmr/bx/n/12 con-fig_fridges.m
  \T1/cmr/m/n/12 kann als eine Daten-bank für
  []
@@ -2142,23 +2202,23 @@ Package Fancyhdr Warning: \headheight is too small (13.6pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[26]
-Overfull \hbox (52.5487pt too wide) in paragraph at lines 655--655
+[29]
+Overfull \hbox (52.5487pt too wide) in paragraph at lines 700--700
 [][][] 
  []
 
 
-Overfull \hbox (52.5487pt too wide) in paragraph at lines 655--655
+Overfull \hbox (52.5487pt too wide) in paragraph at lines 700--700
 [][][] 
  []
 
 
-Overfull \hbox (52.5487pt too wide) in paragraph at lines 666--666
+Overfull \hbox (52.5487pt too wide) in paragraph at lines 711--711
 [][][] 
  []
 
 
-Overfull \hbox (52.5487pt too wide) in paragraph at lines 666--666
+Overfull \hbox (52.5487pt too wide) in paragraph at lines 711--711
 [][][] 
  []
 
@@ -2168,29 +2228,31 @@ Package Fancyhdr Warning: \headheight is too small (13.6pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[27]
+[30]
 \c@Waende=\count167
-
-
-Package Fancyhdr Warning: \headheight is too small (13.6pt): 
- Make it at least 14.49998pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[28]
 \c@v:caro=\count168
 
-Overfull \hbox (52.5487pt too wide) in paragraph at lines 736--736
+Overfull \hbox (52.5487pt too wide) in paragraph at lines 781--781
 [][][] 
  []
 
 
-Overfull \hbox (52.5487pt too wide) in paragraph at lines 736--736
+Overfull \hbox (52.5487pt too wide) in paragraph at lines 781--781
 [][][] 
  []
 
 
-Underfull \hbox (badness 2205) in paragraph at lines 751--757
+Package Fancyhdr Warning: \headheight is too small (13.6pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[31]
+
+LaTeX Warning: Marginpar on page 32 moved.
+
+
+Underfull \hbox (badness 2205) in paragraph at lines 796--802
 \T1/cmr/m/n/12 müssen die Ergeb-nisse der Sim-u-la-tion in ein-er an-wen-der-fr
 e-undlichen Form
  []
@@ -2202,24 +2264,10 @@ Package Fancyhdr Warning: \headheight is too small (13.6pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[29]
-
-Package Fancyhdr Warning: \headheight is too small (13.6pt): 
- Make it at least 14.49998pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[30pdfTeX warning (ext4): destination with the same identifier (name{figure.4.4
-}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.33 \include{Modellierung}
-                            <./images/Theorie_Super/sequence_two.pdf>]
+[32]
 \openout2 = `Simulation_und_Ergebnisse.aux'.
 
-
-(./Simulation_und_Ergebnisse.tex)
+ (./Simulation_und_Ergebnisse.tex)
 \openout2 = `Ausblick.aux'.
 
  (./Ausblick.tex)
@@ -2227,7 +2275,7 @@ l.33 \include{Modellierung}
 
  (./Anhang.tex
 Anhang A.
-) [31
+) [33
 
 
 
@@ -2246,18 +2294,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 28--28
  []
 
 
-Underfull \hbox (badness 2846) in paragraph at lines 83--83
+Underfull \hbox (badness 2846) in paragraph at lines 82--82
 []\T1/cmr/m/n/12 J Prob-st.  Ein Net-zw-erk für ef-fiziente Käl-tetech-nik.  UR
 L: [][]$\T1/cmtt/m/n/12 http :
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 83--83
+Underfull \hbox (badness 10000) in paragraph at lines 82--82
 \T1/cmtt/m/n/12 / / www . energieagentur . nrw . de / unternehmen / page . asp 
 ? TopCatID =
  []
 
-[32
+[34
 
 
 ])
@@ -2283,7 +2331,7 @@ Package Fancyhdr Warning: \headheight is too small (13.6pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[33] (./Thesis.aux (./Title_Page.aux) (./Abstract.aux) (./Einleitung.aux)
+[35] (./Thesis.aux (./Title_Page.aux) (./Abstract.aux) (./Einleitung.aux)
 (./Theorie.aux) (./Aufgabenstellung.aux) (./Modellierung.aux)
 (./Simulation_und_Ergebnisse.aux) (./Ausblick.aux) (./Anhang.aux))
 
@@ -2294,10 +2342,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 19312 strings out of 494818
- 305893 string characters out of 1178666
- 491880 words of memory out of 3000000
- 21488 multiletter control sequences out of 15000+50000
+ 19334 strings out of 494818
+ 306488 string characters out of 1178666
+ 490880 words of memory out of 3000000
+ 21503 multiletter control sequences out of 15000+50000
  45796 words of font info for 115 fonts, out of 3000000 for 9000
  212 hyphenation exceptions out of 8191
  58i,15n,80p,361b,1262s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -2328,22 +2376,24 @@ ec/ecrm1200.600pk> </home/jupik/.texmf-var/fonts/pk/ljfour/jknappen/ec/eccc1440
 ome/jupik/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx2488.600pk> </home/jupik/.
 texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.600pk></usr/share/texmf-texlive/
 fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-texlive/fonts/type1
-/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-texlive/fonts/type1/public/ams
-fonts/cm/cmmi6.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmm
-i8.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr
-/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf
--texlive/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-texlive/fon
-ts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-texlive/fonts/type1/publ
-ic/amsfonts/cm/cmr7.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/c
-m/cmr8.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr9.pfb></
-usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/t
-exmf-texlive/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-texlive
-/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-texlive/fonts/type1
-/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf-texlive/fonts/type1/urw/c
-ourier/ucrr8a.pfb>
-Output written on Thesis.pdf (41 pages, 679919 bytes).
+/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-texlive/fonts/type1/public/ams
+fonts/cm/cmmi12.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cm
+mi6.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi7.pfb></us
+r/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texm
+f-texlive/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-texlive/fo
+nts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-texlive/fonts/type1/pu
+blic/amsfonts/cm/cmr17.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfont
+s/cm/cmr5.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr6.pfb
+></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/
+texmf-texlive/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-texlive
+/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texmf-texlive/fonts/type1/
+public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsf
+onts/cm/cmsy7.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy
+8.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+</usr/share/texmf-texlive/fonts/type1/urw/courier/ucrr8a.pfb>
+Output written on Thesis.pdf (43 pages, 727397 bytes).
 PDF statistics:
- 1525 PDF objects out of 1728 (max. 8388607)
- 227 named destinations out of 1000 (max. 500000)
- 184 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1591 PDF objects out of 1728 (max. 8388607)
+ 232 named destinations out of 1000 (max. 500000)
+ 194 words of extra memory for PDF output out of 10000 (max. 10000000)
 
