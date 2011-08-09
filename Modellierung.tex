@@ -302,20 +302,32 @@ Auf Grund des Modells wird das elektrische Verhalten einer
 Supermarket-K\"altelast im Energieversorgungsnetz durch miteinander
 kooperierende Objekte dargestellt. Wird eine Funktion aufgerufen, die den Start
 der Simulation veranlasst, m\"ussen, bevor auf die Methoden der einzelnen
-Objekte zugegriffen werden kann, die Objekte erzeugt werden. In der
-\cref{fig:uml_sequence} wird mit Hilfe eines Sequenzdiagrammes der
-Nachrichtenaustausch hervorgehoben, der bei der Erstellung der Objekte
-durchlaufen wird. In der Funktion \textbf{runCooling}, die den Start der
-Simulation veranlasst und steuert, wird der Konstruktor der Klasse
-\textbf{Power\_grid} aufgerufen. Als Ergebnis des Aufrufes bekommt die Funktion
-\textbf{runCooling} ein Objekt der Klasse \textbf{Power\_grid} mit allen
-Unterobjekten, die den zu simulierenden Fall beschreiben. Die
-Konstruktor-Funktionen der Klassen, die einen untergeordneten Status besitzen,
-werden bei der Erstellung der \"ubergeordneten Objekte aufgerufen. Die Anzahl
-der erzeugten Objekte h\"angt davon ab, wie oft die Konstruktor-Funktion der
-jeweiligen Klasse aufgerufen wird. Diese Zahlen werden in Konfigurationsdateien
-abh\"angig von dem untersuchten Fall festgelegt. Die ausf\"uhrliche Erkl\"arung
-der Konfigurationsdateien wird in kommenden Abschnitten vorgenommen.
+Objekte zugegriffen werden kann, die Objekte erzeugt werden.
+
+In der \cref{fig:uml_sequence} auf der \pageref{fig:uml_sequence} wird mit Hilfe
+eines Sequenzdiagrammes der Nachrichtenaustausch hervorgehoben, der bei der
+Erstellung der Objekte durchlaufen wird. Auf der Zeitachse, die senkrecht von
+oben nach unten verl\"auft, wird mit Hilfe der Pfeile der Zugriff auf die
+Methoden der Objekte dargestellt. Ist eine Methode des Objektes f\"ur einen
+Zeitraum aktiv, wird dieser Zustand durch einen grauen Balken auf dem Zeitstrahl
+des zugeh\"origen Objektes visualisiert. Der Aufruf der Funktionen der Objekte
+wird durch einen Pfeil mit ausgef\"ullter Spitze dargestellt. Der Pfeil geht vom
+Zeitstrahl eines Objekts aus, der die Funktion aufruft und endet mit der Spitze
+im Objekt, zu dem diese Funktion geh\"ort. Der Name der aufgerufenen Funktion
+steht \"uber dem Pfeil. Wird von dieser Funktion etwas zur\"uckgegeben, so ist
+der Pfeil gestrichelt. Ist Die R\"uckgabevariablen stehen \"uber dem Pfeil.
+
+In der Funktion \textbf{runCooling}, die den Start der Simulation veranlasst und
+steuert, wird der Konstruktor der Klasse \textbf{Power\_grid} aufgerufen. Als
+Ergebnis des Aufrufes bekommt die Funktion \textbf{runCooling} ein Objekt der
+Klasse \textbf{Power\_grid} mit allen Unterobjekten, die den zu simulierenden
+Fall beschreiben. Die Konstruktor-Funktionen der Klassen, die einen
+untergeordneten Status besitzen, werden bei der Erstellung der \"ubergeordneten
+Objekte aufgerufen. Die Anzahl der erzeugten Objekte h\"angt davon ab, wie oft
+die Konstruktor-Funktion der jeweiligen Klasse aufgerufen wird. Diese Zahlen
+werden in Konfigurationsdateien abh\"angig von dem untersuchten Fall festgelegt.
+Die ausf\"uhrliche Erkl\"arung der Konfigurationsdateien wird in kommenden
+Abschnitten vorgenommen.
 
 \subsection*{Bereitstellung der Leistung zur K\"alteerzeugung}
 
@@ -433,23 +445,82 @@ In der \cref{fig:klasskoop} auf der Seite \pageref{fig:klasskoop} wird in einem
 Klassendiagramm die Beziehung zwischen dem bestehenden Modell und der Klasse
 \textbf{Cooling\_strategy} dargestellt. Eine Klasse \textbf{Cooling\_strategy}
 steht in der direkten Verbindung mit der Klasse \textbf{Refrigerator}, f\"ur die
-sie den zur K\"uhlung erforderliche Leistung berechnet. Ein Objekt der Klasse
+sie die zur K\"uhlung erforderliche Leistung berechnet. Ein Objekt der Klasse
 \textbf{Cooling\_strategy} kann mit einem bis mehreren Objekten der Klasse
 \textbf{Refrigerator} in Verbindung stehen.
 
-Aus dem Diagramm wird ersichtlich, dass die Klasse \textbf{Cooling\_strategy}
-\"uber keine Attribute verf\"ugt. Die Klasse besitzt drei Methoden. Das
-Ergebnis des Aufrufes der Konstruktor-Funktion ist ein konkretes Objekt der
-Klasse.
-
 In der \cref{fig:coop} auf der Seite \pageref{fig:coop} ist der
 Programmstrukturplan der Kooperationskonzeptes dargestellt. Der Algorithmus
-zeigt den Ablauf beim "'Auff\"uhlen"' der K\"uhlstellen f\"ur genau einen
-Zeitschritt der Simulation. Die Umsetzung erfolgt in der Funktion
-\textbf{strategy\_calculator()}. Die Leistung, die zum K\"uhlen der
-K\"alteanlagen zur Verf\"ugung steht (vgl. \cref{pload} auf der Seite
-\pageref{pload}), wird mit Hilfe der Funktion \textbf{power\_for\_load\_nett()}
-berechnet.
+zeigt den Ablauf beim "'Auff\"uhlen"' der K\"uhlstellen in einer f\"ur genau
+einen Zeitschritt der Simulation. Die Umsetzung des Algorithmus erfolgt in der
+Funktion \textbf{strategy\_calculator()}.
+
+Der Auff\"uhlvorgang findet zwischen den st\"undlichen Temperaturberechnungen
+statt. Diese Handlung wird schrittweise wiederholt, um das gleichm\"a\ss ige
+Verteilung der Leistung auf alle Anlagen zu erm\"oglichnen. Zur L\"osung dieser
+Aufgabe im Programm ist eine \textbf{while}-Schleife mit einer Abbruchbedingung
+geeignet. Innerhalb der \textbf{while}-Schleife wird der Algorithmus
+\cref{fig:coop} umgesetzt.
+
+Im ersten Schritt des Algorithmus findet eine Abfrage statt, ob Leistung zum
+K\"uhlen der Anlagen zur Verf\"ugung steht. Dieser Berechnung liegt die
+Gleichung \cref{pload} auf der Seite \pageref{pload} zugrunde die in der
+Funktion \textbf{power\_for\_load\_nett()} implementiert ist.
+\begin{description}
+\item[Fall 1] Die Menge der Leistung ist nicht gr\"o\ss er Null. Es erfolgt die
+n\"achste Abfrage nach den K\"uhlstellen, die eine Stunde ohne Leistung aus dem
+Netz nicht \"uberstehen k\"onnen, ohne kritische Temperatur zu \"uberschreiten.
+Diese Anlagen werden mit der zus\"atzlichen, nicht angemeldeten Leistung aus dem
+Netz geladen, so, dass sie genau eine Stunde \"uberstehen, ohne die obere
+Temperaturgrenze zu verletzen. Das Programm endet anschlie\ss end, und es kann
+zum n\"achsten Zeitschritt der Simulation \"ubergegengen werden.
+
+Sind keine solche K\"uhlstellen vorhanden, endet das Programm und es kann zum
+n\"achsten Zeitschritt der Simulation \"ubergegengen werden.
+
+\item[Fall 2] Die Menge der Leistung ist gr\"o\ss er Null. In diesem Fall,
+werden alle K\"uhlstellen gefunden, deren Kapazit\"at noch nicht ausgesch\"opft
+ist und deren Zeit bis zum erreichen der kritischen Temperatur am kleinsten ist.
+Anschlie\ss end wird \"uberpr\"uft, ob eine W\"armeenergie abgef\"uhrt werden
+kann die genau $\frac{1}{60}\cdot Q_v$\footnote{ $Q_v$ ist die eindringende
+Verlustw\"armemenge in $kJ$.} entspricht, ohne als Folge die
+\"Uberschreitung der minimalen Temperatur zu verursachen. Ist das der Fall, wird
+die Kapazit\"at dieser K\"uhlstelle gleich Null gesetzt, damit diese
+K\"uhlstelle beim n\"achsten Durchgang der \textbf{while}-Schleife nicht
+beachtet wird.
+
+Ist das Abf\"uhren der W\"armeenergiemenge ohne Verletzung der Temperaturgrenzen
+m\"oglich, so wird anschlie\ss end die Kapazit\"at, die zur Verf\"ugung
+stehende Gesamtleistung und die Leistung, die zur K\"uhlung dieser K\"uhltruhe
+bereitgestellt wird, um diese Leistungsmenge erg\"anzt. Die Zeit $\tau_{krit}$
+wird um einen Zeitschritt erg\"anzt. Der Zyklus der \textbf{while}-Schleife
+setzt sich fort.
+\begin{equation*}
+	Q_{Kap} = Q_{max} - \frac{1}{60}Q_v\\
+\end{equation*}
+\begin{equation*}
+	P_{load} = P_{load} - \frac{1}{60}\frac{Q_v }{3.6 \cdot 10^{6} \cdot
+	\epsilon}
+\end{equation*}
+\begin{equation*}
+	\tau_{krit} = \tau_{krit} + \frac{1}{60}
+\end{equation*}
+\begin{equation*}
+	Q_{cooling} = Q_{cooling} + \frac{1}{60}Q_v
+\end{equation*}
+\begin{description}[\dth]
+\item[$Q_{Kap}$] W\"armeenergiemenge die zus\"atzlich abgef\"uhrt werden kann,
+ohne dass die minimale Temperaturgrenze verletzt wird in $kJ$
+\item[$Q_{max}$] maximal abzuf\"uhrende W\"armeenergiemenge in $kJ$
+\item[$Q_{v}$] eindringende Verlustw\"armemenge in $kJ$
+\item[$P_{load}$] vorhandene Ladeleistung in $MW$
+\item[$\tau_{krit}$] Zeit bis zur kritischen Temperatur in $h$
+\item[$Q_{cooling}$] W\"armeenergiemenge, die der K\"uhlzelle zur K\"uhlung
+zugewiesen wird in $kJ$
+\end{description} \vspace{0.5cm}
+\end{description}
+
+
 %TODO Was ist verdammt noch einmal cooling capacity?
 \begin{figure}[h!]
 	\begin{center}
@@ -461,12 +532,7 @@ berechnet.
 
 Der genaue Ablauf des Informationsflusses, der zwischen den Objekten im Verlauf
 der Simulation stattfindet, wird im Sequenzdiagramm in der \cref{fig:uml_coop}
-auf der Seite \pageref{fig:uml_coop} grafisch verdeutlicht. Auf der Zeitachse,
-die senkrecht von oben nach unten verl\"auft, wird mit Hilfe der Pfeile der
-Zugriff auf die Methoden der Objekte dargestellt. Ist eine Methode des Objektes
-f\"ur einen Zeitraum aktiv, wird dieser Zustand durch einen grauen Balken auf
-dem Zeitstrahl des zugeh\"origen Objektes visualisiert.
-
+auf der Seite \pageref{fig:uml_coop} grafisch verdeutlicht.
 \begin{figure}[h]
 	\begin{center}
 	\includegraphics[scale=1.15]{images/Theorie_Super/double}
