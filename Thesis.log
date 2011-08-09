@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.4.29)  9 AUG 2011 11:37
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.4.29)  9 AUG 2011 20:46
 entering extended mode
  %&-line parsing enabled.
 **Thesis.tex
@@ -1126,7 +1126,11 @@ Package cleveref Info: loaded `german' language definitions on input line 3149.
 
 LaTeX Warning: Label `b' multiply defined.
 
-) (./Simulation_und_Ergebnisse.aux) (./Ausblick.aux) (./Anhang.aux))
+) (./Simulation_und_Ergebnisse.aux) (./Ausblick.aux) (./Anhang.aux
+
+LaTeX Warning: Label `pgrid' multiply defined.
+
+))
 \openout1 = `Thesis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 5.
@@ -1143,8 +1147,7 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 5.
 LaTeX Font Info:    ... okay on input line 5.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 5.
 LaTeX Font Info:    Try loading font information for TS1+cmr on input line 5.
-
-(/usr/share/texmf-texlive/tex/latex/base/ts1cmr.fd
+ (/usr/share/texmf-texlive/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 5.
@@ -1255,7 +1258,7 @@ LaTeX Info: Redefining \ref on input line 5.
 \openout2 = `Title_Page.aux'.
 
  (./Title_Page.tex
-<images/Title_Page/TU-logo_rot.pdf, id=74, 1392.20125pt x 1032.85875pt>
+<images/Title_Page/TU-logo_rot.pdf, id=86, 1392.20125pt x 1032.85875pt>
 File: images/Title_Page/TU-logo_rot.pdf Graphic file (type pdf)
 
 <use images/Title_Page/TU-logo_rot.pdf>
@@ -1269,7 +1272,7 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 3.
 (/usr/share/texmf-texlive/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 )
-<images/Title_Page/sense.pdf, id=75, 682.55pt x 682.55pt>
+<images/Title_Page/sense.pdf, id=87, 682.55pt x 682.55pt>
 File: images/Title_Page/sense.pdf Graphic file (type pdf)
 
 <use images/Title_Page/sense.pdf>
@@ -1725,7 +1728,7 @@ Package Fancyhdr Warning: \headheight is too small (13.6pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[6] <./images/Theorie_Super/fridge.pdf, id=353, 562.38052pt x 578.56152pt>
+[6] <./images/Theorie_Super/fridge.pdf, id=372, 562.38052pt x 578.56152pt>
 File: ./images/Theorie_Super/fridge.pdf Graphic file (type pdf)
 
 <use ./images/Theorie_Super/fridge.pdf>
@@ -1823,51 +1826,54 @@ Kapitel 4.
 
 \openout3 = `Thesis.mtc'.
 
-(./Thesis.mtc8) <images/SEVN/power_grid.pdf, id=438, 514.87198pt x 201.1244pt>
+(./Thesis.mtc8) <images/SEVN/power_grid.pdf, id=460, 514.87198pt x 201.1244pt>
 File: images/SEVN/power_grid.pdf Graphic file (type pdf)
 
 <use images/SEVN/power_grid.pdf>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 32--34
 
+ []
+
+
+<images/Theorie_Super/class_new_diagramm.pdf, id=466, 302.74706pt x 631.8526pt>
+File: images/Theorie_Super/class_new_diagramm.pdf Graphic file (type pdf)
+<use images/Theorie_Super/class_new_diagramm.pdf>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Overfull \hbox (52.5487pt too wide) in paragraph at lines 54--54
+[][][] 
+ []
+
+
+Overfull \hbox (52.5487pt too wide) in paragraph at lines 54--54
+[][][] 
  []
 
 [15
 
 
 
-pdfTeX warning (ext4): destination with the same identifier (name{figure.4.1}) 
-has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.42 
-      <./images/SEVN/power_grid.pdf>]
-<images/Theorie_Super/class_new_diagramm.pdf, id=453, 302.74706pt x 631.8526pt>
-File: images/Theorie_Super/class_new_diagramm.pdf Graphic file (type pdf)
-<use images/Theorie_Super/class_new_diagramm.pdf>
-Overfull \hbox (52.5487pt too wide) in paragraph at lines 54--54
-[][][] 
- []
-
-
-Overfull \hbox (52.5487pt too wide) in paragraph at lines 54--54
-[][][] 
- []
-
+]
 
 Package Fancyhdr Warning: \headheight is too small (13.6pt): 
  Make it at least 14.49998pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[16pdfTeX warning (ext4): destination with the same identifier (name{figure.4.2
+[16pdfTeX warning (ext4): destination with the same identifier (name{figure.4.1
 }) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.61 \subsubsection
-                   *{Attribute} <./images/Theorie_Super/class_new_diagramm.pdf>
-]
+l.86 	\item[averaged\_cooling\_room\_temperature]
+                                                  Durchschnittliche Temperatur 
+<./images/SEVN/power_grid.pdf>]
 Underfull \hbox (badness 7030) in paragraph at lines 86--88
 []\T1/cmr/m/n/12 Durchschnittliche Tem-per-atur im
  []
@@ -1893,17 +1899,24 @@ Overfull \hbox (52.5487pt too wide) in paragraph at lines 97--97
  []
 
 
-Underfull \hbox (badness 4353) in paragraph at lines 100--103
-[]\T1/cmr/m/n/12 Summe aller durch-schnit-tlichen Trans-mis-
- []
-
-
 Package Fancyhdr Warning: \headheight is too small (13.6pt): 
  Make it at least 14.49998pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[17]
+[17pdfTeX warning (ext4): destination with the same identifier (name{figure.4.2
+}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.100 	\item[averaged\_transmission\_losses]
+                                             Summe aller durchschnittlichen <./
+images/Theorie_Super/class_new_diagramm.pdf>]
+Underfull \hbox (badness 4353) in paragraph at lines 100--103
+[]\T1/cmr/m/n/12 Summe aller durch-schnit-tlichen Trans-mis-
+ []
+
+
 Underfull \hbox (badness 3557) in paragraph at lines 122--126
 []\T1/cmr/m/n/12 Konstruktor der Klasse.
  []
@@ -1994,7 +2007,7 @@ Underfull \hbox (badness 1789) in paragraph at lines 275--277
 
  []
 
-<images/Theorie_Super/sequence_one.pdf, id=537, 490.78952pt x 311.12436pt>
+<images/Theorie_Super/sequence_one.pdf, id=560, 490.78952pt x 311.12436pt>
 File: images/Theorie_Super/sequence_one.pdf Graphic file (type pdf)
 
 <use images/Theorie_Super/sequence_one.pdf>
@@ -2034,12 +2047,17 @@ Package Fancyhdr Warning: \headheight is too small (13.6pt):
  This may cause the page layout to be inconsistent, however.
 
 [23]
-<images/Theorie_Super/class_diagramm_second.pdf, id=565, 442.33153pt x 631.8526
+<images/Theorie_Super/class_diagramm_second.pdf, id=588, 442.33153pt x 631.8526
 pt>
 File: images/Theorie_Super/class_diagramm_second.pdf Graphic file (type pdf)
  <use images/Theorie_Super/class_diagramm_second.pdf>
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 444--451
+
+ []
 
 
 Package Fancyhdr Warning: \headheight is too small (13.6pt): 
@@ -2059,17 +2077,16 @@ Package Fancyhdr Warning: \headheight is too small (13.6pt):
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.492 I
-       st das Abf\"uhren der W\"armeenergiemenge ohne Verletzung der Tempera...
- <./images/Theorie_Super/class_diagramm_second.pdf>]
-<images/Theorie_Super/cooperation.pdf, id=603, 357.75055pt x 629.86716pt>
+l.489 
+       <./images/Theorie_Super/class_diagramm_second.pdf>]
+<images/Theorie_Super/cooperation.pdf, id=623, 357.75055pt x 629.86716pt>
 File: images/Theorie_Super/cooperation.pdf Graphic file (type pdf)
 
 <use images/Theorie_Super/cooperation.pdf>
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<images/Theorie_Super/double.pdf, id=606, 365.09299pt x 349.12433pt>
+<images/Theorie_Super/double.pdf, id=626, 365.09299pt x 349.12433pt>
 File: images/Theorie_Super/double.pdf Graphic file (type pdf)
 
 <use images/Theorie_Super/double.pdf>
@@ -2094,10 +2111,8 @@ Package Fancyhdr Warning: \headheight is too small (13.6pt):
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.578 \subsubsection
-                    {Installation} <./images/Theorie_Super/cooperation.pdf>]
-\c@matlab=\count165
-
+l.580 \subsection
+                 {Installation} <./images/Theorie_Super/cooperation.pdf>]
 
 Package Fancyhdr Warning: \headheight is too small (13.6pt): 
  Make it at least 14.49998pt.
@@ -2109,44 +2124,8 @@ Package Fancyhdr Warning: \headheight is too small (13.6pt):
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.594 	\item E
-              in oder mehrere \matlab-Modelle von SupermÃ¤rkten kÃ¶nnen erst...
- <./images/Theorie_Super/double.pdf>]
-Underfull \hbox (badness 1383) in paragraph at lines 597--600
-[]\T1/cmr/m/n/12 Von einem beson-deren In-ter-esse sind die En-ergie-ver-brauch
--szahlen zum
- []
-
-
-Overfull \hbox (52.5487pt too wide) in paragraph at lines 609--609
-[][][] 
- []
-
-
-Overfull \hbox (52.5487pt too wide) in paragraph at lines 609--609
-[][][] 
- []
-
-
-Overfull \hbox (52.5487pt too wide) in paragraph at lines 627--627
-[][][] 
- []
-
-
-Overfull \hbox (52.5487pt too wide) in paragraph at lines 627--627
-[][][] 
- []
-
-
-Overfull \hbox (52.5487pt too wide) in paragraph at lines 650--650
-[][][] 
- []
-
-
-Overfull \hbox (52.5487pt too wide) in paragraph at lines 650--650
-[][][] 
- []
-
+l.602 	\item c
+              onfig\_grid.m <./images/Theorie_Super/double.pdf>]
 
 Package Fancyhdr Warning: \headheight is too small (13.6pt): 
  Make it at least 14.49998pt.
@@ -2154,29 +2133,9 @@ Package Fancyhdr Warning: \headheight is too small (13.6pt):
  This may cause the page layout to be inconsistent, however.
 
 [29]
-Overfull \hbox (52.5487pt too wide) in paragraph at lines 698--698
-[][][] 
- []
-
-
-Overfull \hbox (52.5487pt too wide) in paragraph at lines 698--698
-[][][] 
- []
-
-
-Overfull \hbox (52.5487pt too wide) in paragraph at lines 709--709
-[][][] 
- []
-
-
-Overfull \hbox (52.5487pt too wide) in paragraph at lines 709--709
-[][][] 
- []
-
-
-Underfull \hbox (badness 1292) in paragraph at lines 693--712
-\T1/cmr/m/n/12 bre-ite Be-tra-ch-tung des Ein-flusses auf ein En-ergiev-er-sorg
-ungsnetz durch den
+Underfull \hbox (badness 1331) in paragraph at lines 710--719
+\T1/cmr/m/n/12 er-läutert. Zur Beschrei-bung ein-er Küh-lein-heit ist er-forder
+-lich, die Dat-en in
  []
 
 
@@ -2186,39 +2145,12 @@ Package Fancyhdr Warning: \headheight is too small (13.6pt):
  This may cause the page layout to be inconsistent, however.
 
 [30]
-Overfull \hbox (1.65112pt too wide) in paragraph at lines 723--723
-[]\T1/cmr/m/n/12 Beschränkungen 
- []
-
-
-Overfull \hbox (52.5487pt too wide) in paragraph at lines 723--723
+Overfull \hbox (52.5487pt too wide) in paragraph at lines 757--757
 [][][] 
  []
 
 
-Overfull \hbox (1.65112pt too wide) in paragraph at lines 723--723
-[]\T1/cmr/m/n/12 Beschränkungen 
- []
-
-
-Overfull \hbox (52.5487pt too wide) in paragraph at lines 723--723
-[][][] 
- []
-
-\c@carro=\count166
-
-Underfull \hbox (badness 1527) in paragraph at lines 720--731
-[]\T1/cmr/m/n/12 Die Kon-fig-u-ra-tions-datei \T1/cmr/bx/n/12 con-fig_fridges.m
- \T1/cmr/m/n/12 kann als eine Daten-bank für
- []
-
-
-Overfull \hbox (52.5487pt too wide) in paragraph at lines 766--766
-[][][] 
- []
-
-
-Overfull \hbox (52.5487pt too wide) in paragraph at lines 766--766
+Overfull \hbox (52.5487pt too wide) in paragraph at lines 757--757
 [][][] 
  []
 
@@ -2229,16 +2161,8 @@ Package Fancyhdr Warning: \headheight is too small (13.6pt):
  This may cause the page layout to be inconsistent, however.
 
 [31]
-Overfull \hbox (52.5487pt too wide) in paragraph at lines 777--777
-[][][] 
- []
+\c@Waende=\count165
 
-
-Overfull \hbox (52.5487pt too wide) in paragraph at lines 777--777
-[][][] 
- []
-
-\c@Waende=\count167
 
 Package Fancyhdr Warning: \headheight is too small (13.6pt): 
  Make it at least 14.49998pt.
@@ -2246,19 +2170,17 @@ Package Fancyhdr Warning: \headheight is too small (13.6pt):
  This may cause the page layout to be inconsistent, however.
 
 [32]
-\c@v:caro=\count168
-
-Overfull \hbox (52.5487pt too wide) in paragraph at lines 847--847
+Overfull \hbox (52.5487pt too wide) in paragraph at lines 827--827
 [][][] 
  []
 
 
-Overfull \hbox (52.5487pt too wide) in paragraph at lines 847--847
+Overfull \hbox (52.5487pt too wide) in paragraph at lines 827--827
 [][][] 
  []
 
 
-Underfull \hbox (badness 2205) in paragraph at lines 862--868
+Underfull \hbox (badness 2205) in paragraph at lines 842--848
 \T1/cmr/m/n/12 müssen die Ergeb-nisse der Sim-u-la-tion in ein-er an-wen-der-fr
 e-undlichen Form
  []
@@ -2281,7 +2203,10 @@ Package Fancyhdr Warning: \headheight is too small (13.6pt):
 
  (./Anhang.tex
 Anhang A.
-) [34
+(/home/jupik/Aalte_Ordnung/TU_Alles/Studienarbeit/my_prog/config_grid.m)
+(/home/jupik/Aalte_Ordnung/TU_Alles/Studienarbeit/my_prog/config_supermarkets.m
+) (/home/jupik/Aalte_Ordnung/TU_Alles/Studienarbeit/my_prog/config_fridges.m
+[34
 
 
 
@@ -2289,7 +2214,135 @@ Anhang A.
 
 
 
-] (./Thesis.bbl (./Thesis.brf)
+]
+
+Package Fancyhdr Warning: \headheight is too small (13.6pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[35]) (/home/jupik/Aalte_Ordnung/TU_Alles/Studienarbeit/my_prog/runCooling.m
+LaTeX Font Info:    Try loading font information for TS1+pcr on input line 20.
+
+(/usr/share/texmf-texlive/tex/latex/psnfss/ts1pcr.fd
+File: ts1pcr.fd 2001/06/04 font definitions for TS1/pcr.
+)
+
+Package Fancyhdr Warning: \headheight is too small (13.6pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[36]
+
+Package Fancyhdr Warning: \headheight is too small (13.6pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[37]
+Overfull \hbox (6.35115pt too wide) in paragraph at lines 104--105
+[][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (6.35115pt too wide) in paragraph at lines 107--109
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+) (/home/jupik/Aalte_Ordnung/TU_Alles/Studienarbeit/my_prog/Cooling_strategy.m
+
+Package Fancyhdr Warning: \headheight is too small (13.6pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[38]
+
+Package Fancyhdr Warning: \headheight is too small (13.6pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[39]
+
+Package Fancyhdr Warning: \headheight is too small (13.6pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[40]
+
+Package Fancyhdr Warning: \headheight is too small (13.6pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[41]
+
+Package Fancyhdr Warning: \headheight is too small (13.6pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[42]) (/home/jupik/Aalte_Ordnung/TU_Alles/Studienarbeit/my_prog/Power_grid.m
+
+Package Fancyhdr Warning: \headheight is too small (13.6pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[43])
+
+Package Fancyhdr Warning: \headheight is too small (13.6pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[44] (/home/jupik/Aalte_Ordnung/TU_Alles/Studienarbeit/my_prog/Bus.m)
+(/home/jupik/Aalte_Ordnung/TU_Alles/Studienarbeit/my_prog/Supermarket.m
+
+Package Fancyhdr Warning: \headheight is too small (13.6pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[45]) (/home/jupik/Aalte_Ordnung/TU_Alles/Studienarbeit/my_prog/Refrigerator.m
+
+Package Fancyhdr Warning: \headheight is too small (13.6pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[46]
+
+Package Fancyhdr Warning: \headheight is too small (13.6pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[47]
+
+Package Fancyhdr Warning: \headheight is too small (13.6pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[48]
+
+Package Fancyhdr Warning: \headheight is too small (13.6pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[49]))
+
+Package Fancyhdr Warning: \headheight is too small (13.6pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[50] (./Thesis.bbl (./Thesis.brf)
 \tf@brf=\write12
 \openout12 = `Thesis.brf'.
 
@@ -2311,7 +2364,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 82--82
 ? TopCatID =
  []
 
-[35
+[51
 
 
 ])
@@ -2337,7 +2390,7 @@ Package Fancyhdr Warning: \headheight is too small (13.6pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[36] (./Thesis.aux (./Title_Page.aux) (./Abstract.aux) (./Einleitung.aux)
+[52] (./Thesis.aux (./Title_Page.aux) (./Abstract.aux) (./Einleitung.aux)
 (./Theorie.aux) (./Aufgabenstellung.aux) (./Modellierung.aux)
 (./Simulation_und_Ergebnisse.aux) (./Ausblick.aux) (./Anhang.aux))
 
@@ -2348,58 +2401,59 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 19336 strings out of 494818
- 306507 string characters out of 1178666
- 489880 words of memory out of 3000000
- 21503 multiletter control sequences out of 15000+50000
- 45796 words of font info for 115 fonts, out of 3000000 for 9000
+ 20368 strings out of 494818
+ 324360 string characters out of 1178666
+ 528880 words of memory out of 3000000
+ 21662 multiletter control sequences out of 15000+50000
+ 46089 words of font info for 116 fonts, out of 3000000 for 9000
  212 hyphenation exceptions out of 8191
- 58i,15n,80p,361b,1262s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 58i,15n,80p,361b,1896s stack positions out of 5000i,500n,10000p,200000b,50000s
  </home/jupik/.texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1200.600pk> </home/j
 upik/.texmf-var/fonts/pk/ljfour/jknappen/ec/tcss0700.600pk> </home/jupik/.texmf
 -var/fonts/pk/ljfour/jknappen/ec/eccc1000.600pk> </home/jupik/.texmf-var/fonts/
-pk/ljfour/jknappen/ec/tcrm1200.600pk> </home/jupik/.texmf-var/fonts/pk/ljfour/j
-knappen/ec/ectt1000.600pk> </home/jupik/.texmf-var/fonts/pk/ljfour/jknappen/ec/
-tcsx1000.600pk> </home/jupik/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecxc1440.60
-0pk>{/usr/share/texmf-texlive/fonts/enc/dvips/base/8r.enc} </home/jupik/.texmf-
-var/fonts/pk/ljfour/jknappen/ec/ecrm1000.600pk> </home/jupik/.texmf-var/fonts/p
-k/ljfour/jknappen/ec/ecrm0700.600pk> </home/jupik/.texmf-var/fonts/pk/ljfour/jk
-nappen/ec/ecrm0800.600pk> </home/jupik/.texmf-var/fonts/pk/ljfour/jknappen/ec/e
-cti1200.600pk> </home/jupik/.texmf-var/fonts/pk/ljfour/jknappen/ec/tcsx1200.600
-pk> </home/jupik/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecxc1728.600pk> </home/
-jupik/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecxc1095.600pk> </home/jupik/.texm
-f-var/fonts/pk/ljfour/jknappen/ec/ecbx1095.600pk> </home/jupik/.texmf-var/fonts
-/pk/ljfour/jknappen/ec/eccc1728.600pk> </home/jupik/.texmf-var/fonts/pk/ljfour/
-jknappen/ec/tcsx2074.600pk> </home/jupik/.texmf-var/fonts/pk/ljfour/jknappen/ec
-/ecxc2488.600pk> </home/jupik/.texmf-var/fonts/pk/ljfour/jknappen/ec/tcss0800.6
-00pk> </home/jupik/.texmf-var/fonts/pk/ljfour/jknappen/ec/eccc1200.600pk> </hom
-e/jupik/.texmf-var/fonts/pk/ljfour/jknappen/ec/tcsx0800.600pk> </home/jupik/.te
-xmf-var/fonts/pk/ljfour/jknappen/ec/ecxc1200.600pk> </home/jupik/.texmf-var/fon
-ts/pk/ljfour/jknappen/ec/ecbx1728.600pk> </home/jupik/.texmf-var/fonts/pk/ljfou
-r/jknappen/ec/ecbx1200.600pk> </home/jupik/.texmf-var/fonts/pk/ljfour/jknappen/
-ec/ecrm1200.600pk> </home/jupik/.texmf-var/fonts/pk/ljfour/jknappen/ec/eccc1440
-.600pk> </home/jupik/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1440.600pk> </h
-ome/jupik/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx2488.600pk> </home/jupik/.
-texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.600pk></usr/share/texmf-texlive/
-fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-texlive/fonts/type1
-/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-texlive/fonts/type1/public/ams
-fonts/cm/cmmi12.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cm
-mi6.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi7.pfb></us
-r/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texm
-f-texlive/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-texlive/fo
-nts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-texlive/fonts/type1/pu
-blic/amsfonts/cm/cmr17.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfont
-s/cm/cmr5.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr6.pfb
-></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/
-texmf-texlive/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-texlive
-/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texmf-texlive/fonts/type1/
-public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsf
-onts/cm/cmsy7.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy
-8.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-</usr/share/texmf-texlive/fonts/type1/urw/courier/ucrr8a.pfb>
-Output written on Thesis.pdf (44 pages, 735545 bytes).
+pk/ljfour/jknappen/ec/ecrm1095.600pk> </home/jupik/.texmf-var/fonts/pk/ljfour/j
+knappen/ec/tcrm1200.600pk> </home/jupik/.texmf-var/fonts/pk/ljfour/jknappen/ec/
+ectt1000.600pk> </home/jupik/.texmf-var/fonts/pk/ljfour/jknappen/ec/tcsx1000.60
+0pk> </home/jupik/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecxc1440.600pk>{/usr/s
+hare/texmf-texlive/fonts/enc/dvips/base/8r.enc} </home/jupik/.texmf-var/fonts/p
+k/ljfour/jknappen/ec/ecrm1000.600pk> </home/jupik/.texmf-var/fonts/pk/ljfour/jk
+nappen/ec/ecrm0700.600pk> </home/jupik/.texmf-var/fonts/pk/ljfour/jknappen/ec/e
+crm0800.600pk> </home/jupik/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1200.600
+pk> </home/jupik/.texmf-var/fonts/pk/ljfour/jknappen/ec/tcsx1200.600pk> </home/
+jupik/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecxc1728.600pk> </home/jupik/.texm
+f-var/fonts/pk/ljfour/jknappen/ec/ecxc1095.600pk> </home/jupik/.texmf-var/fonts
+/pk/ljfour/jknappen/ec/ecbx1095.600pk> </home/jupik/.texmf-var/fonts/pk/ljfour/
+jknappen/ec/eccc1728.600pk> </home/jupik/.texmf-var/fonts/pk/ljfour/jknappen/ec
+/tcsx2074.600pk> </home/jupik/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecxc2488.6
+00pk> </home/jupik/.texmf-var/fonts/pk/ljfour/jknappen/ec/tcss0800.600pk> </hom
+e/jupik/.texmf-var/fonts/pk/ljfour/jknappen/ec/eccc1200.600pk> </home/jupik/.te
+xmf-var/fonts/pk/ljfour/jknappen/ec/tcsx0800.600pk> </home/jupik/.texmf-var/fon
+ts/pk/ljfour/jknappen/ec/ecxc1200.600pk> </home/jupik/.texmf-var/fonts/pk/ljfou
+r/jknappen/ec/ecbx1728.600pk> </home/jupik/.texmf-var/fonts/pk/ljfour/jknappen/
+ec/ecbx1200.600pk> </home/jupik/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1200
+.600pk> </home/jupik/.texmf-var/fonts/pk/ljfour/jknappen/ec/eccc1440.600pk> </h
+ome/jupik/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1440.600pk> </home/jupik/.
+texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx2488.600pk> </home/jupik/.texmf-var/f
+onts/pk/ljfour/jknappen/ec/ecbx1440.600pk></usr/share/texmf-texlive/fonts/type1
+/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-texlive/fonts/type1/public/ams
+fonts/cm/cmmi10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cm
+mi12.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi6.pfb></u
+sr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/tex
+mf-texlive/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-texlive/f
+onts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-texlive/fonts/type1/p
+ublic/amsfonts/cm/cmr12.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfon
+ts/cm/cmr17.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr5.p
+fb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/shar
+e/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-texli
+ve/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-texlive/fonts/type
+1/public/amsfonts/cm/cmr9.pfb></usr/share/texmf-texlive/fonts/type1/public/amsf
+onts/cm/cmsy10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cms
+y7.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr
+/share/texmf-texlive/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share
+/texmf-texlive/fonts/type1/urw/courier/ucrr8a.pfb>
+Output written on Thesis.pdf (60 pages, 899870 bytes).
 PDF statistics:
- 1606 PDF objects out of 1728 (max. 8388607)
- 234 named destinations out of 1000 (max. 500000)
- 194 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2726 PDF objects out of 2984 (max. 8388607)
+ 1074 named destinations out of 1200 (max. 500000)
+ 218 words of extra memory for PDF output out of 10000 (max. 10000000)
 
