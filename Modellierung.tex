@@ -198,8 +198,7 @@ An dieser Stelle werden die Eigenschaften und die Methoden der Klasse
 	Substansmassen mit der jeweiligen spezifischen W\"armekapazit\"aten. Der
 	Funktion werden keine explizite Argumente \"ubergeben. Die Funktion
 	greift direkt auf die Attribute \textbf{specific\_heat\_capacity} und
-	\textbf{mass\_stored} des Objektes zu\todo{Warum ist es n\"otig, die
-	Funktion expliziert zu schreiben?}.
+	\textbf{mass\_stored} des Objektes zu.
 
 	\item[sum\_transmission\_losses()] Es gibt zwei R\"uckgabewerte dieser
 	Funktion. Der erste Wert ist die Summe der Transmissionsverluste (vgl.
@@ -209,8 +208,8 @@ An dieser Stelle werden die Eigenschaften und die Methoden der Klasse
 	Transimissionsverluste berechnet, die bei der oberen Grenze des
 	zugelassenen Temperaturbereiches entstehen. Die Kenntnis dieser Verluste
 	ist wichtig um die Zeitspanne absch\"atzen zu k\"onnen, bis obere
-	Temperaturgrenze erreicht wird (vgl. \cref{taukn} auf der Seite
-	\pageref{taukn}).
+	Temperaturgrenze erreicht wird (vgl. \cref{tauk} auf der Seite
+	\pageref{tauk}).
 
 	Die \"Ubergabe folgender Argumente an die Funktion ist erforderlich:
 	\begin{description}
@@ -232,8 +231,7 @@ An dieser Stelle werden die Eigenschaften und die Methoden der Klasse
 	\textbf{count\_number\_steps} zu den \"Offnungszeiten ist, wird die
 	Ber\"ucksichtigung der zus\"atzlichen Verluste sichergestellt. Der
 	zweite Ruckgabewert ist die Zeitspanne bis zum Erreichen der kritischen
-	maximalen Temperatur (vgl. \cref{taukn} und \cref{taukd} auf den Seiten
-	\pageref{taukn} und \pageref{taukd}).
+	maximalen Temperatur (vgl. \cref{tauk} auf der Seite \pageref{tauk}).
 
 	Die \"Ubergabe folgender Argumente an die Funktion ist erforderlich:
 	\begin{description}
@@ -257,9 +255,9 @@ An dieser Stelle werden die Eigenschaften und die Methoden der Klasse
 		\textbf{number\_steps}.
 		\item[count\_number\_day] Der aktuelle Wert von der Laufvariable
 		\textbf{number\_days}.
-		\item[Q\_losses] Wert der aktuellen eindringenden
-		W\"armeenergie als Ergebnis der Funktion
-		\textbf{sum\_all\_losses()}.
+		\item[Q\_losses] Wert der aktuellen Verlustk\"altemengeals
+		Ergebnis der Funktion \textbf{sum\_all\_losses()} (vgl.
+		\cref{qv} auf der Seite \pageref{qv}).
 	\end{description}
 	\item[temperature\_change()] Die Funktion hat einen R\"uckgabewert.
 	Berechnet wird die Temperatur der Substanzmasse, die durch K\"uhlung am
@@ -284,11 +282,11 @@ Alle Klassen haben einen unterschiedlichen Status. Die Klasse
 \textbf{Power\_gird} vertritt die Rolle des ganzen Systems, also des
 Energieversorgungsnetzes, welches aus charakteristischen Teilen, den Knoten
 (\textbf{Bus}) besteht. Die Existenz eines Knotens au\ss erhalb eines Netzes
-ergibt f\"ur die Berechnung keinen Sinn. Dieser Zusammenhang zwischen Klassen
-wird im Klassendiagramm \cref{fig:klassendiagramm} durch eine Linienverbindung
-verdeutlicht. Auf der Seite des Ganzen endet die Linie mit einem ausgef\"ullten
-Rhombus. Das komplette Modell ist nach diesem Prinzip aufgestellt. Die kleinste
-Einheit des Ganzen stellt die K\"alteanlage (\textbf{Refrigerator}) dar.
+ergibt keinen Sinn. Dieser Zusammenhang zwischen Klassen wird im Klassendiagramm
+\cref{fig:klassendiagramm} durch eine Linienverbindung/Komposition verdeutlicht.
+Auf der Seite des Ganzen endet die Linie mit einem ausgef\"ullten Rhombus. Das
+komplette Modell ist nach diesem Prinzip aufgestellt. Das kleinste Element des
+Ganzen stellt die K\"alteanlage (\textbf{Refrigerator}) dar.
 
 \begin{figure}[h]
 	\begin{center}
@@ -301,13 +299,13 @@ Einheit des Ganzen stellt die K\"alteanlage (\textbf{Refrigerator}) dar.
 Auf Grund des Modells wird das elektrische Verhalten einer
 Supermarket-K\"altelast im Energieversorgungsnetz durch miteinander
 kooperierende Objekte dargestellt. Wird eine Funktion aufgerufen, die den Start
-der Simulation veranlasst, m\"ussen, bevor auf die Methoden der einzelnen
-Objekte zugegriffen werden kann, die Objekte erzeugt werden.
+der Simulation veranlasst, m\"ussen die Objekte aus der Konfigurationsdatei
+erzeugt werden.
 
-In der \cref{fig:uml_sequence} auf der \pageref{fig:uml_sequence} wird mit Hilfe
-eines Sequenzdiagrammes der Nachrichtenaustausch hervorgehoben, der bei der
-Erstellung der Objekte durchlaufen wird. Auf der Zeitachse, die senkrecht von
-oben nach unten verl\"auft, wird mit Hilfe der Pfeile der Zugriff auf die
+In der \cref{fig:uml_sequence} auf der Seite \pageref{fig:uml_sequence} wird mit
+Hilfe eines Sequenzdiagramms der Nachrichtenaustausch hervorgehoben, der bei
+der Erstellung der Objekte durchlaufen wird. Auf der Zeitachse, die senkrecht
+von oben nach unten verl\"auft, wird mit Hilfe der Pfeile der Zugriff auf die
 Methoden der Objekte dargestellt. Ist eine Methode des Objektes f\"ur einen
 Zeitraum aktiv, wird dieser Zustand durch einen grauen Balken auf dem Zeitstrahl
 des zugeh\"origen Objektes visualisiert. Der Aufruf der Funktionen der Objekte
@@ -315,7 +313,7 @@ wird durch einen Pfeil mit ausgef\"ullter Spitze dargestellt. Der Pfeil geht vom
 Zeitstrahl eines Objekts aus, der die Funktion aufruft und endet mit der Spitze
 im Objekt, zu dem diese Funktion geh\"ort. Der Name der aufgerufenen Funktion
 steht \"uber dem Pfeil. Wird von dieser Funktion etwas zur\"uckgegeben, so ist
-der Pfeil gestrichelt. Ist Die R\"uckgabevariablen stehen \"uber dem Pfeil.
+der Pfeil gestrichelt. Die R\"uckgabewerte stehen \"uber dem Pfeil.
 
 In der Funktion \textbf{runCooling}, die den Start der Simulation veranlasst und
 steuert, wird der Konstruktor der Klasse \textbf{Power\_grid} aufgerufen. Als
@@ -327,42 +325,42 @@ Objekte aufgerufen. Die Anzahl der erzeugten Objekte h\"angt davon ab, wie oft
 die Konstruktor-Funktion der jeweiligen Klasse aufgerufen wird. Diese Zahlen
 werden in Konfigurationsdateien abh\"angig von dem untersuchten Fall festgelegt.
 Die ausf\"uhrliche Erkl\"arung der Konfigurationsdateien wird in kommenden
-Abschnitten vorgenommen.
+Abschnitten vorgenommen\todo{Abschnitt einfuegen!}.
 
 \subsection*{Bereitstellung der Leistung zur K\"alteerzeugung}
 
 Der augenblickliche Gleichgewicht zwischen dem K\"altebedarf und der zur
 Verf\"ugung stehenden K\"alteleistung sichert die Einhaltung der Soll-Temperatur
 der K\"uhlg\"uter. Werden die K\"alteanlagen als Energiespeicher zur Regelung
-eingesetzt, so f\"uhrt das auf Grund der fluktuierenden zur Verf\"ugung
-stehenden K\"alteleistung zu Temperaturschwankungen. Die engen Grenzen des
-zul\"assigen Temperaturbandes d\"urfen nicht \"uberschritten werden.
+eingesetzt, so f\"uhrt das, auf Grund der fluktuierenden zur Verf\"ugung
+stehenden K\"alteleistung\todo{Bei Caro nachgucken, ob das leistung ist!}, zu
+Temperaturschwankungen. Die engen Grenzen des zul\"assigen Temperaturbandes
+d\"urfen nicht \"uberschritten werden.
 
 Verschiedene Konzepte f\"ur den Einsatz der K\"alteanlagen als Energiespeicher
 im Energieversorgungsnetz sind denkbar. Im folgenden Abschnitt wird die
-Implementierung eines m\"oglicher Kooperationskonzept zwischen Supermarkt und
-Windpark vorgestellt.
+Implementierung eines m\"oglichen Kooperationskonzeptes zwischen einer
+Supermarktkette und einem Windpark vorgestellt.
 
-Die prognostizierten elektrischen Windleistungsdaten und die tatsächlich vom
-Windpark produzierten elektrischen Windleistungsdaten der Vattenfall-Regelzone
-\todo{was ist das heute?} aus dem Jahr 2005 werden als Grundlage-Datensatz zur
-Implementierung des Kooperationskonzeptes verwendet. Im Datensatz sind
-Stundenwerte von Windleistung gespeichert weshalb in diesem Fall auch von
+Die prognostizierten und die tatsächlich vom Windpark produzierten elektrischen
+Windleistungsdaten der Vattenfall-Regelzone \todo{was ist das heute?} aus dem
+Jahr 2005 werden als Grundlage-Datensatz verwendet. Im Datensatz sind
+Stundenwerte von Windleistung gespeichert, weshalb in diesem Fall auch von
 Energie gesprochen werden kann.
 
-Der Windpark ist bestrebt die Verpflichtung \"uber die Bereitstellung von
+Der Windpark ist bestrebt, die Verpflichtung \"uber die Bereitstellung von
 Leistung beim Netzbetreiber zu erf\"uhlen. Abweichungen, die aufgrund der
 fehlerhaften Windprognosen entstehen, sollen durch die Kooperation mit
 Supermarktketten ausgeglichen werden.
 
 Es wird angenommen, dass der Prognosefehler von der Windleistungsvorhersage
-f\"ur 24 h den 15\% entspricht. Der Windparkbetreiber meldet beim Netzbetreiber
-die untere Grenze, also 85\% von der Windleistungsvorhersage, an. Der
-Supermarkt besitzt einen st\"undlichen Bedarf, der unbedingt gedeckt werden
-muss. Sind die 15\% von der Prognose kleiner als der st\"undliche Bedarf, wird
-die Differenz aus dem Netz gezogen. Diese Abweichung wird beim Netzbetreiber zur
-Erstellung des Lastfahrplanes mitgeteilt. \"Ubersteigt der Prognosefehler die
-15\%, versucht der Supermarkt diesen \"Uberschuss zu neutralisieren.
+f\"ur 24 Stunden den 15\% entspricht. Der Windparkbetreiber meldet beim
+Netzbetreiber die untere Grenze an, also 85\% von der Windleistungsvorhersage.
+Der Supermarkt besitzt einen st\"undlichen Bedarf, der unbedingt gedeckt werden
+muss. Ist der st\"undliche Bedarf gr\"o\ss er als 15\% der Prognose, wird die
+Differenz aus dem Netz gezogen. Diese Abweichung wird beim Netzbetreiber zur
+Erstellung des Lastfahrplanes mitgeteilt. Gibt es eine Abweichung von der
+Prognose, so versucht der Supermarkt diese zu absorbieren.
 
 Die vom Windparkbetreiber beim Netzbetreiber anzumeldende Leistung wird
 berechnet, indem von der Windleistungsvorhersage die 85\% bestimmt werden
@@ -403,7 +401,8 @@ oder
 	\item[$P_{DA}$] Vorhersage der Windleistung (day ahead) in $MW$
 	\item[$P_{dem}$] st\"undlicher Leistungsbedarf des Supermarkts (demand)
 	$MW$
-\end{description} \vspace{0.5cm}
+\end{description}
+\vspace{0.5cm}
 
 Die Leistung, die insgesamt den K\"alteanlagen zur Verf\"ugung steht, berechnet
 sich nach der \cref{pload}. Der Ausdruck $P_{RT} - b$ bedeutet die
@@ -416,23 +415,117 @@ Supermarkts beim Netzbetreiber nicht abgemeldete Leistung.
 \end{equation}
 \begin{description}[\dth]
 	\item[$P_{load}$] vorhandene Leistung zum Laden in $MW$
+	\item[$P_{RT}$] Windleistungsdaten. Windleistung, die tats\"achlich vom
+	Windpark generiert wurde in $MW$
+	\item[$b$] Leistung, die vom Windparkbetreiber beim Netzbetreiber
+	angemeldet wird in $MW$
+	\item[$P_{dem}$] st\"undlicher Leistungsbedarf des Supermarkts (demand)
 	\item[$a$] Leistung, die vom Windparkbetreiber dem Supermarkt
 	versprochen wird in $MW$
-	\item[$P_{dem}$] st\"undlicher Leistungsbedarf des Supermarkts (demand)
-	$MW$
 \end{description} \vspace{0.5cm}
 
 \subsubsection*{Implementierung}
 Die Implementierung des Kooperationskonzeptes erfolgt in einer neuen Klasse
-\textbf{Cooling\_strategy}. Diese Klasse hat die Aufgabe jeder K\"uhlstelle in
+\textbf{Cooling\_strategy}. Diese Klasse hat die Aufgabe, jeder K\"uhlstelle in
 jedem Supermarkt im Netz die aufgrund des Kooperationskonzeptes und der
 Temperaturbeschr\"ankungen optimale Menge an K\"alteleistung zuzuweisen. Die zur
-Verf\"ugung vorhandene Leistung wird auf alle K\"uhlstellen gleichm\"a\ss ig
-aufgeteilt bis keine Leistung mehr zur Verf\"ugung steht oder die
-Minimaltemperatur erreicht wird. Alle K\"uhlstellen sollen zu jeder Stunde
-mindestens soviel Leistung zugewiesen bekommen, dass genau diese eine Stunde
-\"uberbr\"uckt werden kann, ohne dass die H\"ochsttemperatur \"uberschritten
-wird.
+Verf\"ugung stehende Leistung wird auf alle K\"uhlstellen gleichm\"a\ss ig
+aufgeteilt, bis keine Leistung mehr vorhanden ist oder die Minimaltemperatur
+erreicht wird. Alle K\"uhlstellen sollen zu jeder Stunde mindestens soviel
+Leistung zugewiesen bekommen, dass genau diese eine Stunde \"uberbr\"uckt werden
+kann, ohne dass die H\"ochsttemperatur \"uberschritten wird. Die Zeit bis zur
+H\"ochsttemperatur darf also nie unter eine Stunde fallen. Um diese
+Zeitbeschr\"ankung zu erf\"ullen, muss ermittelt werden, ob die die verbleibende
+Zeit bis zur oberen Schranke nicht unter eine Stunde f\"allt, wenn keine
+K\"uhlleistung vorhanden ist.
+Diese Zeit kann nach der \cref{tauk} abgesch\"atz werden.
+\begin{align}
+	\tau_{krit}(i) &= \frac{m \cdot c \cdot (t_{max}
+		t(i))}{Q_{v_{ln}}}
+\label{tauk}
+\end{align}
+\begin{align*}
+	Q_{v_{ln}} &= \begin{cases}
+	1h \cdot \aptranslog, & \text{au\ss erhalb der \"Offnungszeiten}\\
+	1h \cdot (\aptranslog + \pmehr), & \text{innerhalb der \"Offnungszeiten}
+	\end{cases}
+\end{align*}
+
+\begin{description}[\dth]
+	\item[$Q_{v_{ln}}$] Verlustk\"altemenge in $kJ$
+	\item[$\tau_{krit}$] Zeit bis zur kritischen Temperatur in $h$
+	\item[$m$] Substanzmasse zur Aufnahme der Wärmeenergie in $kg$
+	\item[$c$] Spezifische Wärmekapazität der Substanzmasse in $\frac{kJ}{kg
+		\cdot K}$
+	\item[$t_{max}$] obere Temperaturgrenze in $ ^{\circ} C $
+	\item[$t(i)$] Temperatur zur Stunde $i$ in $ ^{\circ} C $
+	\item[$\aptranslog$] logarithmierte Mittelwert der
+		Transmissionswärmeleistung zum aktuellen Zeitpunkt in $kW$
+	\item[$\pmehr$] Tagesmehrbedarf in $kW$
+\end{description}
+\vspace{0.5cm}
+Die Differenz zwischen der Transmissionswärmeleistung f\"ur den aktuellen
+Zeitpunkt wenn die K\"uhlraumtemperatur minimal w\"are, und der
+Transmissionswärmeleistung zum aktuellen Zeitpunkt geteilt durch den Logarithmus
+aus der Division der beiden Leistungen, ergibt den logarithmierten Mittelwert
+der Transmissionswärmeleistung.
+\begin{equation}
+	\aptranslog(i) = \frac{ \ptransm(i) - \ptrans(i) }{\log \left(
+		\frac{\ptransm(i)}{\ptrans(i)} \right)}
+	\label{log}
+\end{equation}
+
+\begin{description}[\dth]
+	\item[$\aptranslog(i)$] logarithmierte Mittelwert der
+		Transmissionswärmeleistung zum aktuellen Zeitpunkt in $kW$
+	\item[$\ptransm(i)$] Transmissionswärmeleistung f\"ur den aktuellen
+	Zeitpunkt wenn die K\"uhlraumtemperatur minimal w\"are in $kW$
+	\item[$\ptrans(i)$] Transmissionswärmeleistung f\"ur den aktuellen
+	Zeitpunkt  $kW$
+\end{description}
+\vspace{0.5cm}
+
+Um den Temperaturausgleich in den Lebensmitteln im Algorithmus zu
+berücksichtigen, werden deshalb die zu- und abgeführten Wärmeenergiemengen bei
+der Berechnung der Temperatur für jeden Zeitschritt stets mit dem Faktor 0,8
+multipliziert.  Die Gleichung zur stündlichen Berechnung der aktuellen
+Temperatur ist damit:
+
+\begin{equation}
+	t(i+1) = 0.8 \cdot \frac{Q_v - Q_{ab}}{m \cdot c}h + t(i)
+\label{tns}
+\end{equation}
+
+\begin{description}[\dth]
+
+	\item[$t$] Temperatur in $^{\circ} C$
+	\item[$Q_v$] eindringende Verlustwärmemenge in $kJ$
+	\item[$Q_{ab}$] abführende Wärmemenge in $kJ$
+
+\end{description}
+\vspace{0.5cm}
+
+wobei $Q_v$ die aktuell eindringende Wärmeenergie und $Q_{ab}$ die abgeführte
+Wärmeenergie ist\todo{die nachfolgende Gleichung geh\"ort nicht dahin! oder?}.
+
+\begin{equation}
+	\emax = m \cdot c \cdot (t(i) - t_{max}) + Q_v
+\label{emax}
+\end{equation}
+
+\begin{description}[\dth]
+
+	\item[$\emax$] maximal abzuf\"uhrende W\"armeenergiemenge in $kJ$
+	\item[$m$] Substanzmasse zur Aufnahme der Wärmeenergie in $kg$
+	\item[$c$] Spezifische Wärmekapazität der Substanzmasse in $\frac{kJ}{kg
+		\cdot K}$
+	\item[$Q_v$] eindringende Verlustwärmemenge in $kJ$
+	\item[$t_{min}$] obere Temperaturgrenze in $ \grad C $
+	\item[$t(i)$] Temperatur zur Stunde $i$ in $ \grad C $
+
+\end{description}
+\vspace{0.5cm}
+
 \begin{figure}[h!]
 	\begin{center}
 	\includegraphics[scale=0.7]{images/Theorie_Super/class_diagramm_second}
@@ -450,10 +543,10 @@ sie die zur K\"uhlung erforderliche Leistung berechnet. Ein Objekt der Klasse
 \textbf{Refrigerator} in Verbindung stehen.\\
 
 In der \cref{fig:coop} auf der Seite \pageref{fig:coop} ist der
-Programmstrukturplan der Kooperationskonzeptes dargestellt. Der Algorithmus
-zeigt den Ablauf beim "'Auff\"uhlen"' der K\"uhlstellen in einer f\"ur genau
-einen Zeitschritt der Simulation. Die Umsetzung des Algorithmus erfolgt in der
-Funktion \textbf{strategy\_calculator()}.
+Programmstrukturplan des Kooperationskonzeptes dargestellt. Der Algorithmus
+zeigt den Ablauf beim "'Auff\"uhlen"' der K\"uhlstellen  f\"ur genau einen
+Zeitschritt der Simulation. Die Umsetzung des Algorithmus erfolgt
+in der Funktion \textbf{strategy\_calculator()}.
 
 \begin{description}
 \item[strategy\_calculator()] Es gibt f\"unf R\"uckgabewerte dieser Funktion.
@@ -461,7 +554,8 @@ Der erste R\"uckgabewert ist ein $n\times11\,$-Array, wobei $n$ f\"ur die Anzahl
 der im gesamten Netz vorhandenen K\"uhlzellen steht. In den Spalten des Arrays
 werden alle Informationen gespeichert, die durch Berechnungen in der Funktion
 entstanden sind und die Information zur eindeutigen Zuordnung dieser Ergebnisse
-zu der jeweiligen K\"alteeinheit. ergibt sich dadurch, dass 
+zu der jeweiligen K\"alteeinheit. ergibt sich dadurch, dass \todo{das mache ich
+noch heute}
 \end{description}
 
 Der Auff\"uhlvorgang findet zwischen den st\"undlichen Temperaturberechnungen
@@ -473,25 +567,27 @@ geeignet. Innerhalb der \textbf{while}-Schleife wird der Algorithmus
 
 Im ersten Schritt des Algorithmus findet eine Abfrage statt, ob Leistung zum
 K\"uhlen der Anlagen zur Verf\"ugung steht. Dieser Berechnung liegt die
-Gleichung \cref{pload} auf der Seite \pageref{pload} zugrunde die in der
-Funktion \textbf{power\_for\_load\_nett()} implementiert ist.
+\cref{pload} auf der Seite \pageref{pload} zugrunde, die in der
+Funktion \textbf{power\_for\_load\_net()} implementiert
+ist.
+
 \begin{description}
 \item[Fall 1] Die Menge der Leistung ist nicht gr\"o\ss er Null. Es erfolgt die
 n\"achste Abfrage nach den K\"uhlstellen, die eine Stunde ohne Leistung aus dem
 Netz nicht \"uberstehen k\"onnen, ohne kritische Temperatur zu \"uberschreiten.
 Diese Anlagen werden mit der zus\"atzlichen, nicht angemeldeten Leistung aus dem
-Netz geladen, so, dass sie genau eine Stunde \"uberstehen, ohne die obere
-Temperaturgrenze zu verletzen. Das Programm endet anschlie\ss end, und es kann
-zum n\"achsten Zeitschritt der Simulation \"ubergegengen werden.
+Netz geladen, sodass sie genau eine Stunde \"uberstehen, ohne die obere
+Temperaturgrenze zu verletzen. Der Vorgang endet anschlie\ss end, und es kann
+zum n\"achsten Zeitschritt der Simulation \"ubergegangen werden.
 
-Sind keine solche K\"uhlstellen vorhanden, endet das Programm und es kann zum
-n\"achsten Zeitschritt der Simulation \"ubergegengen werden.
+Sind keine solche K\"uhlstellen vorhanden, endet der Vorgang und es kann zum
+n\"achsten Zeitschritt der Simulation \"ubergegangen werden.
 
-\item[Fall 2] Die Menge der Leistung ist gr\"o\ss er Null. In diesem Fall,
-werden alle K\"uhlstellen gefunden, deren Kapazit\"at noch nicht ausgesch\"opft
+\item[Fall 2] Die Menge der Leistung ist gr\"o\ss er Null. In diesem Fall
+werden alle K\"uhlstellen gefunden, deren Kapazit\"at\todo{was ist das?} noch nicht ausgesch\"opft
 ist und deren Zeit bis zum erreichen der kritischen Temperatur am kleinsten ist.
 Anschlie\ss end wird \"uberpr\"uft, ob eine W\"armeenergie abgef\"uhrt werden
-kann die genau $\frac{1}{60}\cdot Q_v$\footnote{ $Q_v$ ist die eindringende
+kann, die genau $\frac{1}{60}\cdot Q_v$\footnote{ $Q_v$ ist die eindringende
 Verlustw\"armemenge in $kJ$.} entspricht, ohne als Folge die
 \"Uberschreitung der minimalen Temperatur zu verursachen. Ist das der Fall, wird
 die Kapazit\"at dieser K\"uhlstelle gleich Null gesetzt, damit diese

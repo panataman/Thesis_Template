@@ -291,13 +291,13 @@ Kühlkreislauf aufrecht zu erhalten, muss Leistung aufgewendet werden\footnote{
 \label{fig:prinz}
 \end{figure}
 
-In der \cref{fig:prinz} auf der \pageref{fig:prinz}ist die Prinzipdarstellung der weitverbreiteten
-Kompressionsk\"altemaschine zu sehen. Die Ware, die symbolisch durch einen
-Kohlkopf dargestellt ist, wird mit einer Temperatur zwischen $\pm 0$ und
-$+8\grad C$ gelagert. Der Temperaturunterschied zwischen dem Innen,- und Au\ss
-enbereich folgt der W\"armeausgleich (Verlust an K\"alte). Die K\"alteenergie,
-die in der Substanzmasse (der Ware) gespeichert wird, geht dabei f\"ur den
-Betreiber verloren.
+In der \cref{fig:prinz} auf der \pageref{fig:prinz}ist die Prinzipdarstellung
+der weitverbreiteten Kompressionsk\"altemaschine zu sehen. Die Ware, die
+symbolisch durch einen Kohlkopf dargestellt ist, wird mit einer Temperatur
+zwischen $\pm 0$ und $+8\grad C$ gelagert. Der Temperaturunterschied zwischen
+dem Innen,- und Au\ss enbereich folgt der Verlust an K\"alte (W\"armeausgleich).
+Der Ausgleich f\"uhrt dazu, dass K\"altenergie f\"ur den Lagerungs- und
+K\"uhlungsprozess verloren geht.
 
 Die Aufnahme der Wärmeenergie und der spezifischen Wärmekapazität dieser
 Substanzmasse ergibt die Temperaturdifferenz $\Delta\:t$.
@@ -310,27 +310,27 @@ Substanzmasse ergibt die Temperaturdifferenz $\Delta\:t$.
 \begin{description}[\dth]
 
 	\item[$\Delta\:t$] Temperaturdifferenz in Kelvin $K$
-	\item[$Q$] Eindringende Wärmeenergie in $kJ$
-	\item[$m$] Substanzmasse zur Aufnahme der Wärmeenergie in $kg$
-	\item[$c$] Spezifische Wärmekapazität der Substanzmasse in $\frac{kJ}{kg
-		\cdot K}$
+	\item[$Q$] Verlust an K\"alte in in $kJ$
+	\item[$m$] Substanzmasse zur Aufnahme der K\"alteenergie in $kg$
+	\item[$c$] Spezifische K\"altekapazit\"at (W\"armekapazit\"at) der
+	Substanzmasse in $\frac{kJ}{kg \cdot K}$
 
 \end{description}
 \vspace{0.5cm}
 
 Die installierte Kälteleistung multipliziert mit der täglichen Betriebszeit muss
-zwangsweise größer oder gleich dem stündlichen Kältebedarf multipliziert mit der
-Tagesstundenzahl sein.
+gleich dem stündlichen K\"altebedarf multipliziert mit der Tagesstundenzahl
+sein.
 
 \begin{equation}
-	\pinstall = \frac{24\,h}{ \tau_{B} }  \cdot \pkalt \label{pinstall}
+	\pinstall = \frac{24}{ \tau_{B} }  \cdot \pkalt \label{pinstall}
 \end{equation}
 
 \begin{description}[\dth]
 
 	\item[$\pinstall$] Installierte Kälteleistung in $kW$
 	\item[$\tau_{B}$] Tägliche Betriebszeit in $h$
-	\item[$\pkalt$] Kältebedarf in $kW$
+	\item[$\pkalt$] st\"undliche Kälteleistungsbedarf in $kW$
 
 \end{description}
 \vspace{0.5cm}
@@ -357,9 +357,8 @@ Umgebungstemperatur berechnet.
 
 Der Zusammenhang zwischen der aufgewendeten elektrischen Antriebsleistung $P$
 eines Verdichters in einer Kompressionskälteanlage und der genutzten
-Kälteleistung ${\dot{Q}}_0$ wird durch die Kältezahl $\epsilon$ wiedergegeben.
-Die Leistungszahl wird in die zweite Spalte im Array (vergl. Zeile 4 im
-\matref{fridge}) eingetragen.
+st\"undlichen Kälteleistung ${\dot{Q}}_0$ wird durch die Kältezahl $\epsilon$
+wiedergegeben.
 
 \begin{equation}
 	\epsilon = \frac{\pkalt}{P}
@@ -369,7 +368,7 @@ Die Leistungszahl wird in die zweite Spalte im Array (vergl. Zeile 4 im
 \begin{description}[\dth]
 
 	\item[$\epsilon$] Leistungszahl (einheitenlos)
-	\item[$\pkalt$] Kälteleistungsbedarf in $kW$
+	\item[$\pkalt$] st\"undliche Kälteleistungsbedarf in $kW$
 	\item[$P$] elektrische Verdichterantriebsleistung in einer
 		Kopressionskälteanlage in $kW$
 
@@ -377,11 +376,13 @@ Die Leistungszahl wird in die zweite Spalte im Array (vergl. Zeile 4 im
 \vspace{0.5cm}
 
 Die Öffnungszeit des Supermarkts hat einen spürbaren Einfluss auf die Größe der
-Wärmeverluste. In der Literatur wird der Nachtverbrauch mit $10\%$ bis $20\%$
+K\"alteverluste. In der Literatur wird der Nachtverbrauch mit $10\%$ bis $20\%$
 des Tagesverbrauchs angegeben\cite{kauffeld}.  In der Nacht fallen keine
 zusätzlichen Verluste zum Beispiel durch Licht, Körperwärme oder
 Türöffnungszeiten, sodass nur Transmissionsverluste bei der Berechnung beachtet
-werden.
+werden. Leistungsbedarf definiert die Menge an Leistung, der ben\"otigt wird, um
+den Verlust an K\"alte zu ersetzen. Die Abweichung zwischen Tagesbedarf und
+Nachtbedarf an Leistung wird im weiteren Verlauf Tagesmehrbedarf genannt.
 
 \begin{equation}
 	\dot{Q}_{Nacht}=\ptrans
@@ -397,8 +398,8 @@ werden.
 \vspace{0.5cm}
 
 
-Der Leistungsbedarf am Tag ergibt sich aus der Summe des Tagesmehrbedarfs und
-der Transmissionswärmeleistung. Aus Gründen der Vereinfachung wird
+Der K\"alteleistungsbedarf am Tag ergibt sich aus der Summe des Tagesmehrbedarfs
+und der Transmissionswärmeleistung. Aus Gründen der Vereinfachung wird
 Tagesmehrbedarf als weitgehend konstant angenommen.
 
 \begin{equation}
@@ -409,29 +410,50 @@ Tagesmehrbedarf als weitgehend konstant angenommen.
 \begin{description}[\dth]
 
 	\item[$\ptag$] Leistungsbedarf am Tag in $kW$
-	\item[$\pmehr$] Mehrbedarf am Tag in $kW$
+	\item[$\pmehr$] Tagesmehrbedarf am Tag in $kW$
 	\item[$\ptrans$] Transmissionswärmeleistung in $kW$
 
 \end{description}
 \vspace{0.5cm}
 
-Die in den K\"uhlbereich eindringende Verlustw\"armemenge ist aufgrund der
-obengenannten Schlussfolgerungen je nach Tageszeit unterschiedlich.
+Die Verlustk\"altememeng im K\"uhlbereich ist aufgrund der obengenannten
+Gr\"unden je nach Tageszeit unterschiedlich.
 
 \begin{equation}
 	Q_v = \begin{cases}
 	1h \cdot \pnacht, & \text{au\ss erhalb der \"Offnungszeiten}\\
-	1h \cdot \ptag, & \text{innerhalb der \"Offnungszeiten.}
+	1h \cdot \ptag, & \text{innerhalb der \"Offnungszeiten}
 	\end{cases}
 \label{qv}
 \end{equation}
 
 \begin{description}[\dth]
 
-	\item[$Q_v$] eindringende Verlustwärmemenge in $kJ$
+	\item[$Q_v$] Verlustk\"altemenge in $kJ$
 	\item[$\ptag$] Leistungsbedarf am Tag in $kW$
-	\item[$\pnacht$] Mehrbedarf am Tag in $kW$
+	\item[$\pnacht$] Leistungsbedarf in der Nacht in $kW$
 	\item[$h$] Zeiteinheit f\"ur Stunden
+
+\end{description}
+\vspace{0.5cm}
+
+
+Ist f\"ur eine K\"alteanlage der st\"undliche K\"alteleistungsbedarf bekannt, so
+wird der Tagesmehrbedarf an K\"alteleistung ermittelt, indem vom Produkt des
+K\"alteleistungsbedarfes mit dem Faktor f\"ur K\"altebedarfsabsenkung die
+mittlere Transmissionswärmeleistung abgezogen wird.
+
+\begin{equation}
+	\pmehr = \pkalt \cdot K - \aptrans
+\label{pmehr}
+\end{equation}
+
+\begin{description}[\dth]
+
+	\item[$\pmehr$] Tagesmehrbedarf in $kW$
+	\item[$\pkalt$] st\"undliche Kälteleistungsbedarf in $kW$
+	\item[$K$] Faktor für Kältebedarfsabsenkung (einheitenlos)
+	\item[$\aptrans$] mittlere Transmissionswärmeleistung in $kW$
 
 \end{description}
 \vspace{0.5cm}
@@ -452,29 +474,9 @@ wärmeübertragenden Wände.
 	\item[$\aptrans$] mittlere Transmissionswärmeleistung in $kW$
 	\item[$A$] Fläche in $m^2$
 	\item[$k$] Wärmedurchgangskoeffiziente in $\frac{W}{m^2 \cdot K}$
-	\item[$t_{amb}$] Umbgebungstemperatur in $^{\circ}C$
+	\item[$t_{amb}$] Umgebungstemperatur in $^{\circ}C$
 	\item[$\overline{t}_{KR}$] mittlere Kühlraumtemperatur in
 		$^{\circ}C$
-\end{description}
-\vspace{0.5cm}
-
-Ist f\"ur eine K\"alteanlage der K\"alteleistungsbedarf bekannt, so wird der
-Tagesmehrbedarf an K\"alteleistung ermittelt, indem vom Produkt des
-K\"alteleistungsbedarfes f\"ur $24\;h$ mit dem Faktor f\"ur
-K\"altebedarfsabsenkung die mittlere Transmissionswärmeleistung abgezogen wird.
-
-\begin{equation}
-	\pmehr = \pkalt \cdot K - \aptrans
-\label{pmehr}
-\end{equation}
-
-\begin{description}[\dth]
-
-	\item[$\pmehr$] Mehrbedarf am Tag in $kW$
-	\item[$\pkalt$] Kälteleistungsbedarf in $kW$
-	\item[$K$] Faktor für Kältebedarfsabsenkung (einheitenlos)
-	\item[$\aptrans$] mittlere Transmissionswärmeleistung in $kW$
-
 \end{description}
 \vspace{0.5cm}
 
@@ -495,8 +497,8 @@ Kältebedarfsabsenkung, dem Verdichteranteil ergibt die Verdichterarbeit.
 
 \begin{description}[\dth]
 
-	\item[$\lverd$] Verdichterarbeit pro $24\,h$ in $\frac{kWh}{24h}$
-	\item[$\lspez$] spezifischer Energieverbrauch pro $24\,h$ in
+	\item[$\lverd$] Verdichterarbeit pro 24 Stunden in $\frac{kWh}{24h}$
+	\item[$\lspez$] spezifischer Energieverbrauch pro 24 Stunden in
 		$\frac{kWh}{24h}$
 	\item[$K$] Faktor für Kältebedarfsabsenkung (einheitenlos)
 	\item[$v$] Verdichteranteil (einheitenlos)
@@ -505,20 +507,20 @@ Kältebedarfsabsenkung, dem Verdichteranteil ergibt die Verdichterarbeit.
 \end{description}
 \vspace{0.5cm}
 
-Im Folgenden muss die Verdichterarbeit zum Abf\"uhren von zus\"atzlich
-eindringenden W\"aremeenergie in der \"Offnungszeit berechnet werden, die einem
-weiteren Schritt in W\"armeleistung $\pmehr$ umgewandelt wird.
+Im Folgenden muss die Verdichterarbeit zum Ersetzen der zus\"atzlichen
+K\"alteenergieverlustmenge in der \"Offnungszeit berechnet werden, die einem
+weiteren Schritt in Tagesmehrbedarf $\pmehr$ umgewandelt wird.
 
 \begin{equation}
-	\lmehr = \lverd - \frac{\aptrans}{\epsilon} \cdot 24h
+	\lmehr = \lverd - \frac{\aptrans}{\epsilon} \cdot 24
 \label{lmehr}
 \end{equation}
 
 \begin{description}[\dth]
 
-	\item[$\lmehr$] Verdichterarbeit zum Abführen von eindringenden
-		Wärmeenergie $\emehr$ in $kWh$ in der \"Offnungszeit
-	\item[$\lverd$] Verdichterarbeit pro $24\,h$ in $\frac{kWh}{24h}$
+	\item[$\lmehr$] Verdichterarbeit zum Ersetzen der zus\"atzlichen
+	K\"alteenergieverluste $\emehr$ in der \"Offnungszeit in $kWh$
+	\item[$\lverd$] Verdichterarbeit pro 24 Stunden in $\frac{kWh}{24h}$
 	\item[$\aptrans$] mittlere Transmissionswärmeleistung in $kW$
 	\item[$\epsilon$] Leistungszahl (einheitenlos)
 
@@ -531,127 +533,18 @@ Es wird angenommen, dass der Mehrbedarf in den rund zw\"olf Stunden der
 \"Offnungszeit entsteht.
 
 \begin{equation}
-	\pmehr = \frac{\lmehr}{12h} \cdot \epsilon
+	\pmehr = \frac{\lmehr}{12} \cdot \epsilon
 \label{spmehr}
 \end{equation}
 
 \begin{description}[\dth]
 
-	\item[$\pmehr$] Mehrbedarf am Tag in $kW$
-	\item[$\lmehr$] Verdichterarbeit zum Abführen von eindringenden
-		Wärmeenergie $\emehr$ in $kWh$ in der \"Offnungszeit
+	\item[$\pmehr$] Tagesmehrbedarf in $kW$
+	\item[$\lmehr$] Verdichterarbeit zum Ersetzen der zus\"atzlichen
+	K\"alteenergieverluste $\emehr$ in der \"Offnungszeit in $kWh$
 	\item[$\epsilon$] Leistungszahl (einheitenlos)
 
 \end{description}
 \vspace{0.5cm}
 
-Dabei entspricht $\pnacht$ der mittleren Transmissionswärmeleistung
-$\ptrans$\todo{ab hier noch nicht umformuliert}.
-$\ptag$ ist der Kältebedarf $\pkalt$, multipliziert mit dem Faktor für die
-Kältebedarfsabsenkung $K$ bei Geräten, bei denen der Kältebedarf gegeben ist.
-Bei steckerfertigen Geräten ist $\ptag$ die Summe aus dem Mehrbedarf an Leistung
-am Tag $\pmehr$ und der mittleren Transmissionswärmeleistung $\ptrans$.
 
-Mit den Wärmeverlusten, die am Tag und in der Nacht in unterschiedlicher Größe
-auftreten, wird für jeden Zeitschritt die Zeit bis zum kritischen
-Temperaturmaximum bestimmt. Diese Zeit braucht das Programm, um den Einsatz der
-Supermarktkälteanlagen als Speicher zu planen. Mit der Gleichung
-
-\begin{equation}
-	\aptranslog(i) = \frac{ \ptransm(i) - \ptrans(i) }{log \left(
-		\frac{\ptransm(i)}{\ptrans(i)} \right)}
-	\label{log}
-\end{equation}
-\begin{equation}
-	\tau_{krit}(i) = \frac{m \cdot c \cdot (t_{max} -
-		t(i))}{\aptranslog(i)}
-\label{taukn}
-\end{equation}
-
-\begin{description}[\dth]
-
-	\item[$\tau_{krit}$] Zeit bis zur kritischen Temperatur in $h$
-	\item[$m$] Substanzmasse zur Aufnahme der Wärmeenergie in $kg$
-	\item[$c$] Spezifische Wärmekapazität der Substanzmasse in $\frac{kJ}{kg
-		\cdot K}$
-	\item[$t_{max}$] obere Temperaturgrenze in $ \grad C $
-	\item[$t(i)$] Temperatur zur Stunde $i$ in $ \grad C $
-	\item[$\aptranslog$] logarithmierte Mittelwert der
-		Transmissionswärmeleistung in $kW$
-\end{description}
-\vspace{0.5cm}
-
-
-wird die Zeit $\tau_{krit}$ für jeden Zeitpunkt $i$ berechnet, wobei
-$\overline{\dot{Q}}_{Tr_{ln}}$ der logarithmische Mittelwert ist, der sich aus
-den Transmissionswärmeleistungen zum jeweils aktuellen Zeitpunkt $i$ mit der
-Temperatur $t(i)$ und den Transmissionswärmeleistungen zum Zeitpunkt, an dem der
-Kühlinnenraum die maximale Temperatur $t_{max}$ erreicht hätte, berechnet. Am
-Tag müssen die restlichen Verluste $\pmehr$ zusätzlich zu den
-Transmissionwärmeverlusten für die Berechnung der Zeit bis zur kritischen
-Temperatur berücksichtigt werden, wodurch sich folgende Gleichung ergibt:
-
-\begin{equation}
-	\tau_{krit}(i) = \frac{m \cdot c \cdot (t_{max} -
-		t(i))}{\aptranslog(i) + \pmehr}
-\label{taukd}
-\end{equation}
-
-\begin{description}[\dth]
-
-	\item[$\tau_{krit}$] Zeit bis zur kritischen Temperatur in $h$
-	\item[$m$] Substanzmasse zur Aufnahme der Wärmeenergie in $kg$
-	\item[$c$] Spezifische Wärmekapazität der Substanzmasse in $\frac{kJ}{kg
-		\cdot K}$
-	\item[$t_{max}$] obere Temperaturgrenze in $ ^{\circ} C $
-	\item[$t(i)$] Temperatur zur Stunde $i$ in $ ^{\circ} C $
-	\item[$\aptranslog$] logrithmierte Mittelwert der
-		Transmissionswärmeleistung in $kW$
-	\item[$\pmehr$] Mehrbedarf am Tag in $kW$
-
-\end{description}
-\vspace{0.5cm}
-
-Die Zeit $\tau_{krit}$ ist abhängig vom Anstieg der Temperaturen und dieser
-wiederum von den eindringenden Wärmelasten.
-
-Um den Temperaturausgleich in den Lebensmitteln im Algorithmus zu
-berücksichtigen, werden deshalb die zu- und abgeführten Wärmeenergiemengen bei
-der Berechnung der Temperatur für jeden Zeitschritt stets mit dem Faktor 0,8
-multipliziert.  Die Gleichung zur stündlichen Berechnung der aktuellen
-Temperatur ist damit:
-
-\begin{equation}
-	t(i+1) = 0.8 \cdot \frac{Q_v - Q_{ab}}{m \cdot c}h + t(i)
-\label{tns}
-\end{equation}
-
-\begin{description}[\dth]
-
-	\item[$t$] Temperatur in $^{\circ} C$
-	\item[$Q_v$] eindringende Verlustwärmemenge in $kJ$
-	\item[$Q_{ab}$] abführende Wärmemenge in $kJ$
-
-\end{description}
-\vspace{0.5cm}
-
-wobei $Q_v$ die aktuell eindringende Wärmeenergie und $Q_{ab}$ die abgeführte
-Wärmeenergie ist\todo{die nachfolgende Gleichung geh\"ort nicht dahin! oder?}.
-
-\begin{equation}
-	\emax = m \cdot c \cdot (t(i) - t_{min}) + Q_v
-\label{emax}
-\end{equation}
-
-\begin{description}[\dth]
-
-	\item[$\emax$] maximal abzuf\"uhrende W\"armeenergiemenge in $kJ$
-	\item[$m$] Substanzmasse zur Aufnahme der Wärmeenergie in $kg$
-	\item[$c$] Spezifische Wärmekapazität der Substanzmasse in $\frac{kJ}{kg
-		\cdot K}$
-	\item[$Q_v$] eindringende Verlustwärmemenge in $kJ$
-	\item[$t_{min}$] obere Temperaturgrenze in $ \grad C $
-	\item[$t(i)$] Temperatur zur Stunde $i$ in $ \grad C $
-
-\end{description}
-\vspace{0.5cm}
