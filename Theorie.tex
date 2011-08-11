@@ -1,4 +1,4 @@
-\chapter{Theorie}
+\chapter{Theoretische Problembetrachtung}
 \label{chap:theorie}
 \minitoc
 
@@ -9,95 +9,86 @@
 
 Die erneuerbaren Energien \"ubernehmen in Deutschland mit jedem Jahr einen
 gr\"o\ss eren Anteil an der Elektrizit\"atsversorgung. Mehr als die H\"alfte
-\todo{wo ist die Quelle?}der
-erneuerbaren Energie wird durch Wind und Photovoltaik erzeugt. Diese
-Energiequellen sind jedoch im hohen Grad witterungsabh\"angig und k\"onnen stark
-fluktuieren. Dadurch kann die Menge der zur Verf\"ugung stehenden Energie von
-der Nachfrage zeitlich enorm abweichen. Der sichere Betrieb des Stromnetzes bei
-einer konstanten Frequenz von $50\,Hz$ kann dadurch gef\"ardet werden.
-Zus\"atzliche Bereitstellung an Regelleistung wird dadurch notwendig. Au\ss
-erdem erfolgt die Erstellung der Fahrpl\"ane f\"ur den Einsatz der
-konventionellen Kraftwerke zwangsweise auf den fehlerbehafteten Vortagsprognosen
-\"uber die Menge an Leistung aus erneuerbaren Energien.  Die G\"ute der Prognose
-bestimmt direkt den Regel- und den Reservebedarf.
+\todo{wo ist die Quelle?}der erneuerbaren Energie wird durch Wind und
+Photovoltaik erzeugt. Diese Energiequellen sind jedoch in hohem Grad
+witterungsabh\"angig und k\"onnen stark fluktuieren. Dadurch kann die Menge der
+zur Verf\"ugung stehenden Energie von der Nachfrage zeitlich enorm abweichen.
+Dies kann den  sicheren Betrieb des Stromnetzes bei einer konstanten Frequenz
+von $50$ Hz gef\"arden. Zus\"atzliche Bereitstellung an Regelleistung wird
+dadurch notwendig. Au\ss erdem erfolgt die Erstellung der Fahrpl\"ane f\"ur
+den Einsatz der konventionellen Kraftwerke gezwungenerma\ss en auf den
+fehlerbehafteten Vortagsprognosen \"uber die Menge an Leistung aus erneuerbaren
+Energien. Die G\"ute der Prognose bestimmt dabei direkt den Regel- und den
+Reservebedarf.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\subsection*{Wetter- und Windprognose}
-
-Eine exakte Prognose \"uber die Leistung aus Wind- und Photovoltaikanlagen setzt
-eine nach M\"oglichkeit getreu Wettervorhersage voraus. In der Literatur wird
-eine Genauigkeit f\"ur Day-Ahead Windleistungsprognose von $7\,\%$
+Eine exakte Prognose \"uber die Leistung aus Wind- und Photovoltaikanlagen kann
+nur auf Grundlage exakter Wettervorhersagen erfolgen. In der Literatur wird eine
+mittlere Genauigkeit f\"ur Day-Ahead Windleistungsprognosen von $7\,\%$
 \cite{prognose_doctor} und f\"ur Leistungsprognose aus Photovoltaikanlagen im
-Bereich von $3.5\,\%\,-\,4.4\,\%$ \cite{solarvorhersagung} angegeben. Im
-Verlaufe des Tages k\"onnen zeitweise deutlich h\"ohere Abweichungen auftreten.
-Durch den gedrosselten Betrieb der Anlagen ist eine M\"oglichkeit zur
-Kompensation der Prognosefehler gegeben. Der gedrosselte Anteil kann dadurch
-jedoch nicht genutzt werden. Die Bereitstellung der Regelleistung durch
-konventionelle oder andere Kraftwerke erscheint hier als sinnvoll. Eine bessere
-L\"osung sind Energiespeicher, die bei \"Uberangebot Energie speichern und bei
-einem Defizit Energie an das Netz freigeben.
+Bereich von $3,5\,\%\,-\,4,4\,\%$ \cite{solarvorhersagung} angegeben.
+Dar\"uberhinaus k\"onnen im Verlauf eines Tages zeitweise deutliche Abweichungen
+von diesen Werten auftreten. Durch den gedrosselten Betrieb der Anlagen ist
+eine M\"oglichkeit zur Kompensation der Prognosefehler gegeben. Der gedrosselte
+Anteil kann dadurch jedoch nicht genutzt werden. Die Bereitstellung der
+Regelleistung durch konventionelle oder andere Kraftwerke erscheint hier als
+sinnvoll. Eine Alternative zu den obengenannten Methoden bieten Energiespeicher,
+da sie bei \"Uberangebot Energie speichern k\"onnen und bei Unterversorgung
+Energie in das Netz einspeisen k\"onnen.
 
-Eine weitere M\"oglichkeit zur Reduzierung des obengenannten Effektes ist eine
-variable Gestaltung der Netzlast. Kann sich ein Verbraucher nicht zu seinem
-Nachteil dem Angebot der Energieerzeugung folgen, so würden die
-Regelungsverluste und der Aufwand verringert und damit Kosten gespart werden.
-Kann ein Verbraucher seine Hauptlast zeitlich verschieben, besteht das Potential
-diese F\"ahigkeit zur Regelung einzusetzen.
+Variable Gestalltung der Netzlast kann weiterhin zur Reduzierung der
+obengenannten Problematik beitragen.
 
-Es ist vorstellbar, dass Anlagen zur K\"alteerzeugung auf Grund der thermischen
-Tr\"agheit zu g\"unstigen Zeiten die Temperatur zus\"atzlich senken k\"onnen und
-zu ung\"unstigen Zeiten die K\"uhlt\"atigkeit auf das Minimum herunterfahren.
-Hiermit ist also das Interesse begr\"undet, das Lastverlagerungspotential in der
-K\"alteerzeugung zu untersuchen.
+Dies bedeutet, dass beispielsweise Gro\ss verbraucher in Zeiten geringen
+Energiebedarfs zeitweilig vom Netz genommen und die dadurch freiwerdenden
+Kapazit\"aten anderwertig eingesetzt werden. Dies h\"atte zur Folge, dass sowohl
+Regelungsverluste als auch der Regelungsaufwand verringert und somit Kosten
+gespart werden k\"onnten. Es ist vorstellbar, dass Anlagen zur K\"alteerzeugung
+aufgrund der thermischen Tr\"agheit zu g\"unstigen Zeiten die Temperatur
+zus\"atzlich senken k\"onnen und zu ung\"unstigen Zeiten die K\"uhlt\"atigkeit
+auf das Minimum herunterfahren. Hiermit ist also das Interesse begr\"undet, das
+Lastverlagerungspotential in der K\"alteerzeugung zu untersuchen.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{K\"alteerzeugung im Supermarkt: Potentiale und Besonderheiten}
 
-Im Mittel entfallen $60\, \%$\cite{leghart, EANRW} des Stromverbrauchs in einem
-Supermarkt auf Kühlen und Tiefkühlen von Produkten. Der durchschnittliche
-Verbrauch in einem Supermarkt liegt zwischen 300 $MWh$ und 500 $MWh$ im
-Jahr\cite{leghart}. In den kommenden Jahren sch\"atzt man den Wachstum des
-gesamten K\"altebedarfs f\"ur Deutschland mit 100 \% \cite{probst}. Der Anteil
-am Bedarf an elektrischen Energie vom Gesamtverbrauch eines Industrielandes für
+Im Mittel entfallen $60\,\%$\cite{leghart, EANRW} des Stromverbrauchs in einem
+Supermarkt auf das Kühlen und Tiefkühlen von Produkten. Der durchschnittliche
+Verbrauch in einem Supermarkt liegt zwischen 300 MWh und 500 MWh im
+Jahr\cite{leghart}. In den kommenden Jahren sch\"atzt man das Wachstum des
+gesamten K\"altebedarfs f\"ur Deutschland auf 100 \% \cite{probst}. Der Anteil
+am Bedarf an elektrischer Energie vom Gesamtverbrauch eines Industrielandes für
 Kälteerzeugung in den Supermärkten wird in der Literatur f\"ur  Australien mit
 $1\, \%$ \cite{australia} und in Schweden mit $2\, \%$ \cite{doctor, EANRW}
-Prozent angegeben. In Deutschland liegt der Verbrauch mit 6294 $GWh$ f\"ur das
-Jahr 1999 bei rund $1.27\, \%$\cite{steilme}. Die Gr\"o\ss enordnung des
+angegeben. In Deutschland liegt der Verbrauch mit 6294 $GWh$ f\"ur das
+Jahr 1999 bei rund $1,27\, \%$\cite{steilme}. Die Gr\"o\ss enordnung des
 Verbrauchs f\"ur die Produktlagerung in Superm\"arkten und die M\"oglichkeit
 diesen zeitlich zu verschieben, macht die Superm\"arkte f\"ur die Regelung
-besonders interessant\todo{Eine \"Uberleitung finden}.
+besonders interessant. Jedoch unterliegt der Einsatz bestimmten Beschr\"ankungen
+und Randbedingungen.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\subsection*{Beschr\"ankungen und Randbedingungen}
-
-Die Mindesthaltbarkeit f\"ur bestimmten Produkte kann nur durch Lagerung
-dieser Produkte in f\"ur sie festgelegtem K\"uhltemeperaturbereichen
-garantiert werden. Dieser Temperaturbereich ist je nach Bedarf und Anwendung in
-Normalk\"uhlung (NK\abvz{NK}{Normalk\"uhlung}) über 0 $\grad C$ und in
-Tiefk\"uhlung (TK\abvz{TK}{Tiefk\"uhlung}) unter 0 $\grad C$ unterteilt. Auf der
-nationalen und auch auf internationalen Ebene existieren Auflagen, die die
+Die Mindesthaltbarkeit f\"ur bestimmte Produkte kann nur durch Lagerung
+dieser Produkte in f\"ur sie festgelegtem K\"uhltemperaturbereichen garantiert
+werden. Dieser Temperaturbereich ist je nach Bedarf und Anwendung in
+Normalk\"uhlung (NK\abvz{NK}{Normalk\"uhlung}) über 0$\grad$C und in
+Tiefk\"uhlung (TK\abvz{TK}{Tiefk\"uhlung}) unter 0$\grad$C unterteilt. Auf der
+nationalen und auch auf der internationalen Ebene existieren Auflagen, die die
 maximale Temperaturen bei der Lagerung von Nahrungsmitteln vorschreiben. Die
 fundamentale Verordnung ist die EG 853/2004. Aus der geht hervor, dass
-normalgekühlte Produkte im Temperaturbereich 0 bis $+8$ $\grad C$ je nach
-Nahrungsmittel und tiefgekühlte Produkte mindestens bei $-18$ $\grad C$ gekühlt
+normalgekühlte Produkte im Temperaturbereich von 0 bis $+8$$\grad$C je nach
+Nahrungsmittel und tiefgekühlte Produkte mindestens bei $-18$$\grad$C gekühlt
 werden müssen.
 
 Die K\"alteerzeugung im Supermarkt kann r\"aumlich generell in zwei Bereiche
 unterteilt werden, dem Verkaufsbereich und dem Warenlager. Au\ss erdem kommen
 K\"uhleinheiten zum Einsatz, die einer Verbundk\"alteanlage angeh\"oren oder
-steckerfertig zur Verf\"ugung stehen. \"Uberwiegend werden im Verkaufsbereich
-K\"uhlregale, K\"uhltruhen und K\"uhlschr\"anke im Tiefk\"uhlbereich und im
-Niederk\"uhlbereich ebenso wie K\"uhltheken im Niederk\"uhlbereich installiert.
-Zur Ausstattung z\"ahlen Ger\"ate in offener sowie durch T\"uren verschlie\ss
-barer Ausf\"uhrung. Gro\ss enteils werden, die die offenen Modelle au\ss erhalb
-der \"Offnungszeiten durch Decken und Rollos zwecks Energieeinsparung
-verschlossen.
+steckerfertig zur Verf\"ugung stehen. Im Verkaufsbereich kommen \"uberwiegend
+K\"uhltruhen im Tiefk\"uhlbereich und K\"uhltruhen und -regale im
+Niederk\"uhlbereich zum Einsatz. Zur Ausstattung z\"ahlen Ger\"ate in offener
+sowie durch T\"uren verschlie\ss barer Ausf\"uhrung. Gr\"o\ss tenteils werden
+die offenen Modelle au\ss erhalb der \"Offnungszeiten durch Decken und Rollos
+zwecks Energieeinsparung verschlossen.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -109,7 +100,7 @@ die Meinung, dass der Einsatz von objektorientierten Techniken Programme
 hervorbringt, die im Vergleich \textit{einfacher erweiterbar, besser testbar}
 und \textit{besser wartbar} sind. Dabei wird ein Verfahren angewendet, nachdem
 große Systeme in kleinere Teile des Ganzen zerlegt werden. Programme lassen sich
-dadurch im Allgemeinen mit weniger Aufwand und kleineren
+dadurch im Allgemeinen mit weniger Aufwand und kleinerer
 Fehlerwahrscheinlichkeit programmieren. Inspiriert durch die Vorgänge aus der
 realen Welt, werden die Abläufe durch operierende Objekte dargestellt, die
 Aufträge erledigen und vergeben können. Die wesentlichen Eigenschaften der
@@ -143,7 +134,7 @@ man z.B. in \cite{OOP},\cite{pepperOOP},\cite{java} oder \cite{python}.}
 	\item[Polymorphie] K\"onnen unterschiedliche Objekte auf eine gleiche
 	Nachricht unterschiedlich reagieren, spricht man von Polymorphie.
 
-	\item[Vererbung] Die Vererbung erm\"oglicht durch Ver\"nderung der
+	\item[Vererbung] Die Vererbung erm\"oglicht durch Ver\"anderung der
 	bestehenden Klassen neue Klassen zu erstellen. Die grundlegenden
 	Programmteile der bestehenden Klasse werden zwangsl\"aufig
 	\"ubernomen.
@@ -169,7 +160,7 @@ Ausf\"uhrliche Informationen dazu findet man z.B. in \cite{matlab_kompakt} oder
 	Eigenschaften-Block. Abgeschlossen wird der Block mit \lstinline$end$.
 	Innerhalb einer Klasse k\"onnen mehrere Bl\"ocke existieren. M\"ochte
 	man das Verhalten eines Eigenschaften-Blocks zus\"atzlich ver\"andern,
-	zum Beispiel neu Zugriffsarten oder Zugriffsrechte vergeben, ist der
+	zum Beispiel neue Zugriffsarten oder Zugriffsrechte vergeben, ist der
 	Einsatz von Attributen zweckm\"a\ss ig.
 	\begin{lstlisting}[frame=none]
 	properties (attribut1, attribut2, etc.)
@@ -211,7 +202,7 @@ Eigenschaften-Block und der Methoden-Block definiert.
 		properties (Attributes) % first property block
 			PropertyName = [];
 		end % end of properties block
-		% additionally here can be another methods block with 
+		% additionally here can be another properties block with 
 		% specifying by another Attributes
 		methods (Attributes) 
 			function obj = class_name(obj,a) % consturctor
@@ -241,7 +232,7 @@ den Aufruf der Konstruktor-Funktion ein Objekt \textbf{object} der im
 \end{lstlisting}
 
 Methoden, die applikationsspezifische Operationen mit einem Datensatz
-durchrf\"uhren sollen, werden nach der Konstruktor-Funktion definiert.  Die
+durchf\"uhren sollen, werden nach der Konstruktor-Funktion definiert.  Die
 meisten dieser Funktionen nutzen das Objekt als Eingabeargument, zum Beispiel:
 \lstinline{second_function(obj)}. Der Zugriff auf die Variablen der
 Objekteigenschaften erfolgt durch Referenzierung auf das Objekt. Im
@@ -270,13 +261,13 @@ gehalten. Körper mit unterschiedlicher Temperatur sind bestrebt, wenn sie
 thermisch von einander nicht vollkommen isoliert sind, durch gegenseitige
 Wechselwirkung ihre Temperaturen anzugleichen. Infolge dessen wird ein
 Wärmegleichgewicht erreicht. Der nat\"urliche W\"armefluss findet
-selbstst\"andig immer vom K\"orper mit h\"oheren Temperatur in die Richtung des
-K\"orpers mit der kleineren Temperatur statt. Um eine negative
+selbstst\"andig immer vom K\"orper mit der h\"oheren Temperatur in die Richtung des
+K\"orpers mit der niedrigeren Temperatur statt. Um eine negative
 Temperaturänderung herzustellen und diese auch zu halten, muss die eindringende
-Wärmeenergie ständig in der selben Höhe abgeführt werden, damit die Temperatur
+Wärmeenergie ständig in derselben Höhe abgeführt werden, damit die Temperatur
 konstant bleibt. Diese Energiemenge pro Zeiteinheit wird als Kälteleistung
 bezeichnet. Eine Abweichung von dieser Menge führt zum Steigen der Temperatur,
-wenn weniger und zum sinken der Temperatur wenn mehr abgeführt wird. Um diesen
+wenn weniger und zum Sinken der Temperatur wenn mehr abgeführt wird. Um diesen
 Kühlkreislauf aufrecht zu erhalten, muss Leistung aufgewendet werden\footnote{
 	Eine detailierte Beschreibung dieser Prozesse in einer
 	Kompressionskälteanlage und Spezifikation ist nicht Gegenstand dieser
@@ -291,13 +282,13 @@ Kühlkreislauf aufrecht zu erhalten, muss Leistung aufgewendet werden\footnote{
 \label{fig:prinz}
 \end{figure}
 
-In der \cref{fig:prinz} auf der \pageref{fig:prinz}ist die Prinzipdarstellung
-der weitverbreiteten Kompressionsk\"altemaschine zu sehen. Die Ware, die
-symbolisch durch einen Kohlkopf dargestellt ist, wird mit einer Temperatur
-zwischen $\pm 0$ und $+8\grad C$ gelagert. Der Temperaturunterschied zwischen
-dem Innen,- und Au\ss enbereich folgt der Verlust an K\"alte (W\"armeausgleich).
-Der Ausgleich f\"uhrt dazu, dass K\"altenergie f\"ur den Lagerungs- und
-K\"uhlungsprozess verloren geht.
+In der \cref{fig:prinz} auf der Seite \pageref{fig:prinz} ist die
+Prinzipdarstellung der weitverbreiteten Kompressionsk\"altemaschine zu sehen.
+Die Ware, die symbolisch durch einen Kohlkopf dargestellt ist, wird mit einer
+Temperatur zwischen $\pm 0$ und $+8\grad$C gelagert. Der Temperaturunterschied
+zwischen dem Innen- und Au\ss enbereich ist ma\ss gebend f\"ur den Verlust an
+K\"alte (W\"armeausgleich).  Der Ausgleich f\"uhrt dazu, dass K\"altenergie
+f\"ur den Lagerungs- und K\"uhlungsprozess verloren geht.
 
 Die Aufnahme der Wärmeenergie und der spezifischen Wärmekapazität dieser
 Substanzmasse ergibt die Temperaturdifferenz $\Delta\:t$.
@@ -309,11 +300,11 @@ Substanzmasse ergibt die Temperaturdifferenz $\Delta\:t$.
 
 \begin{description}[\dth]
 
-	\item[$\Delta\:t$] Temperaturdifferenz in Kelvin $K$
-	\item[$Q$] Verlust an K\"alte in in $kJ$
-	\item[$m$] Substanzmasse zur Aufnahme der K\"alteenergie in $kg$
+	\item[$\Delta\:t$] Temperaturdifferenz in Kelvin K
+	\item[$Q$] Verlust an K\"alte in in kJ
+	\item[$m$] Substanzmasse zur Aufnahme der K\"alteenergie in kg
 	\item[$c$] Spezifische K\"altekapazit\"at (W\"armekapazit\"at) der
-	Substanzmasse in $\frac{kJ}{kg \cdot K}$
+	Substanzmasse in $\mathrm{\frac{kJ}{kg \cdot K}}$
 
 \end{description}
 \vspace{0.5cm}
@@ -328,9 +319,10 @@ sein.
 
 \begin{description}[\dth]
 
-	\item[$\pinstall$] Installierte Kälteleistung in $kW$
-	\item[$\tau_{B}$] Tägliche Betriebszeit in $h$
-	\item[$\pkalt$] st\"undliche Kälteleistungsbedarf in $kW$
+	\item[$\pinstall$] Installierte Kälteleistung in kW
+	\item[$\tau_{B}$] Tägliche Betriebszeit in h
+	\item[$\pkalt$] st\"undlicher Kälteleistungsbedarf in
+	kW\todo{st\"undlicher!!! \"uberall}
 
 \end{description}
 \vspace{0.5cm}
@@ -347,10 +339,11 @@ Umgebungstemperatur berechnet.
 
 \begin{description}[\dth]
 
-	\item[$\ptrans$] Transmissionswärmeleistung in $kW$
-	\item[$A$] Fläche in $m^2$
-	\item[$k$] Wärmedurchgangskoeffiziente in $\frac{W}{m^2 \cdot K}$
-	\item[$\Delta\: t$] Temperaturdifferenz in $K$
+	\item[$\ptrans$] Transmissionswärmeleistung in kW
+	\item[$A$] Fläche in $\mathrm{m^2}$
+	\item[$k$] Wärmedurchgangskoeffizient\todo{e zuviel} in $\mathrm{\frac{W}{m^2 \cdot
+	K}}$
+	\item[$\Delta\: t$] Temperaturdifferenz in K
 
 \end{description}
 \vspace{0.5cm}
@@ -368,17 +361,17 @@ wiedergegeben.
 \begin{description}[\dth]
 
 	\item[$\epsilon$] Leistungszahl (einheitenlos)
-	\item[$\pkalt$] st\"undliche Kälteleistungsbedarf in $kW$
+	\item[$\pkalt$] st\"undliche Kälteleistungsbedarf in kW
 	\item[$P$] elektrische Verdichterantriebsleistung in einer
-		Kopressionskälteanlage in $kW$
+		Kompressionskälteanlage in kW
 
 \end{description}
 \vspace{0.5cm}
 
 Die Öffnungszeit des Supermarkts hat einen spürbaren Einfluss auf die Größe der
-K\"alteverluste. In der Literatur wird der Nachtverbrauch mit $10\%$ bis $20\%$
+K\"alteverluste. In der Literatur wird der Nachtverbrauch mit $10\,\%$ bis $20\,\%$
 des Tagesverbrauchs angegeben\cite{kauffeld}.  In der Nacht fallen keine
-zusätzlichen Verluste zum Beispiel durch Licht, Körperwärme oder
+zusätzlichen Verluste an, zum Beispiel durch Licht, Körperwärme oder
 Türöffnungszeiten, sodass nur Transmissionsverluste bei der Berechnung beachtet
 werden. Leistungsbedarf definiert die Menge an Leistung, der ben\"otigt wird, um
 den Verlust an K\"alte zu ersetzen. Die Abweichung zwischen Tagesbedarf und
@@ -391,15 +384,15 @@ Nachtbedarf an Leistung wird im weiteren Verlauf Tagesmehrbedarf genannt.
 
 \begin{description}[\dth]
 
-	\item[$\pnacht$] Leistungsbedarf in der Nacht in $kW$
-	\item[$\ptrans$] Transmissionswärmeleistung in $kW$
+	\item[$\pnacht$] Leistungsbedarf in der Nacht in kW
+	\item[$\ptrans$] Transmissionswärmeleistung in kW
 
 \end{description}
 \vspace{0.5cm}
 
 
 Der K\"alteleistungsbedarf am Tag ergibt sich aus der Summe des Tagesmehrbedarfs
-und der Transmissionswärmeleistung. Aus Gründen der Vereinfachung wird
+und der Transmissionswärmeleistung. Aus Gründen der Vereinfachung wird der
 Tagesmehrbedarf als weitgehend konstant angenommen.
 
 \begin{equation}
@@ -409,15 +402,15 @@ Tagesmehrbedarf als weitgehend konstant angenommen.
 
 \begin{description}[\dth]
 
-	\item[$\ptag$] Leistungsbedarf am Tag in $kW$
-	\item[$\pmehr$] Tagesmehrbedarf am Tag in $kW$
-	\item[$\ptrans$] Transmissionswärmeleistung in $kW$
+	\item[$\ptag$] Leistungsbedarf am Tag in kW
+	\item[$\pmehr$] Tagesmehrbedarf am Tag in kW
+	\item[$\ptrans$] Transmissionswärmeleistung in kW
 
 \end{description}
 \vspace{0.5cm}
 
-Die Verlustk\"altememeng im K\"uhlbereich ist aufgrund der obengenannten
-Gr\"unden je nach Tageszeit unterschiedlich.
+Die Verlustk\"altememenge im K\"uhlbereich ist aufgrund der obengenannten
+Gr\"unde je nach Tageszeit unterschiedlich.
 
 \begin{equation}
 	Q_v = \begin{cases}
@@ -429,9 +422,9 @@ Gr\"unden je nach Tageszeit unterschiedlich.
 
 \begin{description}[\dth]
 
-	\item[$Q_v$] Verlustk\"altemenge in $kJ$
-	\item[$\ptag$] Leistungsbedarf am Tag in $kW$
-	\item[$\pnacht$] Leistungsbedarf in der Nacht in $kW$
+	\item[$Q_v$] Verlustk\"altemenge in kJ
+	\item[$\ptag$] Leistungsbedarf am Tag in kW
+	\item[$\pnacht$] Leistungsbedarf in der Nacht in kW
 	\item[$h$] Zeiteinheit f\"ur Stunden
 
 \end{description}
@@ -450,10 +443,10 @@ mittlere Transmissionswärmeleistung abgezogen wird.
 
 \begin{description}[\dth]
 
-	\item[$\pmehr$] Tagesmehrbedarf in $kW$
-	\item[$\pkalt$] st\"undliche Kälteleistungsbedarf in $kW$
+	\item[$\pmehr$] Tagesmehrbedarf in kW
+	\item[$\pkalt$] st\"undliche Kälteleistungsbedarf in kW
 	\item[$K$] Faktor für Kältebedarfsabsenkung (einheitenlos)
-	\item[$\aptrans$] mittlere Transmissionswärmeleistung in $kW$
+	\item[$\aptrans$] mittlere Transmissionswärmeleistung in kW
 
 \end{description}
 \vspace{0.5cm}
@@ -471,12 +464,12 @@ wärmeübertragenden Wände.
 
 \begin{description}[\dth]
 
-	\item[$\aptrans$] mittlere Transmissionswärmeleistung in $kW$
-	\item[$A$] Fläche in $m^2$
-	\item[$k$] Wärmedurchgangskoeffiziente in $\frac{W}{m^2 \cdot K}$
-	\item[$t_{amb}$] Umgebungstemperatur in $^{\circ}C$
+	\item[$\aptrans$] mittlere Transmissionswärmeleistung in kW
+	\item[$A$] Fläche in $\mathrm{m^2}$
+	\item[$k$] Wärmedurchgangskoeffiziente in $\mathrm{\frac{W}{m^2 \cdot K}}$
+	\item[$t_{amb}$] Umgebungstemperatur in $^{\circ}$ C
 	\item[$\overline{t}_{KR}$] mittlere Kühlraumtemperatur in
-		$^{\circ}C$
+		$^{\circ}$ C
 \end{description}
 \vspace{0.5cm}
 
@@ -497,18 +490,19 @@ Kältebedarfsabsenkung, dem Verdichteranteil ergibt die Verdichterarbeit.
 
 \begin{description}[\dth]
 
-	\item[$\lverd$] Verdichterarbeit pro 24 Stunden in $\frac{kWh}{24h}$
+	\item[$\lverd$] Verdichterarbeit pro 24 Stunden in
+	$\mathrm{\frac{kWh}{24h}}$
 	\item[$\lspez$] spezifischer Energieverbrauch pro 24 Stunden in
-		$\frac{kWh}{24h}$
+		$\mathrm{\frac{kWh}{24h}}$
 	\item[$K$] Faktor für Kältebedarfsabsenkung (einheitenlos)
 	\item[$v$] Verdichteranteil (einheitenlos)
-	\item[$v_{mod}$] modifizierte Verdichteranteil (einheitenlos)
+	\item[$v_{mod}$] modifizierter Verdichteranteil (einheitenlos)
 
 \end{description}
 \vspace{0.5cm}
 
 Im Folgenden muss die Verdichterarbeit zum Ersetzen der zus\"atzlichen
-K\"alteenergieverlustmenge in der \"Offnungszeit berechnet werden, die einem
+K\"alteenergieverlustmenge in der \"Offnungszeit berechnet werden, die in einem
 weiteren Schritt in Tagesmehrbedarf $\pmehr$ umgewandelt wird.
 
 \begin{equation}
@@ -519,9 +513,10 @@ weiteren Schritt in Tagesmehrbedarf $\pmehr$ umgewandelt wird.
 \begin{description}[\dth]
 
 	\item[$\lmehr$] Verdichterarbeit zum Ersetzen der zus\"atzlichen
-	K\"alteenergieverluste $\emehr$ in der \"Offnungszeit in $kWh$
-	\item[$\lverd$] Verdichterarbeit pro 24 Stunden in $\frac{kWh}{24h}$
-	\item[$\aptrans$] mittlere Transmissionswärmeleistung in $kW$
+	K\"alteenergieverluste $\emehr$ in der \"Offnungszeit in kWh
+	\item[$\lverd$] Verdichterarbeit pro 24 Stunden in
+	$\mathrm{\frac{kWh}{24h}}$
+	\item[$\aptrans$] mittlere Transmissionswärmeleistung in kW
 	\item[$\epsilon$] Leistungszahl (einheitenlos)
 
 \end{description}
@@ -539,9 +534,9 @@ Es wird angenommen, dass der Mehrbedarf in den rund zw\"olf Stunden der
 
 \begin{description}[\dth]
 
-	\item[$\pmehr$] Tagesmehrbedarf in $kW$
+	\item[$\pmehr$] Tagesmehrbedarf in kW
 	\item[$\lmehr$] Verdichterarbeit zum Ersetzen der zus\"atzlichen
-	K\"alteenergieverluste $\emehr$ in der \"Offnungszeit in $kWh$
+	K\"alteenergieverluste $\emehr$ in der \"Offnungszeit in kWh
 	\item[$\epsilon$] Leistungszahl (einheitenlos)
 
 \end{description}

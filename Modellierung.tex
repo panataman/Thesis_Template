@@ -30,7 +30,7 @@ verbunden.
 \end{figure}
 
 \noindent In der Realität kann ein Energieversorgungsnetz durch die Variation
-der Knotenzahl und die Vermaschung beliebig komplizierte Form aufweisen. \\
+der Knotenzahl und die Vermaschung eine beliebig komplizierte Form aufweisen. \\
 
 In Anbetracht der im \cref{sec:OOP} vorgestellten Verfahren erscheint der Ansatz
 der OOP bei der Erstellung eines Programms zur Simulation einer K\"alteslast mit
@@ -56,25 +56,25 @@ ein \"Uberleitungssatz}.
 \subsection*{Refrigerator}
 
 An dieser Stelle werden die Eigenschaften und die Methoden der Klasse
-\textbf{Refrigerator} explizit erkl\"art.
+\textbf{Refrigerator}\todo{trennung!} explizit erkl\"art.
 
 \subsubsection*{Attribute}
 \begin{description}
 	\item[fridge\_detector] Art der Anlage. Die Berechnung der Verluste der
-	Verbundsanlagen unterscheidet sich von der der steckerfertigen
-	Ger\"aten.
+	Verbundanlagen unterscheidet sich von der der steckerfertigen
+	Ger\"ate.
 	\item[energy\_consumption\_day] H\"ohe des durchschnittlichen
-	elektrischen Energieverbrauches.
+	elektrischen Energieverbrauchs.
 	\item[epsilon] Leistungszahl.
 	\item[compressor\_quotient] Anteil des Verdichters am Gesamtverbrauch
-	der K\"uhlanlage.
+	der K\"uhlanlage\todo{trennung}.
 	\item[cooling\_power] K\"alteleistungsbedarf (Herstellerangaben).
 	\item[temperatur\_outside\_fridge] $1\times M$-Array mit
 	Au\ss entemperaturwertet f\"ur die Umgebung der K\"alteanlage. $M$
 	stimmt mit der Anzahl der W\"ande \"uberein, f\"ur die ihre Fl\"ache
 	bekannt ist.
 	\item[mass\_stored] $1\times N$-Array mit den Massewerten, der zur
-	K\"uhlung vorhandenen Substansmasse. $N$ stimmt mit der Anzahl der
+	K\"uhlung vorhandenen Substanzmasse. $N$ stimmt mit der Anzahl der
 	Massen \"uberein, f\"ur die die spezifische W\"armekapazit\"at
 	unterschiedlich ist.
 	\item[specific\_heat\_capacity] $1\times N$-Array mit den Werten f\"ur
@@ -86,30 +86,30 @@ An dieser Stelle werden die Eigenschaften und die Methoden der Klasse
 	\item[averaged\_cooling\_room\_temperature] Durchschnittliche Temperatur
 	im Normalbetrieb.
 	\item[temperature\_history] $n \times m$-Array mit $(n,m)\in
-	\mathbb{Z}^+_0$, wobei $n$ f\"ur die Anzahl der Werten des berechneten
-	Temperaturverlaufes und $m$ f\"ur die Anzahl der simulierten Tage
-	stehen\todo{stehen oder steht?}. Die Werte sind das Ergebnis der
+	\mathbb{Z}^+_0$, wobei $n$ f\"ur die Anzahl der Werte des berechneten
+	Temperaturverlaufs und $m$ f\"ur die Anzahl der simulierten Tage
+	steht. Die Werte sind das Ergebnis der
 	Berechnung der Funktion \textbf{main\_equation}. Eine Spalte des Arrays
 	stellt den Temperaturverlauf an genau einem Tag dar.
 	\item[electric\_power\_consumption\_history] $n \times m$-Array mit
-	$(n,m)\in \mathbb{Z}^+_0$, wobei $n$ f\"ur die Anzahl der Werten des
+	$(n,m)\in \mathbb{Z}^+_0$, wobei $n$ f\"ur die Anzahl der Werte des
 	berechneten Verbrauchs und $m$ f\"ur die Anzahl der simulierten Tage
-	stehen\todo{stehen oder steht?}. Die Werte sind das Ergebnis der
-	Berechnung der Funktion \textbf{main\_equation}. Eine Spalte des Arrays
-	stellt den Verlauf des berechneten Verbrauches an genau einem Tag dar.
+	steht. Die Werte sind das Ergebnis der Berechnung der Funktion
+	\textbf{main\_equation}. Eine Spalte des Arrays stellt den Verlauf des
+	berechneten Verbrauches an genau einem Tag dar.
 	\item[averaged\_transmission\_losses] Summe aller durchschnittlichen
 	Transmissionsverluste im Normalbetrieb (vgl. \cref{aptrans} auf der
 	Seite \pageref{aptrans}).
 	\item[modified\_heat\_transmission\_coefficient] $1\times M$-Array mit
-	Werten aus der elementenweise Multiplikation des Vektors mit Werten der
-	spezifischen W\"armedurchgangskoeffizienten mit dem Vektor mit Werten
-	f\"ur die Durchgagnsfl\"achen (vgl. \cref{vmod} auf der Seite
-	\pageref{vmod}).
-	\item[increased\_demand\_heat\_power\_day] Mehrbedarf am Tag, aufgrund
+	Werten aus der elementeweisen\todo{trennung} Multiplikation des
+	Vektors mit den Werten der spezifischen W\"armedurchgangskoeffizienten
+	mit dem Vektor mit Werten f\"ur die Durchgangsfl\"achen (vgl.
+	\cref{vmod} auf der Seite \pageref{vmod}).
+	\item[increased\_demand\_heat\_power\_day] Mehrbedarf am Tag aufgrund
 	der zus\"atzlichen Verluste durch Licht, Menschenk\"orperw\"arme,
-	T\"ur\"offnungszeiten und weiteren Einfl\"usse. Die Berechnung erfolgt
+	T\"ur\"offnungszeiten und weiteren Einfl\"ussen. Die Berechnung erfolgt
 	nach einer Auswahl zwischen der \cref{pmehr} und der \cref{lverd} bis
-	\cref{spmehr} wie auf der Seiten \pageref{pmehr} und \pageref{spmehr}
+	\cref{spmehr} wie auf den Seiten \pageref{pmehr} und \pageref{spmehr}
 	beschrieben.
 	\item[factor\_cooling\_reducer] Faktor f\"ur K\"altebedarfsabsenkung
 	infolge der Luftfeuchtigkeit und der Umgebungstemperatur.
@@ -125,10 +125,10 @@ An dieser Stelle werden die Eigenschaften und die Methoden der Klasse
 	\begin{description}
 		\item[fridge\_config] $1 \times 2$-Cell Array
 		mit Modellparametern\footnote{ Die Form des Arrays ist
-		\"aquivalent zu genaue einer Zeile der in
+		\"aquivalent zu genau einer Zeile der in
 		\matref{csuper} auf der Seite \pageref{csuper} vorgestellten
 		Arrays, die die Modelle der Superm\"arkte abbilden.}.
-		\item[number\_steps] Anzahl der Zeitschritte die einen
+		\item[number\_steps] Anzahl der Zeitschritte, die einen
 		Tag beschreiben.
 		\item[days] Anzahl der zu simulierenden Tage.
 	\end{description}
@@ -144,10 +144,10 @@ An dieser Stelle werden die Eigenschaften und die Methoden der Klasse
 		durchschnittlichen Transmissionsverluste im Normalbetrieb
 		(vgl. \cref{aptrans} auf der Seite \pageref{aptrans}).
 		\item[modified\_heat\_transmission\_coefficient] $1\times
-		M$-Array mit Werten aus der elementenweise Multiplikation des
-		Vektors mit Werten der spezifischen
-		W\"armedurchgangskoeffizienten mit dem Vektor mit Werten f\"ur
-		die Durchgagnsfl\"achen (vgl. \cref{vmod} auf der Seite
+		M$-Array mit Werten aus der elementeweisen Multiplikation des
+		Vektors mit Werten der spezifischen\todo{trennung}
+		W\"armedurchgangskoeffizienten mit dem Vektor mit den Werten f\"ur
+		die Durchgangsfl\"achen (vgl. \cref{vmod} auf der Seite
 		\pageref{vmod}).
 		\item[increased\_demand\_heat\_power\_day] Mehrbedarf am Tag ,
 		aufgrund der zus\"atzlichen Verluste durch Licht,
@@ -161,21 +161,18 @@ An dieser Stelle werden die Eigenschaften und die Methoden der Klasse
 	Folgende Attribute werden im Laufe der Simulation ver\"andert:
 	\begin{description}
 		\item[temperature\_history] $n \times m$-Array mit $(n,m)\in
-		\mathbb{Z}^+_0$, wobei $n$ f\"ur die Anzahl der Werten des
-		berechneten Temperaturverlaufes und $m$ f\"ur die Anzahl der
-		simulierten Tage stehen\todo{stehen oder steht?}. Die Werte sind
-		das Ergebnis der Berechnung der Funktion
-		\textbf{main\_equation}. Eine Spalte des Arrays stellt den
-		Temperaturverlauf an genau einem Tag dar.
+		\mathbb{Z}^+_0$, wobei $n$ f\"ur die Anzahl der Werte des
+		berechneten Temperaturverlaufs und $m$ f\"ur die Anzahl der
+		simulierten Tage steht. Die Werte sind das Ergebnis der
+		Berechnung der Funktion \textbf{main\_equation}. Eine Spalte des
+		Arrays stellt den Temperaturverlauf an genau einem Tag dar.
 		\item[electric\_power\_consumption\_history] $n \times m$-Array
 		mit $(n,m)\in \mathbb{Z}^+_0$, wobei $n$ f\"ur die Anzahl der
-		Werten des berechneten Verbrauchs und $m$ f\"ur die
-		Anzahl der simulierten Tage stehen\todo{stehen oder steht?}. Die
-		Werte sind das Ergebnis der Berechnung der Funktion
-		\textbf{main\_equation}. Die Werte sind das Ergebnis der
-		Berechnung der Funktion \textbf{main\_equation}. Eine Spalte des
-		Arrays stellt den Verlauf des berechneten Verbrauches an genau
-		einem Tag dar.
+		Werten des berechneten Verbrauchs und $m$ f\"ur die Anzahl der
+		simulierten Tage steht. Die Werte sind das Ergebnis der
+		Berechnung der Funktion \textbf{main\_equation}. Eine Spalte
+		des Arrays stellt den Verlauf des berechneten Verbrauches an
+		genau einem Tag dar.
 	\end{description}
 
 	Folgende Attribute sind auf Grund der Annahmen dieser Studie konstant,
@@ -194,8 +191,8 @@ An dieser Stelle werden die Eigenschaften und die Methoden der Klasse
 	\end{description}
 
 	\item[sum\_mass\_times\_capacity()] Der R\"uckgabewert dieser Funktion
-	ist die berechnete Summe aus elementenweise Multiplikation aller
-	Substansmassen mit der jeweiligen spezifischen W\"armekapazit\"aten. Der
+	ist die berechnete Summe aus der elementeweisen Multiplikation aller
+	Substanzmassen mit den jeweiligen spezifischen W\"armekapazit\"aten. Der
 	Funktion werden keine explizite Argumente \"ubergeben. Die Funktion
 	greift direkt auf die Attribute \textbf{specific\_heat\_capacity} und
 	\textbf{mass\_stored} des Objektes zu.
@@ -203,18 +200,18 @@ An dieser Stelle werden die Eigenschaften und die Methoden der Klasse
 	\item[sum\_transmission\_losses()] Es gibt zwei R\"uckgabewerte dieser
 	Funktion. Der erste Wert ist die Summe der Transmissionsverluste (vgl.
 	\cref{aptrans} auf der Seite \pageref{ptrans}) durch alle
-	Durchgangsfl\"achen f\"ur den aktuellen Zeitpunkt und die aktuelle
+	Durchgangsfl\"achen f\"ur den aktuellen Zeitpunkt und f\"ur die aktuelle
 	K\"uhlraumtemperatur. Desweiteren wird die Summe der
 	Transimissionsverluste berechnet, die bei der oberen Grenze des
 	zugelassenen Temperaturbereiches entstehen. Die Kenntnis dieser Verluste
-	ist wichtig um die Zeitspanne absch\"atzen zu k\"onnen, bis obere
+	ist wichtig, um die Zeitspanne absch\"atzen zu k\"onnen bis die obere
 	Temperaturgrenze erreicht wird (vgl. \cref{tauk} auf der Seite
 	\pageref{tauk}).
 
 	Die \"Ubergabe folgender Argumente an die Funktion ist erforderlich:
 	\begin{description}
 		\item[number\_steps] Laufvariable. Gesamtzahl der zu
-		simulierenden Zeitschrite f\"ur ein Tag.
+		simulierenden Zeitschrite f\"ur einen Tag.
 		\item[count\_number\_steps] Der aktuelle Wert von
 		\textbf{number\_steps}.
 		\item[count\_number\_day] Der aktuelle Wert von der Laufvariable
@@ -225,18 +222,18 @@ An dieser Stelle werden die Eigenschaften und die Methoden der Klasse
 	Der erste R\"uckgabewert beinhaltet die Summe aller Verluste an K\"alte
 	(vgl. \cref{qv} auf der Seite \pageref{qv}).
 	Au\ss erhalb der \"Offnungszeiten entf\"allt der Anteil an
-	zus\"atzlichen Verlusten, die durch Licht, offene T\"uren und etc.
+	zus\"atzlichen Verlusten, die durch Licht, offene T\"uren etc.
 	anfallen. Durch eine alternative Verzweigung, deren Bedingung die
 	Zugeh\"origkeit des aktuellen Wertes der Laufvariable
 	\textbf{count\_number\_steps} zu den \"Offnungszeiten ist, wird die
-	Ber\"ucksichtigung der zus\"atzlichen Verluste sichergestellt. Der
-	zweite Ruckgabewert ist die Zeitspanne bis zum Erreichen der kritischen
+	Ber\"ucksichtigung der zus\"atzlichen\todo{trennung} Verluste sichergestellt. Der
+	zweite R\"uckgabewert ist die Zeitspanne bis zum Erreichen der kritischen
 	maximalen Temperatur (vgl. \cref{tauk} auf der Seite \pageref{tauk}).
 
 	Die \"Ubergabe folgender Argumente an die Funktion ist erforderlich:
 	\begin{description}
-		\item[number\_steps] Laufvariable. Gesamtzahl der zu
-		simulierenden Zeitschrite f\"ur ein Tag.
+		\item[number\_steps] Laufvariable. Gesamtzahl, der zu
+		simulierenden Zeitschrite f\"ur einen Tag.
 		\item[count\_number\_steps] Der aktuelle Wert von
 		\textbf{number\_steps}.
 		\item[count\_number\_day] Der aktuelle Wert von der Laufvariable
@@ -246,7 +243,7 @@ An dieser Stelle werden die Eigenschaften und die Methoden der Klasse
 	\end{description}
 
 	\item[capacity\_estimator()] Die Funktion hat einen R\"uckgabewert.
-	Berechnet wird die maximal abzuf\"uhrende Wermeenergiemenge $\emax$
+	Berechnet wird die maximal abzuf\"uhrende W\"armeenergiemenge $\emax$
 	(vgl. die \cref{emax} auf der Seite \pageref{emax}).
 
 	Die \"Ubergabe folgender Argumente an die Funktion ist erforderlich:
@@ -255,7 +252,7 @@ An dieser Stelle werden die Eigenschaften und die Methoden der Klasse
 		\textbf{number\_steps}.
 		\item[count\_number\_day] Der aktuelle Wert von der Laufvariable
 		\textbf{number\_days}.
-		\item[Q\_losses] Wert der aktuellen Verlustk\"altemengeals
+		\item[Q\_losses] Wert der aktuellen Verlustk\"altemenge als
 		Ergebnis der Funktion \textbf{sum\_all\_losses()} (vgl.
 		\cref{qv} auf der Seite \pageref{qv}).
 	\end{description}
@@ -266,20 +263,20 @@ An dieser Stelle werden die Eigenschaften und die Methoden der Klasse
 	
 	Die \"Ubergabe folgender Argumente an die Funktion ist erforderlich:
 	\begin{description}
-		\item[number\_steps] Laufvariable. Gesamtzahl der zu
-		simulierenden Zeitschrite f\"ur ein Tag.
+		\item[number\_steps] Laufvariable. Gesamtzahl, der zu
+		simulierenden Zeitschrite f\"ur einen Tag.
 		\item[count\_number\_steps] Der aktuelle Wert von
 		\textbf{number\_steps}.
 		\item[count\_number\_day] Der aktuelle Wert von der Laufvariable
 		\textbf{number\_days}.
-		\item[Q\_losses] Wert der aktuellen eindringenden
-		W\"armeenergie als Ergebnis der Funktion
-		\textbf{sum\_all\_losses()}.
+		\item[Q\_losses] Wert der aktuellen Verlustk\"altemenge als
+		Ergebnis der Funktion \textbf{sum\_all\_losses()} (vgl.
+		\cref{qv} auf der Seite \pageref{qv}).
 	\end{description}
 \end{description}
 
 Alle Klassen haben einen unterschiedlichen Status. Die Klasse
-\textbf{Power\_gird} vertritt die Rolle des ganzen Systems, also des
+\textbf{Power\_grid} vertritt die Rolle des ganzen Systems, also des
 Energieversorgungsnetzes, welches aus charakteristischen Teilen, den Knoten
 (\textbf{Bus}) besteht. Die Existenz eines Knotens au\ss erhalb eines Netzes
 ergibt keinen Sinn. Dieser Zusammenhang zwischen Klassen wird im Klassendiagramm
@@ -317,25 +314,24 @@ der Pfeil gestrichelt. Die R\"uckgabewerte stehen \"uber dem Pfeil.
 
 In der Funktion \textbf{runCooling}, die den Start der Simulation veranlasst und
 steuert, wird der Konstruktor der Klasse \textbf{Power\_grid} aufgerufen. Als
-Ergebnis des Aufrufes bekommt die Funktion \textbf{runCooling} ein Objekt der
+Ergebnis des Aufrufs bekommt die Funktion \textbf{runCooling} ein Objekt der
 Klasse \textbf{Power\_grid} mit allen Unterobjekten, die den zu simulierenden
 Fall beschreiben. Die Konstruktor-Funktionen der Klassen, die einen
 untergeordneten Status besitzen, werden bei der Erstellung der \"ubergeordneten
 Objekte aufgerufen. Die Anzahl der erzeugten Objekte h\"angt davon ab, wie oft
 die Konstruktor-Funktion der jeweiligen Klasse aufgerufen wird. Diese Zahlen
 werden in Konfigurationsdateien abh\"angig von dem untersuchten Fall festgelegt.
-Die ausf\"uhrliche Erkl\"arung der Konfigurationsdateien wird in kommenden
-Abschnitten vorgenommen\todo{Abschnitt einfuegen!}.
+Die ausf\"uhrliche Erkl\"arung der Konfigurationsdateien findet im
+\cref{sc:handhabung} statt.
 
 \subsection*{Bereitstellung der Leistung zur K\"alteerzeugung}
 
-Der augenblickliche Gleichgewicht zwischen dem K\"altebedarf und der zur
+Das augenblickliche Gleichgewicht zwischen dem K\"altebedarf und der zur
 Verf\"ugung stehenden K\"alteleistung sichert die Einhaltung der Soll-Temperatur
 der K\"uhlg\"uter. Werden die K\"alteanlagen als Energiespeicher zur Regelung
 eingesetzt, so f\"uhrt das, auf Grund der fluktuierenden zur Verf\"ugung
-stehenden K\"alteleistung\todo{Bei Caro nachgucken, ob das leistung ist!}, zu
-Temperaturschwankungen. Die engen Grenzen des zul\"assigen Temperaturbandes
-d\"urfen nicht \"uberschritten werden.
+stehenden K\"alteleistung, zu Temperaturschwankungen\todo{trennung}. Die engen Grenzen des
+zul\"assigen Temperaturbandes d\"urfen nicht \"uberschritten werden.
 
 Verschiedene Konzepte f\"ur den Einsatz der K\"alteanlagen als Energiespeicher
 im Energieversorgungsnetz sind denkbar. Im folgenden Abschnitt wird die
@@ -343,31 +339,31 @@ Implementierung eines m\"oglichen Kooperationskonzeptes zwischen einer
 Supermarktkette und einem Windpark vorgestellt.
 
 Die prognostizierten und die tatsächlich vom Windpark produzierten elektrischen
-Windleistungsdaten der Vattenfall-Regelzone \todo{was ist das heute?} aus dem
+Windleistungsdaten der Vattenfall-Regelzone (heute 50Hertz-Regelzone) aus dem
 Jahr 2005 werden als Grundlage-Datensatz verwendet. Im Datensatz sind
 Stundenwerte von Windleistung gespeichert, weshalb in diesem Fall auch von
 Energie gesprochen werden kann.
 
 Der Windpark ist bestrebt, die Verpflichtung \"uber die Bereitstellung von
-Leistung beim Netzbetreiber zu erf\"uhlen. Abweichungen, die aufgrund der
+Leistung beim Netzbetreiber zu erf\"ullen. Abweichungen, die aufgrund der
 fehlerhaften Windprognosen entstehen, sollen durch die Kooperation mit
 Supermarktketten ausgeglichen werden.
 
 Es wird angenommen, dass der Prognosefehler von der Windleistungsvorhersage
-f\"ur 24 Stunden den 15\% entspricht. Der Windparkbetreiber meldet beim
-Netzbetreiber die untere Grenze an, also 85\% von der Windleistungsvorhersage.
+f\"ur 24 Stunden den 15\,\% entspricht. Der Windparkbetreiber meldet beim
+Netzbetreiber die untere Grenze an, also 85\,\% von der Windleistungsvorhersage.
 Der Supermarkt besitzt einen st\"undlichen Bedarf, der unbedingt gedeckt werden
-muss. Ist der st\"undliche Bedarf gr\"o\ss er als 15\% der Prognose, wird die
+muss. Ist der st\"undliche Bedarf gr\"o\ss er als 15\,\% der Prognose, wird die
 Differenz aus dem Netz gezogen. Diese Abweichung wird beim Netzbetreiber zur
 Erstellung des Lastfahrplanes mitgeteilt. Gibt es eine Abweichung von der
 Prognose, so versucht der Supermarkt diese zu absorbieren.
 
 Die vom Windparkbetreiber beim Netzbetreiber anzumeldende Leistung wird
-berechnet, indem von der Windleistungsvorhersage die 85\% bestimmt werden
-oder der st\"undliche Bedarf des Supermarktes abgezogen wird, wenn die 15\%
+berechnet, indem von der Windleistungsvorhersage die 85\,\% bestimmt werden
+oder der st\"undliche Bedarf des Supermarktes abgezogen wird, wenn die 15\,\%
 kleiner als der st\"undliche Bedarf sind.
 \begin{equation*}
-	b = 0.85 \cdot P_{DA}
+	b = 0,85 \cdot P_{DA}
 \end{equation*}
 oder
 \begin{equation*}
@@ -377,17 +373,17 @@ oder
 
  \begin{description}[\dth]
 	\item[$b$] Leistung, die vom Windparkbetreiber beim Netzbetreiber
-	angemeldet wird in $MW$
-	\item[$P_{DA}$] Vorhersage der Windleistung (day ahead) in $MW$
+	angemeldet wird in MW
+	\item[$P_{DA}$] Vorhersage der Windleistung (day ahead) in MW
 	\item[$P_{dem}$] st\"undlicher Leistungsbedarf des Supermarkts (demand)
-	$MW$
+	MW
  \end{description} \vspace{0.5cm}
 
 Die vom Windparkbetreiber dem Supermarkt versprochene Leistung wird berechnet,
-indem von der Windleistungsvorhersage die 15\% bestimmt werden oder nur der
-st\"undliche Bedarf, wenn die 15\% kleiner als der st\"undliche Bedarf sind.
+indem von der Windleistungsvorhersage die 15\,\% bestimmt werden oder nur der
+st\"undliche Bedarf, wenn die 15\,\% kleiner als der st\"undliche Bedarf sind.
 \begin{equation*}
-	a = 0.15 \cdot P_{DA}\\
+	a = 0,15 \cdot P_{DA}\\
 \end{equation*}
 oder
 \begin{equation*}
@@ -397,10 +393,10 @@ oder
 
 \begin{description}[\dth]
 	\item[$a$] Leistung, die vom Windparkbetreiber dem Supermarkt
-	versprochen wird in $MW$
-	\item[$P_{DA}$] Vorhersage der Windleistung (day ahead) in $MW$
+	versprochen wird in MW
+	\item[$P_{DA}$] Vorhersage der Windleistung (day ahead) in MW
 	\item[$P_{dem}$] st\"undlicher Leistungsbedarf des Supermarkts (demand)
-	$MW$
+	MW
 \end{description}
 \vspace{0.5cm}
 
@@ -414,14 +410,14 @@ Supermarkts beim Netzbetreiber nicht abgemeldete Leistung.
 	\label{pload}
 \end{equation}
 \begin{description}[\dth]
-	\item[$P_{load}$] vorhandene Leistung zum Laden in $MW$
+	\item[$P_{load}$] vorhandene Leistung zum Laden in MW
 	\item[$P_{RT}$] Windleistungsdaten. Windleistung, die tats\"achlich vom
-	Windpark generiert wurde in $MW$
+	Windpark generiert wurde in MW
 	\item[$b$] Leistung, die vom Windparkbetreiber beim Netzbetreiber
-	angemeldet wird in $MW$
+	angemeldet wird in MW
 	\item[$P_{dem}$] st\"undlicher Leistungsbedarf des Supermarkts (demand)
 	\item[$a$] Leistung, die vom Windparkbetreiber dem Supermarkt
-	versprochen wird in $MW$
+	versprochen wird in MW
 \end{description} \vspace{0.5cm}
 
 \subsubsection*{Implementierung}
@@ -440,28 +436,29 @@ Zeit bis zur oberen Schranke nicht unter eine Stunde f\"allt, wenn keine
 K\"uhlleistung vorhanden ist.
 Diese Zeit kann nach der \cref{tauk} abgesch\"atz werden.
 \begin{align}
-	\tau_{krit}(i) &= \frac{m \cdot c \cdot (t_{max}
-		t(i))}{Q_{v_{ln}}}
+	\tau_{krit}(i) &= \frac{m \cdot c \cdot (t_{max} -
+		t(i))}{Q_{v_{ln}}(i)}
 \label{tauk}
 \end{align}
 \begin{align*}
-	Q_{v_{ln}} &= \begin{cases}
-	1h \cdot \aptranslog, & \text{au\ss erhalb der \"Offnungszeiten}\\
-	1h \cdot (\aptranslog + \pmehr), & \text{innerhalb der \"Offnungszeiten}
-	\end{cases}
+	Q_{v_{ln}}(i) &= \begin{cases}
+	1h \cdot \aptranslog(i), & \text{au\ss erhalb der \"Offnungszeiten}\\
+	1h \cdot (\aptranslog(i) + \pmehr(i)), & \text{innerhalb der
+	\"Offnungszeiten} \end{cases}
 \end{align*}
 
 \begin{description}[\dth]
-	\item[$Q_{v_{ln}}$] Verlustk\"altemenge in $kJ$
-	\item[$\tau_{krit}$] Zeit bis zur kritischen Temperatur in $h$
-	\item[$m$] Substanzmasse zur Aufnahme der Wärmeenergie in $kg$
-	\item[$c$] Spezifische Wärmekapazität der Substanzmasse in $\frac{kJ}{kg
-		\cdot K}$
-	\item[$t_{max}$] obere Temperaturgrenze in $ ^{\circ} C $
-	\item[$t(i)$] Temperatur zur Stunde $i$ in $ ^{\circ} C $
-	\item[$\aptranslog$] logarithmierte Mittelwert der
-		Transmissionswärmeleistung zum aktuellen Zeitpunkt in $kW$
-	\item[$\pmehr$] Tagesmehrbedarf in $kW$
+	\item[$Q_{v_{ln}}(i)$] Verlustk\"altemenge zur Stunde $i$ in kJ
+	\item[$\tau_{krit}(i)$] Zeit bis zur kritischen Temperatur zur Stunde
+	$i$ in h
+	\item[$m$] Substanzmasse zur Aufnahme der Wärmeenergie in kg
+	\item[$c$] Spezifische Wärmekapazität der Substanzmasse in $\mathrm{\frac{kJ}{kg
+		\cdot K}}$
+	\item[$t_{max}$] obere Temperaturgrenze in $ ^{\circ} $C
+	\item[$t(i)$] Temperatur zur Stunde $i$ in $ ^{\circ} $C
+	\item[$\aptranslog(i)$] logarithmierte Mittelwert der
+		Transmissionswärmeleistung zum aktuellen Zeitpunkt in kW
+	\item[$\pmehr(i)$] Tagesmehrbedarf zum aktuellen Zeitpunkt in kW
 \end{description}
 \vspace{0.5cm}
 Die Differenz zwischen der Transmissionswärmeleistung f\"ur den aktuellen
@@ -477,11 +474,46 @@ der Transmissionswärmeleistung.
 
 \begin{description}[\dth]
 	\item[$\aptranslog(i)$] logarithmierte Mittelwert der
-		Transmissionswärmeleistung zum aktuellen Zeitpunkt in $kW$
+		Transmissionswärmeleistung zum aktuellen Zeitpunkt in kW
 	\item[$\ptransm(i)$] Transmissionswärmeleistung f\"ur den aktuellen
-	Zeitpunkt wenn die K\"uhlraumtemperatur minimal w\"are in $kW$
+	Zeitpunkt, wenn die K\"uhlraumtemperatur minimal w\"are in kW
 	\item[$\ptrans(i)$] Transmissionswärmeleistung f\"ur den aktuellen
-	Zeitpunkt  $kW$
+	Zeitpunkt  kW
+\end{description}
+\vspace{0.5cm}
+
+\begin{equation}
+	\ptransm(i) = A \cdot k \cdot \left( t_{max} -
+	t(i) \right)
+	\label{ptransmi}
+\end{equation}
+
+\begin{description}[\dth]
+
+	\item[$\ptransm(i)$] Transmissionswärmeleistung f\"ur den aktuellen
+	Zeitpunkt, wenn die K\"uhlraumtemperatur minimal w\"are in kW
+	\item[$A$] Fläche in $\mathrm{m^2}$
+	\item[$k$] Wärmedurchgangskoeffiziente in $\mathrm{\frac{W}{m^2 \cdot
+	K}}$
+	\item[$t_{max}$] obere Temperaturgrenze in $ ^{\circ} $C
+	\item[$t(i)$] Temperatur zur Stunde $i$ in $ ^{\circ} $C
+\end{description}
+\vspace{0.5cm}
+
+\begin{equation}
+	\ptrans(i) = A \cdot k \cdot \left( t_{amb}(i) -
+	t(i) \right)
+	\label{ptransi}
+\end{equation}
+
+\begin{description}[\dth]
+
+	\item[$\ptrans(i)$] aktuelle Transmissionswärmeleistung in kW
+	\item[$A$] Fläche in $\mathrm{m^2}$
+	\item[$k$] Wärmedurchgangskoeffiziente in $\mathrm{\frac{W}{m^2 \cdot
+	K}}$
+	\item[$t_{amb}(i)$] aktuelle Umgebungstemperatur in $^{\circ}$C
+	\item[$t(i)$] aktuelle Kühlraumtemperatur in $^{\circ}$C
 \end{description}
 \vspace{0.5cm}
 
@@ -498,33 +530,15 @@ Temperatur ist damit:
 
 \begin{description}[\dth]
 
-	\item[$t$] Temperatur in $^{\circ} C$
-	\item[$Q_v$] eindringende Verlustwärmemenge in $kJ$
-	\item[$Q_{ab}$] abführende Wärmemenge in $kJ$
+	\item[$t$] Temperatur in $^{\circ} $C
+	\item[$Q_v$] eindringende Verlustwärmemenge in kJ
+	\item[$Q_{ab}$] abführende Wärmemenge in kJ
 
 \end{description}
 \vspace{0.5cm}
 
 wobei $Q_v$ die aktuell eindringende Wärmeenergie und $Q_{ab}$ die abgeführte
-Wärmeenergie ist\todo{die nachfolgende Gleichung geh\"ort nicht dahin! oder?}.
-
-\begin{equation}
-	\emax = m \cdot c \cdot (t(i) - t_{max}) + Q_v
-\label{emax}
-\end{equation}
-
-\begin{description}[\dth]
-
-	\item[$\emax$] maximal abzuf\"uhrende W\"armeenergiemenge in $kJ$
-	\item[$m$] Substanzmasse zur Aufnahme der Wärmeenergie in $kg$
-	\item[$c$] Spezifische Wärmekapazität der Substanzmasse in $\frac{kJ}{kg
-		\cdot K}$
-	\item[$Q_v$] eindringende Verlustwärmemenge in $kJ$
-	\item[$t_{min}$] obere Temperaturgrenze in $ \grad C $
-	\item[$t(i)$] Temperatur zur Stunde $i$ in $ \grad C $
-
-\end{description}
-\vspace{0.5cm}
+Wärmeenergie ist\todo{die aktuelle Gleichung geh\"ort nicht dahin! oder?}.
 
 \begin{figure}[h!]
 	\begin{center}
@@ -583,12 +597,12 @@ zum n\"achsten Zeitschritt der Simulation \"ubergegangen werden.
 Sind keine solche K\"uhlstellen vorhanden, endet der Vorgang und es kann zum
 n\"achsten Zeitschritt der Simulation \"ubergegangen werden.
 
-\item[Fall 2] Die Menge der Leistung ist gr\"o\ss er Null. In diesem Fall
-werden alle K\"uhlstellen gefunden, deren Kapazit\"at\todo{was ist das?} noch nicht ausgesch\"opft
-ist und deren Zeit bis zum erreichen der kritischen Temperatur am kleinsten ist.
-Anschlie\ss end wird \"uberpr\"uft, ob eine W\"armeenergie abgef\"uhrt werden
-kann, die genau $\frac{1}{60}\cdot Q_v$\footnote{ $Q_v$ ist die eindringende
-Verlustw\"armemenge in $kJ$.} entspricht, ohne als Folge die
+\item[Fall 2] Die Menge der Leistung ist gr\"o\ss er Null. In diesem Fall werden
+alle K\"uhlstellen gefunden, deren Kapazit\"at\todo{was ist das?} noch nicht
+ausgesch\"opft ist und deren Zeit bis zum erreichen der kritischen Temperatur am
+kleinsten ist.  Anschlie\ss end wird \"uberpr\"uft, ob eine W\"armeenergie
+abgef\"uhrt werden kann, die genau $\frac{1}{60}\cdot Q_v$\footnote{ $Q_v$ ist
+die eindringende Verlustw\"armemenge in kJ.} entspricht, ohne als Folge die
 \"Uberschreitung der minimalen Temperatur zu verursachen. Ist das der Fall, wird
 die Kapazit\"at dieser K\"uhlstelle gleich Null gesetzt, damit diese
 K\"uhlstelle beim n\"achsten Durchgang der \textbf{while}-Schleife nicht
@@ -615,15 +629,34 @@ setzt sich fort.
 \end{equation*}
 \begin{description}[\dth]
 \item[$Q_{Kap}$] W\"armeenergiemenge die zus\"atzlich abgef\"uhrt werden kann,
-ohne dass die minimale Temperaturgrenze verletzt wird in $kJ$
-\item[$Q_{max}$] maximal abzuf\"uhrende W\"armeenergiemenge in $kJ$
-\item[$Q_{v}$] eindringende Verlustw\"armemenge in $kJ$
-\item[$P_{load}$] vorhandene Ladeleistung in $MW$
-\item[$\tau_{krit}$] Zeit bis zur kritischen Temperatur in $h$
+ohne dass die minimale Temperaturgrenze verletzt wird in kJ
+\item[$Q_{max}$] maximal abzuf\"uhrende W\"armeenergiemenge in kJ
+\item[$Q_{v}$] eindringende Verlustw\"armemenge in kJ
+\item[$P_{load}$] vorhandene Ladeleistung in MW
+\item[$\tau_{krit}$] Zeit bis zur kritischen Temperatur in h
 \item[$Q_{cooling}$] W\"armeenergiemenge, die der K\"uhlzelle zur K\"uhlung
-zugewiesen wird in $kJ$
+zugewiesen wird in kJ
 \end{description} \vspace{0.5cm}
+\begin{equation}
+	\emax = m \cdot c \cdot (t(i) - t_{min}) + Q_v
+\label{emax}
+\end{equation}
+
+\begin{description}[\dth]
+
+	\item[$\emax$] maximal abzuf\"uhrende W\"armeenergiemenge in kJ
+	\item[$m$] Substanzmasse zur Aufnahme der Wärmeenergie in kg
+	\item[$c$] Spezifische Wärmekapazität der Substanzmasse in $\mathrm{\frac{kJ}{kg
+		\cdot K}}$
+	\item[$Q_v$] Verlustk\"altemenge in kJ
+	\item[$t_{min}$] obere Temperaturgrenze in  $\grad$ C
+	\item[$t(i)$] Temperatur zur Stunde $i$ in  $\grad$ C
+
 \end{description}
+\vspace{0.5cm}
+
+\end{description}
+
 
 
 %TODO Was ist verdammt noch einmal cooling capacity?
@@ -756,7 +789,7 @@ beibehalten.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Abkürzungen die config_supermarkets betreffen
 \abvz{NK\_KT\_S}{normalgekühlte Kühltruhe steckerfertig}
-\abvz{NK\_KR\_V}{normalgekühltes Kühltregal an Verbundanlage}
+\abvz{NK\_KR\_V}{normalgekühltes Kühlregal an Verbundanlage}
 \abvz{TK\_TKT\_S}{tiefgekühlte Tiefkühltruhe steckerfertig}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -775,20 +808,18 @@ Netto = {...
 Die Kältelast in einem Supermarkt bilden die einzelnen je nach Einsatzzweck
 speziell dafür konstruierten Kühleinheiten. Die Anzahl, die technischen
 Eigenschaften und die Betriebsweise dieser Kältemaschinen können in der Realität
-beispielsweise aufgrund von klimatischen, wirtschaftlichen oder auf
-Kundenverhalten bezogenen Standortbesonderheiten Unterschiede aufweisen. In der
-Konfigurationsdatei \textbf{config\_supermarkets.m$\,$} (vgl. \matref{csuper})
-wird festgelegt, wie die einzelnen Supermarktketten aus verschiedenen
-Kälteeinheiten zusammengesetzt sind. Die Gruppierung der einzelnen Kühleinheiten
-zu einem Modellsupermarkt erfolgt in der
-\textbf{config\_supermarkets.m$\,$}-Datei durch Definition eines oder mehrerer
-$i\times2\,$-Cell ($i\in \mathbb{Z}^+_0$) Arrays, die jeweils ein Supermarkt
-abbilden. Jede Zeile eines solchen Cell Arrays ist für je eine Art Kühleinheit
-reserviert. In die erste Spalte kommt der Name der K\"uhlzelle, deren
-Eigenschaften in der \textbf{config\_fridges.m}-Datei (vgl. \matref{fridge} auf
-der Seite \pageref{fridge}) gespeichert sind. In der zweiten Spalte wird die
-Anzahl f\"ur diese K\"uhleinheiten, die in dem Supermarkt betrieben werden,
-festgelegt.
+Unterschiede aufweisen. In der Konfigurationsdatei
+\textbf{config\_supermarkets.m$\,$} (vgl. \matref{csuper}) wird festgelegt, wie
+die einzelnen Supermarktketten aus verschiedenen Kälteeinheiten zusammengesetzt
+sind. Die Gruppierung der einzelnen Kühleinheiten zu einem Modellsupermarkt
+erfolgt in der \textbf{config\_supermarkets.m$\,$}-Datei durch Definition eines
+oder mehrerer $i\times2\,$-Cell ($i\in \mathbb{Z}^+_0$) Arrays, die jeweils ein
+Supermarkt abbilden. Jede Zeile eines solchen Cell Arrays ist für je eine Art
+Kühleinheit reserviert. In die erste Spalte kommt der Name der K\"uhlzelle,
+deren Eigenschaften in der \textbf{config\_fridges.m}-Datei (vgl.
+\matref{fridge} auf der Seite \pageref{fridge}) gespeichert sind. In der zweiten
+Spalte wird die Anzahl f\"ur diese K\"uhleinheiten, die in dem Supermarkt
+betrieben werden, festgelegt.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -807,10 +838,10 @@ Am Beispiel des Modells einer steckerfertigen Normalkühltruhe, abgekürzt
 NK\_KT\_S (vgl. \matref{fridge} auf der Seite \pageref{fridge}), wird im
 folgenden die Eingabeform eines solchen Datenbankeintrages in der Datei
 \textbf{config\_fridges.m} erläutert.  Zur Beschreibung einer Kühleinheit ist
-erforderlich, die Annahmen in einen $1\times14\,$-Cell Array zu erfassen. Die Größe
-und die Art des Arrays ist vorgegeben durch die Auslegung des Modells zur Anzahl
-und dem Typus der modellbeschreibenden Annahmen. Die Struktur eines Cell Arrays
-ermöglicht neben der zusammenhängenden Speicherung verschiedener
+erforderlich, die Annahmen in einen $1\times14\,$-Cell Array zu erfassen. Die
+Größe und die Art des Arrays ist vorgegeben durch die Auslegung des Modells zur
+Anzahl und dem Typus der modellbeschreibenden Annahmen. Die Struktur eines Cell
+Arrays ermöglicht neben der zusammenhängenden Speicherung verschiedener
 Datentypen einen durch \matlab darauf direkten Zugriff.
 
 \begin{lstlisting}[caption=config\_fridges.m,label={fridge}]
