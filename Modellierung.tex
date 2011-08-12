@@ -2,15 +2,60 @@
 \label{chap:SEVN}
 \minitoc
 
-Der durchschnittliche Energieverbrauch der Kälteanlagen je Supermaktkette
-kann aufgrund der technischen Ausführung unterschiedlich sein. Der
-Energieverbrauch entsteht an definierten Punkten im Netz. An den einzelnen
-Knotenpunkten können mehrere Kältelasten angeschlossen sein.
+\section{Aufgabenstellung}
+\label{sec:aufst}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Die Intention der Arbeit, ist der objektorientierte Entwurf eines
+\matlab-Programms zur Simulation des variablen Lastverhaltens von Kältelasten
+mit Kältespeichern im Energieversorgungsnetz. 
+
+Es sollen ausschlie\ss lich K\"alteanlagen modelliert werden, die in
+Superm\"arkten zum Einsatz kommen. Das Ergebnis der Simulation soll der
+Verbrauch einer variabel gef\"uhrten Supermarktkette auf der Basis der einzelnen
+in den Superm\"arkten eingesetzten K\"alteanlagen sein.
+
+Verbrauchswerte in einem Lastflussoptimierungsprogramm zu verwenden.
+
+\subsection*{Explizite Anforderungen}
+
+Folgende explizite Anforderungen sind an das Programm gestellt:
+
+\begin{itemize}
+	\item Die Speicherung der f\"ur das Beschreiben der Modelle
+	erforderlichen Parameter findet in einer Konfigurationsdatei statt.
+	\item Der elektrische Energieverbrauch wird aufgrund der Modellparameter
+	der Kältelasten sowie des gefahrenen Einsatzes der Kältelasten
+	berechnet.
+	\item Die Topologie des elektrischen Netzwerkes wird ber\"ucksichtigt.
+	\item Die M\"oglichkeit einer eindeutigen Zuweisung der Verbrauchswerte
+	f\"ur folgende Verursacher wird realisiert:
+	\begin{itemize}
+		\item Daten f\"ur jede K\"alteanlage werden einzeln gespeichert,
+		wenn mehrere Anlagen simuliert werden.
+		\item Daten f\"ur jede Supermarktkette werden einzeln
+		gespeichert, wenn der Verbrach mehrerer Supermarktketten
+		simuliert wird.
+		\item Erfolgt die Simulation des Energieverbrauchs f\"ur ein
+		Mehrknotennetz, so werden die Daten f\"ur jeden Knoten einzeln
+		gespeichert.
+	\end{itemize}
+\end{itemize}
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Erstellung des OOP-Modells}
+
+Der durchschnittliche Energieverbrauch der Kälteanlagen je Supermaktkette
+kann aufgrund der technischen Ausführung unterschiedlich sein. Der
+Energieverbrauch entsteht an definierten Punkten im Netz. An den einzelnen
+Knotenpunkten können mehrere Kältelasten angeschlossen sein.\\
 
 In der \cref{fig:vkb} wird ein einfaches Energieversorgungsnetz mit vier Knoten
 dargestellt. Am Knoten eins ist eine regenerative elektrische Energiequelle, in
@@ -56,7 +101,7 @@ ein \"Uberleitungssatz}.
 \subsection*{Refrigerator}
 
 An dieser Stelle werden die Eigenschaften und die Methoden der Klasse
-\textbf{Refrigerator}\todo{trennung!} explizit erkl\"art.
+\textbf{Refrigerator} explizit erkl\"art.
 
 \subsubsection*{Attribute}
 \begin{description}
@@ -67,7 +112,7 @@ An dieser Stelle werden die Eigenschaften und die Methoden der Klasse
 	elektrischen Energieverbrauchs.
 	\item[epsilon] Leistungszahl.
 	\item[compressor\_quotient] Anteil des Verdichters am Gesamtverbrauch
-	der K\"uhlanlage\todo{trennung}.
+	der K\"uhlanlage.
 	\item[cooling\_power] K\"alteleistungsbedarf (Herstellerangaben).
 	\item[temperatur\_outside\_fridge] $1\times M$-Array mit
 	Au\ss entemperaturwertet f\"ur die Umgebung der K\"alteanlage. $M$
@@ -85,14 +130,14 @@ An dieser Stelle werden die Eigenschaften und die Methoden der Klasse
 	K\"uhlung erreicht werden darf.
 	\item[averaged\_cooling\_room\_temperature] Durchschnittliche Temperatur
 	im Normalbetrieb.
-	\item[temperature\_history] $n \times m$-Array mit $(n,m)\in
+	\item[temperature\_history] $n \times m$-Array mit $n,m\in
 	\mathbb{Z}^+_0$, wobei $n$ f\"ur die Anzahl der Werte des berechneten
 	Temperaturverlaufs und $m$ f\"ur die Anzahl der simulierten Tage
 	steht. Die Werte sind das Ergebnis der
 	Berechnung der Funktion \textbf{main\_equation}. Eine Spalte des Arrays
 	stellt den Temperaturverlauf an genau einem Tag dar.
 	\item[electric\_power\_consumption\_history] $n \times m$-Array mit
-	$(n,m)\in \mathbb{Z}^+_0$, wobei $n$ f\"ur die Anzahl der Werte des
+	$n,m\in \mathbb{Z}^+_0$, wobei $n$ f\"ur die Anzahl der Werte des
 	berechneten Verbrauchs und $m$ f\"ur die Anzahl der simulierten Tage
 	steht. Die Werte sind das Ergebnis der Berechnung der Funktion
 	\textbf{main\_equation}. Eine Spalte des Arrays stellt den Verlauf des
@@ -101,10 +146,10 @@ An dieser Stelle werden die Eigenschaften und die Methoden der Klasse
 	Transmissionsverluste im Normalbetrieb (vgl. \cref{aptrans} auf der
 	Seite \pageref{aptrans}).
 	\item[modified\_heat\_transmission\_coefficient] $1\times M$-Array mit
-	Werten aus der elementeweisen\todo{trennung} Multiplikation des
-	Vektors mit den Werten der spezifischen W\"armedurchgangskoeffizienten
-	mit dem Vektor mit Werten f\"ur die Durchgangsfl\"achen (vgl.
-	\cref{vmod} auf der Seite \pageref{vmod}).
+	Werten aus der elementeweisen Multiplikation des Vektors mit den Werten
+	der spezifischen W\"armedurchgangskoeffizienten mit dem Vektor mit
+	Werten f\"ur die Durchgangsfl\"achen (vgl.  \cref{vmod} auf der Seite
+	\pageref{vmod}).
 	\item[increased\_demand\_heat\_power\_day] Mehrbedarf am Tag aufgrund
 	der zus\"atzlichen Verluste durch Licht, Menschenk\"orperw\"arme,
 	T\"ur\"offnungszeiten und weiteren Einfl\"ussen. Die Berechnung erfolgt
@@ -145,9 +190,9 @@ An dieser Stelle werden die Eigenschaften und die Methoden der Klasse
 		(vgl. \cref{aptrans} auf der Seite \pageref{aptrans}).
 		\item[modified\_heat\_transmission\_coefficient] $1\times
 		M$-Array mit Werten aus der elementeweisen Multiplikation des
-		Vektors mit Werten der spezifischen\todo{trennung}
-		W\"armedurchgangskoeffizienten mit dem Vektor mit den Werten f\"ur
-		die Durchgangsfl\"achen (vgl. \cref{vmod} auf der Seite
+		Vektors mit Werten der spezifischen
+		W\"armedurchgangskoeffizienten mit dem Vektor mit den Werten
+		f\"ur die Durchgangsfl\"achen (vgl. \cref{vmod} auf der Seite
 		\pageref{vmod}).
 		\item[increased\_demand\_heat\_power\_day] Mehrbedarf am Tag ,
 		aufgrund der zus\"atzlichen Verluste durch Licht,
@@ -160,14 +205,14 @@ An dieser Stelle werden die Eigenschaften und die Methoden der Klasse
 
 	Folgende Attribute werden im Laufe der Simulation ver\"andert:
 	\begin{description}
-		\item[temperature\_history] $n \times m$-Array mit $(n,m)\in
+		\item[temperature\_history] $n \times m$-Array mit $n,m\in
 		\mathbb{Z}^+_0$, wobei $n$ f\"ur die Anzahl der Werte des
 		berechneten Temperaturverlaufs und $m$ f\"ur die Anzahl der
 		simulierten Tage steht. Die Werte sind das Ergebnis der
 		Berechnung der Funktion \textbf{main\_equation}. Eine Spalte des
 		Arrays stellt den Temperaturverlauf an genau einem Tag dar.
 		\item[electric\_power\_consumption\_history] $n \times m$-Array
-		mit $(n,m)\in \mathbb{Z}^+_0$, wobei $n$ f\"ur die Anzahl der
+		mit $n,m\in \mathbb{Z}^+_0$, wobei $n$ f\"ur die Anzahl der
 		Werten des berechneten Verbrauchs und $m$ f\"ur die Anzahl der
 		simulierten Tage steht. Die Werte sind das Ergebnis der
 		Berechnung der Funktion \textbf{main\_equation}. Eine Spalte
@@ -226,13 +271,14 @@ An dieser Stelle werden die Eigenschaften und die Methoden der Klasse
 	anfallen. Durch eine alternative Verzweigung, deren Bedingung die
 	Zugeh\"origkeit des aktuellen Wertes der Laufvariable
 	\textbf{count\_number\_steps} zu den \"Offnungszeiten ist, wird die
-	Ber\"ucksichtigung der zus\"atzlichen\todo{trennung} Verluste sichergestellt. Der
-	zweite R\"uckgabewert ist die Zeitspanne bis zum Erreichen der kritischen
-	maximalen Temperatur (vgl. \cref{tauk} auf der Seite \pageref{tauk}).
+	Ber\"ucksichtigung der zus\"atzlichen Verluste sichergestellt. Der
+	zweite R\"uckgabewert ist die Zeitspanne bis zum Erreichen der
+	kritischen maximalen Temperatur (vgl. \cref{tauk} auf der Seite
+	\pageref{tauk}).
 
 	Die \"Ubergabe folgender Argumente an die Funktion ist erforderlich:
 	\begin{description}
-		\item[number\_steps] Laufvariable. Gesamtzahl, der zu
+		\item[number\_steps] Laufvariable. Gesamtzahl der zu
 		simulierenden Zeitschrite f\"ur einen Tag.
 		\item[count\_number\_steps] Der aktuelle Wert von
 		\textbf{number\_steps}.
@@ -263,7 +309,7 @@ An dieser Stelle werden die Eigenschaften und die Methoden der Klasse
 	
 	Die \"Ubergabe folgender Argumente an die Funktion ist erforderlich:
 	\begin{description}
-		\item[number\_steps] Laufvariable. Gesamtzahl, der zu
+		\item[number\_steps] Laufvariable. Gesamtzahl der zu
 		simulierenden Zeitschrite f\"ur einen Tag.
 		\item[count\_number\_steps] Der aktuelle Wert von
 		\textbf{number\_steps}.
@@ -280,10 +326,10 @@ Alle Klassen haben einen unterschiedlichen Status. Die Klasse
 Energieversorgungsnetzes, welches aus charakteristischen Teilen, den Knoten
 (\textbf{Bus}) besteht. Die Existenz eines Knotens au\ss erhalb eines Netzes
 ergibt keinen Sinn. Dieser Zusammenhang zwischen Klassen wird im Klassendiagramm
-\cref{fig:klassendiagramm} durch eine Linienverbindung/Komposition verdeutlicht.
-Auf der Seite des Ganzen endet die Linie mit einem ausgef\"ullten Rhombus. Das
-komplette Modell ist nach diesem Prinzip aufgestellt. Das kleinste Element des
-Ganzen stellt die K\"alteanlage (\textbf{Refrigerator}) dar.
+in der \cref{fig:klassendiagramm} durch eine Linienverbindung/Komposition
+verdeutlicht.  Auf der Seite des Ganzen endet die Linie mit einem ausgef\"ullten
+Rhombus. Das komplette Modell ist nach diesem Prinzip aufgestellt. Das kleinste
+Element des Ganzen stellt die K\"alteanlage (\textbf{Refrigerator}) dar.
 
 \begin{figure}[h]
 	\begin{center}
@@ -294,7 +340,7 @@ Ganzen stellt die K\"alteanlage (\textbf{Refrigerator}) dar.
 \end{figure}
 
 Auf Grund des Modells wird das elektrische Verhalten einer
-Supermarket-K\"altelast im Energieversorgungsnetz durch miteinander
+Supermarkt-K\"altelast im Energieversorgungsnetz durch miteinander
 kooperierende Objekte dargestellt. Wird eine Funktion aufgerufen, die den Start
 der Simulation veranlasst, m\"ussen die Objekte aus der Konfigurationsdatei
 erzeugt werden.
@@ -330,7 +376,7 @@ Das augenblickliche Gleichgewicht zwischen dem K\"altebedarf und der zur
 Verf\"ugung stehenden K\"alteleistung sichert die Einhaltung der Soll-Temperatur
 der K\"uhlg\"uter. Werden die K\"alteanlagen als Energiespeicher zur Regelung
 eingesetzt, so f\"uhrt das, auf Grund der fluktuierenden zur Verf\"ugung
-stehenden K\"alteleistung, zu Temperaturschwankungen\todo{trennung}. Die engen Grenzen des
+stehenden K\"alteleistung, zu Temperaturschwankungen. Die engen Grenzen des
 zul\"assigen Temperaturbandes d\"urfen nicht \"uberschritten werden.
 
 Verschiedene Konzepte f\"ur den Einsatz der K\"alteanlagen als Energiespeicher
@@ -353,15 +399,15 @@ Es wird angenommen, dass der Prognosefehler von der Windleistungsvorhersage
 f\"ur 24 Stunden den 15\,\% entspricht. Der Windparkbetreiber meldet beim
 Netzbetreiber die untere Grenze an, also 85\,\% von der Windleistungsvorhersage.
 Der Supermarkt besitzt einen st\"undlichen Bedarf, der unbedingt gedeckt werden
-muss. Ist der st\"undliche Bedarf gr\"o\ss er als 15\,\% der Prognose, wird die
+muss. Ist der st\"undlicher Bedarf gr\"o\ss er als 15\,\% der Prognose, wird die
 Differenz aus dem Netz gezogen. Diese Abweichung wird beim Netzbetreiber zur
 Erstellung des Lastfahrplanes mitgeteilt. Gibt es eine Abweichung von der
 Prognose, so versucht der Supermarkt diese zu absorbieren.
 
 Die vom Windparkbetreiber beim Netzbetreiber anzumeldende Leistung wird
 berechnet, indem von der Windleistungsvorhersage die 85\,\% bestimmt werden
-oder der st\"undliche Bedarf des Supermarktes abgezogen wird, wenn die 15\,\%
-kleiner als der st\"undliche Bedarf sind.
+oder der st\"undlicher Bedarf des Supermarktes abgezogen wird, wenn die 15\,\%
+kleiner als der st\"undlicher Bedarf sind.
 \begin{equation*}
 	b = 0,85 \cdot P_{DA}
 \end{equation*}
@@ -381,7 +427,7 @@ oder
 
 Die vom Windparkbetreiber dem Supermarkt versprochene Leistung wird berechnet,
 indem von der Windleistungsvorhersage die 15\,\% bestimmt werden oder nur der
-st\"undliche Bedarf, wenn die 15\,\% kleiner als der st\"undliche Bedarf sind.
+st\"undlicher Bedarf, wenn die 15\,\% kleiner als der st\"undlicher Bedarf sind.
 \begin{equation*}
 	a = 0,15 \cdot P_{DA}\\
 \end{equation*}
@@ -426,7 +472,7 @@ Die Implementierung des Kooperationskonzeptes erfolgt in einer neuen Klasse
 jedem Supermarkt im Netz die aufgrund des Kooperationskonzeptes und der
 Temperaturbeschr\"ankungen optimale Menge an K\"alteleistung zuzuweisen. Die zur
 Verf\"ugung stehende Leistung wird auf alle K\"uhlstellen gleichm\"a\ss ig
-aufgeteilt, bis keine Leistung mehr vorhanden ist oder die Minimaltemperatur
+aufgeteilt bis keine Leistung mehr vorhanden ist oder die Minimaltemperatur
 erreicht wird. Alle K\"uhlstellen sollen zu jeder Stunde mindestens soviel
 Leistung zugewiesen bekommen, dass genau diese eine Stunde \"uberbr\"uckt werden
 kann, ohne dass die H\"ochsttemperatur \"uberschritten wird. Die Zeit bis zur
@@ -456,7 +502,7 @@ Diese Zeit kann nach der \cref{tauk} abgesch\"atz werden.
 		\cdot K}}$
 	\item[$t_{max}$] obere Temperaturgrenze in $ ^{\circ} $C
 	\item[$t(i)$] Temperatur zur Stunde $i$ in $ ^{\circ} $C
-	\item[$\aptranslog(i)$] logarithmierte Mittelwert der
+	\item[$\aptranslog(i)$] logarithmierter Mittelwert der
 		Transmissionswärmeleistung zum aktuellen Zeitpunkt in kW
 	\item[$\pmehr(i)$] Tagesmehrbedarf zum aktuellen Zeitpunkt in kW
 \end{description}
@@ -473,7 +519,7 @@ der Transmissionswärmeleistung.
 \end{equation}
 
 \begin{description}[\dth]
-	\item[$\aptranslog(i)$] logarithmierte Mittelwert der
+	\item[$\aptranslog(i)$] logarithmierter Mittelwert der
 		Transmissionswärmeleistung zum aktuellen Zeitpunkt in kW
 	\item[$\ptransm(i)$] Transmissionswärmeleistung f\"ur den aktuellen
 	Zeitpunkt, wenn die K\"uhlraumtemperatur minimal w\"are in kW
@@ -493,7 +539,7 @@ der Transmissionswärmeleistung.
 	\item[$\ptransm(i)$] Transmissionswärmeleistung f\"ur den aktuellen
 	Zeitpunkt, wenn die K\"uhlraumtemperatur minimal w\"are in kW
 	\item[$A$] Fläche in $\mathrm{m^2}$
-	\item[$k$] Wärmedurchgangskoeffiziente in $\mathrm{\frac{W}{m^2 \cdot
+	\item[$k$] Wärmedurchgangskoeffizient in $\mathrm{\frac{W}{m^2 \cdot
 	K}}$
 	\item[$t_{max}$] obere Temperaturgrenze in $ ^{\circ} $C
 	\item[$t(i)$] Temperatur zur Stunde $i$ in $ ^{\circ} $C
@@ -510,7 +556,7 @@ der Transmissionswärmeleistung.
 
 	\item[$\ptrans(i)$] aktuelle Transmissionswärmeleistung in kW
 	\item[$A$] Fläche in $\mathrm{m^2}$
-	\item[$k$] Wärmedurchgangskoeffiziente in $\mathrm{\frac{W}{m^2 \cdot
+	\item[$k$] Wärmedurchgangskoeffizient in $\mathrm{\frac{W}{m^2 \cdot
 	K}}$
 	\item[$t_{amb}(i)$] aktuelle Umgebungstemperatur in $^{\circ}$C
 	\item[$t(i)$] aktuelle Kühlraumtemperatur in $^{\circ}$C
@@ -558,48 +604,79 @@ sie die zur K\"uhlung erforderliche Leistung berechnet. Ein Objekt der Klasse
 
 In der \cref{fig:coop} auf der Seite \pageref{fig:coop} ist der
 Programmstrukturplan des Kooperationskonzeptes dargestellt. Der Algorithmus
-zeigt den Ablauf beim "'Auff\"uhlen"' der K\"uhlstellen  f\"ur genau einen
+zeigt den Ablauf beim "'Auff\"ullen"' der K\"uhlstellen  f\"ur genau einen
 Zeitschritt der Simulation. Die Umsetzung des Algorithmus erfolgt
 in der Funktion \textbf{strategy\_calculator()}.
 
 \begin{description}
 \item[strategy\_calculator()] Es gibt f\"unf R\"uckgabewerte dieser Funktion.
 Der erste R\"uckgabewert ist ein $n\times11\,$-Array, wobei $n$ f\"ur die Anzahl
-der im gesamten Netz vorhandenen K\"uhlzellen steht. In den Spalten des Arrays
+der im gesamten Netz vorhandenen K\"uhlzellen steht. Dieser Array wird zu jedem
+Zeitschritt (Stunde) der Simulation neu erzeugt. In den Spalten des Arrays
 werden alle Informationen gespeichert, die durch Berechnungen in der Funktion
-entstanden sind und die Information zur eindeutigen Zuordnung dieser Ergebnisse
-zu der jeweiligen K\"alteeinheit. ergibt sich dadurch, dass \todo{das mache ich
-noch heute}
+entstanden sind und weitere Informationen, die zur eindeutigen Zuordnung dieser
+Ergebnisse zu der jeweiligen K\"alteeinheit beitragen. Die Energie zum K\"uhlen
+wird f\"ur die jeweiligen K\"uhleinheiten z.B. in der Spalte sechs gespeichert.
+Der zweite Ausgabewert ist der st\"undliche Leistungbedarf $P_{dem}$ f\"ur das
+Gesamtnetz.  Die f\"ur das Gesamtnetz berechnete vorhandene Leistung zum Laden
+$P_{load}$ ist der dritte Ausgabewert. Der vierte Wert ist die vom
+Windparkbetreiber beim Netzbetreiber angemeldete Leistung $b$ f\"ur das
+Gesamtnetz. Der f\"unfte Ausgabewert ist die dem Supermarkt vom
+Windparkbetreiber versprochene Leistung.  Die letzten drei Ausgaben berechnen
+sich nach den Formeln, die in der \cref{pload} auf der Seite \pageref{pload} zu
+sehen sind.
+
+Die \"Ubergabe folgender Attribute an die Funktion ist erforderlich.
+
+\begin{description} 
+\item[buses] Referenz zum Attribut \textbf{buses} vom Objekt der Klasse
+\textbf{Power\_grid}
+\item[hourly\_demand\_day] Referenz zum Attribut \textbf{hourly\_demand\_day}
+vom Objekt der Klasse \textbf{Power\_grid}
+\item[hourly\_demand\_night] Referenz zum Attribut
+\textbf{hourly\_demand\_night} vom Objekt der Klasse \textbf{Power\_grid}
+\item[count\_number\_day] Der aktuelle Wert von der Laufvariable number\_day
+\item[count\_number\_steps] Der aktuelle Wert von der Laufvariable number\_steps
+\item[gen\_out\_day\_T] Daten der tats\"achlich vom Windpark generierten
+Leistung f\"ur den untersuchten Zeitraum
+\item[gen\_out\_day\_A] Windleistungsprognosedaten f\"ur den untersuchten Zeitraum
+\item[promised\_gen\_output\_DA\_gros] untere Grenze des angenommenen Bandes
+f\"ur Abweichung der Windleistungsprognosedaten von realen Werten f\"ur den
+untersuchten Zeitraum
+\item[number\_day] Laufvariable. Gesamtzahl der zu simulierenden Tage.
+\item[number\_steps] Laufvariable. Gesamtzahl der zu simulierenden Zeitschrite f\"ur einen Tag.
 \end{description}
 
-Der Auff\"uhlvorgang findet zwischen den st\"undlichen Temperaturberechnungen
-statt. Diese Handlung wird schrittweise wiederholt, um das gleichm\"a\ss ige
-Verteilung der Leistung auf alle Anlagen zu erm\"oglichnen. Zur L\"osung dieser
+\end{description}
+
+Der Auff\"ullvorgang findet zwischen den st\"undlichen Temperaturberechnungen
+statt. Diese Handlung wird schrittweise wiederholt, um die gleichm\"a\ss ige
+Verteilung der Leistung auf alle Anlagen zu erm\"oglichen. Zur L\"osung dieser
 Aufgabe im Programm ist eine \textbf{while}-Schleife mit einer Abbruchbedingung
-geeignet. Innerhalb der \textbf{while}-Schleife wird der Algorithmus
-\cref{fig:coop} umgesetzt.
+geeignet. Innerhalb der \textbf{while}-Schleife wird der Algorithmus, der in
+der \cref{fig:coop} zu sehen ist, umgesetzt.
 
 Im ersten Schritt des Algorithmus findet eine Abfrage statt, ob Leistung zum
 K\"uhlen der Anlagen zur Verf\"ugung steht. Dieser Berechnung liegt die
-\cref{pload} auf der Seite \pageref{pload} zugrunde, die in der
-Funktion \textbf{power\_for\_load\_net()} implementiert
-ist.
+\cref{pload} auf der Seite \pageref{pload} zugrunde, die in der Funktion
+\textbf{power\_for\_load\_net()} implementiert ist.
 
 \begin{description}
 \item[Fall 1] Die Menge der Leistung ist nicht gr\"o\ss er Null. Es erfolgt die
 n\"achste Abfrage nach den K\"uhlstellen, die eine Stunde ohne Leistung aus dem
-Netz nicht \"uberstehen k\"onnen, ohne kritische Temperatur zu \"uberschreiten.
-Diese Anlagen werden mit der zus\"atzlichen, nicht angemeldeten Leistung aus dem
-Netz geladen, sodass sie genau eine Stunde \"uberstehen, ohne die obere
-Temperaturgrenze zu verletzen. Der Vorgang endet anschlie\ss end, und es kann
-zum n\"achsten Zeitschritt der Simulation \"ubergegangen werden.
+Netz nicht \"uberstehen k\"onnen, ohne die kritische Temperatur zu
+\"uberschreiten.  Diese Anlagen werden mit der zus\"atzlichen, nicht
+angemeldeten Leistung aus dem Netz geladen, sodass sie genau eine Stunde
+\"uberstehen, ohne die obere Temperaturgrenze zu verletzen. Der Vorgang endet
+anschlie\ss end, und es kann zum n\"achsten Zeitschritt der Simulation
+\"ubergegangen werden.
 
 Sind keine solche K\"uhlstellen vorhanden, endet der Vorgang und es kann zum
 n\"achsten Zeitschritt der Simulation \"ubergegangen werden.
 
 \item[Fall 2] Die Menge der Leistung ist gr\"o\ss er Null. In diesem Fall werden
 alle K\"uhlstellen gefunden, deren Kapazit\"at\todo{was ist das?} noch nicht
-ausgesch\"opft ist und deren Zeit bis zum erreichen der kritischen Temperatur am
+ausgesch\"opft ist und deren Zeit bis zum Erreichen der kritischen Temperatur am
 kleinsten ist.  Anschlie\ss end wird \"uberpr\"uft, ob eine W\"armeenergie
 abgef\"uhrt werden kann, die genau $\frac{1}{60}\cdot Q_v$\footnote{ $Q_v$ ist
 die eindringende Verlustw\"armemenge in kJ.} entspricht, ohne als Folge die
@@ -618,7 +695,7 @@ setzt sich fort.
 	Q_{Kap} = Q_{max} - \frac{1}{60}Q_v\\
 \end{equation*}
 \begin{equation*}
-	P_{load} = P_{load} - \frac{1}{60}\frac{Q_v }{3.6 \cdot 10^{6} \cdot
+	P_{load} = P_{load} - \frac{1}{60}\frac{Q_v }{3,6 \cdot 10^{6} \cdot
 	\epsilon}
 \end{equation*}
 \begin{equation*}
@@ -628,7 +705,7 @@ setzt sich fort.
 	Q_{cooling} = Q_{cooling} + \frac{1}{60}Q_v
 \end{equation*}
 \begin{description}[\dth]
-\item[$Q_{Kap}$] W\"armeenergiemenge die zus\"atzlich abgef\"uhrt werden kann,
+\item[$Q_{Kap}$] W\"armeenergiemenge, die zus\"atzlich abgef\"uhrt werden kann,
 ohne dass die minimale Temperaturgrenze verletzt wird in kJ
 \item[$Q_{max}$] maximal abzuf\"uhrende W\"armeenergiemenge in kJ
 \item[$Q_{v}$] eindringende Verlustw\"armemenge in kJ
@@ -710,7 +787,7 @@ bestimmt.
 
 Das Programm richtet sich in seiner Installation und der Benutzung nach dem
 allgemein gültigen Gebrauch der \matlab M-files\footnote{
-Ausführliche Information dazu findet man z.B. im \cite{MATLAB-Buch}.}.
+Ausführliche Information dazu findet man z.B. in \cite{MATLAB-Buch}.}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -739,7 +816,7 @@ dargestellt sind.} benötigt:
 \noindent\textbf{config\_grid.m}
 \vspace{3mm}
 
-Es ist wichtig, dass die topologische Eigenschaft des Netzes im Programm
+Es ist wichtig, dass die topologischen Eigenschaften des Netzes im Programm
 berücksichtigt werden. Damit das Programm mit den für die Simulation notwendigen
 Informationen, die das Energienetz beschreiben, versorgt wird, ist die Form, die
 in \matref{cgrid} vorgestellt wird, für die \textbf{config\_grid.m$\,$}-Datei
@@ -772,8 +849,8 @@ Jede Zeile dieses Cell Arrays ist für eine eigene Art Supermarktkette
 reserviert. In die erste Spalte kommt der Name der Supermarktkette deren
 Eigenschaften in der \textbf{config\_supermarkets.m$\,$}-Datei (vgl.
 \matref{csuper}) gespeichert sind. In der zweiten Spalte wird die Anzahl der
-Supermärkte einer Kette festgelegt, die an dem bestimmten Knoten simuliert werden
-soll.
+Supermärkte einer Kette festgelegt, die an dem bestimmten Knoten simuliert
+werden soll.
 
 Um Fehler auf dieser Ebene zu vermeiden, muss die
 \textbf{config\_grid.m}$\,$-Datei unbedingt die oben vorgestellte Form
@@ -806,17 +883,17 @@ Netto = {...
 \end{lstlisting}
 
 Die Kältelast in einem Supermarkt bilden die einzelnen je nach Einsatzzweck
-speziell dafür konstruierten Kühleinheiten. Die Anzahl, die technischen
-Eigenschaften und die Betriebsweise dieser Kältemaschinen können in der Realität
-Unterschiede aufweisen. In der Konfigurationsdatei
+speziell dafür konstruierten K\"uhleinheiten. Die Anzahl, die technischen
+Eigenschaften und die Betriebsweise dieser Kältemaschinen können in der
+Realität Unterschiede aufweisen. In der Konfigurationsdatei
 \textbf{config\_supermarkets.m$\,$} (vgl. \matref{csuper}) wird festgelegt, wie
 die einzelnen Supermarktketten aus verschiedenen Kälteeinheiten zusammengesetzt
-sind. Die Gruppierung der einzelnen Kühleinheiten zu einem Modellsupermarkt
+sind. Die Gruppierung der einzelnen K\"uhleinheiten zu einem Modellsupermarkt
 erfolgt in der \textbf{config\_supermarkets.m$\,$}-Datei durch Definition eines
-oder mehrerer $i\times2\,$-Cell ($i\in \mathbb{Z}^+_0$) Arrays, die jeweils ein
-Supermarkt abbilden. Jede Zeile eines solchen Cell Arrays ist für je eine Art
-Kühleinheit reserviert. In die erste Spalte kommt der Name der K\"uhlzelle,
-deren Eigenschaften in der \textbf{config\_fridges.m}-Datei (vgl.
+oder mehrerer $i\times2\,$-Cell ($i\in \mathbb{Z}^+_0$) Arrays, die jeweils
+einen Supermarkt abbilden. Jede Zeile eines solchen Cell Arrays ist für je eine
+Art K\"uhleinheit reserviert. In die erste Spalte kommt der Name der
+K\"uhlzelle, deren Eigenschaften in der \textbf{config\_fridges.m}-Datei (vgl.
 \matref{fridge} auf der Seite \pageref{fridge}) gespeichert sind. In der zweiten
 Spalte wird die Anzahl f\"ur diese K\"uhleinheiten, die in dem Supermarkt
 betrieben werden, festgelegt.
@@ -831,13 +908,13 @@ betrieben werden, festgelegt.
 Die Konfigurationsdatei \textbf{config\_fridges.m} kann als eine Datenbank für
 Kälteeinheiten aufgefasst werden. In dieser Datenbank werden Informationen nach
 einem bestimmten Muster gruppiert und gespeichert, sodass jede Gruppe eine
-bestimmte Kühleinheit abbildet. Im Programm kann aus je einem dieser
-physikalisch fundierten Modellen ein Kühleinheit-Objekt erzeugt werden.
+bestimmte K\"uhleinheit abbildet. Im Programm kann aus je einem dieser
+physikalisch fundierten Modellen ein K\"uhleinheit-Objekt erzeugt werden.
 
 Am Beispiel des Modells einer steckerfertigen Normalkühltruhe, abgekürzt
 NK\_KT\_S (vgl. \matref{fridge} auf der Seite \pageref{fridge}), wird im
 folgenden die Eingabeform eines solchen Datenbankeintrages in der Datei
-\textbf{config\_fridges.m} erläutert.  Zur Beschreibung einer Kühleinheit ist
+\textbf{config\_fridges.m} erläutert.  Zur Beschreibung einer K\"uhleinheit ist
 erforderlich, die Annahmen in einen $1\times14\,$-Cell Array zu erfassen. Die
 Größe und die Art des Arrays ist vorgegeben durch die Auslegung des Modells zur
 Anzahl und dem Typus der modellbeschreibenden Annahmen. Die Struktur eines Cell
@@ -869,89 +946,72 @@ Datentypen einen durch \matlab darauf direkten Zugriff.
 	\item [Spalte eins]\footnote{ Aus Gr\"unden der \"Ubersicht sind im
 	\matref{fridge} auf der Seite \pageref{fridge} der Zeilenvektor
 	NK\_KT\_S als Spaltenvektor dargestellt. Es wird jedoch weiterhin auf
-	Spalten verwiesen, da er in \matlab als Zeilenvektor implementiert
-	ist.} Die Unterscheidung in steckerfertige Kälteanlagen und
+	Spalten verwiesen, da er in \matlab als Zeilenvektor implementiert ist.}
+	Die Unterscheidung in steckerfertige Kälteanlagen und
 	Kälteverbundanlagen im Programm ist notwendig, da bei der Berechnung der
-	Kälteverluste unterschiedliche Verfahren zu Grunde gelegt werden.  Diese
+	Kälteverluste unterschiedliche Verfahren zugrunde gelegt werden. Diese
 	Differenzierung erfolgt durch die Zuweisung einer Eins für die
-	steckerfertige Einheit und einer Zwei für eine Einheit an Verbundanlage
-	in der ersten Spalte im Array.
-
+	steckerfertige Einheit und einer Zwei für eine Einheit an einer
+	Verbundanlage in der ersten Spalte im Array. Die Berechnug der Verluste
+	wird im \cref{chap:theorie} erkl\"ahrt.
 	\item [{Spalte zwei}] Die druchschnittliche elektrische Energieaufnahme
 	ist eine Kennzahl in Watt pro 24 Stunden, die durch die Hersteller mit
-	Hilfe eines genormten Verfahren ermittelt wird und in den technischen
-	Blättern angegeben werden muss\todo{Wo wird das Verwendet? Hier
-	schreiben}.
-
-	\item [{Spalte drei}] In diese Spalte wird die Leistungszahl
-	eingetragen.
-
+	Hilfe eines genormten Verfahrens ermittelt wird und in den technischen
+	Blättern angegeben werden muss. Diese Angabe wird bei der Bestimmung von
+	K\"ahltemehrverlusten am Tag (vgl. \cref{pmehr} auf der Seite
+	\pageref{pmehr}) verwendet.
+	\item [{Spalte drei}] In diese Spalte wird die Leistungszahl $\epsilon$
+	eingetragen, die den Zusammenhang zwischen der K\"alteleistung und er
+	elektrischen Leistung herstellt.
 	\item [{Spalte vier}] Der Anteil des Verdichters an dem
-	Tagesenergieverbrauch der Kühleinheiten wird Leistungszahl genannt. Aus
-	der \cref{lverd} im \cref{chap:theorie} geht hervor, wie diese Kehnzahl
-	in die Berechnung eingeht. Die Liestungszahl wird in der Spalte vier
-	festgehalten.
-
+	Tagesenergieverbrauch der K\"uhleinheiten wird in diese Spalte
+	eingetragen. Aus der \cref{lverd} im \cref{chap:theorie} geht hervor,
+	wie diese Kennzahl in die Berechnung eingeht.
 	\item [{Spalte fünf}] Werden anschlussfertige Kälteaggregate zur Kühlung
 	von Räumen verwendet, so wird die installierte Kälteleistung in Kilowatt
 	in die Spalte fünf anstatt einer Null eingetragen.
-
-	\item [{Spalte sechs}] Ein Teil der Wärmeverluste ist auf die
-	Transmissionsverluste durch die Wände zurückzuführen.  Die Anzahl der
-	Wände muss für die Rechnung berücksichtigt werden, Sie wird in die
-	sechste Spalte eingetragen.
-	
-	\item [{Spalte sieben}] Für die Transmissionsverlustberechnung sind
+	\item [{Spalte sechs}] Für die Transmissionsverlustberechnung sind
 	unter anderem die Flächengrößen und die jeweiligen
 	Wärmedurchgangskoeffizienten der einzelnen Wände
-	maßgebend\footnoteremember{Waende}{ Der mathematische Zusammenhang wird
+	maßgebend\footnote{ Der mathematische Zusammenhang wird
 	im \cref{chap:theorie} in der \cref{ptrans} deutlich gemacht.}. Für je
 	eine Flächengröße in Quadratmeter ist in der Spalte sieben des
 	NK\_KT\_S-Arrays ein Spaltenplatz im $1\times w\,$-Zeilenarray
-	reserviert. Die $w$ steht für die Anzahl der Wände.
-
-	\item [{Spalte acht}] In der achten Spalte werden in einem weiteren
-	$1\times w\,$-Zeilenarray die mit den Flächen korrespondiere
-	Wärmedurchgangskoeffiziente\footnoterecall{Waende} in gleicher
-	Reihenfolge gespeichert.
-
-	\item [{Spalte neun}] Die Tepmeratur außerhalb der Kühleinheit
-	bestimmt\footnoterecall{Waende} die Größe der Transmissionsverluste. In
-	der neunten Spalte werden nach dem gleichen Prinzip und in der gleichen
-	Form wie im vorhergegangenen Eintrag die Außentemperatur für jede Wand
-	eingetragen.
-
-	\item [{Spalte zehn}] Die Abhängigkeit der Temperaturänderung von der in
-	einer Kühleinheit deponierten Masse an Waren und deren spezifische
+	reserviert. $w$ steht für die Anzahl der Wände.
+	\item [{Spalte sieben}] In dieser Spalte werden in einem weiteren
+	$1\times w\,$-Zeilenarray die mit den Flächen korrespondierende
+	Wärmedurchgangskoeffiziente in gleicher Reihenfolge gespeichert.
+	\item [{Spalte acht}] Die Temperatur außerhalb der K\"uhleinheit
+	bestimmt die Größe der Transmissionsverluste. In der dieser Spalte
+	werden nach dem gleichen Prinzip und in der gleichen Form wie im
+	vorhergegangenen Eintrag die Außentemperatur für jede Wand eingetragen.
+	\item [{Spalte neun}] Die Abhängigkeit der Temperaturänderung von der in
+	einer K\"uhleinheit deponierten Masse an Waren und deren spezifische
 	Wärmekapazität ist aus der \cref{tdif} im \cref{chap:theorie}
 	ersichtlich. In der Realität werden in einem Kühlschrank gewöhnlich
 	mehrere verschiedene Lebensmittel gekühlt. Möchte man gemischte Beladung
 	simulieren, so sind die Massen in der Spalte zehn im NK\_KT\_S in der
-	gleichen Art und Weise wie in der Spalte sieben acht oder neun zu
+	gleichen Art und Weise wie in der Spalte sechs sieben oder acht
 	einzutragen. Der Eintrag erfolgt in Kilogramm.
-
-	\item [{Spalte elf}] Zu jeder in der Spalte zehn eingetragener Massezahl
-	muss in der Spalte neun nach dem Beispiel der Spalte acht die
-	spezifische Wärmekapazität eingetragen werden.
-
-	\item [{Spalte zwölf}] In der Realität fällt die Spanne für Variation
+	\item [{Spalte zehn}] Zu jeder in der Spalte neun eingetragenen
+	Massezahl muss in dieser Spalte nach dem Beispiel der Spalten neun und
+	zehn, die spezifische Wärmekapazität eingetragen werden.
+	\item [{Spalte elf}] In der Realität fällt die Spanne für die Variation
 	die Innentemperatur in einem Lebensmittelkühlschrank eher gering aus, da
 	die Temperatur auf einem bestimmten Niveau gehalten werden muss, damit
 	die Lebensmittel maximal lange frisch bleiben können. Möchte man die
 	Kälte im Lebensmittel speichern, darf die Lebensmitteltemperatur einen
-	bestimmten Bereich nicht Verlassen. In der Spalte zwölf im NK\_KT\_S
-	wird die untere Temperaturgrenze in Grad Celsius festgelegt.
-
-	\item [{Spalte elf}] In der Spalte elf wird die obere Temperaturgrenze
-	in Grad Celsius festgelegt.
-
-	\item [{Spalte zwölf}] Die Bedeutung\footnote{caro}{
-	Ausführlich begründet wird das in \cite{caro}.} der mittleren
-	Kühlraumtemperatur ist kurz im \cref{chap:theorie} angeschnitten.
-	Notiert wird diese Kennzahl in der Spalte zwölf im NK\_KT\_S
-	eingetragen.
-
-	\item [{Spalte dreizehn}] Keine Ahnung\todo{Klären was das ist.}
+	bestimmten Bereich nicht verlassen. In dieser Spalte wird die untere
+	Temperaturgrenze in Grad Celsius festgelegt.
+	\item [{Spalte zw\"olf}] In dieser Spalte wird die obere
+	Temperaturgrenze in Grad Celsius festgelegt.
+	\item [{Spalte dreizehn}] Die Bedeutung\footnote{ Alle Modellannahmen
+	wurden in Zusammenarbeit mit Caroline M\"oller entwickelt \cite{caro}.}
+	der mittleren Kühlraumtemperatur ist im \cref{chap:theorie} erkl\"ahrt.
+	\item [{Spalte vierzehn}] Zur Ber\"ucksichtiung Zeit, bis die K\"alte
+	auf Grund der \"Anderung der K\"uhlleistug nach Au\ss en durch die
+	K\"uhlraumabgrenzung entweichen kann, wird ein Faktor zwischen Null
+	und Eins eingef\"uhrt, um den K\"alteverlust zu verkleinern.
 
 \end{description}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

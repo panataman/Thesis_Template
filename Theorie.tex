@@ -187,9 +187,9 @@ Ausf\"uhrliche Informationen dazu findet man z.B. in \cite{matlab_kompakt} oder
 
 Klassen werden in \matlab mit Hilfe einer Datei mit der Endung $.m$ definiert,
 die den selben Namen wie die Klasse hat. Im Quelltextbeispiel
-\matref{Klassendefinition} wird eine Beispielklasse \textbf{class\_name} mit
+\matref{Klassendefinition} wird eine Beispielklasse \textbf{Class\_name} mit
 einem Eigenschaften-Block und einem Methoden-Block definiert. Die Datei muss
-demnach \textbf{class\_name.m} hei\ss en. In die erste Zeile der Datei kommt die
+demnach \textbf{Class\_name.m} hei\ss en. In die erste Zeile der Datei kommt die
 Anweisung \lstinline$classdef$, die die Klasse einleitet. Werden der Klasse
 zus\"atzliche Verhaltensmuster zugewiesen, folgt die Setzung der Attribute in
 Klammern. Anschlie\ss end kommt der Name der Klasse. Wird die neue Klasse eine
@@ -198,14 +198,14 @@ und der Name der Superklasse. In den anschlie\ss enden Zeilen werden der
 Eigenschaften-Block und der Methoden-Block definiert.
 
 \begin{lstlisting}[float=h!,caption={Beispiel Klassendefinition},label={Klassendefinition}, frame=none]
-	classdef (Attributes) class_name < super_class % class definition
+	classdef (Attributes) Class_name < Super_class % class definition
 		properties (Attributes) % first property block
 			PropertyName = [];
 		end % end of properties block
 		% additionally here can be another properties block with 
 		% specifying by another Attributes
 		methods (Attributes) 
-			function obj = class_name(obj,a) % consturctor
+			function obj = Class_name(obj,a) % consturctor
 				obj.PropertyName = a;
 			end
 			function [X] = second_function(obj)
@@ -228,7 +228,7 @@ Konstruktors unterscheidet sich nicht von dem Aufruf gew\"ohnlicher
 den Aufruf der Konstruktor-Funktion ein Objekt \textbf{object} der im
 \matref{Klassendefinition} vorgestellten Klasse erzeugt.
 \begin{lstlisting}[frame=none]
-	>> object = class_name(input_data);
+	>> object = Class_name(input_data);
 \end{lstlisting}
 
 Methoden, die applikationsspezifische Operationen mit einem Datensatz
@@ -322,7 +322,7 @@ sein.
 	\item[$\pinstall$] Installierte Kälteleistung in kW
 	\item[$\tau_{B}$] Tägliche Betriebszeit in h
 	\item[$\pkalt$] st\"undlicher Kälteleistungsbedarf in
-	kW\todo{st\"undlicher!!! \"uberall}
+	kW
 
 \end{description}
 \vspace{0.5cm}
@@ -341,7 +341,7 @@ Umgebungstemperatur berechnet.
 
 	\item[$\ptrans$] Transmissionswärmeleistung in kW
 	\item[$A$] Fläche in $\mathrm{m^2}$
-	\item[$k$] Wärmedurchgangskoeffizient\todo{e zuviel} in $\mathrm{\frac{W}{m^2 \cdot
+	\item[$k$] Wärmedurchgangskoeffizient in $\mathrm{\frac{W}{m^2 \cdot
 	K}}$
 	\item[$\Delta\: t$] Temperaturdifferenz in K
 
@@ -361,7 +361,7 @@ wiedergegeben.
 \begin{description}[\dth]
 
 	\item[$\epsilon$] Leistungszahl (einheitenlos)
-	\item[$\pkalt$] st\"undliche Kälteleistungsbedarf in kW
+	\item[$\pkalt$] st\"undlicher Kälteleistungsbedarf in kW
 	\item[$P$] elektrische Verdichterantriebsleistung in einer
 		Kompressionskälteanlage in kW
 
@@ -431,8 +431,8 @@ Gr\"unde je nach Tageszeit unterschiedlich.
 \vspace{0.5cm}
 
 
-Ist f\"ur eine K\"alteanlage der st\"undliche K\"alteleistungsbedarf bekannt, so
-wird der Tagesmehrbedarf an K\"alteleistung ermittelt, indem vom Produkt des
+Ist f\"ur eine K\"alteanlage der st\"undlicher K\"alteleistungsbedarf bekannt,
+so wird der Tagesmehrbedarf an K\"alteleistung ermittelt, indem vom Produkt des
 K\"alteleistungsbedarfes mit dem Faktor f\"ur K\"altebedarfsabsenkung die
 mittlere Transmissionswärmeleistung abgezogen wird.
 
@@ -444,7 +444,7 @@ mittlere Transmissionswärmeleistung abgezogen wird.
 \begin{description}[\dth]
 
 	\item[$\pmehr$] Tagesmehrbedarf in kW
-	\item[$\pkalt$] st\"undliche Kälteleistungsbedarf in kW
+	\item[$\pkalt$] st\"undlicher Kälteleistungsbedarf in kW
 	\item[$K$] Faktor für Kältebedarfsabsenkung (einheitenlos)
 	\item[$\aptrans$] mittlere Transmissionswärmeleistung in kW
 
@@ -466,7 +466,7 @@ wärmeübertragenden Wände.
 
 	\item[$\aptrans$] mittlere Transmissionswärmeleistung in kW
 	\item[$A$] Fläche in $\mathrm{m^2}$
-	\item[$k$] Wärmedurchgangskoeffiziente in $\mathrm{\frac{W}{m^2 \cdot K}}$
+	\item[$k$] Wärmedurchgangskoeffizient in $\mathrm{\frac{W}{m^2 \cdot K}}$
 	\item[$t_{amb}$] Umgebungstemperatur in $^{\circ}$ C
 	\item[$\overline{t}_{KR}$] mittlere Kühlraumtemperatur in
 		$^{\circ}$ C
@@ -542,4 +542,20 @@ Es wird angenommen, dass der Mehrbedarf in den rund zw\"olf Stunden der
 \end{description}
 \vspace{0.5cm}
 
+Nun kann der der st\"undlicher Leistungsbedarf des Supermarkts in MW berechnet
+werden.
+
+\begin{equation}
+	P_{dem} = \frac{\dot Q_v}{\epsilon}
+\label{pdem}
+\end{equation}
+\begin{description}[\dth]
+
+	\item[$P_{dem}$] st\"undlicher Leistungsbedarf des Supermarkts (demand)
+	MW
+	\item[$\dot Q_v$] Verlustk\"alteleistung in kW
+	\item[$\epsilon$] Leistungszahl (einheitenlos)
+
+\end{description}
+\vspace{0.5cm}
 
