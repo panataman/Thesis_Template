@@ -220,7 +220,7 @@ An dieser Stelle werden die Eigenschaften und die Methoden der Klasse
 		genau einem Tag dar.
 	\end{description}
 
-	Folgende Attribute sind auf Grund der Annahmen dieser Studie konstant,
+	Folgende Attribute sind aufgrund der Annahmen dieser Studie konstant,
 	k\"onnen aber bei der bei einer Modifizierung der Annahmen im Laufe der
 	Simulation ver\"andert werden:
 	\begin{description}
@@ -339,7 +339,7 @@ Element des Ganzen stellt die K\"alteanlage (\textbf{Refrigerator}) dar.
 \label{fig:uml_sequence}
 \end{figure}
 
-Auf Grund des Modells wird das elektrische Verhalten einer
+Aufgrund des Modells wird das elektrische Verhalten einer
 Supermarkt-K\"altelast im Energieversorgungsnetz durch miteinander
 kooperierende Objekte dargestellt. Wird eine Funktion aufgerufen, die den Start
 der Simulation veranlasst, m\"ussen die Objekte aus der Konfigurationsdatei
@@ -375,7 +375,7 @@ Die ausf\"uhrliche Erkl\"arung der Konfigurationsdateien findet im
 Das augenblickliche Gleichgewicht zwischen dem K\"altebedarf und der zur
 Verf\"ugung stehenden K\"alteleistung sichert die Einhaltung der Soll-Temperatur
 der K\"uhlg\"uter. Werden die K\"alteanlagen als Energiespeicher zur Regelung
-eingesetzt, so f\"uhrt das, auf Grund der fluktuierenden zur Verf\"ugung
+eingesetzt, so f\"uhrt das, aufgrund der fluktuierenden zur Verf\"ugung
 stehenden K\"alteleistung, zu Temperaturschwankungen. Die engen Grenzen des
 zul\"assigen Temperaturbandes d\"urfen nicht \"uberschritten werden.
 
@@ -409,7 +409,7 @@ berechnet, indem von der Windleistungsvorhersage die 85\,\% bestimmt werden
 oder der st\"undlicher Bedarf des Supermarktes abgezogen wird, wenn die 15\,\%
 kleiner als der st\"undlicher Bedarf sind.
 \begin{equation*}
-	b = 0,85 \cdot P_{DA}
+	b = \min \left\{0,85 \cdot P_{DA},\; P_{DA} - P_{dem} \right \}
 \end{equation*}
 oder
 \begin{equation*}
@@ -734,9 +734,6 @@ zugewiesen wird in kJ
 
 \end{description}
 
-
-
-%TODO Was ist verdammt noch einmal cooling capacity?
 \begin{figure}[h!]
 	\begin{center}
 	\includegraphics[scale=0.8]{images/Theorie_Super/cooperation}
@@ -746,8 +743,9 @@ zugewiesen wird in kJ
 \end{figure}
 
 Der genaue Ablauf des Informationsflusses, der zwischen den Objekten im Verlauf
-der Simulation stattfindet, wird im Sequenzdiagramm in der \cref{fig:uml_coop}
-auf der Seite \pageref{fig:uml_coop} grafisch verdeutlicht.
+der Simulation des Kooperationskonzeptes stattfindet, wird im Sequenzdiagramm in
+der \cref{fig:uml_coop} auf der Seite \pageref{fig:uml_coop} grafisch
+verdeutlicht.
 \begin{figure}[h]
 	\begin{center}
 	\includegraphics[scale=1.15]{images/Theorie_Super/double}
@@ -1009,7 +1007,7 @@ Datentypen einen durch \matlab darauf direkten Zugriff.
 	wurden in Zusammenarbeit mit Caroline M\"oller entwickelt \cite{caro}.}
 	der mittleren Kühlraumtemperatur ist im \cref{chap:theorie} erkl\"ahrt.
 	\item [{Spalte vierzehn}] Zur Ber\"ucksichtiung Zeit, bis die K\"alte
-	auf Grund der \"Anderung der K\"uhlleistug nach Au\ss en durch die
+	aufgrund der \"Anderung der K\"uhlleistug nach Au\ss en durch die
 	K\"uhlraumabgrenzung entweichen kann, wird ein Faktor zwischen Null
 	und Eins eingef\"uhrt, um den K\"alteverlust zu verkleinern.
 
@@ -1017,31 +1015,26 @@ Datentypen einen durch \matlab darauf direkten Zugriff.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection*{Die main.m Datei}
+\subsection*{Dynamische Simulation}
+\subsubsection*{runCooling.m}
+Zum Ausf\"uhren der Simulation dient die \matlab Funktions-Datei
+\textbf{runCooling.m}. Vor dem Start der Simulation mussen die
+Konfigurationsdateien, deren Zusammensetzung im vorangeganden Abschnitt
+erkl\"ahrt wurden (vlg. auch \matref{crgrid}, \matref{crsuper},
+\matref{crfridge}) definiert und in \matlab Workspace geladen werden. Die
+\textbf{runCooling} ben\"otigt anschlie\ss end als Eingabeparameter die Referenz
+auf nun im \matlab Workspace vorhanden Cell-Array \textbf{configurations\_grid}
+(vgl. \matref{cgrid}). Die Diese Datei hat die Aufgabe im ersten
+Schritt, die Konstruktor-Funktionen der einzelnen Klassen zum Erzeugen des
+OOP-Modells aufzurufen. Anschlie\ss end
+werden 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Anschauung der berechneten Daten}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Zur inhaltlichen Auswertung der Simulation hat sich graphische Darstellung der
+Ergebnisse als sehr hilfreich erwiesen. Die Abh\"angigkeiten zwischen Gr\"o\ss
+en zur sofortigen Analyse werden durch eine Abbildung deutlich.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{Deklamation der berechneten Daten}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-Die inhaltliche Auswertung der Simulation ist dem Benutzer vorbehalten. Darum
-müssen die Ergebnisse der Simulation in einer anwenderfreundlichen Form
-zugänglich gemacht werden. Durch sinnvolle graphische Darstellung der
-untersuchten Größen kann zum Beispiel die Überprüfung, die Veranschaulichung
-oder die Bestimmung der funktionalen Abhängigkeit dieser durchgeführt werden.
-\todo[inline,color=orange!30]{Das ist noch nicht richtig im Programm
-implementiert. Das muss DU NOCH MACHEN!}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection*{Graphische Ausgabe}
-\textbf{Wichtig!!!} hier wird nicht der Quellcode erklärt, sondern die
-Darstellung der Ausgabe.  \todo[inline,color=orange!30]{Funktion mit für die
-graphische Ausgabe schreiben}
-\subsubsection{Tabellarische Ausgabe im Command-Window und Exel}
-\todo[inline,color=orange!30]{Funktion für tabellarische Ausgabe schreiben}
+\subsubsection*{plotCooling.m}
 
