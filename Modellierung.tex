@@ -396,49 +396,23 @@ fehlerhaften Windprognosen entstehen, sollen durch die Kooperation mit
 Supermarktketten ausgeglichen werden.
 
 Es wird angenommen, dass der Prognosefehler von der Windleistungsvorhersage
-f\"ur 24 Stunden den 15\,\% entspricht. Der Windparkbetreiber meldet beim
-Netzbetreiber die untere Grenze an, also 85\,\% von der Windleistungsvorhersage.
+f\"ur 24 Stunden den 15 \% entspricht. Der Windparkbetreiber meldet beim
+Netzbetreiber die untere Grenze an, also 85 \% von der Windleistungsvorhersage.
 Der Supermarkt besitzt einen st\"undlichen Bedarf, der unbedingt gedeckt werden
-muss. Ist der st\"undlicher Bedarf gr\"o\ss er als 15\,\% der Prognose, wird die
+muss. Ist der st\"undlicher Bedarf gr\"o\ss er als 15 \% der Prognose, wird die
 Differenz aus dem Netz gezogen. Diese Abweichung wird beim Netzbetreiber zur
 Erstellung des Lastfahrplanes mitgeteilt. Gibt es eine Abweichung von der
 Prognose, so versucht der Supermarkt diese zu absorbieren.
 
-Die vom Windparkbetreiber beim Netzbetreiber anzumeldende Leistung wird
-berechnet, indem von der Windleistungsvorhersage die 85\,\% bestimmt werden
-oder der st\"undlicher Bedarf des Supermarktes abgezogen wird, wenn die 15\,\%
-kleiner als der st\"undlicher Bedarf sind.
-\begin{equation*}
-	b = \min \left\{0,85 \cdot P_{DA},\; P_{DA} - P_{dem} \right \}
-\end{equation*}
-oder
-\begin{equation*}
-	b = P_{DA} - P_{dem}\\
-	\label{b}
-\end{equation*}
-
- \begin{description}[\dth]
-	\item[$b$] Leistung, die vom Windparkbetreiber beim Netzbetreiber
-	angemeldet wird in MW
-	\item[$P_{DA}$] Vorhersage der Windleistung (day ahead) in MW
-	\item[$P_{dem}$] st\"undlicher Leistungsbedarf des Supermarkts (demand)
-	MW
- \end{description} \vspace{0.5cm}
-
 Die vom Windparkbetreiber dem Supermarkt versprochene Leistung wird berechnet,
-indem von der Windleistungsvorhersage die 15\,\% bestimmt werden oder nur der
-st\"undlicher Bedarf, wenn die 15\,\% kleiner als der st\"undlicher Bedarf sind.
+indem von der Windleistungsvorhersage die 15 \% bestimmt werden oder nur der
+st\"undlicher Bedarf, wenn er kleiner als die 15 \% ist\todo{das ischt a}.
 \begin{equation*}
-	a = 0,15 \cdot P_{DA}\\
-\end{equation*}
-oder
-\begin{equation*}
-	a = P_{dem}\\
-	\label{b}
+	P_{sm} = \min \{ 0,15 \cdot P_{DA},\, P_{dem} \} 
 \end{equation*}
 
 \begin{description}[\dth]
-	\item[$a$] Leistung, die vom Windparkbetreiber dem Supermarkt
+	\item[$P_{sm}$] Leistung, die vom Windparkbetreiber dem Supermarkt
 	versprochen wird in MW
 	\item[$P_{DA}$] Vorhersage der Windleistung (day ahead) in MW
 	\item[$P_{dem}$] st\"undlicher Leistungsbedarf des Supermarkts (demand)
@@ -446,23 +420,41 @@ oder
 \end{description}
 \vspace{0.5cm}
 
+Die vom Windparkbetreiber beim Netzbetreiber anzumeldende Leistung wird
+berechnet, indem von der Windleistungsvorhersage die 85\,\% bestimmt werden
+oder der st\"undlicher Bedarf des Supermarktes abgezogen wird, wenn er kleiner
+als die 15\,\% ist.
+\begin{equation*}
+	P_{net} = P_{DA} - P_{sm}
+\end{equation*}
+
+\begin{description}[\dth]
+	\item[$P_{net}$] Leistung, die vom Windparkbetreiber beim Netzbetreiber
+	angemeldet wird in MW
+	\item[$P_{DA}$] Vorhersage der Windleistung (day ahead) in MW
+	\item[$P_{dem}$] st\"undlicher Leistungsbedarf des Supermarkts (demand)
+	MW
+ \end{description} \vspace{0.5cm}
+
+
 Die Leistung, die insgesamt den K\"alteanlagen zur Verf\"ugung steht, berechnet
-sich nach der \cref{pload}. Der Ausdruck $P_{RT} - b$ bedeutet die
-\"ubersch\"ussige Windleistung. Der Ausdruck $P_{dem} - a$  bedeutet die vom
+sich nach der \cref{pload}. Der Ausdruck $P_{RT} - P_{net}$ bedeutet die
+\"ubersch\"ussige Windleistung. Der Ausdruck $P_{dem} - P_{sm}$  bedeutet die vom
 Supermarkts beim Netzbetreiber nicht abgemeldete Leistung.
 
-\begin{equation}
-	P_{load} = P_{RT} - b + P_{dem} - a
+\begin{align}
+	P_{load} &= P_{RT} - P_{net} + P_{dem} - P_{sm}\\
+		&= P_{RT} - P_{DA} + P_{dem}
 	\label{pload}
-\end{equation}
+\end{align}
 \begin{description}[\dth]
 	\item[$P_{load}$] vorhandene Leistung zum Laden in MW
 	\item[$P_{RT}$] Windleistungsdaten. Windleistung, die tats\"achlich vom
 	Windpark generiert wurde in MW
-	\item[$b$] Leistung, die vom Windparkbetreiber beim Netzbetreiber
+	\item[$P_{net}$] Leistung, die vom Windparkbetreiber beim Netzbetreiber
 	angemeldet wird in MW
 	\item[$P_{dem}$] st\"undlicher Leistungsbedarf des Supermarkts (demand)
-	\item[$a$] Leistung, die vom Windparkbetreiber dem Supermarkt
+	\item[$P_{sm}$] Leistung, die vom Windparkbetreiber dem Supermarkt
 	versprochen wird in MW
 \end{description} \vspace{0.5cm}
 

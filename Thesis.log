@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.8.12)  13 AUG 2011 20:18
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.8.12)  14 AUG 2011 00:11
 entering extended mode
  %&-line parsing enabled.
 **Thesis.tex
@@ -1118,11 +1118,8 @@ Package cleveref Info: loaded `german' language definitions on input line 3149.
 
 )) (./Thesis.aux
 (./Title_Page.aux) (./Eigenstaendig.aux) (./Abstract.aux) (./Einleitung.aux)
-(./Theorie.aux) (./Modellierung.aux
-
-LaTeX Warning: Label `b' multiply defined.
-
-) (./Simulation_und_Ergebnisse.aux) (./Ausblick.aux) (./Anhang.aux
+(./Theorie.aux) (./Modellierung.aux) (./Simulation_und_Ergebnisse.aux)
+(./Ausblick.aux) (./Anhang.aux
 
 LaTeX Warning: Label `pgrid' multiply defined.
 
@@ -1690,7 +1687,7 @@ Package Fancyhdr Warning: \headheight is too small (13.6pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[6] <./images/Theorie_Super/fridge.pdf, id=347, 562.38052pt x 578.56152pt>
+[6] <./images/Theorie_Super/fridge.pdf, id=349, 562.38052pt x 578.56152pt>
 File: ./images/Theorie_Super/fridge.pdf Graphic file (type pdf)
 
 <use ./images/Theorie_Super/fridge.pdf>
@@ -1752,7 +1749,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 55--59
 
  []
 
-<images/SEVN/power_grid.pdf, id=423, 514.87198pt x 201.1244pt>
+<images/SEVN/power_grid.pdf, id=425, 514.87198pt x 201.1244pt>
 File: images/SEVN/power_grid.pdf Graphic file (type pdf)
 
 <use images/SEVN/power_grid.pdf>
@@ -1761,7 +1758,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 77--79
  []
 
 
-<images/Theorie_Super/class_new_diagramm.pdf, id=429, 302.74706pt x 631.8526pt>
+<images/Theorie_Super/class_new_diagramm.pdf, id=431, 302.74706pt x 631.8526pt>
 File: images/Theorie_Super/class_new_diagramm.pdf Graphic file (type pdf)
 <use images/Theorie_Super/class_new_diagramm.pdf>
 
@@ -1873,7 +1870,7 @@ Package Fancyhdr Warning: \headheight is too small (13.6pt):
  This may cause the page layout to be inconsistent, however.
 
 [18]
-<images/Theorie_Super/sequence_one.pdf, id=527, 490.78952pt x 311.12436pt>
+<images/Theorie_Super/sequence_one.pdf, id=529, 490.78952pt x 311.12436pt>
 File: images/Theorie_Super/sequence_one.pdf Graphic file (type pdf)
 
 <use images/Theorie_Super/sequence_one.pdf>
@@ -1897,6 +1894,15 @@ Package Fancyhdr Warning: \headheight is too small (13.6pt):
  This may cause the page layout to be inconsistent, however.
 
 [20]
+Overfull \hbox (52.5487pt too wide) in paragraph at lines 409--409
+[][][] 
+ []
+
+
+Overfull \hbox (52.5487pt too wide) in paragraph at lines 409--409
+[][][] 
+ []
+
 
 Package Fancyhdr Warning: \headheight is too small (13.6pt): 
  Make it at least 14.49998pt.
@@ -1911,6 +1917,15 @@ Package Fancyhdr Warning: \headheight is too small (13.6pt):
  This may cause the page layout to be inconsistent, however.
 
 [22]
+Overfull \hbox (52.5487pt too wide) in paragraph at lines 579--579
+[][][] 
+ []
+
+
+Overfull \hbox (52.5487pt too wide) in paragraph at lines 579--579
+[][][] 
+ []
+
 
 Package Fancyhdr Warning: \headheight is too small (13.6pt): 
  Make it at least 14.49998pt.
@@ -1918,46 +1933,38 @@ Package Fancyhdr Warning: \headheight is too small (13.6pt):
  This may cause the page layout to be inconsistent, however.
 
 [23]
-Overfull \hbox (52.5487pt too wide) in paragraph at lines 587--587
-[][][] 
- []
-
-
-Overfull \hbox (52.5487pt too wide) in paragraph at lines 587--587
-[][][] 
- []
-
-
-<images/Theorie_Super/class_diagramm_second.pdf, id=570, 442.33153pt x 631.8526
+<images/Theorie_Super/class_diagramm_second.pdf, id=573, 442.33153pt x 631.8526
 pt>
 File: images/Theorie_Super/class_diagramm_second.pdf Graphic file (type pdf)
  <use images/Theorie_Super/class_diagramm_second.pdf>
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 597--604
+Underfull \hbox (badness 10000) in paragraph at lines 589--596
 
  []
 
 
-Underfull \hbox (badness 1117) in paragraph at lines 634--636
+Package Fancyhdr Warning: \headheight is too small (13.6pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[24pdfTeX warning (ext4): destination with the same identifier (name{figure.3.4
+}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.602 
+       <./images/Theorie_Super/class_diagramm_second.pdf>]
+Underfull \hbox (badness 1117) in paragraph at lines 626--628
 []\T1/cmr/m/n/12 Referenz zum At-tri-but \T1/cmr/bx/n/12 hour-ly_demand_day
  []
 
 
-Package Fancyhdr Warning: \headheight is too small (13.6pt): 
- Make it at least 14.49998pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[24]
-Underfull \hbox (badness 10000) in paragraph at lines 636--638
+Underfull \hbox (badness 10000) in paragraph at lines 628--630
 []\T1/cmr/m/n/12 Referenz zum At-tri-but \T1/cmr/bx/n/12 hour-
  []
 
 
-Underfull \hbox (badness 1077) in paragraph at lines 639--640
+Underfull \hbox (badness 1077) in paragraph at lines 631--632
 []\T1/cmr/m/n/12 Der ak-tu-el-le Wert von der Lauf-va-ria-ble num-
  []
 
@@ -1967,38 +1974,31 @@ Package Fancyhdr Warning: \headheight is too small (13.6pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[25pdfTeX warning (ext4): destination with the same identifier (name{figure.3.4
-}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.643 \item[promised\_gen\_output\_DA\_gros]
-                                             untere Grenze des angenommenen ...
- <./images/Theorie_Super/class_diagramm_second.pdf>]
-Underfull \hbox (badness 2229) in paragraph at lines 659--663
+[25]
+Underfull \hbox (badness 2229) in paragraph at lines 651--655
 []\T1/cmr/m/n/12 Im ers-ten Schritt des Al-go-rith-mus fin-det ei-ne Ab-fra-ge 
 statt, ob Leis-
  []
 
 
-Underfull \hbox (badness 4084) in paragraph at lines 659--663
+Underfull \hbox (badness 4084) in paragraph at lines 651--655
 \T1/cmr/m/n/12 tung zum Küh-len der An-la-gen zur Ver-fü-gung steht. Die-ser Be
 -rech-nung
  []
 
 
-Underfull \hbox (badness 1642) in paragraph at lines 659--663
-\T1/cmr/m/n/12 liegt die Glei-chung ([][]3.1[][]) auf der Sei-te [][]21[][] zu-
+Underfull \hbox (badness 1642) in paragraph at lines 651--655
+\T1/cmr/m/n/12 liegt die Glei-chung ([][]3.2[][]) auf der Sei-te [][]21[][] zu-
 grun-de, die in der Funk-ti-on
  []
 
 
-Overfull \hbox (52.5487pt too wide) in paragraph at lines 678--678
+Overfull \hbox (52.5487pt too wide) in paragraph at lines 670--670
 [][][] 
  []
 
 
-Overfull \hbox (52.5487pt too wide) in paragraph at lines 678--678
+Overfull \hbox (52.5487pt too wide) in paragraph at lines 670--670
 [][][] 
  []
 
@@ -2008,14 +2008,14 @@ Package Fancyhdr Warning: \headheight is too small (13.6pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[26] <images/Theorie_Super/cooperation.pdf, id=613, 357.75055pt x 629.86716pt>
+[26] <images/Theorie_Super/cooperation.pdf, id=616, 357.75055pt x 629.86716pt>
 File: images/Theorie_Super/cooperation.pdf Graphic file (type pdf)
 
 <use images/Theorie_Super/cooperation.pdf>
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<images/Theorie_Super/double.pdf, id=616, 365.09299pt x 349.12433pt>
+<images/Theorie_Super/double.pdf, id=619, 365.09299pt x 349.12433pt>
 File: images/Theorie_Super/double.pdf Graphic file (type pdf)
 
 <use images/Theorie_Super/double.pdf>
@@ -2040,8 +2040,8 @@ Package Fancyhdr Warning: \headheight is too small (13.6pt):
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.784 \subsection
-                 {Installation} <./images/Theorie_Super/cooperation.pdf>]
+l.798 	\item c
+              onfig\_grid.m <./images/Theorie_Super/cooperation.pdf>]
 
 Package Fancyhdr Warning: \headheight is too small (13.6pt): 
  Make it at least 14.49998pt.
@@ -2053,8 +2053,11 @@ Package Fancyhdr Warning: \headheight is too small (13.6pt):
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.806 	\item c
-              onfig\_grid.m <./images/Theorie_Super/double.pdf>]
+l.814 
+       <./images/Theorie_Super/double.pdf>]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
 
 Package Fancyhdr Warning: \headheight is too small (13.6pt): 
  Make it at least 14.49998pt.
@@ -2094,7 +2097,7 @@ Package Fancyhdr Warning: \headheight is too small (13.6pt):
 
  (./Simulation_und_Ergebnisse.tex
 Kapitel 4.
-<images/Simulation/ausgabe.png, id=761, 1371.1225pt x 770.88pt>
+<images/Simulation/ausgabe.png, id=764, 1371.1225pt x 770.88pt>
 File: images/Simulation/ausgabe.png Graphic file (type png)
 
 <use images/Simulation/ausgabe.png>
@@ -2311,13 +2314,13 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 20290 strings out of 494781
- 322597 string characters out of 1177155
- 527940 words of memory out of 3000000
- 21618 multiletter control sequences out of 15000+50000
+ 20296 strings out of 494781
+ 322759 string characters out of 1177155
+ 527938 words of memory out of 3000000
+ 21622 multiletter control sequences out of 15000+50000
  46089 words of font info for 116 fonts, out of 3000000 for 9000
  214 hyphenation exceptions out of 8191
- 58i,17n,80p,361b,1894s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 58i,17n,80p,361b,1908s stack positions out of 5000i,500n,10000p,200000b,50000s
  </home/jupik/.texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1200.600pk> </home/j
 upik/.texmf-var/fonts/pk/ljfour/jknappen/ec/tcss0700.600pk> </home/jupik/.texmf
 -var/fonts/pk/ljfour/jknappen/ec/eccc1000.600pk> </home/jupik/.texmf-var/fonts/
@@ -2361,9 +2364,9 @@ onts/cm/cmsy10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cms
 y7.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr
 /share/texmf-texlive/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share
 /texmf-texlive/fonts/type1/urw/courier/ucrr8a.pfb>
-Output written on Thesis.pdf (62 pages, 924485 bytes).
+Output written on Thesis.pdf (62 pages, 924532 bytes).
 PDF statistics:
- 2710 PDF objects out of 2984 (max. 8388607)
- 1055 named destinations out of 1200 (max. 500000)
+ 2714 PDF objects out of 2984 (max. 8388607)
+ 1057 named destinations out of 1200 (max. 500000)
  223 words of extra memory for PDF output out of 10000 (max. 10000000)
 

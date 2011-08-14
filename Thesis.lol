@@ -1,7 +1,7 @@
 \contentsline {lstlisting}{\numberline {2.1}Beispiel Klassendefinition}{6}{lstlisting.2.1}
 \contentsline {lstlisting}{\numberline {3.1}config\_grid.m}{30}{lstlisting.3.1}
 \contentsline {lstlisting}{\numberline {3.2}config\_supermarkets.m}{31}{lstlisting.3.2}
-\contentsline {lstlisting}{\numberline {3.3}config\_fridges.m}{32}{lstlisting.3.3}
+\contentsline {lstlisting}{\numberline {3.3}config\_fridges.m}{31}{lstlisting.3.3}
 \contentsline {lstlisting}{\numberline {A.1}config\_grid.m}{36}{lstlisting.A.1}
 \contentsline {lstlisting}{\numberline {A.2}config\_supermarkets.m}{36}{lstlisting.A.2}
 \contentsline {lstlisting}{\numberline {A.3}config\_fridges.m}{36}{lstlisting.A.3}
