@@ -439,8 +439,8 @@ als die 15\,\% ist.
 
 Die Leistung, die insgesamt den K\"alteanlagen zur Verf\"ugung steht, berechnet
 sich nach der \cref{pload}. Der Ausdruck $P_{RT} - P_{net}$ bedeutet die
-\"ubersch\"ussige Windleistung. Der Ausdruck $P_{dem} - P_{sm}$  bedeutet die vom
-Supermarkts beim Netzbetreiber nicht abgemeldete Leistung.
+\"ubersch\"ussige Windleistung. Der Ausdruck $P_{dem} - P_{sm}$  bedeutet die
+vom Supermarkts beim Netzbetreiber nicht abgemeldete Leistung.
 
 \begin{align}
 	P_{load} &= P_{RT} - P_{net} + P_{dem} - P_{sm}\\
@@ -667,15 +667,15 @@ Sind keine solche K\"uhlstellen vorhanden, endet der Vorgang und es kann zum
 n\"achsten Zeitschritt der Simulation \"ubergegangen werden.
 
 \item[Fall 2] Die Menge der Leistung ist gr\"o\ss er Null. In diesem Fall werden
-alle K\"uhlstellen gefunden, deren Kapazit\"at\todo{was ist das?} noch nicht
-ausgesch\"opft ist und deren Zeit bis zum Erreichen der kritischen Temperatur am
-kleinsten ist.  Anschlie\ss end wird \"uberpr\"uft, ob eine W\"armeenergie
-abgef\"uhrt werden kann, die genau $\frac{1}{60}\cdot Q_v$\footnote{ $Q_v$ ist
-die eindringende Verlustw\"armemenge in kJ.} entspricht, ohne als Folge die
-\"Uberschreitung der minimalen Temperatur zu verursachen. Ist das der Fall, wird
-die Kapazit\"at dieser K\"uhlstelle gleich Null gesetzt, damit diese
-K\"uhlstelle beim n\"achsten Durchgang der \textbf{while}-Schleife nicht
-beachtet wird.
+alle K\"uhlstellen gefunden, deren Kapazit\"at (vgl. die \cref{eq:ap}) noch
+nicht ausgesch\"opft ist und deren Zeit bis zum Erreichen der kritischen
+Temperatur am kleinsten ist.  Anschlie\ss end wird \"uberpr\"uft, ob eine
+W\"armeenergie abgef\"uhrt werden kann, die genau $\frac{1}{60}\cdot
+Q_v$\footnote{ $Q_v$ ist die eindringende Verlustw\"armemenge in kJ.}
+entspricht, ohne als Folge die \"Uberschreitung der minimalen Temperatur zu
+verursachen. Ist das der Fall, wird die Kapazit\"at dieser K\"uhlstelle gleich
+Null gesetzt, damit diese K\"uhlstelle beim n\"achsten Durchgang der
+\textbf{while}-Schleife nicht beachtet wird.
 
 Ist das Abf\"uhren der W\"armeenergiemenge ohne Verletzung der Temperaturgrenzen
 m\"oglich, so wird anschlie\ss end die Kapazit\"at, die zur Verf\"ugung
@@ -683,9 +683,10 @@ stehende Gesamtleistung und die Leistung, die zur K\"uhlung dieser K\"uhltruhe
 bereitgestellt wird, um diese Leistungsmenge erg\"anzt. Die Zeit $\tau_{krit}$
 wird um einen Zeitschritt erg\"anzt. Der Zyklus der \textbf{while}-Schleife
 setzt sich fort.
-\begin{equation*}
+\begin{equation}
 	Q_{Kap} = Q_{max} - \frac{1}{60}Q_v\\
-\end{equation*}
+	\label{eq:ap}
+\end{equation}
 \begin{equation*}
 	P_{load} = P_{load} - \frac{1}{60}\frac{Q_v }{3,6 \cdot 10^{6} \cdot
 	\epsilon}
@@ -1007,26 +1008,77 @@ Datentypen einen durch \matlab darauf direkten Zugriff.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection*{Dynamische Simulation}
+\subsection*{Dynamische diskrete Simulation}
+
+Mit Hilfe der Simulation sollen Erkenntnisse \"uber reale Systeme gewonnen
+werden. Die Umwandlung der elektrischen Energie in thermische Energie ist ein
+Prozess, der in einem hohen Grad von der Zeit abh\"angig ist. Die Simulation
+zeitabh\"angiger Systeme, wird als dynamische Simulation bezeichnet. Das Modell
+wurde so aufgestellt, dass zu jedem Zeitpunkt ein Systemzustand bestimmt und
+ver\"andert wird. Ein neuer Systemzustand wird im n\"achsten Zeitschritt
+bestimmt, sodass die Auswirkung der Ver\"anderung, die vorgenommen wurde, erst
+im n\"achsten Zeitschritt sichtbar gemacht werden kann. Weist die Simulation das
+obengenannte Verhalten auf, so spricht man von einer dynamischen diskreten
+Simulation. Die Funktionen, die den Systemzustand der K\"alteanlagen zu jedem
+Zeitpunkt berechnen, werden von der Funktion \textbf{runCooling.m} aufgerufen.
+
 \subsubsection*{runCooling.m}
 Zum Ausf\"uhren der Simulation dient die \matlab Funktions-Datei
 \textbf{runCooling.m}. Vor dem Start der Simulation mussen die
 Konfigurationsdateien, deren Zusammensetzung im vorangeganden Abschnitt
 erkl\"ahrt wurden (vlg. auch \matref{crgrid}, \matref{crsuper},
 \matref{crfridge}) definiert und in \matlab Workspace geladen werden. Die
-\textbf{runCooling} ben\"otigt anschlie\ss end als Eingabeparameter die Referenz
-auf nun im \matlab Workspace vorhanden Cell-Array \textbf{configurations\_grid}
-(vgl. \matref{cgrid}). Die Diese Datei hat die Aufgabe im ersten
-Schritt, die Konstruktor-Funktionen der einzelnen Klassen zum Erzeugen des
-OOP-Modells aufzurufen. Anschlie\ss end
-werden 
+\textbf{runCooling}, die im \matlab Command-Window aufgerufen werden kann,
+ben\"otigt anschlie\ss end als Eingabeparameter die Referenz auf nun im \matlab
+Workspace vorhanden Cell-Array \textbf{configurations\_grid} (vgl.
+\matref{cgrid}). Die Diese Datei hat die Aufgabe im ersten Schritt, die
+Konstruktor-Funktionen der einzelnen Klassen zum Erzeugen des OOP-Modells
+aufzurufen. Anschlie\ss end werden die Vattenfall(50Herz)-Winddaten geladen. Die
+Berechnung der Systemzust\"ande erfolgt nun stundenweise f\"ur eine gew\"unschte
+Anzahl an Tagen. Die Tagesanzahl wird in der Zeile 13 der
+\textbf{runCooling.m}-Datei festgelegt (vgl. \matref{configf} auf der Seite
+\pageref{configf}). Die Berechneten Temperatur- und Verbrauchswerte werden in
+den jeweiligen Objekten gespeichert. Die Leistungswerte, die auf Grund des
+Kooperationskonzepts entstehen, werden in einem $( b \times d \times h \times v
+)$-Array namens \textbf{result\_matrix} gespeichert.
+\begin{description}[\dth]
+\item[$b$] steht f\"ur die Anzahl der Netzknoten des Modells
+\item[$d$] steht f\"ur die Anzahl der Tage
+\item[$h$] steht f\"ur die Anzahl der Stunden an einem Tag
+\item[$v$] steht f\"ur die Anzahl der berechneten Lestungswerte, die f\"ur
+weitere Verwendung, z.B. in einem Leistungsflu\ss berechnungsprogramm verwendet
+werden k\"onnen
+\end{description}
+Die Anzahl betr\"agt $v = 7$. An erster Stelle wird der gesamte elektrische
+Leistungsbedarf $P_{dem}$ der Superm\"arkte an je einem Knoten gespeichert. An
+zweiter Stelle werden die Leistungverbrauchswerte ohne der zus\"atzlichen vom
+Supermarkt nicht angemeldeten Leistung gespeichert. An dritter Stelle wird die
+dem Supermarkt angebotene Leistung $P_{load}$ gespeichert. An vierter Stelle
+wird die nur die Windleistung, die dem Supermarkt zur Verf\"ugung gestellt
+werden konnte ($P_{RT} - P_{net}$), gespeichert. Die gesamte an einem Knoten
+bezogene Leistung wird an der f\"unften Stelle gespeichert. Die vom
+Supermarkt zus\"atzlich aus dem Netz gezogene Leistung wird an der sechsten
+Stelle gespeichert. Der Berechnung erfolgt, indem von der Gesamtleistung die
+Leistung ohne der zus\"atzlich aus dem Netz bezogenen subtrahiert wird.
+Abschlie\ss end wird an siebter Stelle die dem Supermarkt vom Windparkbetreiber
+versprochene Leistung $P_{sm}$ gespeichert. Die R\"uckgabewerte der Funktion
+sind die Objekte des OOP-Modells und die \textbf{result\_matrix}.
+Die graphische Ausgabe dieser Werte wird durch die Funktion
+\textbf{plotCooling.m} realisiert.
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection*{Anschauung der berechneten Daten}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Zur inhaltlichen Auswertung der Simulation hat sich graphische Darstellung der
-Ergebnisse als sehr hilfreich erwiesen. Die Abh\"angigkeiten zwischen Gr\"o\ss
-en zur sofortigen Analyse werden durch eine Abbildung deutlich.
+Ergebnisse als sehr hilfreich erwiesen.
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection*{plotCooling.m}
-
+Nach dem Durchlauf der Simulation kann mit der Funktion \textbf{plotCooling.m}
+die graphische Ausgabe durchgef\"uhrt werden. Wird die Funktion z.B. im \matlab
+Command-Window aufgerufen, so muss ihr an erster Stelle die Referenz auf die
+\textbf{result\_matrix} \"ubergeben werden. An zweiter Stelle wird die Referenz auf das
+Objekt der Klasse \textbf{Power\_grid} mit allen Unterobjekten \"ubergeben.
+Anschlie\ss end kommt die Angaben \"uber den Knoten, den Supermarkt und den Tag,
+f\"ur den die graphische Ausgabe erfolgen soll.

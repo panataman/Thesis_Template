@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.8.12)  14 AUG 2011 00:11
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.8.12)  14 AUG 2011 20:01
 entering extended mode
  %&-line parsing enabled.
 **Thesis.tex
@@ -1687,7 +1687,7 @@ Package Fancyhdr Warning: \headheight is too small (13.6pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[6] <./images/Theorie_Super/fridge.pdf, id=349, 562.38052pt x 578.56152pt>
+[6] <./images/Theorie_Super/fridge.pdf, id=347, 562.38052pt x 578.56152pt>
 File: ./images/Theorie_Super/fridge.pdf Graphic file (type pdf)
 
 <use ./images/Theorie_Super/fridge.pdf>
@@ -1749,7 +1749,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 55--59
 
  []
 
-<images/SEVN/power_grid.pdf, id=425, 514.87198pt x 201.1244pt>
+<images/SEVN/power_grid.pdf, id=423, 514.87198pt x 201.1244pt>
 File: images/SEVN/power_grid.pdf Graphic file (type pdf)
 
 <use images/SEVN/power_grid.pdf>
@@ -1758,7 +1758,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 77--79
  []
 
 
-<images/Theorie_Super/class_new_diagramm.pdf, id=431, 302.74706pt x 631.8526pt>
+<images/Theorie_Super/class_new_diagramm.pdf, id=429, 302.74706pt x 631.8526pt>
 File: images/Theorie_Super/class_new_diagramm.pdf Graphic file (type pdf)
 <use images/Theorie_Super/class_new_diagramm.pdf>
 
@@ -1870,7 +1870,7 @@ Package Fancyhdr Warning: \headheight is too small (13.6pt):
  This may cause the page layout to be inconsistent, however.
 
 [18]
-<images/Theorie_Super/sequence_one.pdf, id=529, 490.78952pt x 311.12436pt>
+<images/Theorie_Super/sequence_one.pdf, id=527, 490.78952pt x 311.12436pt>
 File: images/Theorie_Super/sequence_one.pdf Graphic file (type pdf)
 
 <use images/Theorie_Super/sequence_one.pdf>
@@ -1933,7 +1933,7 @@ Package Fancyhdr Warning: \headheight is too small (13.6pt):
  This may cause the page layout to be inconsistent, however.
 
 [23]
-<images/Theorie_Super/class_diagramm_second.pdf, id=573, 442.33153pt x 631.8526
+<images/Theorie_Super/class_diagramm_second.pdf, id=571, 442.33153pt x 631.8526
 pt>
 File: images/Theorie_Super/class_diagramm_second.pdf Graphic file (type pdf)
  <use images/Theorie_Super/class_diagramm_second.pdf>
@@ -1993,16 +1993,6 @@ grun-de, die in der Funk-ti-on
  []
 
 
-Overfull \hbox (52.5487pt too wide) in paragraph at lines 670--670
-[][][] 
- []
-
-
-Overfull \hbox (52.5487pt too wide) in paragraph at lines 670--670
-[][][] 
- []
-
-
 Package Fancyhdr Warning: \headheight is too small (13.6pt): 
  Make it at least 14.49998pt.
  We now make it that large for the rest of the document.
@@ -2040,7 +2030,7 @@ Package Fancyhdr Warning: \headheight is too small (13.6pt):
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.798 	\item c
+l.799 	\item c
               onfig\_grid.m <./images/Theorie_Super/cooperation.pdf>]
 
 Package Fancyhdr Warning: \headheight is too small (13.6pt): 
@@ -2053,7 +2043,7 @@ Package Fancyhdr Warning: \headheight is too small (13.6pt):
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.814 
+l.815 
        <./images/Theorie_Super/double.pdf>]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -2079,6 +2069,23 @@ Package Fancyhdr Warning: \headheight is too small (13.6pt):
  This may cause the page layout to be inconsistent, however.
 
 [32]
+Underfull \hbox (badness 3058) in paragraph at lines 1026--1044
+\T1/cmr/bx/n/12 ling.m\T1/cmr/m/n/12 . Vor dem Start der Si-mu-la-ti-on mus-sen
+ die Kon-fi-gu-ra-ti-ons-da-tei-en,
+ []
+
+
+Underfull \hbox (badness 1596) in paragraph at lines 1026--1044
+\T1/cmr/m/n/12 de-ren Zu-sam-men-set-zung im vor-an-ge-gan-den Ab-schnitt er-kl
+ährt wur-den (vlg.
+ []
+
+
+Underfull \hbox (badness 1102) in paragraph at lines 1026--1044
+\T1/cmr/m/n/12 Ein-ga-be-pa-ra-me-ter die Re-fe-renz auf nun im \T1/cmr/m/sc/12
+ Matlab$[]$\T1/cmr/m/n/12 Workspace vor-han-den
+ []
+
 
 Package Fancyhdr Warning: \headheight is too small (13.6pt): 
  Make it at least 14.49998pt.
@@ -2086,6 +2093,11 @@ Package Fancyhdr Warning: \headheight is too small (13.6pt):
  This may cause the page layout to be inconsistent, however.
 
 [33])
+Underfull \hbox (badness 2503) in paragraph at lines 1078--32
+\T1/cmr/m/n/12 die gra-phi-sche Aus-ga-be durch-ge-führt wer-den. Wird die Funk
+-ti-on z.B. im
+ []
+
 
 Package Fancyhdr Warning: \headheight is too small (13.6pt): 
  Make it at least 14.49998pt.
@@ -2093,11 +2105,18 @@ Package Fancyhdr Warning: \headheight is too small (13.6pt):
  This may cause the page layout to be inconsistent, however.
 
 [34]
+
+Package Fancyhdr Warning: \headheight is too small (13.6pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[35]
 \openout2 = `Simulation_und_Ergebnisse.aux'.
 
  (./Simulation_und_Ergebnisse.tex
 Kapitel 4.
-<images/Simulation/ausgabe.png, id=764, 1371.1225pt x 770.88pt>
+<images/Simulation/ausgabe.png, id=771, 1371.1225pt x 770.88pt>
 File: images/Simulation/ausgabe.png Graphic file (type png)
 
 <use images/Simulation/ausgabe.png>
@@ -2105,7 +2124,7 @@ Overfull \hbox (13.11491pt too wide) in paragraph at lines 6--7
  [] 
  []
 
-) [35
+) [36
 
 
 
@@ -2127,7 +2146,7 @@ Anhang A.
 (/home/jupik/Aalte_Ordnung/TU_Alles/Studienarbeit/my_prog/config_grid.m)
 (/home/jupik/Aalte_Ordnung/TU_Alles/Studienarbeit/my_prog/config_supermarkets.m
 ) (/home/jupik/Aalte_Ordnung/TU_Alles/Studienarbeit/my_prog/config_fridges.m
-[36
+[37
 
 
 
@@ -2140,8 +2159,8 @@ Package Fancyhdr Warning: \headheight is too small (13.6pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[37]) (/home/jupik/Aalte_Ordnung/TU_Alles/Studienarbeit/my_prog/runCooling.m
-LaTeX Font Info:    Try loading font information for TS1+pcr on input line 20.
+[38]) (/home/jupik/Aalte_Ordnung/TU_Alles/Studienarbeit/my_prog/runCooling.m
+LaTeX Font Info:    Try loading font information for TS1+pcr on input line 17.
 
 (/usr/share/texmf-texlive/tex/latex/psnfss/ts1pcr.fd
 File: ts1pcr.fd 2001/06/04 font definitions for TS1/pcr.
@@ -2152,19 +2171,7 @@ Package Fancyhdr Warning: \headheight is too small (13.6pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[38]
-
-Package Fancyhdr Warning: \headheight is too small (13.6pt): 
- Make it at least 14.49998pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
 [39]
-Overfull \hbox (6.35115pt too wide) in paragraph at lines 105--107
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
- []
-
-) (/home/jupik/Aalte_Ordnung/TU_Alles/Studienarbeit/my_prog/Cooling_strategy.m
 
 Package Fancyhdr Warning: \headheight is too small (13.6pt): 
  Make it at least 14.49998pt.
@@ -2172,6 +2179,11 @@ Package Fancyhdr Warning: \headheight is too small (13.6pt):
  This may cause the page layout to be inconsistent, however.
 
 [40]
+Overfull \hbox (6.35115pt too wide) in paragraph at lines 104--106
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+) (/home/jupik/Aalte_Ordnung/TU_Alles/Studienarbeit/my_prog/Cooling_strategy.m
 
 Package Fancyhdr Warning: \headheight is too small (13.6pt): 
  Make it at least 14.49998pt.
@@ -2199,35 +2211,35 @@ Package Fancyhdr Warning: \headheight is too small (13.6pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[44]) (/home/jupik/Aalte_Ordnung/TU_Alles/Studienarbeit/my_prog/Power_grid.m
+[44]
 
 Package Fancyhdr Warning: \headheight is too small (13.6pt): 
  Make it at least 14.49998pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[45]) (/home/jupik/Aalte_Ordnung/TU_Alles/Studienarbeit/my_prog/Bus.m
+[45]) (/home/jupik/Aalte_Ordnung/TU_Alles/Studienarbeit/my_prog/Power_grid.m
 
 Package Fancyhdr Warning: \headheight is too small (13.6pt): 
  Make it at least 14.49998pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[46]) (/home/jupik/Aalte_Ordnung/TU_Alles/Studienarbeit/my_prog/Supermarket.m
+[46]) (/home/jupik/Aalte_Ordnung/TU_Alles/Studienarbeit/my_prog/Bus.m
 
 Package Fancyhdr Warning: \headheight is too small (13.6pt): 
  Make it at least 14.49998pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[47]) (/home/jupik/Aalte_Ordnung/TU_Alles/Studienarbeit/my_prog/Refrigerator.m
+[47]) (/home/jupik/Aalte_Ordnung/TU_Alles/Studienarbeit/my_prog/Supermarket.m
 
 Package Fancyhdr Warning: \headheight is too small (13.6pt): 
  Make it at least 14.49998pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[48]
+[48]) (/home/jupik/Aalte_Ordnung/TU_Alles/Studienarbeit/my_prog/Refrigerator.m
 
 Package Fancyhdr Warning: \headheight is too small (13.6pt): 
  Make it at least 14.49998pt.
@@ -2248,14 +2260,21 @@ Package Fancyhdr Warning: \headheight is too small (13.6pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[51]))
+[51]
 
 Package Fancyhdr Warning: \headheight is too small (13.6pt): 
  Make it at least 14.49998pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[52] (./Thesis.bbl (./Thesis.brf)
+[52]))
+
+Package Fancyhdr Warning: \headheight is too small (13.6pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[53] (./Thesis.bbl (./Thesis.brf)
 \tf@brf=\write11
 \openout11 = `Thesis.brf'.
 
@@ -2277,7 +2296,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 82--82
 ? TopCatID =
  []
 
-[53
+[54
 
 
 ])
@@ -2303,7 +2322,7 @@ Package Fancyhdr Warning: \headheight is too small (13.6pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[54] (./Thesis.aux (./Title_Page.aux) (./Eigenstaendig.aux) (./Abstract.aux)
+[55] (./Thesis.aux (./Title_Page.aux) (./Eigenstaendig.aux) (./Abstract.aux)
 (./Einleitung.aux) (./Theorie.aux) (./Modellierung.aux)
 (./Simulation_und_Ergebnisse.aux) (./Ausblick.aux) (./Anhang.aux))
 
@@ -2314,10 +2333,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 20296 strings out of 494781
- 322759 string characters out of 1177155
- 527938 words of memory out of 3000000
- 21622 multiletter control sequences out of 15000+50000
+ 20294 strings out of 494781
+ 322615 string characters out of 1177155
+ 527940 words of memory out of 3000000
+ 21620 multiletter control sequences out of 15000+50000
  46089 words of font info for 116 fonts, out of 3000000 for 9000
  214 hyphenation exceptions out of 8191
  58i,17n,80p,361b,1908s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -2364,9 +2383,9 @@ onts/cm/cmsy10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cms
 y7.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr
 /share/texmf-texlive/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share
 /texmf-texlive/fonts/type1/urw/courier/ucrr8a.pfb>
-Output written on Thesis.pdf (62 pages, 924532 bytes).
+Output written on Thesis.pdf (63 pages, 928553 bytes).
 PDF statistics:
- 2714 PDF objects out of 2984 (max. 8388607)
+ 2719 PDF objects out of 2984 (max. 8388607)
  1057 named destinations out of 1200 (max. 500000)
  223 words of extra memory for PDF output out of 10000 (max. 10000000)
 
