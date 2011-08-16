@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.8.12)  16 AUG 2011 18:48
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.8.12)  16 AUG 2011 20:44
 entering extended mode
  %&-line parsing enabled.
 **Thesis.tex
@@ -2145,107 +2145,110 @@ Package minitoc Info: I0006
 File: images/Simulation/415.pdf Graphic file (type pdf)
 
 <use images/Simulation/415.pdf>
-Overfull \hbox (1.82208pt too wide) in paragraph at lines 19--20
+Overfull \hbox (1.82208pt too wide) in paragraph at lines 38--39
  [] 
  []
 
 
-Overfull \hbox (2.73969pt too wide) in paragraph at lines 55--55
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Overfull \hbox (2.73969pt too wide) in paragraph at lines 74--74
 []|\T1/cmr/m/n/10 Super-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 55--55
+Underfull \hbox (badness 10000) in paragraph at lines 74--74
 
  []
 
 
-Overfull \hbox (0.518pt too wide) in paragraph at lines 55--55
+Overfull \hbox (0.518pt too wide) in paragraph at lines 74--74
 \T1/cmr/m/n/10 markt| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 55--55
+Underfull \hbox (badness 10000) in paragraph at lines 74--74
 []|\T1/cmr/m/n/10 Refri-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 55--55
+Underfull \hbox (badness 10000) in paragraph at lines 74--74
 \T1/cmr/m/n/10 ge-ra-
  []
 
 
-Overfull \hbox (2.73969pt too wide) in paragraph at lines 55--55
+Overfull \hbox (2.73969pt too wide) in paragraph at lines 74--74
 []|\T1/cmr/m/n/10 Super-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 55--55
+Underfull \hbox (badness 10000) in paragraph at lines 74--74
 
  []
 
 
-Overfull \hbox (0.518pt too wide) in paragraph at lines 55--55
+Overfull \hbox (0.518pt too wide) in paragraph at lines 74--74
 \T1/cmr/m/n/10 markt| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 55--55
+Underfull \hbox (badness 10000) in paragraph at lines 74--74
 []|\T1/cmr/m/n/10 Refri-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 55--55
+Underfull \hbox (badness 10000) in paragraph at lines 74--74
 \T1/cmr/m/n/10 ge-ra-
  []
 
 
-Overfull \hbox (2.73969pt too wide) in paragraph at lines 55--55
+Overfull \hbox (2.73969pt too wide) in paragraph at lines 74--74
 []|\T1/cmr/m/n/10 Super-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 55--55
+Underfull \hbox (badness 10000) in paragraph at lines 74--74
 
  []
 
 
-Overfull \hbox (0.518pt too wide) in paragraph at lines 55--55
+Overfull \hbox (0.518pt too wide) in paragraph at lines 74--74
 \T1/cmr/m/n/10 markt| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 55--55
+Underfull \hbox (badness 10000) in paragraph at lines 74--74
 []|\T1/cmr/m/n/10 Refri-
  []
 
 
-Overfull \hbox (5.26685pt too wide) in paragraph at lines 55--55
+Overfull \hbox (5.26685pt too wide) in paragraph at lines 74--74
 \T1/cmr/m/n/10 gerator| 
  []
 
 
-Overfull \hbox (2.73969pt too wide) in paragraph at lines 55--55
+Overfull \hbox (2.73969pt too wide) in paragraph at lines 74--74
 []|\T1/cmr/m/n/10 Super-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 55--55
+Underfull \hbox (badness 10000) in paragraph at lines 74--74
 
  []
 
 
-Overfull \hbox (0.518pt too wide) in paragraph at lines 55--55
+Overfull \hbox (0.518pt too wide) in paragraph at lines 74--74
 \T1/cmr/m/n/10 markt| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 55--55
+Underfull \hbox (badness 10000) in paragraph at lines 74--74
 []|\T1/cmr/m/n/10 Refri-
  []
 
 
-Overfull \hbox (5.26685pt too wide) in paragraph at lines 55--55
+Overfull \hbox (5.26685pt too wide) in paragraph at lines 74--74
 \T1/cmr/m/n/10 gerator| 
  []
 
@@ -2253,29 +2256,30 @@ Overfull \hbox (5.26685pt too wide) in paragraph at lines 55--55
 
 
 
-pdfTeX warning (ext4): destination with the same identifier (name{figure.4.1}) 
-has been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{table.4.1}) h
+as been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.33 \include{Simulation_und_Ergebnisse}
-                                         <./images/Simulation/415.pdf>]
+                                        ]
 
 Package Fancyhdr Warning: \headheight is too small (13.6pt): 
  Make it at least 14.49998pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[37pdfTeX warning (ext4): destination with the same identifier (name{table.4.1}
-) has been already used, duplicate ignored
+[37pdfTeX warning (ext4): destination with the same identifier (name{figure.4.1
+}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.33 \include{Simulation_und_Ergebnisse}
-                                        ]
+                                         <./images/Simulation/415.pdf>]
 \openout2 = `Ausblick.aux'.
 
- (./Ausblick.tex)
+
+(./Ausblick.tex)
 \openout2 = `Anhang.aux'.
 
  (./Anhang.tex
@@ -2521,7 +2525,7 @@ y10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy7.pfb></us
 r/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texm
 f-texlive/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf-texl
 ive/fonts/type1/urw/courier/ucrr8a.pfb>
-Output written on Thesis.pdf (64 pages, 967350 bytes).
+Output written on Thesis.pdf (64 pages, 968341 bytes).
 PDF statistics:
  2741 PDF objects out of 2984 (max. 8388607)
  1058 named destinations out of 1200 (max. 500000)
