@@ -407,9 +407,10 @@ Prognose, so versucht der Supermarkt diese zu absorbieren.
 Die vom Windparkbetreiber dem Supermarkt versprochene Leistung wird berechnet,
 indem von der Windleistungsvorhersage die 15 \% bestimmt werden oder nur der
 st\"undlicher Bedarf, wenn er kleiner als die 15 \% ist\todo{das ischt a}.
-\begin{equation*}
+\begin{equation}
 	P_{sm} = \min \{ 0,15 \cdot P_{DA},\, P_{dem} \} 
-\end{equation*}
+	\label{eq:psm}
+\end{equation}
 
 \begin{description}[\dth]
 	\item[$P_{sm}$] Leistung, die vom Windparkbetreiber dem Supermarkt
@@ -424,9 +425,10 @@ Die vom Windparkbetreiber beim Netzbetreiber anzumeldende Leistung wird
 berechnet, indem von der Windleistungsvorhersage die 85\,\% bestimmt werden
 oder der st\"undlicher Bedarf des Supermarktes abgezogen wird, wenn er kleiner
 als die 15\,\% ist.
-\begin{equation*}
+\begin{equation}
 	P_{net} = P_{DA} - P_{sm}
-\end{equation*}
+	\label{eq:pnet}
+\end{equation}
 
 \begin{description}[\dth]
 	\item[$P_{net}$] Leistung, die vom Windparkbetreiber beim Netzbetreiber
@@ -1070,22 +1072,37 @@ Die graphische Ausgabe dieser Werte wird durch die Funktion
 \subsection*{Anschauung der berechneten Daten}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Zur inhaltlichen Auswertung der Simulation hat sich graphische Darstellung der
+Zur inhaltlichen Auswertung einer Simulation hat sich graphische Darstellung der
 Ergebnisse als sehr hilfreich erwiesen.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection*{plotCooling.m}
-Nach dem Durchlauf der Simulation kann mit der Funktion \textbf{plotCooling.m}
-die graphische Ausgabe durchgef\"uhrt werden. Wird die Funktion z.B. im \matlab
-Command-Window aufgerufen, so muss ihr an erster Stelle die Referenz auf die
-\textbf{result\_matrix} \"ubergeben werden. An zweiter Stelle wird die Referenz auf das
-Objekt der Klasse \textbf{Power\_grid} mit allen Unterobjekten \"ubergeben.
-Anschlie\ss end kommt die Angaben \"uber den Knoten, den Supermarkt und den Tag,
-f\"ur den die graphische Ausgabe erfolgen soll.
+\subsubsection*{plotCooling.m} Nach dem Durchlauf der Simulation kann mit der
+Funktion \textbf{plotCooling.m} die graphische Ausgabe durchgef\"uhrt werden.
+Wird die Funktion z.B. im \matlab Command-Window aufgerufen, so muss ihr an
+erster Stelle die Referenz auf die \textbf{result\_matrix} \"ubergeben werden.
+An zweiter Stelle wird die Referenz auf das Objekt der Klasse
+\textbf{Power\_grid} mit allen Unterobjekten \"ubergeben.  Anschlie\ss end kommt
+die Angaben \"uber den Knoten, den Supermarkt und den Tag, f\"ur den die
+graphische Ausgabe erfolgen soll.
 
 Befindet man sich in dem Verzeichnis, wo das Programm gespeichert ist, so f\"uhr
 die Eingabe folgender Kommandos im \matlab Command-Window zum Start der
-Simulation und im Anschluss zu der graphischen Ausgabe der Werte f\"ur einen
-bestimmten Knoten, Supermarkt und Tag.
+Simulation und im Anschluss zu der graphischen Ausgabe (vgl.die \cref{fig:ausg}
+auf der Seite \pageref{fig:ausg})der Werte f\"ur den Knoten eins, Supermarkt
+eins und den vierten Tag.
 
-\lstinputlisting{>> clear all, config_fridges, config_supermarkets, config_grid}
+\noindent \lstinline{>> clear all, config_fridges, config_supermarkets, config_grid}
+\noindent \lstinline{>> [g,m]=runCooling(config_grid_);}\\
+\noindent \lstinline{>> plotCooling(m,g,1,1,4)}\\
+\begin{figure}[h]
+\begin{center}
+\includegraphics[scale=0.30]{images/Simulation/ausgabe}
+% \includegraphics[scale=0.40]{/home/jupik/Aalte_Ordnung/TU_Alles/Studienarbeit/my_prog/pics/415}
+\end{center}
+\caption{Ausgabe Tag 4}
+\label{fig:ausg}
+\end{figure}
+Das Graphik-Fenster ist optisch in drei Spalten unterteilt. In den ersten beiden
+Spalten sind in den insgesamt sechs Subplots die zeitlichen Leistungsverl\"aufe
+abgebildet. In der dritten Spalte sind die Temperaturverl\"aufe der f\"unf
+K\"uhlanlagen eines Modellsupermarkts zu sehen.

@@ -1,11 +1,76 @@
 \chapter{Simulation und Ergebnisse}
+\minitoc
 \label{chp:sue}
+Im folgenden Kapitel werden die Auswertung der Simulation statt. Die Auswirkung
+des im vorangegangenen Kapitel erkl\"arten Kooperationskonzeptes zwischen einem
+Windparkbetreiber und einer Supermarketkette wird auf der Basis der
+Windleistungsdaten der Vattenfall-Regelzone (heute 50Hertz-Regelzone) f\"ur das
+Jahr 2005 untersucht. F\"ur drei zuf\"allig ausgew\"ahlte aufeinander folgende
+Tage des Jahres wird die St\"atigkeit des Temperaturverlaufes eine K\"uhleinheit
+des Modellsupermarktes revidiert. Zus\"atzlich wird der Einfluss der
+Kooperation auf die Ladeleistung der Modellsupermarktkette untersucht. Zum
+Abschluss wird durch Variation der Parameter in den Konfigurationsdateien das
+Programm auf m\"ogliche Skalierbarkeit untersucht. Durch das objektorientierte
+Modell entsteht das Potenzial, die erforderliche Speicherkapazit\"at durch
+unterschiedliche Ma\ss nahmen zu erh\"ohen. Der Gegenstand der Untersuchung wird
+die Variation der Anzahl unterschiedlicher Objekte des Modells, sodass die
+doppelte Speicherkapazit\"at erreicht wird. Aufgrund des im Kooperationsmodell
+umgesetzten Verfahrens der gleichm\"a\ss igen Aufteilung der vorhandenen
+Ladeleistung auf alle K\"alteeinheiten im Netz wird erwartet, dass die
+Ver\"anderungen keinen Einflu\ss $ $ auf das Ergebnis der Simulation haben,
+solange die Anzahl, die Beladung und die technische Ausf\"uhrung
+\"ubereinstimmen. Eine Best\"atigung der Vermutung w\"urde bedeuten, dass die
+implementierte Kommunikation zwischen Objekte funktioniert. Dadurch entsteht die
+Perspektive, mit dem Programm den Einsatz der K\"altespeicher im elektrischen
+Energieversorgungsnez mit weiteren Lastmanagement-Algorithmen und Ausf\"uhrungen
+zu untersuchen.
+
+der Einfluss der Bandbreite der Leistung $P_{ms}$ (vgl.
+\cref{eq:psm} auf der Seite \pageref{eq:psm}), die der Windparkbetreiber dem
+Supermarkt einen Tag voraus verspricht, auf die Menge der Regelleistung
+untersucht. Die Menge der Leistung $P_{ms}$ ist von der Genauigkeit Prognose und
+der Menge der prognostizierten Leistung abh\"angig.
+
+
 
 \begin{figure}[h]
 	\begin{center}
-	\includegraphics[scale=0.32]{images/Simulation/ausgabe}
+	\includegraphics[scale=0.39]{images/Simulation/415}
 	\end{center}
 \caption{Ausgabe plotCooling.m}
 \label{fig:ausgabe}
 \end{figure}
 
+\begin{table}
+\footnotesize
+\centering
+\begin{tabularx}{\textwidth}{X|X|X|X|X|X|X|X|X|}
+\cline{2-9}
+& \multicolumn{2}{c|}{\textbf{Fall 1}} & \multicolumn{2}{c|}{\textbf{Fall 2}}
+&  \multicolumn{2}{c|}{\textbf{Fall 3}} &  \multicolumn{2}{c|}{\textbf{Fall 4}}\\
+ \cline{2-9}
+& Super- \linebreak markt & Refri- \linebreak gerator & Super- \linebreak markt
+& Refri- \linebreak gerator & Super- \linebreak markt & Refri-\linebreak gerator
+& Super- \linebreak markt & Refri-\linebreak gerator \\
+\hline
+\multicolumn{1}{|l|}{Multiplikator} & \multicolumn{1}{c|}{1500} &
+\multicolumn{1}{c|}{1} & \multicolumn{1}{c|}{3000} & \multicolumn{1}{c|}{1} &
+\multicolumn{1}{c|}{1500} & \multicolumn{1}{c|}{2} & \multicolumn{1}{c|}{1500} &
+\multicolumn{1}{c|}{1} \\
+\hline
+\multicolumn{1}{|l|}{Objektenanzahl} & \multicolumn{1}{c|}{1} &
+\multicolumn{1}{c|}{5}& \multicolumn{1}{c|}{1} & \multicolumn{1}{c|}{5} &
+\multicolumn{1}{c|}{1}& \multicolumn{1}{c|}{10} & \multicolumn{1}{c|}{1}&
+\multicolumn{1}{c|}{10} \\
+\hline
+\multicolumn{1}{|l|}{Gesamtzahl im Netz} & \multicolumn{1}{c|}{1500} &
+\multicolumn{1}{c|}{7500}& \multicolumn{1}{c|}{3000} & \multicolumn{1}{c|}{15000} &
+\multicolumn{1}{c|}{1500} & \multicolumn{1}{c|}{15000} & \multicolumn{1}{c|}{2}&
+\multicolumn{1}{c|}{10} \\
+\hline
+\multicolumn{1}{|l|}{Gesamtzahl der Objekte} & \multicolumn{2}{c|}{6} &
+\multicolumn{2}{c|}{5} & \multicolumn{2}{c|}{11} & \multicolumn{2}{c|}{11}\\
+\hline
+\end{tabularx}
+\caption{Simulation F\"alle}
+\end{table}
