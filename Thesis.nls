@@ -2,13 +2,19 @@
 
  \nomgroup{A}
 
-  \item [{NK\_KR\_V}]\begingroup normalgekühltes Kühltregal an Verbundanlage\nomeqref {3.0}
-		\nompageref{12}
-  \item [{NK\_KT\_S}]\begingroup normalgekühlte Kühltruhe steckerfertig\nomeqref {3.0}
-		\nompageref{12}
-  \item [{OOP}]\begingroup objektorientierte Programmierung\nomeqref {1.0}
-		\nompageref{2}
-  \item [{TK\_TKT\_S}]\begingroup tiefgekühlte Tiefkühltruhe steckerfertig\nomeqref {3.0}
-		\nompageref{12}
+  \item [{NK}]\begingroup Normalk\"uhlung\nomeqref {2.0}\nompageref{3}
+  \item [{NK\_KR\_V}]\begingroup normalgekühltes Kühlregal an Verbundanlage\nomeqref {3.11}
+		\nompageref{30}
+  \item [{NK\_KT\_S}]\begingroup normalgekühlte Kühltruhe steckerfertig\nomeqref {3.11}
+		\nompageref{30}
+  \item [{NK\_KZ}]\begingroup normalgek\"uhlte K\"uhlzelle an Vergundanlage\nomeqref {3.11}
+		\nompageref{30}
+  \item [{OOP}]\begingroup objektorientierte Programmierung\nomeqref {2.0}
+		\nompageref{4}
+  \item [{TK}]\begingroup Tiefk\"uhlung\nomeqref {2.0}\nompageref{3}
+  \item [{TK\_KZ}]\begingroup tiefgek\"uhlte Tiefk\"uhlzelle K\"alteaggregat\nomeqref {3.11}
+		\nompageref{30}
+  \item [{TK\_TKT\_S}]\begingroup tiefgekühlte Tiefkühltruhe steckerfertig\nomeqref {3.11}
+		\nompageref{30}
 
 \end{thenomenclature}

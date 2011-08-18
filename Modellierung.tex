@@ -9,9 +9,13 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Die Intention der Arbeit, ist der objektorientierte Entwurf eines
-\matlab-Programms zur Simulation des variablen Lastverhaltens von Kältelasten
-mit Kältespeichern im Energieversorgungsnetz. 
+Die Intention der Arbeit, ist im Ramen der Bereitstellung der Regelleistung
+f\"ur erneuerbaren Energien durch den Einsatz der Verfahren und Techniken des
+objektorientierten Entwurfs ein \matlab-Programm zur Simulation des variablen
+Lastverhaltens von Kältelasten mit Kältespeichern im Energieversorgungsnetz zu
+entwerfen. Anschliessend wird mit Hilfe des Programms das variable Verhalten der
+K\"altespeicher im Enerergieversorgungsnetz simuliert und der Einfluss auf das
+Energieversorgungsnetz untersucht.
 
 Es sollen ausschlie\ss lich K\"alteanlagen modelliert werden, die in
 Superm\"arkten zum Einsatz kommen. Das Ergebnis der Simulation soll der
@@ -25,6 +29,8 @@ Verbrauchswerte in einem Lastflussoptimierungsprogramm zu verwenden.
 Folgende explizite Anforderungen sind an das Programm gestellt:
 
 \begin{itemize}
+	\item Der Entwurf des Programms erfolgt mit Hilfe der objektorientierter
+	Verfahren und Techniken.
 	\item Die Speicherung der f\"ur das Beschreiben der Modelle
 	erforderlichen Parameter findet in einer Konfigurationsdatei statt.
 	\item Der elektrische Energieverbrauch wird aufgrund der Modellparameter
@@ -34,17 +40,15 @@ Folgende explizite Anforderungen sind an das Programm gestellt:
 	\item Die M\"oglichkeit einer eindeutigen Zuweisung der Verbrauchswerte
 	f\"ur folgende Verursacher wird realisiert:
 	\begin{itemize}
-		\item Daten f\"ur jede K\"alteanlage werden einzeln gespeichert,
-		wenn mehrere Anlagen simuliert werden.
-		\item Daten f\"ur jede Supermarktkette werden einzeln
-		gespeichert, wenn der Verbrach mehrerer Supermarktketten
-		simuliert wird.
-		\item Erfolgt die Simulation des Energieverbrauchs f\"ur ein
-		Mehrknotennetz, so werden die Daten f\"ur jeden Knoten einzeln
-		gespeichert.
+		\item Die berechneten Werte f\"ur jede K\"alteanlage werden
+		einzeln gespeichert, wenn mehrere Anlagen simuliert werden.
+		\item Die berechneten Werte f\"ur jede Supermarktkette werden
+		einzeln gespeichert, wenn der Verbrauch mehrerer
+		Supermarktketten simuliert wird.
 	\end{itemize}
+	\item Eine M\"oglichkeit zur graphischen Auswertung der Berechnung wird
+	erstellt.
 \end{itemize}
-
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -53,7 +57,7 @@ Folgende explizite Anforderungen sind an das Programm gestellt:
 \section{Erstellung des OOP-Modells}
 
 Der durchschnittliche Energieverbrauch der Kälteanlagen je Supermaktkette
-kann aufgrund der technischen Ausführung unterschiedlich sein. Der
+kann aufgrund der technischen Ausführung unterschiedlich ausfallen. Der
 Energieverbrauch entsteht an definierten Punkten im Netz. An den einzelnen
 Knotenpunkten können mehrere Kältelasten angeschlossen sein.\\
 
@@ -95,8 +99,8 @@ Abh\"angigkeit unter Klassen visualisiert.
 
 Das Ergebnis der Abstraktion sind vier Klassen. In der Klasse
 \textbf{Refrigerator} sind Eigenschaften und Methoden zusammengefasst, die das
-Modell einer K\"altelast beschreiben. Die explizite Erkl\"arung der\todo{hier
-ein \"Uberleitungssatz}.
+Modell einer K\"altelast beschreiben. Darum wird nachfolgend die Klasse
+\textbf{Refirgerator} explizit erl\"autert.
 
 \subsection*{Refrigerator}
 
@@ -141,7 +145,7 @@ An dieser Stelle werden die Eigenschaften und die Methoden der Klasse
 	berechneten Verbrauchs und $m$ f\"ur die Anzahl der simulierten Tage
 	steht. Die Werte sind das Ergebnis der Berechnung der Funktion
 	\textbf{main\_equation}. Eine Spalte des Arrays stellt den Verlauf des
-	berechneten Verbrauches an genau einem Tag dar.
+	berechneten Verbrauchs an genau einem Tag dar.
 	\item[averaged\_transmission\_losses] Summe aller durchschnittlichen
 	Transmissionsverluste im Normalbetrieb (vgl. \cref{aptrans} auf der
 	Seite \pageref{aptrans}).
@@ -177,7 +181,7 @@ An dieser Stelle werden die Eigenschaften und die Methoden der Klasse
 		Tag beschreiben.
 		\item[days] Anzahl der zu simulierenden Tage.
 	\end{description}
-	Bei der Initialisierung eines Objektes werden einem Teil der oben
+	Bei der Initialisierung eines Objekts werden einem Teil der oben
 	vorgestellten Attribute der Klasse \textbf{Refrigerator} Werte aus dem
 	\textbf{ fridge\_config }-Array direkt \"ubergeben. Andere Werte werden
 	einmalig von der Konstruktor-Methode berechnet oder im Laufe der
@@ -213,15 +217,15 @@ An dieser Stelle werden die Eigenschaften und die Methoden der Klasse
 		Arrays stellt den Temperaturverlauf an genau einem Tag dar.
 		\item[electric\_power\_consumption\_history] $n \times m$-Array
 		mit $n,m\in \mathbb{Z}^+_0$, wobei $n$ f\"ur die Anzahl der
-		Werten des berechneten Verbrauchs und $m$ f\"ur die Anzahl der
+		Werte des berechneten Verbrauchs und $m$ f\"ur die Anzahl der
 		simulierten Tage steht. Die Werte sind das Ergebnis der
 		Berechnung der Funktion \textbf{main\_equation}. Eine Spalte
-		des Arrays stellt den Verlauf des berechneten Verbrauches an
+		des Arrays stellt den Verlauf des berechneten Verbrauchs an
 		genau einem Tag dar.
 	\end{description}
 
 	Folgende Attribute sind aufgrund der Annahmen dieser Studie konstant,
-	k\"onnen aber bei der bei einer Modifizierung der Annahmen im Laufe der
+	k\"onnen aber bei der einer Modifizierung der Annahmen im Laufe der
 	Simulation ver\"andert werden:
 	\begin{description}
 		\item[temperature\_outside\_fridge] Befindet sich der
@@ -240,7 +244,7 @@ An dieser Stelle werden die Eigenschaften und die Methoden der Klasse
 	Substanzmassen mit den jeweiligen spezifischen W\"armekapazit\"aten. Der
 	Funktion werden keine explizite Argumente \"ubergeben. Die Funktion
 	greift direkt auf die Attribute \textbf{specific\_heat\_capacity} und
-	\textbf{mass\_stored} des Objektes zu.
+	\textbf{mass\_stored} des Objekts zu.
 
 	\item[sum\_transmission\_losses()] Es gibt zwei R\"uckgabewerte dieser
 	Funktion. Der erste Wert ist die Summe der Transmissionsverluste (vgl.
@@ -248,15 +252,16 @@ An dieser Stelle werden die Eigenschaften und die Methoden der Klasse
 	Durchgangsfl\"achen f\"ur den aktuellen Zeitpunkt und f\"ur die aktuelle
 	K\"uhlraumtemperatur. Desweiteren wird die Summe der
 	Transimissionsverluste berechnet, die bei der oberen Grenze des
-	zugelassenen Temperaturbereiches entstehen. Die Kenntnis dieser Verluste
-	ist wichtig, um die Zeitspanne absch\"atzen zu k\"onnen bis die obere
-	Temperaturgrenze erreicht wird (vgl. \cref{tauk} auf der Seite
+	zugelassenen Temperaturbereichs entsteht. Die Kenntnis hinsichtlich
+	dieser Verluste ist wichtig, um die Zeitspanne absch\"atzen zu k\"onnen
+	bis die obere Temperaturgrenze erreicht wird (vgl. \cref{tauk} auf der
+	Seite
 	\pageref{tauk}).
 
 	Die \"Ubergabe folgender Argumente an die Funktion ist erforderlich:
 	\begin{description}
 		\item[number\_steps] Laufvariable. Gesamtzahl der zu
-		simulierenden Zeitschrite f\"ur einen Tag.
+		simulierenden Zeitschritte f\"ur einen Tag.
 		\item[count\_number\_steps] Der aktuelle Wert von
 		\textbf{number\_steps}.
 		\item[count\_number\_day] Der aktuelle Wert von der Laufvariable
@@ -279,7 +284,7 @@ An dieser Stelle werden die Eigenschaften und die Methoden der Klasse
 	Die \"Ubergabe folgender Argumente an die Funktion ist erforderlich:
 	\begin{description}
 		\item[number\_steps] Laufvariable. Gesamtzahl der zu
-		simulierenden Zeitschrite f\"ur einen Tag.
+		simulierenden Zeitschritte f\"ur einen Tag.
 		\item[count\_number\_steps] Der aktuelle Wert von
 		\textbf{number\_steps}.
 		\item[count\_number\_day] Der aktuelle Wert von der Laufvariable
@@ -304,13 +309,13 @@ An dieser Stelle werden die Eigenschaften und die Methoden der Klasse
 	\end{description}
 	\item[temperature\_change()] Die Funktion hat einen R\"uckgabewert.
 	Berechnet wird die Temperatur der Substanzmasse, die durch K\"uhlung am
-	Ende eines Zeitschrittes erreicht wird (vgl. die \cref{tns} auf der
+	Ende eines Zeitschritts erreicht wird (vgl. die \cref{tns} auf der
 	Seite \pageref{tns}).
 	
 	Die \"Ubergabe folgender Argumente an die Funktion ist erforderlich:
 	\begin{description}
 		\item[number\_steps] Laufvariable. Gesamtzahl der zu
-		simulierenden Zeitschrite f\"ur einen Tag.
+		simulierenden Zeitschritte f\"ur einen Tag.
 		\item[count\_number\_steps] Der aktuelle Wert von
 		\textbf{number\_steps}.
 		\item[count\_number\_day] Der aktuelle Wert von der Laufvariable
@@ -323,13 +328,14 @@ An dieser Stelle werden die Eigenschaften und die Methoden der Klasse
 
 Alle Klassen haben einen unterschiedlichen Status. Die Klasse
 \textbf{Power\_grid} vertritt die Rolle des ganzen Systems, also des
-Energieversorgungsnetzes, welches aus charakteristischen Teilen, den Knoten
-(\textbf{Bus}) besteht. Die Existenz eines Knotens au\ss erhalb eines Netzes
-ergibt keinen Sinn. Dieser Zusammenhang zwischen Klassen wird im Klassendiagramm
-in der \cref{fig:klassendiagramm} durch eine Linienverbindung/Komposition
-verdeutlicht.  Auf der Seite des Ganzen endet die Linie mit einem ausgef\"ullten
-Rhombus. Das komplette Modell ist nach diesem Prinzip aufgestellt. Das kleinste
-Element des Ganzen stellt die K\"alteanlage (\textbf{Refrigerator}) dar.
+Energieversorgungsnetzes, welches sich aus den charakteristischen Teilen, den
+Knoten (\textbf{Bus}) zusammensetzt. Die Existenz eines Knotens au\ss erhalb
+eines Netzes ergibt keinen Sinn. Dieser Zusammenhang zwischen Klassen wird im
+Klassendiagramm in der \cref{fig:klassendiagramm} durch eine
+Linienverbindung/Komposition verdeutlicht.  Auf der Seite des Ganzen endet die
+Linie mit einem ausgef\"ullten Rhombus. Das komplette Modell ist nach diesem
+Prinzip aufgestellt. Das kleinste Element des Ganzen stellt die K\"alteanlage
+(\textbf{Refrigerator}) dar.
 
 \begin{figure}[h]
 	\begin{center}
@@ -349,9 +355,9 @@ In der \cref{fig:uml_sequence} auf der Seite \pageref{fig:uml_sequence} wird mit
 Hilfe eines Sequenzdiagramms der Nachrichtenaustausch hervorgehoben, der bei
 der Erstellung der Objekte durchlaufen wird. Auf der Zeitachse, die senkrecht
 von oben nach unten verl\"auft, wird mit Hilfe der Pfeile der Zugriff auf die
-Methoden der Objekte dargestellt. Ist eine Methode des Objektes f\"ur einen
+Methoden der Objekte hingewiesen. Ist eine Methode des Objekts f\"ur einen
 Zeitraum aktiv, wird dieser Zustand durch einen grauen Balken auf dem Zeitstrahl
-des zugeh\"origen Objektes visualisiert. Der Aufruf der Funktionen der Objekte
+des zugeh\"origen Objekts visualisiert. Der Aufruf der Funktionen der Objekte
 wird durch einen Pfeil mit ausgef\"ullter Spitze dargestellt. Der Pfeil geht vom
 Zeitstrahl eines Objekts aus, der die Funktion aufruft und endet mit der Spitze
 im Objekt, zu dem diese Funktion geh\"ort. Der Name der aufgerufenen Funktion
@@ -380,9 +386,11 @@ stehenden K\"alteleistung, zu Temperaturschwankungen. Die engen Grenzen des
 zul\"assigen Temperaturbandes d\"urfen nicht \"uberschritten werden.
 
 Verschiedene Konzepte f\"ur den Einsatz der K\"alteanlagen als Energiespeicher
-im Energieversorgungsnetz sind denkbar. Im folgenden Abschnitt wird die
-Implementierung eines m\"oglichen Kooperationskonzeptes zwischen einer
-Supermarktkette und einem Windpark vorgestellt.
+im Energieversorgungsnetz sind denkbar.
+
+Im folgenden Abschnitt wird die Implementierung eines m\"oglichen
+Kooperationskonzepts zwischen einer Supermarktkette und einem Windpark
+vorgestellt.
 
 Die prognostizierten und die tatsächlich vom Windpark produzierten elektrischen
 Windleistungsdaten der Vattenfall-Regelzone (heute 50Hertz-Regelzone) aus dem
@@ -398,15 +406,16 @@ Supermarktketten ausgeglichen werden.
 Es wird angenommen, dass der Prognosefehler von der Windleistungsvorhersage
 f\"ur 24 Stunden den 15 \% entspricht. Der Windparkbetreiber meldet beim
 Netzbetreiber die untere Grenze an, also 85 \% von der Windleistungsvorhersage.
-Der Supermarkt besitzt einen st\"undlichen Bedarf, der unbedingt gedeckt werden
-muss. Ist der st\"undlicher Bedarf gr\"o\ss er als 15 \% der Prognose, wird die
-Differenz aus dem Netz gezogen. Diese Abweichung wird beim Netzbetreiber zur
-Erstellung des Lastfahrplanes mitgeteilt. Gibt es eine Abweichung von der
+Der Supermarkt weist einen st\"undlichen Bedarf auf, der unbedingt gedeckt
+werden muss. Ist der st\"undliche Bedarf gr\"o\ss er als 15 \% der Prognose,
+wird die Differenz aus dem Netz gezogen. Diese Abweichung wird beim
+Netzbetreiber zur Erstellung des Lastfahrplans mitgeteilt. Gibt es eine
+Abweichung von der
 Prognose, so versucht der Supermarkt diese zu absorbieren.
 
 Die vom Windparkbetreiber dem Supermarkt versprochene Leistung wird berechnet,
 indem von der Windleistungsvorhersage die 15 \% bestimmt werden oder nur der
-st\"undlicher Bedarf, wenn er kleiner als die 15 \% ist\todo{das ischt a}.
+st\"undliche Bedarf, wenn er kleiner als die 15 \% ist.
 \begin{equation}
 	P_{sm} = \min \{ 0,15 \cdot P_{DA},\, P_{dem} \} 
 	\label{eq:psm}
@@ -416,14 +425,14 @@ st\"undlicher Bedarf, wenn er kleiner als die 15 \% ist\todo{das ischt a}.
 	\item[$P_{sm}$] Leistung, die vom Windparkbetreiber dem Supermarkt
 	versprochen wird in MW
 	\item[$P_{DA}$] Vorhersage der Windleistung (day ahead) in MW
-	\item[$P_{dem}$] st\"undlicher Leistungsbedarf des Supermarkts (demand)
+	\item[$P_{dem}$] St\"undlicher Leistungsbedarf des Supermarkts (demand)
 	MW
 \end{description}
 \vspace{0.5cm}
 
 Die vom Windparkbetreiber beim Netzbetreiber anzumeldende Leistung wird
 berechnet, indem von der Windleistungsvorhersage die 85\,\% bestimmt werden
-oder der st\"undlicher Bedarf des Supermarktes abgezogen wird, wenn er kleiner
+oder der st\"undliche Bedarf des Supermarkts abgezogen wird, wenn er kleiner
 als die 15\,\% ist.
 \begin{equation}
 	P_{net} = P_{DA} - P_{sm}
@@ -434,7 +443,7 @@ als die 15\,\% ist.
 	\item[$P_{net}$] Leistung, die vom Windparkbetreiber beim Netzbetreiber
 	angemeldet wird in MW
 	\item[$P_{DA}$] Vorhersage der Windleistung (day ahead) in MW
-	\item[$P_{dem}$] st\"undlicher Leistungsbedarf des Supermarkts (demand)
+	\item[$P_{dem}$] St\"undlicher Leistungsbedarf des Supermarkts (demand)
 	MW
  \end{description} \vspace{0.5cm}
 
@@ -442,7 +451,7 @@ als die 15\,\% ist.
 Die Leistung, die insgesamt den K\"alteanlagen zur Verf\"ugung steht, berechnet
 sich nach der \cref{pload}. Der Ausdruck $P_{RT} - P_{net}$ bedeutet die
 \"ubersch\"ussige Windleistung. Der Ausdruck $P_{dem} - P_{sm}$  bedeutet die
-vom Supermarkts beim Netzbetreiber nicht abgemeldete Leistung.
+vom Supermarkt beim Netzbetreiber nicht abgemeldete Leistung.
 
 \begin{align}
 	P_{load} &= P_{RT} - P_{net} + P_{dem} - P_{sm}\\
@@ -450,28 +459,28 @@ vom Supermarkts beim Netzbetreiber nicht abgemeldete Leistung.
 	\label{pload}
 \end{align}
 \begin{description}[\dth]
-	\item[$P_{load}$] vorhandene Leistung zum Laden in MW
+	\item[$P_{load}$] Vorhandene Leistung zum Laden in MW
 	\item[$P_{RT}$] Windleistungsdaten. Windleistung, die tats\"achlich vom
 	Windpark generiert wurde in MW
 	\item[$P_{net}$] Leistung, die vom Windparkbetreiber beim Netzbetreiber
 	angemeldet wird in MW
-	\item[$P_{dem}$] st\"undlicher Leistungsbedarf des Supermarkts (demand)
+	\item[$P_{dem}$] St\"undlicher Leistungsbedarf des Supermarkts (demand)
 	\item[$P_{sm}$] Leistung, die vom Windparkbetreiber dem Supermarkt
 	versprochen wird in MW
 \end{description} \vspace{0.5cm}
 
 \subsubsection*{Implementierung}
-Die Implementierung des Kooperationskonzeptes erfolgt in einer neuen Klasse
+Die Implementierung des Kooperationskonzepts erfolgt in einer neuen Klasse
 \textbf{Cooling\_strategy}. Diese Klasse hat die Aufgabe, jeder K\"uhlstelle in
-jedem Supermarkt im Netz die aufgrund des Kooperationskonzeptes und der
+jedem Supermarkt im Netz die aufgrund des Kooperationskonzepts und der
 Temperaturbeschr\"ankungen optimale Menge an K\"alteleistung zuzuweisen. Die zur
 Verf\"ugung stehende Leistung wird auf alle K\"uhlstellen gleichm\"a\ss ig
 aufgeteilt bis keine Leistung mehr vorhanden ist oder die Minimaltemperatur
 erreicht wird. Alle K\"uhlstellen sollen zu jeder Stunde mindestens soviel
 Leistung zugewiesen bekommen, dass genau diese eine Stunde \"uberbr\"uckt werden
-kann, ohne dass die H\"ochsttemperatur \"uberschritten wird. Die Zeit bis zur
+kann, ohne, dass die H\"ochsttemperatur \"uberschritten wird. Die Zeit bis zur
 H\"ochsttemperatur darf also nie unter eine Stunde fallen. Um diese
-Zeitbeschr\"ankung zu erf\"ullen, muss ermittelt werden, ob die die verbleibende
+Zeitbeschr\"ankung zu erf\"ullen, muss ermittelt werden, ob die verbleibende
 Zeit bis zur oberen Schranke nicht unter eine Stunde f\"allt, wenn keine
 K\"uhlleistung vorhanden ist.
 Diese Zeit kann nach der \cref{tauk} abgesch\"atz werden.
@@ -494,9 +503,9 @@ Diese Zeit kann nach der \cref{tauk} abgesch\"atz werden.
 	\item[$m$] Substanzmasse zur Aufnahme der Wärmeenergie in kg
 	\item[$c$] Spezifische Wärmekapazität der Substanzmasse in $\mathrm{\frac{kJ}{kg
 		\cdot K}}$
-	\item[$t_{max}$] obere Temperaturgrenze in $ ^{\circ} $C
+	\item[$t_{max}$] Obere Temperaturgrenze in $ ^{\circ} $C
 	\item[$t(i)$] Temperatur zur Stunde $i$ in $ ^{\circ} $C
-	\item[$\aptranslog(i)$] logarithmierter Mittelwert der
+	\item[$\aptranslog(i)$] Logarithmierter Mittelwert der
 		Transmissionswärmeleistung zum aktuellen Zeitpunkt in kW
 	\item[$\pmehr(i)$] Tagesmehrbedarf zum aktuellen Zeitpunkt in kW
 \end{description}
@@ -513,7 +522,7 @@ der Transmissionswärmeleistung.
 \end{equation}
 
 \begin{description}[\dth]
-	\item[$\aptranslog(i)$] logarithmierter Mittelwert der
+	\item[$\aptranslog(i)$] Logarithmierter Mittelwert der
 		Transmissionswärmeleistung zum aktuellen Zeitpunkt in kW
 	\item[$\ptransm(i)$] Transmissionswärmeleistung f\"ur den aktuellen
 	Zeitpunkt, wenn die K\"uhlraumtemperatur minimal w\"are in kW
@@ -535,7 +544,7 @@ der Transmissionswärmeleistung.
 	\item[$A$] Fläche in $\mathrm{m^2}$
 	\item[$k$] Wärmedurchgangskoeffizient in $\mathrm{\frac{W}{m^2 \cdot
 	K}}$
-	\item[$t_{max}$] obere Temperaturgrenze in $ ^{\circ} $C
+	\item[$t_{max}$] Obere Temperaturgrenze in $ ^{\circ} $C
 	\item[$t(i)$] Temperatur zur Stunde $i$ in $ ^{\circ} $C
 \end{description}
 \vspace{0.5cm}
@@ -548,16 +557,16 @@ der Transmissionswärmeleistung.
 
 \begin{description}[\dth]
 
-	\item[$\ptrans(i)$] aktuelle Transmissionswärmeleistung in kW
+	\item[$\ptrans(i)$] Aktuelle Transmissionswärmeleistung in kW
 	\item[$A$] Fläche in $\mathrm{m^2}$
 	\item[$k$] Wärmedurchgangskoeffizient in $\mathrm{\frac{W}{m^2 \cdot
 	K}}$
-	\item[$t_{amb}(i)$] aktuelle Umgebungstemperatur in $^{\circ}$C
-	\item[$t(i)$] aktuelle Kühlraumtemperatur in $^{\circ}$C
+	\item[$t_{amb}(i)$] Aktuelle Umgebungstemperatur in $^{\circ}$C
+	\item[$t(i)$] Aktuelle Kühlraumtemperatur in $^{\circ}$C
 \end{description}
 \vspace{0.5cm}
 
-Um den Temperaturausgleich in den Lebensmitteln im Algorithmus zu
+Um den Temperaturausgleich bei den Lebensmitteln im Algorithmus zu
 berücksichtigen, werden deshalb die zu- und abgeführten Wärmeenergiemengen bei
 der Berechnung der Temperatur für jeden Zeitschritt stets mit dem Faktor 0,8
 multipliziert.  Die Gleichung zur stündlichen Berechnung der aktuellen
@@ -571,14 +580,14 @@ Temperatur ist damit:
 \begin{description}[\dth]
 
 	\item[$t$] Temperatur in $^{\circ} $C
-	\item[$Q_v$] eindringende Verlustwärmemenge in kJ
-	\item[$Q_{ab}$] abführende Wärmemenge in kJ
+	\item[$Q_v$] Eindringende Verlustwärmemenge in kJ
+	\item[$Q_{ab}$] Abführende Wärmemenge in kJ
 
 \end{description}
 \vspace{0.5cm}
 
 wobei $Q_v$ die aktuell eindringende Wärmeenergie und $Q_{ab}$ die abgeführte
-Wärmeenergie ist\todo{die aktuelle Gleichung geh\"ort nicht dahin! oder?}.
+Wärmeenergie ist.
 
 \begin{figure}[h!]
 	\begin{center}
@@ -590,15 +599,15 @@ Wärmeenergie ist\todo{die aktuelle Gleichung geh\"ort nicht dahin! oder?}.
 
 In der \cref{fig:klasskoop} auf der Seite \pageref{fig:klasskoop} wird in einem
 Klassendiagramm die Beziehung zwischen dem bestehenden Modell und der Klasse
-\textbf{Cooling\_strategy} dargestellt. Eine Klasse \textbf{Cooling\_strategy}
-steht in der direkten Verbindung mit der Klasse \textbf{Refrigerator}, f\"ur die
-sie die zur K\"uhlung erforderliche Leistung berechnet. Ein Objekt der Klasse
-\textbf{Cooling\_strategy} kann mit einem bis mehreren Objekten der Klasse
-\textbf{Refrigerator} in Verbindung stehen.\\
+\textbf{Cooling\_strategy} veranschaulicht. Eine Klasse
+\textbf{Cooling\_strategy} steht in der direkten Verbindung mit der Klasse
+\textbf{Refrigerator}, f\"ur die sie die zur K\"uhlung erforderliche Leistung
+berechnet. Ein Objekt der Klasse \textbf{Cooling\_strategy} kann mit einem bis
+mehreren Objekten der Klasse \textbf{Refrigerator} in Verbindung stehen.\\
 
 In der \cref{fig:coop} auf der Seite \pageref{fig:coop} ist der
-Programmstrukturplan des Kooperationskonzeptes dargestellt. Der Algorithmus
-zeigt den Ablauf beim "'Auff\"ullen"' der K\"uhlstellen  f\"ur genau einen
+Programmstrukturplan des Kooperationskonzepts abgebildet. Der Algorithmus
+zeigt den Ablauf beim "`Auff\"ullen"' der K\"uhlstellen  f\"ur genau einen
 Zeitschritt der Simulation. Die Umsetzung des Algorithmus erfolgt
 in der Funktion \textbf{strategy\_calculator()}.
 
@@ -638,8 +647,8 @@ Leistung f\"ur den untersuchten Zeitraum
 f\"ur Abweichung der Windleistungsprognosedaten von realen Werten f\"ur den
 untersuchten Zeitraum
 \item[number\_day] Laufvariable. Gesamtzahl der zu simulierenden Tage.
-\item[number\_steps] Laufvariable. Gesamtzahl der zu simulierenden Zeitschrite f\"ur einen Tag.
-\end{description}
+\item[number\_steps] Laufvariable. Gesamtzahl der zu simulierenden Zeitschritte
+f\"ur einen Tag.  \end{description}
 
 \end{description}
 
@@ -651,9 +660,9 @@ geeignet. Innerhalb der \textbf{while}-Schleife wird der Algorithmus, der in
 der \cref{fig:coop} zu sehen ist, umgesetzt.
 
 Im ersten Schritt des Algorithmus findet eine Abfrage statt, ob Leistung zum
-K\"uhlen der Anlagen zur Verf\"ugung steht. Dieser Berechnung liegt die
-\cref{pload} auf der Seite \pageref{pload} zugrunde, die in der Funktion
-\textbf{power\_for\_load\_net()} implementiert ist.
+K\"uhlen der Anlagen zur Verf\"ugung steht. Der Abfrage liegt eine Berechnung
+(vgl. \cref{pload} auf der Seite \pageref{pload}) zugrunde, die in der
+Funktion \textbf{power\_for\_load\_net()} implementiert ist.
 
 \begin{description}
 \item[Fall 1] Die Menge der Leistung ist nicht gr\"o\ss er Null. Es erfolgt die
@@ -702,9 +711,9 @@ setzt sich fort.
 \begin{description}[\dth]
 \item[$Q_{Kap}$] W\"armeenergiemenge, die zus\"atzlich abgef\"uhrt werden kann,
 ohne dass die minimale Temperaturgrenze verletzt wird in kJ
-\item[$Q_{max}$] maximal abzuf\"uhrende W\"armeenergiemenge in kJ
-\item[$Q_{v}$] eindringende Verlustw\"armemenge in kJ
-\item[$P_{load}$] vorhandene Ladeleistung in MW
+\item[$Q_{max}$] Maximal abzuf\"uhrende W\"armeenergiemenge in kJ
+\item[$Q_{v}$] Eindringende Verlustw\"armemenge in kJ
+\item[$P_{load}$] Vorhandene Ladeleistung in MW
 \item[$\tau_{krit}$] Zeit bis zur kritischen Temperatur in h
 \item[$Q_{cooling}$] W\"armeenergiemenge, die der K\"uhlzelle zur K\"uhlung
 zugewiesen wird in kJ
@@ -716,12 +725,12 @@ zugewiesen wird in kJ
 
 \begin{description}[\dth]
 
-	\item[$\emax$] maximal abzuf\"uhrende W\"armeenergiemenge in kJ
+	\item[$\emax$] Maximal abzuf\"uhrende W\"armeenergiemenge in kJ
 	\item[$m$] Substanzmasse zur Aufnahme der Wärmeenergie in kg
 	\item[$c$] Spezifische Wärmekapazität der Substanzmasse in $\mathrm{\frac{kJ}{kg
 		\cdot K}}$
 	\item[$Q_v$] Verlustk\"altemenge in kJ
-	\item[$t_{min}$] obere Temperaturgrenze in  $\grad$ C
+	\item[$t_{min}$] Obere Temperaturgrenze in  $\grad$ C
 	\item[$t(i)$] Temperatur zur Stunde $i$ in  $\grad$ C
 
 \end{description}
@@ -738,9 +747,9 @@ zugewiesen wird in kJ
 \end{figure}
 
 Der genaue Ablauf des Informationsflusses, der zwischen den Objekten im Verlauf
-der Simulation des Kooperationskonzeptes stattfindet, wird im Sequenzdiagramm in
+der Simulation des Kooperationskonzepts stattfindet, wird im Sequenzdiagramm in
 der \cref{fig:uml_coop} auf der Seite \pageref{fig:uml_coop} grafisch
-verdeutlicht.
+erl\"autert.
 \begin{figure}[h]
 	\begin{center}
 	\includegraphics[scale=1.15]{images/Theorie_Super/double}
@@ -755,14 +764,11 @@ verdeutlicht.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Handhabung des Programms}
 \label{sc:handhabung}
-In diesem Abschnitt wird beschrieben, we
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \subsection{Systemanforderungen}
 
 Zur Benutzung des Programms muss aufgrund der gewählten Programmiersprache und
-der objektorientierten Programmierwiese folgendes gelten:
+der objektorientierten Programmierweise folgendes gelten:
 
 \begin{itemize}
 	\item Im Rechner muss die Software \matlab der Version $5.0$ oder
@@ -861,6 +867,8 @@ beibehalten.
 \abvz{NK\_KT\_S}{normalgekühlte Kühltruhe steckerfertig}
 \abvz{NK\_KR\_V}{normalgekühltes Kühlregal an Verbundanlage}
 \abvz{TK\_TKT\_S}{tiefgekühlte Tiefkühltruhe steckerfertig}
+\abvz{NK\_KZ}{normalgek\"uhlte K\"uhlzelle an Vergundanlage}
+\abvz{TK\_KZ}{tiefgek\"uhlte Tiefk\"uhlzelle K\"alteaggregat}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{lstlisting}[float=h!,caption=config\_supermarkets.m,label={csuper}]
@@ -906,9 +914,9 @@ physikalisch fundierten Modellen ein K\"uhleinheit-Objekt erzeugt werden.
 
 Am Beispiel des Modells einer steckerfertigen Normalkühltruhe, abgekürzt
 NK\_KT\_S (vgl. \matref{fridge} auf der Seite \pageref{fridge}), wird im
-folgenden die Eingabeform eines solchen Datenbankeintrages in der Datei
+Folgenden die Eingabeform eines solchen Datenbankeintrages in der Datei
 \textbf{config\_fridges.m} erläutert.  Zur Beschreibung einer K\"uhleinheit ist
-erforderlich, die Annahmen in einen $1\times14\,$-Cell Array zu erfassen. Die
+es erforderlich, die Annahmen in einen $1\times14\,$-Cell Array zu erfassen. Die
 Größe und die Art des Arrays ist vorgegeben durch die Auslegung des Modells zur
 Anzahl und dem Typus der modellbeschreibenden Annahmen. Die Struktur eines Cell
 Arrays ermöglicht neben der zusammenhängenden Speicherung verschiedener
@@ -946,7 +954,7 @@ Datentypen einen durch \matlab darauf direkten Zugriff.
 	Differenzierung erfolgt durch die Zuweisung einer Eins für die
 	steckerfertige Einheit und einer Zwei für eine Einheit an einer
 	Verbundanlage in der ersten Spalte im Array. Die Berechnug der Verluste
-	wird im \cref{chap:theorie} erkl\"ahrt.
+	wird im \cref{chap:theorie} erkl\"art.
 	\item [{Spalte zwei}] Die druchschnittliche elektrische Energieaufnahme
 	ist eine Kennzahl in Watt pro 24 Stunden, die durch die Hersteller mit
 	Hilfe eines genormten Verfahrens ermittelt wird und in den technischen
@@ -954,7 +962,7 @@ Datentypen einen durch \matlab darauf direkten Zugriff.
 	K\"ahltemehrverlusten am Tag (vgl. \cref{pmehr} auf der Seite
 	\pageref{pmehr}) verwendet.
 	\item [{Spalte drei}] In diese Spalte wird die Leistungszahl $\epsilon$
-	eingetragen, die den Zusammenhang zwischen der K\"alteleistung und er
+	eingetragen, die den Zusammenhang zwischen der K\"alteleistung und der
 	elektrischen Leistung herstellt.
 	\item [{Spalte vier}] Der Anteil des Verdichters an dem
 	Tagesenergieverbrauch der K\"uhleinheiten wird in diese Spalte
@@ -975,15 +983,15 @@ Datentypen einen durch \matlab darauf direkten Zugriff.
 	$1\times w\,$-Zeilenarray die mit den Flächen korrespondierende
 	Wärmedurchgangskoeffiziente in gleicher Reihenfolge gespeichert.
 	\item [{Spalte acht}] Die Temperatur außerhalb der K\"uhleinheit
-	bestimmt die Größe der Transmissionsverluste. In der dieser Spalte
+	bestimmt die Größe der Transmissionsverluste. In dieser Spalte
 	werden nach dem gleichen Prinzip und in der gleichen Form wie im
 	vorhergegangenen Eintrag die Außentemperatur für jede Wand eingetragen.
 	\item [{Spalte neun}] Die Abhängigkeit der Temperaturänderung von der in
 	einer K\"uhleinheit deponierten Masse an Waren und deren spezifische
-	Wärmekapazität ist aus der \cref{tdif} im \cref{chap:theorie}
+	Wärmekapazität wird aus der \cref{tdif} im \cref{chap:theorie}
 	ersichtlich. In der Realität werden in einem Kühlschrank gewöhnlich
-	mehrere verschiedene Lebensmittel gekühlt. Möchte man gemischte Beladung
-	simulieren, so sind die Massen in der Spalte zehn im NK\_KT\_S in der
+	mehrere verschiedene Lebensmittel gekühlt. Soll gemischte Beladung
+	simulieren werden, so sind die Massen in der Spalte zehn im NK\_KT\_S in der
 	gleichen Art und Weise wie in der Spalte sechs sieben oder acht
 	einzutragen. Der Eintrag erfolgt in Kilogramm.
 	\item [{Spalte zehn}] Zu jeder in der Spalte neun eingetragenen
@@ -1000,8 +1008,8 @@ Datentypen einen durch \matlab darauf direkten Zugriff.
 	Temperaturgrenze in Grad Celsius festgelegt.
 	\item [{Spalte dreizehn}] Die Bedeutung\footnote{ Alle Modellannahmen
 	wurden in Zusammenarbeit mit Caroline M\"oller entwickelt \cite{caro}.}
-	der mittleren Kühlraumtemperatur ist im \cref{chap:theorie} erkl\"ahrt.
-	\item [{Spalte vierzehn}] Zur Ber\"ucksichtiung Zeit, bis die K\"alte
+	der mittleren Kühlraumtemperatur ist im \cref{chap:theorie} erkl\"art.
+	\item [{Spalte vierzehn}] Zur Beachtung der Zeit, bis die K\"alte
 	aufgrund der \"Anderung der K\"uhlleistug nach Au\ss en durch die
 	K\"uhlraumabgrenzung entweichen kann, wird ein Faktor zwischen Null
 	und Eins eingef\"uhrt, um den K\"alteverlust zu verkleinern.
@@ -1035,36 +1043,48 @@ ben\"otigt anschlie\ss end als Eingabeparameter die Referenz auf nun im \matlab
 Workspace vorhanden Cell-Array \textbf{configurations\_grid} (vgl.
 \matref{cgrid}). Die Diese Datei hat die Aufgabe im ersten Schritt, die
 Konstruktor-Funktionen der einzelnen Klassen zum Erzeugen des OOP-Modells
-aufzurufen. Anschlie\ss end werden die Vattenfall(50Herz)-Winddaten geladen. Die
-Berechnung der Systemzust\"ande erfolgt nun stundenweise f\"ur eine gew\"unschte
-Anzahl an Tagen. Die Tagesanzahl wird in der Zeile 13 der
+aufzurufen. Anschlie\ss end werden die Vattenfall(50Herz)-Windleistungsdaten
+geladen. Die Berechnung der Systemzust\"ande erfolgt nun stundenweise f\"ur eine
+gew\"unschte Anzahl an Tagen. Die Tagesanzahl wird in der Zeile 13 der
 \textbf{runCooling.m}-Datei festgelegt (vgl. \matref{configf} auf der Seite
 \pageref{configf}). Die Berechneten Temperatur- und Verbrauchswerte werden in
 den jeweiligen Objekten gespeichert. Die Leistungswerte, die auf Grund des
-Kooperationskonzepts entstehen, werden in einem $( b \times d \times h \times v
-)$-Array namens \textbf{result\_matrix} gespeichert.
+Kooperationskonzepts entstehen, werden in einem $( d \times h \times
+v)$-Array namens \textbf{power\_grid\_results} gespeichert.
 \begin{description}[\dth]
-\item[$b$] steht f\"ur die Anzahl der Netzknoten des Modells
 \item[$d$] steht f\"ur die Anzahl der Tage
 \item[$h$] steht f\"ur die Anzahl der Stunden an einem Tag
 \item[$v$] steht f\"ur die Anzahl der berechneten Lestungswerte, die f\"ur
 weitere Verwendung, z.B. in einem Leistungsflu\ss berechnungsprogramm verwendet
 werden k\"onnen
 \end{description}
-Die Anzahl betr\"agt $v = 7$. An erster Stelle wird der gesamte elektrische
-Leistungsbedarf $P_{dem}$ der Superm\"arkte an je einem Knoten gespeichert. An
-zweiter Stelle werden die Leistungverbrauchswerte ohne der zus\"atzlichen vom
-Supermarkt nicht angemeldeten Leistung gespeichert. An dritter Stelle wird die
-dem Supermarkt angebotene Leistung $P_{load}$ gespeichert. An vierter Stelle
-wird die nur die Windleistung, die dem Supermarkt zur Verf\"ugung gestellt
-werden konnte ($P_{RT} - P_{net}$), gespeichert. Die gesamte an einem Knoten
-bezogene Leistung wird an der f\"unften Stelle gespeichert. Die vom
-Supermarkt zus\"atzlich aus dem Netz gezogene Leistung wird an der sechsten
-Stelle gespeichert. Der Berechnung erfolgt, indem von der Gesamtleistung die
-Leistung ohne der zus\"atzlich aus dem Netz bezogenen subtrahiert wird.
-Abschlie\ss end wird an siebter Stelle die dem Supermarkt vom Windparkbetreiber
-versprochene Leistung $P_{sm}$ gespeichert. Die R\"uckgabewerte der Funktion
-sind die Objekte des OOP-Modells und die \textbf{result\_matrix}.
+Die Anzahl ist auf $v = 8$ festgelegt. Die Speicherung der Daten erfolgt f\"ur
+das gesamte Netz und wird nicht nach Knoten oder Superm\"arkten unterschieden.
+Diese Behandlung erfolgt aus dem Grund, dass durch die Umsetzung des
+Kooperationskonzepts die Zuweisung der Menge an Leistung f\"ur die einzelnen
+K\"uhlstellen nicht von der Netztopologie abh\"angig ist. Der Verbrauch der
+einzelnen K\"uhleinheiten wird in den jeweiligen Objekten gesichert.
+
+Die zeitlichen Verl\"aufe folgender Leistungswerte in MW werden in dem Array
+\textbf{power\_grid\_results} unter diesen Adressen abgelegt.
+\begin{description}
+\item[$v=1$] Leistungsbedarfs $P_{dem}$ f\"ur das Gesamtnetz.
+\item[$v=2$] Die dem Supermarkt angebotene Leistung $P_{load}$.
+\item[$v=3$] Die vom Windparkbetreiber beim Netzbetreiber angemeldete Leistung
+$P_{net}$.
+\item[$v=4$] Die vom Windparkbetreiber dem Supermarkt versprochen Leistung
+$P_{sm}$.
+\item[$v=5$] Der durch die Kooperation und die reale Produktion der Windleistung
+entstandene Regelleistungsbedarf ($P_{RT}-P_{net}$).
+\item[$v=6$] Der Anteil der Leistung $P_{load}$, der an die Speicher verteilt
+wurde, $P_{involved}$.
+\item[$v=7$] Die gesamte an den K\"altespeicher verteilte Leistung $P_v$.
+\item[$v=8$] Die aufgrund der Kooperation zus\"atzlich entstandene und an die
+Speicher aus dem Netz verteilte Regelleistung: $P_{additionally} = P_v -
+P_{involved}$.
+
+
+\end{description}
 Die graphische Ausgabe dieser Werte wird durch die Funktion
 \textbf{plotCooling.m} realisiert.
 
@@ -1079,11 +1099,12 @@ Ergebnisse als sehr hilfreich erwiesen.
 \subsubsection*{plotCooling.m} Nach dem Durchlauf der Simulation kann mit der
 Funktion \textbf{plotCooling.m} die graphische Ausgabe durchgef\"uhrt werden.
 Wird die Funktion z.B. im \matlab Command-Window aufgerufen, so muss ihr an
-erster Stelle die Referenz auf die \textbf{result\_matrix} \"ubergeben werden.
-An zweiter Stelle wird die Referenz auf das Objekt der Klasse
+erster Stelle die Referenz auf die \textbf{power\_grid\_results} \"ubergeben
+werden.  An zweiter Stelle wird die Referenz auf das Objekt der Klasse
 \textbf{Power\_grid} mit allen Unterobjekten \"ubergeben.  Anschlie\ss end kommt
 die Angaben \"uber den Knoten, den Supermarkt und den Tag, f\"ur den die
-graphische Ausgabe erfolgen soll.
+graphische Ausgabe erfolgen soll. Die Zeitverl\"aufe der Leistungswerte beziehen
+sich jedoch auf das Gesamtnetz.
 
 Befindet man sich in dem Verzeichnis, wo das Programm gespeichert ist, so f\"uhr
 die Eingabe folgender Kommandos im \matlab Command-Window zum Start der

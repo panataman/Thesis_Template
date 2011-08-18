@@ -23,8 +23,8 @@ Potenzial, die erforderliche Speicherkapazit\"at durch unterschiedliche Ma\ss
 nahmen zu erh\"ohen z.B. durch die Variation der Anzahl von Objekten der Klassen
 Supermarkt und Refrigerator. Im ersten Schritt wird untersucht, wie die
 Verdoppelung der Speicherkapazit\"at auf die Regelleistung den Energieverbrauch
-der Supermarktkette auswirkt. Im zweiten Schritt wird untersucht, ob die Art und
-Weise, wie die Speicherkapazit\"at erh\"oht wurde, einen Einfluss auf das
+der Supermarktkette auswirkt. Im zweiten Schritt wird \"uberpr\"uft, ob die Art
+und Weise, wie die Speicherkapazit\"at erh\"oht wurde, einen Einfluss auf das
 Verhalten des Systems nimmt. Im vorangegangenen Kapitel wurde erkl\"art, wie mit
 Hilfe der Konfigurationsdateien die Anzahl der Superm\"arkte und der
 K\"uhleinheiten im System ver\"andert werden kann. Aufgrund des im
@@ -39,7 +39,7 @@ mit dem Programm den Einsatz der K\"altespeicher im elektrischen
 Energieversorgungsnez mit weiteren Lastmanagement-Algorithmen und Ausf\"uhrungen
 zu untersuchen.
 
-\subsection{Auswertung Kooperationskonzept}
+\section{Auswertung des Kooperationskonzepts}
 Die Simulation wird f\"ur vier F\"alle durchgef\"uhrt (vgl. \cref{t:faelle} auf
 der Seite \pageref{t:faelle}). Im im Fall 1 werden die Multiplikatoren in den
 Konfigurationsdateien \matref{cgrid} und \matref{csuper} so ver\"andert, dass
@@ -54,11 +54,17 @@ hat einen angenommenen durchschnittlichen Verbrauch von von 75,1384 MWh im Jahr
 \cite{caro}. Durch die Kooperation erh\"oht sich der Verbrauch auf 75,4479 MWh
 um rund 0,00441 $\%$.  F\"ur das gesamte Netz mit 1500 Superm\"arkten sind das
 464,25 MWh an Mehrbedarf im Jahr. Der Wert f\"ur die Regellenergie $W_{wo}$
-f\"uhr das ganze Jahr 2005 \todo{Gleichung ref} ohne die Kooperation lag bei
-rund 3,6 $10^6$ MWh. Durch die Kooperation konnte in der Simulation der Wert um
-rund ein Prozent mit 37,458 MWh gesenkt werden. Tr\"agt der Winparkbetreiber die
-die Kosten des Mehrbedarfs f\"ur den Supermarkt, dann ist durch die Einsparung
-an Regelenergie die Kooperationsrendite um die 7968,5 Prozent m\"oglich.
+f\"uhr das ganze Jahr 2005 (vgl. die \cref{eq:wrwo} auf der Seite
+\pageref{eq:wrwo}) ohne die Kooperation lag bei rund 3,6 $10^6$ MWh. Durch die
+Kooperation konnte in der Simulation der Wert um rund ein Prozent mit 37,458 MWh
+gesenkt werden. Tr\"agt der Winparkbetreiber die Kosten des Mehrbedarfs
+f\"ur den Supermarkt, dann ist durch die Einsparung an Regelenergie die
+Kooperationsrendite um die 7968,5 Prozent m\"oglich (vgl. \cref{t:faelle}).
+F\"ur die Verdoppelung der Anzahl der K\"altespeicher ist das Ergebnis der
+Simulation auch eine Verdoppelung der Einsparung an Regelleistung. Der
+Mehrbedarf f\"ur den Supermarkt hat sich aber auch verdoppelt. Die
+Kooperationsrendite ist dadurch konstant geblieben.
+
 
 \begin{table}
 \footnotesize{
@@ -91,29 +97,40 @@ an Regelenergie die Kooperationsrendite um die 7968,5 Prozent m\"oglich.
 \multicolumn{2}{c|}{6} & \multicolumn{2}{c|}{6} & \multicolumn{2}{c|}{12}\\
 \hline
 \hline
-\multicolumn{1}{|l|}{$W_{r_{wo}}$ in $10^6$ MWh } & \multicolumn{2}{c|}{3,6116} &
-\multicolumn{2}{c|}{} & \multicolumn{2}{c|}{11} & \multicolumn{2}{c|}{11}\\
+\multicolumn{1}{|l|}{$W_{r_{wo}}$ in $10^6$ MWh } & \multicolumn{8}{c|}{3,6116}\\
 \hline
 \multicolumn{1}{|l|}{$W_{r_{w}}$ in $10^6$ MWh} & \multicolumn{2}{c|}{3,5742} &
-\multicolumn{2}{c|}{5} & \multicolumn{2}{c|}{11} & \multicolumn{2}{c|}{11}\\
+\multicolumn{2}{c|}{3,5381} &
+\multicolumn{2}{c|}{3,5381} &
+\multicolumn{2}{c|}{3,5381}\\
 \hline
-\multicolumn{1}{|l|}{$(W_{r_{wo}} - W_{r_{w}})$ in MWh} &
+\multicolumn{1}{|l|}{$|W_{r_{wo}} - W_{r_{w}}|$ in MWh} &
 \multicolumn{2}{c|}{37.458} &
-\multicolumn{2}{c|}{5} & \multicolumn{2}{c|}{11} & \multicolumn{2}{c|}{11}\\
+\multicolumn{2}{c|}{73.530} &
+\multicolumn{2}{c|}{73.649} &
+\multicolumn{2}{c|}{73.530}\\
 \hline
 \hline
-\multicolumn{1}{|l|}{$W_{dem}$ in MWh } & \multicolumn{2}{c|}{112.710} &
-\multicolumn{2}{c|}{} & \multicolumn{2}{c|}{11} & \multicolumn{2}{c|}{11}\\
+\multicolumn{1}{|l|}{$W_{dem}$ in MWh } & \multicolumn{2}{c|}{112.707,62} &
+\multicolumn{2}{c|}{225.415,23} &
+\multicolumn{2}{c|}{225.415,23} &
+\multicolumn{2}{c|}{225.415,23}\\
 \hline
-\multicolumn{1}{|l|}{$W_{coop}$ in MWh} & \multicolumn{2}{c|}{113.170} &
-\multicolumn{2}{c|}{5} & \multicolumn{2}{c|}{11} & \multicolumn{2}{c|}{11}\\
+\multicolumn{1}{|l|}{$W_{coop}$ in MWh} & \multicolumn{2}{c|}{113.171,86} &
+\multicolumn{2}{c|}{226.353,68} &
+\multicolumn{2}{c|}{226.355,31} &
+\multicolumn{2}{c|}{226.353,68}\\
 \hline
-\multicolumn{1}{|l|}{$(W_{dem} - W_{coop})$ in MWh} & \multicolumn{2}{c|}{464,25} &
-\multicolumn{2}{c|}{5} & \multicolumn{2}{c|}{11} & \multicolumn{2}{c|}{11}\\
+\multicolumn{1}{|l|}{$(W_{dem} - W_{coop})$ in MWh} & \multicolumn{2}{c|}{464,24} &
+\multicolumn{2}{c|}{938.450} &
+\multicolumn{2}{c|}{940,080} &
+\multicolumn{2}{c|}{938.450}\\
 \hline
 \hline
 \multicolumn{1}{|l|}{Kooperationsgewinn in \%} & \multicolumn{2}{c|}{7968,5} &
-\multicolumn{2}{c|}{5} & \multicolumn{2}{c|}{11} & \multicolumn{2}{c|}{11}\\
+\multicolumn{2}{c|}{7935,3} &
+\multicolumn{2}{c|}{7934,3} &
+\multicolumn{2}{c|}{7935,3}\\
 \hline
 
 
@@ -123,28 +140,111 @@ an Regelenergie die Kooperationsrendite um die 7968,5 Prozent m\"oglich.
 \label{t:faelle}
 \end{table}
 
+Die Regelenergie berechnete sich dadurch, dass der Summe die Stundenwerte f\"ur
+die vom Windparkbetreiber tats\"achlich generierte Leistungswerte \"uber
+das ganze Jahr die Summe der Prognosestundenwerte \"uber das Ganze Jahr
+abgezogen. Anschlie\"ss end wird daraus der Betrag genommen.
+\begin{equation}
+	W_{r_{wo}} = |\sum^{365}_{d=1}\sum^{24}_{h=1}(P_{RT\,dh}-P_{DA\,dh})|
+\label{eq:wrwo}
+\end{equation}
+\begin{description}[\dth]
+\item[$W_{r_{wo}}$] Regelenergie ohne Kooperation zum Ausgleich der
+Prognosefehler.
+\item[$P_{RT}$] Windleistungsdaten. Windleistung, die tats\"achlich vom
+Windpark generiert wurde in MW
+\item[$P_{DA}$] Vorhersage der Windleistung (day ahead) in MW
+\item[$d$] Laufvariable f\"ur die Tage
+\item[$h$] Laufvariable f\"ur die Stunden
+\end{description}
+
+Die durch die Kooperation entstanden Regelenergie wird berechnet, indem zuerst
+der Betrag aus der Differenz zwischen der tats\"achlich vom Windpark generierten
+Leistung summiert \"uber das Jahr die auch \"uber das Jahr summierte Leistung
+abgezogen wird, mit der der Windparkbetreiber sich beim Netzbetreiber angemeldet
+hat. Konnte der Supermarkt Winleistung integrieren, ohne zus\"atzliche Leistung
+aus dem Netz zu beziehen so muss der Betrag um diese auch \"uber das ganze Jahr
+summierte Leistung abziehen. Wurde vom Supermarkt zus\"atzlich Leistung aus dem
+Netz bezogen, so wird die restliche Regelenergie um die \"uber das ganze Jahr
+summierte zus\"atzliche Regelleistung erh\"oht.
+\begin{equation}
+	W_{r_{w}} = |\sum^{365}_{d=1}\sum^{24}_{h=1}(P_{RT_{dh}}-P_{net_{dh}})| -
+	\sum^{365}_{d=1}\sum^{24}_{h=1}(P_{involved_{dh}} - P_{additionally_{dh}})
+\label{eq:wrw}
+\end{equation}
+\begin{description}[\dth]
+\item[$W_{r_{wo}}$] Regelenergie ohne Kooperation zum Ausgleich der
+Prognosefehler.
+\item[$P_{RT}$] Windleistungsdaten. Windleistung, die tats\"achlich vom
+Windpark generiert wurde in MW
+\item[$P_{DA}$] Vorhersage der Windleistung (day ahead) in MW
+\item[$d$] Laufvariable f\"ur die Tage
+\item[$h$] Laufvariable f\"ur die Stunden
+\end{description}
+
 In der \cref{fig:threep} wird der zeitliche Verlauf der Leistungsdaten des
 Widparkbetreibers und die daraus f\"ur die Kooperation ermittelte Werte \"uber
 drei Tage vom 14.1.2005 bis 16.1.2005 st\"undlich aufgetragen. Die Prognose
-\"uber die Windleistung\footnote{ In der Abbildung als
-\textit{gen\_output\_DA} bezeichnet.} am ersten Tag von Mitternacht und bis zum
-Mittag war relativ konstant zwischen 3000 MW und 4000 MW angegeben. Daraus wurde
-die Leistung $P_{net}$\footnote{ In der Abbildung als \textit{power\_net}
-bezeichnet} (vgl.  \cref{eq:pnet} auf der Seite \pageref{eq:pnet}), die beim
-Netzbetreiber aufgrund des Kooperationskonzepts anzumelden ist, berechnet. Die
-tats\"achlich vom Windpark generierte Leistung\footnote{ In der Abbildung
-als \textit{gen\_output\_DA} bezeichnet.} liegt zeitweise mit rund 2500 MW
-unter der Prognose. Die Leistung, mit der der Windpark sich beim Supermarkt und
-beim Netzbetreiber auf Grund der hohen Prognosewerte verpflichtet, kann nicht
+\"uber die Windleistung\footnote{ In der Abbildung als \textit{gen\_output\_DA}
+bezeichnet.} am ersten Tag von Mitternacht und bis zum Mittag war relativ
+konstant zwischen 3000 MW und 4000 MW angegeben. Daraus wurde die Leistung
+$P_{net}$\footnote{ In der Abbildung als \textit{power\_net} bezeichnet} (vgl.
+\cref{eq:pnet} auf der Seite \pageref{eq:pnet}), die beim Netzbetreiber aufgrund
+des Kooperationskonzepts anzumelden ist, berechnet. Die tats\"achlich vom
+Windpark generierte Leistung\footnote{ In der Abbildung als
+\textit{gen\_output\_DA} bezeichnet.} liegt zeitweise mit rund 2500 MW unter der
+Prognose. Die Leistung, mit der der Windpark sich beim Supermarkt und beim
+Netzbetreiber auf Grund der hohen Prognosewerte verpflichtet, kann nicht
 geliefert werden. In der \cref{fig:threet} auf der Seite \cref{fig:threet} ist
-im dritten Nebenbild zu erkennen, dass der Windparkbetreiber sich beim
-Supermarkt mit der Lieferung des kompletten durchschnittlichen st\"undlichen
-Bedarfs\footnote{ In der Abbildung als \textit{demand} bezeichnet.}
-verpflichtet\footnote{ In der Abbildung wird diese Leistung als
-\textit{power promised} bezeichnet (vgl. die \cref{eq:psm} auf der Seite
-\pageref{eq:psm}).}  hat. Infolge dessen hat sich der Supermarkt beim
+im dritten Nebenbild\todo{gibt soein wort \"uberhaupt} zu erkennen, dass der
+Windparkbetreiber sich beim Supermarkt mit der Lieferung des kompletten
+durchschnittlichen st\"undlichen Bedarfs\footnote{ In der Abbildung als
+\textit{demand} bezeichnet.} verpflichtet\footnote{ In der Abbildung wird diese
+Leistung als \textit{power promised} bezeichnet (vgl. die \cref{eq:psm} auf der
+Seite \pageref{eq:psm}).} hat. Infolge dessen hat sich der Supermarkt beim
 Netzbetreiber komplett als Last abgemeldet\footnote{ In der Abbildung als
-\textit{firm commitment} bezeichnet}. Im K\"uhlbereich darf
+\textit{firm commitment} bezeichnet}. Im K\"uhlbereich darf die Temperatur
+nicht \"uber die obere Grenze steigen. Zum Einhalten dieser Bedingung muss der
+Supermarkt zus\"atzlich Leistung\footnote{ In der Abbildung mit
+\textit{additionally power bezeichnet} bezeichnet.} aus dem Netz ziehen. F\"ur
+den Netzbetreiber Verursacht diese unangemeldete Last einen zus\"atzlichen
+Regelaufwand. Der Verlauf dieser Energie ist im Nebenbild\todo{hier auch} in der
+\cref{fig:threet} enthalten. Es ist zu erkennen, dass der Bedarf des
+Supermarkts\footnote{ In der Abbildung als \textit{charge} bezeichnet.}
+an diesem Tag komplett durch die zus\"atzliche Leistung aus dem Netz gedeckt
+wird. Die Temperatur in den K\"uhlbereichen tiefgek\"uhlte Tiefk\"uhltruhe
+steckerfertig und Tiefk\"uhl K\"uhlzellen bleibt in diesem Zeitraum bei der
+maximal zul\"assigen Temperatur von -18 $\grad$ C. In den Stunden 27 bis 30
+liegen die Werte f\"ur tats\"achlich generierte Leistun \"uber der Prognose. In
+diesem Zeitbereich ist auch ein deutlicher Anstieg der Ladeleistung des
+Supermarkts zu beobachten. Die Temperatur wurde dadurch gesenkt. Es wurde keine
+zus\"atzliche Leistung aus dem Netz beansprucht. Die Aufladung wurde komplett
+durch die Windleistung vorgenommen\footnote{ In der Abbildung wird die
+Leistung, die ausschlie\sslich vom Windpark beansprucht wird, als \textbf{wind only}
+bezeichnet}. Die Prognose wurde der realen Werte f\"ur den neuen Tag angepasst.
+Der Tag 15.1.2005 zeichnet sich durch eine deutliche Windschw\"ache aus, sodass
+der Supermarkt mit dem gr\"o\ss ten Teil seines Bedarfs sich nicht beim
+Netzbetreiber abgemeldet hat. Der Windpark konnte aber auch die Differenz nicht
+bedienen, sodass nur die aus dem Netz bestellte Leistung verbraucht werden
+konnte. Diese Menge ist jedoch kleiner als der durchschnittliche st\"undliche
+Bedarf. Aus diesem Grund steigt die Temperatur in den K\"uhlbereichen. In den
+Stunden zwischen 36 und 40 ist die bestellte Leistung so gro\ss ,$ $ dass ein
+Teil der K\"uhlzellen damit versorgt wird, und die Temperatur konstant gehalten
+werden kann. In den Stunden 43 bis 60 liegt die tats\"achliche generierte
+Windleistung deutlich \"uber der Prognose, sodass der Supermarkt komplett von
+der Windversorgung gespeist wurde. Die Speicherkapazit\"at wurde vollst\"andig
+ausgenutzt und die Temperatur auf das Minimun heruntergek\"uhlt. Aus diesem
+Grund konnte der Supermarkt in der Stunde 60, als wieder keine Leistung
+geliefert werden konnte, vollst\"andig auf Leistung verzichten. In den folgenden
+Stunden wird aufgrund der Temperaurbeschr\"ankungen die zus\"atzliche Leistung
+aus dem Netz beansprucht, bis wieder Mehrangebot an Windleistung gibt. Die
+Temperatur bleibt stehts in den definierten Grenzen und reagiert gem\"a\ss $ $
+den Erwartungen auf die Netzsituation. Die vollst\"andige \"Ubersicht \"uber
+alle K\"uhlzellen des Modellsupermarktes sowie \"uber die Leistungsferl\"aufe im
+gesamten Netz f\"ur diese Tage kann aus den \todo{hier verweis auf anhang}
+bezogen werden. Der Unterschiede im Temperaturverlauf sind dadurch zu
+begr\"unden, dass einzelnen K\"uhleinheiten durch die Beladung, die Abdichtung
+gegen K\"alteenergieverlust etc. unterscheiden.
 
 % \Ergebnisse
 \begin{figure}[h] \begin{center}
@@ -154,7 +254,7 @@ Netzbetreiber komplett als Last abgemeldet\footnote{ In der Abbildung als
 
 \begin{figure}[h]
 \begin{center}
-\includegraphics[scale=0.40]{images/Simulation/three_days2}
+\includegraphics[scale=0.40]{images/Simulation/three_days_2}
 \end{center}
 \vspace{-25pt}
 \caption{Temperatur und Leistungswerte f\"ur die Tage 14.1.05-16.1.05}
