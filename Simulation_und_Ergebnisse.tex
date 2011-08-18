@@ -65,7 +65,7 @@ Simulation auch eine Verdoppelung der Einsparung an Regelleistung. Der
 Mehrbedarf f\"ur den Supermarkt hat sich aber auch verdoppelt. Die
 Kooperationsrendite ist dadurch konstant geblieben.
 
-
+% \include{tabelle}
 \begin{table}
 \footnotesize{
 \centering
@@ -132,8 +132,6 @@ Kooperationsrendite ist dadurch konstant geblieben.
 \multicolumn{2}{c|}{7934,3} &
 \multicolumn{2}{c|}{7935,3}\\
 \hline
-
-
 \end{tabularx}
 }
 \caption{Simulation F\"alle}
@@ -167,11 +165,13 @@ aus dem Netz zu beziehen so muss der Betrag um diese auch \"uber das ganze Jahr
 summierte Leistung abziehen. Wurde vom Supermarkt zus\"atzlich Leistung aus dem
 Netz bezogen, so wird die restliche Regelenergie um die \"uber das ganze Jahr
 summierte zus\"atzliche Regelleistung erh\"oht.
+
 \begin{equation}
-	W_{r_{w}} = |\sum^{365}_{d=1}\sum^{24}_{h=1}(P_{RT_{dh}}-P_{net_{dh}})| -
-	\sum^{365}_{d=1}\sum^{24}_{h=1}(P_{involved_{dh}} - P_{additionally_{dh}})
+W_{r_{w}} = |\sum^{365}_{d=1}\sum^{24}_{h=1}(P_{RT_{dh}}-P_{net_{dh}})| -
+\sum^{365}_{d=1}\sum^{24}_{h=1}(P_{involved_{dh}} - P_{additionally_{dh}})
 \label{eq:wrw}
 \end{equation}
+
 \begin{description}[\dth]
 \item[$W_{r_{wo}}$] Regelenergie ohne Kooperation zum Ausgleich der
 Prognosefehler.
@@ -181,6 +181,42 @@ Windpark generiert wurde in MW
 \item[$d$] Laufvariable f\"ur die Tage
 \item[$h$] Laufvariable f\"ur die Stunden
 \end{description}
+
+Der Betrag der Differenz |$W_{r_{wo}}- W_{r_{w}}$| bildet den Wert der
+eingesparten Regelenergie.
+
+Der durchschnittliche Jahresverbrauch f\"ur alle Superm\"arkte $W_{dem}$ ist die
+Summe des durchschnittlichen st\"undlichen Bedarfs $P_{dem}$ f\"ur alle Stunden
+und Tage des Jahres.
+
+\begin{equation}
+W_{dem} = \sum^{365}_{d=1}\sum^{24}_{h=1}P_{dem_{dh}}
+\label{eq:wdem}
+\end{equation}
+
+\begin{description}[\dth]
+\item[$W_{dem}$] Der durchschnittliche Jahresverbrauch f\"ur die Supermaktkette
+\item[$P_{dem}$] St\"undlicher Leistungsbedarf des Supermarkts (demand)
+\end{description}
+
+Der durchschnittliche Jahresverbrauch f\"ur alle Superm\"arkte $W_{dem}$ ist die
+Summe des durchschnittlichen st\"undlichen Bedarfs $P_{dem}$ f\"ur alle Stunden
+und Tage des Jahres.
+
+\begin{equation}
+W_{coop} = \sum^{365}_{d=1}\sum^{24}_{h=1}P_{v_{dh}}
+\label{eq:wcoop}
+\end{equation}
+
+\begin{description}[\dth]
+\item[$W_{coop}$] Der Jahresverbrauch f\"ur die Supermaktkette infolge des
+Kooperation
+\item[$P_{v}$] Der st\"undliche Leistungsverbrauch des Supermarkts aufgrund der
+Kooperation
+\end{description}
+
+Die Differenz $W_{dem}- W_{coop}$| bildet den Wert des Jahresmehrbedarfs an
+Energie aufgrund der Kooperation.
 
 In der \cref{fig:threep} wird der zeitliche Verlauf der Leistungsdaten des
 Widparkbetreibers und die daraus f\"ur die Kooperation ermittelte Werte \"uber
@@ -220,12 +256,12 @@ diesem Zeitbereich ist auch ein deutlicher Anstieg der Ladeleistung des
 Supermarkts zu beobachten. Die Temperatur wurde dadurch gesenkt. Es wurde keine
 zus\"atzliche Leistung aus dem Netz beansprucht. Die Aufladung wurde komplett
 durch die Windleistung vorgenommen\footnote{ In der Abbildung wird die
-Leistung, die ausschlie\sslich vom Windpark beansprucht wird, als \textbf{wind only}
-bezeichnet}. Die Prognose wurde der realen Werte f\"ur den neuen Tag angepasst.
-Der Tag 15.1.2005 zeichnet sich durch eine deutliche Windschw\"ache aus, sodass
-der Supermarkt mit dem gr\"o\ss ten Teil seines Bedarfs sich nicht beim
-Netzbetreiber abgemeldet hat. Der Windpark konnte aber auch die Differenz nicht
-bedienen, sodass nur die aus dem Netz bestellte Leistung verbraucht werden
+Leistung, die ausschlie\ss lich vom Windpark beansprucht wird, als \textbf{wind
+only} bezeichnet}. Die Prognose wurde der realen Werte f\"ur den neuen Tag
+angepasst.  Der Tag 15.1.2005 zeichnet sich durch eine deutliche Windschw\"ache
+aus, sodass der Supermarkt mit dem gr\"o\ss ten Teil seines Bedarfs sich nicht
+beim Netzbetreiber abgemeldet hat. Der Windpark konnte aber auch die Differenz
+nicht bedienen, sodass nur die aus dem Netz bestellte Leistung verbraucht werden
 konnte. Diese Menge ist jedoch kleiner als der durchschnittliche st\"undliche
 Bedarf. Aus diesem Grund steigt die Temperatur in den K\"uhlbereichen. In den
 Stunden zwischen 36 und 40 ist die bestellte Leistung so gro\ss ,$ $ dass ein
@@ -261,13 +297,9 @@ gegen K\"alteenergieverlust etc. unterscheiden.
 \label{fig:threet}
 \end{figure}
 
+\subsection*{Variation der Speicherkapazit\"at}
 
-\begin{figure}[h]
-	\begin{center}
-	\includegraphics[scale=0.39]{images/Simulation/415}
-	\end{center}
-\caption{Ausgabe plotCooling.m}
-\label{fig:ausgabe}
-\end{figure}
+Die Variation der Speicherkapazit\"at erfolgt mit Hilfe der Konfigurationsdatein
+\textbf{config\_grid.m} und \textbf{config\_supermarkets.m}. F\"ur das 
 
 

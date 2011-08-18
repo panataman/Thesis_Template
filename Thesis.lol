@@ -9,5 +9,9 @@
 \contentsline {lstlisting}{\numberline {A.5}Cooling\_strategy.m}{48}{lstlisting.A.5}
 \contentsline {lstlisting}{\numberline {A.6}Power\_grid.m}{53}{lstlisting.A.6}
 \contentsline {lstlisting}{\numberline {A.7}Bus.m}{54}{lstlisting.A.7}
-\contentsline {lstlisting}{\numberline {A.8}Supermarket.m}{55}{lstlisting.A.8}
+\contentsline {lstlisting}{\numberline {A.8}Supermarket.m}{54}{lstlisting.A.8}
 \contentsline {lstlisting}{\numberline {A.9}Refrigerator.m}{55}{lstlisting.A.9}
+\contentsline {lstlisting}{\numberline {A.10}Variation Multipliaktor K\"uhlzellen}{60}{lstlisting.A.10}
+\contentsline {lstlisting}{\numberline {A.11}Variation Anzahl K\"uhlzellen}{60}{lstlisting.A.11}
+\contentsline {lstlisting}{\numberline {A.12}Variation Multiplikator Superm\"arkte}{60}{lstlisting.A.12}
+\contentsline {lstlisting}{\numberline {A.13}Variation Anzahl Superm\"arkte}{60}{lstlisting.A.13}
