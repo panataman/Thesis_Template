@@ -39,7 +39,7 @@ mit dem Programm den Einsatz der K\"altespeicher im elektrischen
 Energieversorgungsnez mit weiteren Lastmanagement-Algorithmen und Ausf\"uhrungen
 zu untersuchen.
 
-\section{Auswertung des Kooperationskonzepts}
+\section{Auswertung}
 Die Simulation wird f\"ur vier F\"alle durchgef\"uhrt (vgl. \cref{t:faelle} auf
 der Seite \pageref{t:faelle}). Im im Fall 1 werden die Multiplikatoren in den
 Konfigurationsdateien \matref{cgrid} und \matref{csuper} so ver\"andert, dass
@@ -61,9 +61,25 @@ gesenkt werden. Tr\"agt der Winparkbetreiber die Kosten des Mehrbedarfs
 f\"ur den Supermarkt, dann ist durch die Einsparung an Regelenergie die
 Kooperationsrendite um die 7968,5 Prozent m\"oglich (vgl. \cref{t:faelle}).
 F\"ur die Verdoppelung der Anzahl der K\"altespeicher ist das Ergebnis der
-Simulation auch eine Verdoppelung der Einsparung an Regelleistung. Der
-Mehrbedarf f\"ur den Supermarkt hat sich aber auch verdoppelt. Die
-Kooperationsrendite ist dadurch konstant geblieben.
+Simulation auch eine Verdoppelung der Einsparung an Regelleistung. Eine negative
+Folge ist die Verdoppelung des Mehrbedarfs f\"ur den Supermarkt. Dadurch ist
+keine \"Anderung der Kooperationsrendite beobachtet worden.\\
+
+Zum besseren Verst\"andnis, welche Dateien und wie zur Simulation jeweiligen
+F\"alle ver\"adert wurden sind sie im Anhang zus\"atzlich abgebildet.
+Die Konfigurationsdatein, mit denen Fall 1 simuliert wurden, sind in der
+\matref{cgrid} und \matref{csuper} zu sehen.
+Die Konfigurationsdatein, mit denen Fall 2 simuliert wurden, sind in der
+\matref{dsf} und \matref{csuper} zu sehen.
+Die Konfigurationsdatein, mit denen Fall 3 simuliert wurden, sind in der
+\matref{cgrid} und \matref{dff} zu sehen.
+Die Konfigurationsdatein, mit denen Fall 4 simuliert wurden, sind in der
+\matref{fall} und \matref{csuper} zu sehen.
+
+Aus der \cref{t:faelle} ist ersichtlich, dass die Vergr\"osserung der
+Speicherkapazit\"at durch die Konfigurationsdateien funktioniert. F\"ur beliebig
+gro\ss e Energieversorgungsnetze k\"onnen dadurch Simulationen durchgef\"uhr
+werden.
 
 % \include{tabelle}
 \begin{table}
@@ -232,38 +248,37 @@ Windpark generierte Leistung\footnote{ In der Abbildung als
 Prognose. Die Leistung, mit der der Windpark sich beim Supermarkt und beim
 Netzbetreiber auf Grund der hohen Prognosewerte verpflichtet, kann nicht
 geliefert werden. In der \cref{fig:threet} auf der Seite \cref{fig:threet} ist
-im dritten Nebenbild\todo{gibt soein wort \"uberhaupt} zu erkennen, dass der
-Windparkbetreiber sich beim Supermarkt mit der Lieferung des kompletten
-durchschnittlichen st\"undlichen Bedarfs\footnote{ In der Abbildung als
-\textit{demand} bezeichnet.} verpflichtet\footnote{ In der Abbildung wird diese
-Leistung als \textit{power promised} bezeichnet (vgl. die \cref{eq:psm} auf der
-Seite \pageref{eq:psm}).} hat. Infolge dessen hat sich der Supermarkt beim
-Netzbetreiber komplett als Last abgemeldet\footnote{ In der Abbildung als
-\textit{firm commitment} bezeichnet}. Im K\"uhlbereich darf die Temperatur
-nicht \"uber die obere Grenze steigen. Zum Einhalten dieser Bedingung muss der
-Supermarkt zus\"atzlich Leistung\footnote{ In der Abbildung mit
-\textit{additionally power bezeichnet} bezeichnet.} aus dem Netz ziehen. F\"ur
-den Netzbetreiber Verursacht diese unangemeldete Last einen zus\"atzlichen
-Regelaufwand. Der Verlauf dieser Energie ist im Nebenbild\todo{hier auch} in der
-\cref{fig:threet} enthalten. Es ist zu erkennen, dass der Bedarf des
-Supermarkts\footnote{ In der Abbildung als \textit{charge} bezeichnet.}
-an diesem Tag komplett durch die zus\"atzliche Leistung aus dem Netz gedeckt
-wird. Die Temperatur in den K\"uhlbereichen tiefgek\"uhlte Tiefk\"uhltruhe
+im dritten Subplot zu erkennen, dass der Windparkbetreiber sich beim Supermarkt
+mit der Lieferung des kompletten durchschnittlichen st\"undlichen
+Bedarfs\footnote{ In der Abbildung als \textit{demand} bezeichnet.}
+verpflichtet\footnote{ In der Abbildung wird diese Leistung als \textit{power
+promised} bezeichnet (vgl. die \cref{eq:psm} auf der Seite \pageref{eq:psm}).}
+hat. Infolge dessen hat sich der Supermarkt beim Netzbetreiber komplett als Last
+abgemeldet\footnote{ In der Abbildung als \textit{firm commitment} bezeichnet}.
+Im K\"uhlbereich darf die Temperatur nicht \"uber die obere Grenze steigen. Zum
+Einhalten dieser Bedingung muss der Supermarkt zus\"atzlich Leistung\footnote{
+In der Abbildung mit \textit{additionally power bezeichnet} bezeichnet.}
+aus dem Netz ziehen. F\"ur den Netzbetreiber Verursacht diese unangemeldete Last
+einen zus\"atzlichen Regelaufwand. Der Verlauf dieser Energie ist im
+Subplot in der \cref{fig:threet} enthalten. Es ist zu erkennen, dass der Bedarf
+des Supermarkts\footnote{ In der Abbildung als \textit{charge} bezeichnet.} an
+diesem Tag komplett durch die zus\"atzliche Leistung aus dem Netz gedeckt wird.
+Die Temperatur in den K\"uhlbereichen tiefgek\"uhlte Tiefk\"uhltruhe
 steckerfertig und Tiefk\"uhl K\"uhlzellen bleibt in diesem Zeitraum bei der
 maximal zul\"assigen Temperatur von -18 $\grad$ C. In den Stunden 27 bis 30
 liegen die Werte f\"ur tats\"achlich generierte Leistun \"uber der Prognose. In
 diesem Zeitbereich ist auch ein deutlicher Anstieg der Ladeleistung des
-Supermarkts zu beobachten. Die Temperatur wurde dadurch gesenkt. Es wurde keine
-zus\"atzliche Leistung aus dem Netz beansprucht. Die Aufladung wurde komplett
-durch die Windleistung vorgenommen\footnote{ In der Abbildung wird die
-Leistung, die ausschlie\ss lich vom Windpark beansprucht wird, als \textbf{wind
-only} bezeichnet}. Die Prognose wurde der realen Werte f\"ur den neuen Tag
-angepasst.  Der Tag 15.1.2005 zeichnet sich durch eine deutliche Windschw\"ache
-aus, sodass der Supermarkt mit dem gr\"o\ss ten Teil seines Bedarfs sich nicht
-beim Netzbetreiber abgemeldet hat. Der Windpark konnte aber auch die Differenz
-nicht bedienen, sodass nur die aus dem Netz bestellte Leistung verbraucht werden
+Supermarkts zu beobachten. Die Temperatur wurde dadurch gesenkt.  Es wurde keine
+zus\"atzliche Leistung aus dem Netz beansprucht.  Die Aufladung wurde komplett
+durch die Windleistung vorgenommen\footnote{ In der Abbildung wird die Leistung,
+die ausschlie\ss lich vom Windpark beansprucht wird, als \textbf{wind only}
+bezeichnet}. Die Prognose wurde der realen Werte f\"ur den neuen Tag angepasst.
+Der Tag 15.1.2005 zeichnet sich durch eine deutliche Windschw\"ache aus, sodass
+der Supermarkt mit dem gr\"o\ss ten Teil seines Bedarfs sich nicht beim
+Netzbetreiber abgemeldet hat. Der Windpark konnte aber auch die Differenz nicht
+bedienen, sodass nur die aus dem Netz bestellte Leistung verbraucht werden
 konnte. Diese Menge ist jedoch kleiner als der durchschnittliche st\"undliche
-Bedarf. Aus diesem Grund steigt die Temperatur in den K\"uhlbereichen. In den
+Bedarf.  Aus diesem Grund steigt die Temperatur in den K\"uhlbereichen.  In den
 Stunden zwischen 36 und 40 ist die bestellte Leistung so gro\ss ,$ $ dass ein
 Teil der K\"uhlzellen damit versorgt wird, und die Temperatur konstant gehalten
 werden kann. In den Stunden 43 bis 60 liegt die tats\"achliche generierte
@@ -277,10 +292,10 @@ aus dem Netz beansprucht, bis wieder Mehrangebot an Windleistung gibt. Die
 Temperatur bleibt stehts in den definierten Grenzen und reagiert gem\"a\ss $ $
 den Erwartungen auf die Netzsituation. Die vollst\"andige \"Ubersicht \"uber
 alle K\"uhlzellen des Modellsupermarktes sowie \"uber die Leistungsferl\"aufe im
-gesamten Netz f\"ur diese Tage kann aus den \todo{hier verweis auf anhang}
-bezogen werden. Der Unterschiede im Temperaturverlauf sind dadurch zu
-begr\"unden, dass einzelnen K\"uhleinheiten durch die Beladung, die Abdichtung
-gegen K\"alteenergieverlust etc. unterscheiden.
+gesamten Netz f\"ur diese Tage kann aus der \cref{fig:14}, der \cref{fig:15} und
+der \cref{fig:16} bezogen werden. Der Unterschiede im Temperaturverlauf sind
+dadurch zu begr\"unden, dass einzelnen K\"uhleinheiten sich durch die Beladung,
+die Abdichtung gegen K\"alteenergieverlust etc. unterscheiden.
 
 \begin{figure}[h] \begin{center}
 \includegraphics[scale=0.40]{images/Simulation/three_days_power} \end{center}
@@ -296,9 +311,18 @@ gegen K\"alteenergieverlust etc. unterscheiden.
 \label{fig:threet}
 \end{figure}
 
-\subsection*{Variation der Speicherkapazit\"at}
+\subsection*{Aussichten}
 
-Die Variation der Speicherkapazit\"at erfolgt mit Hilfe der Konfigurationsdatein
-\textbf{config\_grid.m} und \textbf{config\_supermarkets.m}. F\"ur das 
-
+Es gib viele M\"oglichgeiten, wie das Programm verbessert werden kann. An erster
+Stelle k\"onnen zur realit\"atsgetreuen Darstellung der Abl\"aufe und Verfahren
+im K\"altetechnikbetrieb die Erstellung der Spezifikationsvariablen auf der
+Basis von messtechnischen Verfahren zu verwirklichen. M\"ogliche Schwachstellen
+des Modells k\"onnten dadurch korrigiert werden. Weitere Klassen zur Simulation
+weiterer verschiedener K\"alteverlustquellen k\"onnen implementiert werden. Der
+Einfluss der Vereisung des und die sinkende Leistungszahl des Verdampfers sowie
+die Beschr\"ankung der Leistungsaufnahme durch technische Grenzen wurden nicht
+betrachtet. Das Kaufverhalten, also der Verlust an Substanzmasse zur Speicherung
+der K\"alteenergie und der Einfluss der Jahreszeiten w\"urden einen genaueren
+Abbild der Realit\"at darstellen. Das Programm k\"onnte einen Grundstein f\"ur
+weitere Studien auf diesem Gebiet bilden.
 
